@@ -32,5 +32,3 @@ Copy the modified json files to your MHServerEmu installation:
 - Batch price updates
 - Batch delete operations
 - Search by SKU, title, or prototype ID
-
-The catalog manager will now be ready to use with your Marvel Heroes Emulator server.
