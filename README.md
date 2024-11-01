@@ -2,8 +2,9 @@
 
 ## Setup Instructions
 
-1. Download the application binaries
-2. Place your game files in the Data/Game folder:
+1. Download the application binaries (Found under Releases/CatalogManager-v0.1.zip).
+2. Extract the zip folder.
+3. Place your game files in the Data/Game folder:
    - Calligraphy.sip
    - mu_cdata.sip
 
