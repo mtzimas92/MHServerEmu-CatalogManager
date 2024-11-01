@@ -24,15 +24,15 @@ Copy the modified json files to your MHServerEmu installation:
 
 ## Features
 
-- Browse and search through all game items
-- Filter items by category
+- Browse and search through all game items that are currently in the store.
+- Filter items by category.
 - Add new items to the catalog
-- Edit existing items
-- Set item prices and type modifiers
-- Price range filtering
-- Batch price updates
-- Batch delete operations
-- Search by SKU, title, or prototype ID
+- Edit existing items.
+- Set item prices and type modifiers.
+- Price range filtering.
+- Batch price updates.
+- Batch delete operations.
+- Search by SKU, title, or prototype ID.
   
 ## Disclaimer
 
