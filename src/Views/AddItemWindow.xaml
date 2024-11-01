@@ -1,0 +1,139 @@
+<Window x:Class="CatalogManager.Views.AddItemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:CatalogManager.Converters"
+        Loaded="Window_Loaded"
+        Title="{Binding WindowTitle}" 
+        Height="600" 
+        Width="500"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F5F5">
+
+    <Window.Resources>
+        <Style x:Key="FormLabelStyle" TargetType="TextBlock">
+            <Setter Property="Margin" Value="0,0,0,4"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="#424242"/>
+        </Style>
+
+        <Style x:Key="FormInputStyle" TargetType="Control">
+            <Setter Property="Margin" Value="0,0,0,16"/>
+            <Setter Property="Padding" Value="8,6"/>
+            <Setter Property="BorderBrush" Value="#DDDDDD"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+
+        <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Padding" Value="15,8"/>
+            <Setter Property="Background" Value="#2196F3"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="4"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#1976D2"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibility"/>
+    </Window.Resources>
+
+    <Border Margin="20" Background="White" CornerRadius="8" Padding="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <TextBlock Text="{Binding WindowTitle}"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Margin="0,0,0,20"
+                       Foreground="#333333"/>
+
+            <!-- Form Content -->
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <TextBlock Text="SKU ID" Style="{StaticResource FormLabelStyle}"/>
+                    <TextBox Text="{Binding SkuId}" 
+                             IsReadOnly="True"
+                             Style="{StaticResource FormInputStyle}"/>
+
+                    <TextBlock Text="Item Type" Style="{StaticResource FormLabelStyle}"/>
+                    <ComboBox ItemsSource="{Binding ItemTypes}"
+                              SelectedItem="{Binding SelectedType}"
+                              Style="{StaticResource FormInputStyle}"/>
+
+                    <TextBlock Text="Type Modifiers" Style="{StaticResource FormLabelStyle}"/>
+                    <ListBox x:Name="TypeModifiersListBox"
+                        ItemsSource="{Binding AvailableTypeModifiers}"
+                        SelectionMode="Multiple"
+                        SelectionChanged="ListBox_SelectionChanged"
+                        Height="100"
+                        Style="{StaticResource FormInputStyle}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox Content="{Binding}"
+                                         IsChecked="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=ListBoxItem}}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <TextBlock Text="Prototype ID" Style="{StaticResource FormLabelStyle}"/>
+                    <TextBox Text="{Binding PrototypeId}" 
+                            IsReadOnly="True"
+                            Style="{StaticResource FormInputStyle}"/>
+
+                    <StackPanel Visibility="{Binding IsNewItem, Converter={StaticResource BoolToVisibility}}">
+                        <TextBlock Text="Available Items" Style="{StaticResource FormLabelStyle}"/>
+                        <Button Content="Select Item" 
+                                Command="{Binding OpenSelectItemCommand}"
+                                HorizontalAlignment="Left"
+                                Style="{StaticResource FormInputStyle}"/>
+                    </StackPanel>
+
+                    <TextBlock Text="Title" Style="{StaticResource FormLabelStyle}"/>
+                    <TextBox Text="{Binding Title}" Style="{StaticResource FormInputStyle}"/>
+
+                    <TextBlock Text="Description" Style="{StaticResource FormLabelStyle}"/>
+                    <TextBox Text="{Binding Description}"
+                             TextWrapping="Wrap"
+                             AcceptsReturn="True"
+                             Height="80"
+                             Style="{StaticResource FormInputStyle}"/>
+
+                    <TextBlock Text="Price" Style="{StaticResource FormLabelStyle}"/>
+                    <TextBox Text="{Binding Price}" Style="{StaticResource FormInputStyle}"/>
+                </StackPanel>
+            </ScrollViewer>
+
+            <!-- Action Buttons -->
+            <StackPanel Grid.Row="2" 
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Right" 
+                        Margin="0,20,0,0">
+                <Button Content="Save"
+                        Command="{Binding SaveCommand}"
+                        Width="100"
+                        Margin="0,0,10,0"
+                        Background="#4CAF50"/>
+                <Button Content="Cancel"
+                        Command="{Binding CancelCommand}"
+                        Width="100"
+                        Background="#757575"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

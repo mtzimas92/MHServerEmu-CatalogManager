@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <Platforms>x64</Platforms>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>true</GenerateTargetFrameworkAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="MHServerEmu.Core">
+      <HintPath>lib\MHServerEmu.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MHServerEmu.Games">
+      <HintPath>lib\MHServerEmu.Games.dll</HintPath>
+    </Reference>
+    <Reference Include="Gazillion">
+      <HintPath>lib\Gazillion.dll</HintPath>
+    </Reference>
+    <Reference Include="Free.Ports.zLib">
+      <HintPath>lib\Free.Ports.zLib.dll</HintPath>
+    </Reference>
+    <Reference Include="INIFileParser">
+      <HintPath>lib\INIFileParser.dll</HintPath>
+    </Reference>
+    <Content Include="Data\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </Content>
+    <PackageReference Include="K4os.Compression.LZ4" Version="1.3.5" />
+  </ItemGroup>
+</Project>
