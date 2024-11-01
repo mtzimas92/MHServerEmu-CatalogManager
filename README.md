@@ -32,3 +32,7 @@ Copy the modified json files to your MHServerEmu installation:
 - Batch price updates
 - Batch delete operations
 - Search by SKU, title, or prototype ID
+  
+## Disclaimer
+
+This application is completely new. Any issues you may encounter, please report them so I can look into them. Before doing any work, make a backup for the Catalog.json and CatalogPatch.json files that are included in this. 
