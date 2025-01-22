@@ -166,9 +166,7 @@ namespace CatalogManager.ViewModels
             _catalogService = catalogService;
             _items = new ObservableCollection<CatalogEntry>();
             Categories = new ObservableCollection<string>();
-            //AnalyzeDesignStatesCommand = new RelayCommand(() => _catalogService.AnalyzeDesignStates());
 
-            //AnalyzeItemCategoriesCommand = new RelayCommand(async () => await AnalyzeItemCategories());
             LoadItemsCommand = new AsyncRelayCommand(LoadItemsAsync);
             RefreshCommand = new AsyncRelayCommand(LoadItemsAsync);
             AddItemCommand = new AsyncRelayCommand(AddItemAsync);
@@ -179,10 +177,7 @@ namespace CatalogManager.ViewModels
 
             _ = LoadItemsAsync();
         }
-/*         private async Task AnalyzeItemCategories()
-        {
-            await _catalogService.AnalyzeItemCategories();
-        } */
+
         private async Task LoadItemsAsync()
         {
             IsLoading = true;

@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using MHServerEmu.Games.GameData.Prototypes;
 using CatalogManager.Services;
 using System.Diagnostics;
-
+using System.IO;  // For File operations
 
 
 namespace CatalogManager.ViewModels
@@ -79,6 +79,7 @@ namespace CatalogManager.ViewModels
         {
             _catalogService = catalogService;
             InitializeCategories();
+            //ExportCharacterPrototypesToJson().Wait();
         }
 
         private void InitializeCategories()
@@ -91,7 +92,8 @@ namespace CatalogManager.ViewModels
                 new Category { Path = "Entity/Items/CurrencyItems", DisplayName = "Currency Items", IsInventoryType = false },
                 new Category { Path = "Entity/Items/Pets", DisplayName = "Pets", IsInventoryType = false },
                 new Category { Path = "Entity/Items/Crafting", DisplayName = "Crafting", IsInventoryType = false },
-                new Category { Path = "Entity/Inventory/PlayerInventories/StashInventories/PageProtos/AvatarGear", DisplayName = "Avatar Gear", IsInventoryType = true }
+                new Category { Path = "Entity/Inventory/PlayerInventories/StashInventories/PageProtos/AvatarGear", DisplayName = "Stash Tabs", IsInventoryType = true },
+                new Category { Path = "Entity/Items/Test", DisplayName = "Test Gear", IsInventoryType = false },
             };
 
             // Select first category by default
@@ -112,7 +114,9 @@ namespace CatalogManager.ViewModels
                 "Entity/Items/Costumes",
                 "Entity/Items/CurrencyItems",
                 "Entity/Items/Crafting",
+                "Entity/Items/Test",
                 "Entity/Items/Pets"
+
             };
 
             var avatarGearItems = GameDatabase.DataDirectory
@@ -175,8 +179,33 @@ namespace CatalogManager.ViewModels
                   FilteredItems = new ObservableCollection<ItemDisplay>(filtered);
               }
         }
-        
+        // This is a piece of code that can be used to get various information from specific areas. It's currentl
+        // not used but it's setup to find LiveTuning enabled/disabled properties (for events). The method name is 
+        // left over from previous iterations. This can be called in line 82, on startup of add new items. Leaving it here. 
+        // public async Task ExportCharacterPrototypesToJson()
+        // {
+        //     var allPrototypes = GameDatabase.DataDirectory
+        //         .IteratePrototypesInHierarchy<Prototype>(PrototypeIterateFlags.None)
+        //         .Select(protoId => {
+        //             var proto = GameDatabase.GetPrototype<Prototype>(protoId);
+        //             var liveTuningProperty = proto.GetType().GetProperty("LiveTuningDefaultEnabled");
+        //             return new
+        //             {
+        //                 Path = GameDatabase.GetPrototypeName(protoId),
+        //                 Type = proto.GetType().Name,
+        //                 HasLiveTuning = liveTuningProperty != null,
+        //                 LiveTuningValue = liveTuningProperty?.GetValue(proto)
+        //             };
+        //         })
+        //         .Where(x => x.HasLiveTuning && x.LiveTuningValue != null && !(bool)x.LiveTuningValue)
+        //         .OrderBy(x => x.Path)
+        //         .ToList();
 
+        //     var output = allPrototypes.Select(p => $"Path: {p.Path}\nType: {p.Type}\nLiveTuningDefaultEnabled: {p.LiveTuningValue}\n\n");
+        //     await File.WriteAllLinesAsync("live_tuning_disabled.txt", output);
+        // }
+
+                        
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

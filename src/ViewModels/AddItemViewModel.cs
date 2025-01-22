@@ -83,16 +83,6 @@ namespace CatalogManager.ViewModels
             }
         }
 
-        //private ObservableCollection<GameDatabaseItem> _availableItems;
-/*         public ObservableCollection<GameDatabaseItem> AvailableItems
-        {
-            get => _availableItems;
-            set
-            {
-                _availableItems = value;
-                OnPropertyChanged();
-            }
-        } */
         public ObservableCollection<string> AvailableTypeModifiers
         {
             get => _availableTypeModifiers;
@@ -193,51 +183,6 @@ namespace CatalogManager.ViewModels
             SaveCommand = new RelayCommand(Save, CanSave);
             CancelCommand = new RelayCommand(Cancel);
         }
-/*         private async void LoadGameDatabaseItems()
-        {
-            // Get existing catalog items first
-            var catalogItems = await _catalogService.GetItemsAsync("All", "");
-            var existingProtoIds = catalogItems.Select(c => c.GuidItems[0].ItemPrototypeRuntimeIdForClient).ToHashSet();
-
-            var validPaths = new[]
-            {
-                "Entity/Items/Consumables",
-                "Entity/Items/CharacterTokens",
-                "Entity/Items/Costumes",
-                "Entity/Items/CurrencyItems",
-                "Entity/Items/Crafting",
-                "Entity/Items/Pets"
-            };
-
-            var avatarGearItems = GameDatabase.DataDirectory
-                .IteratePrototypesInHierarchy<PlayerStashInventoryPrototype>(PrototypeIterateFlags.NoAbstractApprovedOnly)
-                .Where(protoId => GameDatabase.GetPrototypeName(protoId).StartsWith("Entity/Inventory/PlayerInventories/StashInventories/PageProtos/AvatarGear"))
-                .Where(protoId => !existingProtoIds.Contains((ulong)protoId))
-                .Select(protoId => new GameDatabaseItem
-                {
-                    Id = protoId,
-                    Name = GameDatabase.GetPrototypeName(protoId)
-                })
-                .ToList();
-
-            var regularItems = GameDatabase.DataDirectory
-                .IteratePrototypesInHierarchy<ItemPrototype>(PrototypeIterateFlags.NoAbstractApprovedOnly)
-                .Select(protoId => (id: protoId, proto: GameDatabase.GetPrototype<ItemPrototype>(protoId)))
-                .Where(item => validPaths.Any(path => GameDatabase.GetPrototypeName(item.id).StartsWith(path)))
-                .Where(item => item.proto.DesignState == DesignWorkflowState.Live)
-                .Where(item => !existingProtoIds.Contains((ulong)item.id))
-                .Select(item => new GameDatabaseItem
-                {
-                    Id = item.id,
-                    Name = GameDatabase.GetPrototypeName(item.id)
-                })
-                .ToList();
-
-            var allItems = regularItems.Concat(avatarGearItems).ToList();
-            AvailableItems = new ObservableCollection<GameDatabaseItem>(allItems);
-        } */
-
-
         private async void InitializeNewItem()
         {
             SkuId = await _catalogService.GetNextAvailableSkuId();
