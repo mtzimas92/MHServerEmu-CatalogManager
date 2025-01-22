@@ -93,7 +93,11 @@ namespace CatalogManager.ViewModels
                 new Category { Path = "Entity/Items/Pets", DisplayName = "Pets", IsInventoryType = false },
                 new Category { Path = "Entity/Items/Crafting", DisplayName = "Crafting", IsInventoryType = false },
                 new Category { Path = "Entity/Inventory/PlayerInventories/StashInventories/PageProtos/AvatarGear", DisplayName = "Stash Tabs", IsInventoryType = true },
-                new Category { Path = "Entity/Items/Test", DisplayName = "Test Gear", IsInventoryType = false },
+                new Category { 
+                    Path = "Entity/Items/Test|Entity/Items/Artifacts/Prototypes/Tier1Artifacts/RaidTest|Entity/Items/Medals/MedalBlueprints/Endgame/TestMedals", 
+                    DisplayName = "Test Gear", 
+                    IsInventoryType = false 
+                },            
             };
 
             // Select first category by default
@@ -115,8 +119,9 @@ namespace CatalogManager.ViewModels
                 "Entity/Items/CurrencyItems",
                 "Entity/Items/Crafting",
                 "Entity/Items/Test",
+                "Entity/Items/Artifacts/Prototypes/Tier1Artifacts/RaidTest",
+                "Entity/Items/Medals/MedalBlueprints/Endgame/TestMedals",
                 "Entity/Items/Pets"
-
             };
 
             var avatarGearItems = GameDatabase.DataDirectory
@@ -163,8 +168,15 @@ namespace CatalogManager.ViewModels
             var allItems = regularItems.Concat(avatarGearItems).Concat(costumeItems).ToList();
             
             // Filter by selected category
-            var categoryItems = allItems.Where(item => item.FullPath.StartsWith(SelectedCategory.Path)).ToList();
-            
+            var categoryItems = allItems.Where(item => {
+                if (SelectedCategory.Path.Contains("|"))
+                {
+                    // Split the compound path and check if item starts with any of the paths
+                    var paths = SelectedCategory.Path.Split('|');
+                    return paths.Any(path => item.FullPath.StartsWith(path));
+                }
+                return item.FullPath.StartsWith(SelectedCategory.Path);
+            }).ToList();            
             _items = new ObservableCollection<ItemDisplay>(categoryItems);
             FilterItems();
         }
