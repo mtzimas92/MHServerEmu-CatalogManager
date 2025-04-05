@@ -1,4 +1,10 @@
 # Marvel Heroes Catalog Manager
+## Description
+
+A MHServerEmu-based tool that allows users to change the in-game store catalog easily.
+It uses the game files to find common (and some uncommon or test) items that can be added to your store.  
+Using this application, you can bring back the stash tabs for F4 heroes which were removed from MHO in later iterations, in an easy-to-use UI.
+You can change the current catalog prices, you can create your own bundles or BOGO offers, or enable items that you cannot currently see but exist in the current catalog. 
 
 ## Setup Instructions
 
