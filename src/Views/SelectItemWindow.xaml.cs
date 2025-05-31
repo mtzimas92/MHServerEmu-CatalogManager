@@ -1,4 +1,5 @@
 using System.Windows;
+using CatalogManager.ViewModels;
 
 namespace CatalogManager.Views
 {

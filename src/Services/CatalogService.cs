@@ -3,233 +3,554 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 using MHServerEmu.Games.GameData;
 using MHServerEmu.Games.GameData.Prototypes;
+
 namespace CatalogManager.Services
 {
     public class CatalogService
     {
-        private readonly string _catalogPath = Path.Combine("Data", "Catalog.json");
-        private readonly string _patchPath = Path.Combine("Data", "CatalogPatch.json");
-        private readonly JsonSerializerOptions _jsonOptions = new JsonSerializerOptions 
-        { 
-            WriteIndented = true,
-            NumberHandling = JsonNumberHandling.AllowReadingFromString
-        };
-        private Dictionary<string, List<string>> _categoryModifierMappings;
+        private readonly string _catalogPath;
+        private readonly string _patchPath;
+        private readonly JsonSerializerOptions _jsonOptions;
+        private readonly SemaphoreSlim _catalogLock = new SemaphoreSlim(1, 1);
+        private readonly Dictionary<string, List<string>> _categoryModifierMappings = new();
+        private readonly HashSet<ulong> _patchFileSkuIds = new();
+        
+        // Cache for better performance
+        private List<CatalogEntry> _cachedCatalogItems;
+        private HashSet<string> _cachedCategories;
+        private DateTime _lastCatalogLoadTime = DateTime.MinValue;
+        private readonly TimeSpan _cacheExpirationTime = TimeSpan.FromMinutes(5);
+        
+        // Prototype cache
+        private readonly Dictionary<ulong, string> _prototypeNameCache = new();
 
-        private HashSet<ulong> _patchFileSkuIds = new();
-
-        public async Task<(List<CatalogEntry> Items, HashSet<string> Categories)> LoadCatalogAsync()
+        public CatalogService(string dataDirectory = "Data")
         {
-            //Debug.WriteLine("Loading catalog files...");
-
-            var items = new List<CatalogEntry>();
-
-            // Load patch file
-            var patchJson = await File.ReadAllTextAsync(_patchPath);
-            var patch = JsonSerializer.Deserialize<List<CatalogEntry>>(patchJson, _jsonOptions);
-            //Debug.WriteLine($"Loaded {patch?.Count ?? 0} items from patch file");
-            if (patch != null) 
-            {
-                items.AddRange(patch);
-                _patchFileSkuIds = new HashSet<ulong>(patch.Select(x => x.SkuId));
-            }
-
-            // Load base catalog if it exists
-            if (File.Exists(_catalogPath))
-            {
-                var catalogJson = await File.ReadAllTextAsync(_catalogPath);
-                var catalogRoot = JsonSerializer.Deserialize<CatalogRoot>(catalogJson, _jsonOptions);
-                if (catalogRoot?.Entries != null) items.AddRange(catalogRoot.Entries);
-            }
-
-            // Get unique categories from all items
-            var categories = new HashSet<string>(items.Select(i => i.Type.Name).OrderBy(n => n));
-            //Debug.WriteLine($"Loaded {items.Count} items and {categories.Count} categories");
-            return (items, categories);
-        }
-        public CatalogService()
-        {
-            InitializeCategoryModifierMappings();
-        }
-/*         public async void AnalyzeDesignStates()
-        {
-            var (catalogItems, _) = await LoadCatalogAsync();
-
-            var pathAnalysis = catalogItems
-                .Select(item => new
-                {
-                    Path = Path.GetDirectoryName(GameDatabase.GetPrototypeName((PrototypeId)item.GuidItems[0].ItemPrototypeRuntimeIdForClient)),
-                    Type = item.Type.Name
-                })
-                .Distinct()
-                .OrderBy(x => x.Path)
-                .ToList();
-
-            string filePath = Path.Combine(AppContext.BaseDirectory, "CatalogPathAnalysis.json");
-            File.WriteAllText(filePath, 
-                JsonSerializer.Serialize(pathAnalysis, new JsonSerializerOptions { WriteIndented = true }));
-        } */
-
-        private string GetExistingTypeForPath(string path, List<CatalogEntry> catalogItems)
-        {
-            var existingItem = catalogItems.FirstOrDefault(i => 
-                GameDatabase.GetPrototypeName((PrototypeId)i.GuidItems[0].ItemPrototypeRuntimeIdForClient) == path);
-            return existingItem?.Type.Name ?? "Unknown";
-        }
-        public bool IsItemFromPatch(ulong skuId) => _patchFileSkuIds.Contains(skuId);
-
-        public async Task SaveItemAsync(CatalogEntry entry)
-        {
-            var catalogJson = await File.ReadAllTextAsync(_catalogPath);
+            _catalogPath = Path.Combine(dataDirectory, "Catalog.json");
+            _patchPath = Path.Combine(dataDirectory, "CatalogPatch.json");
             
-            if (catalogJson.Contains($"\"SkuId\":{entry.SkuId}"))
+            _jsonOptions = new JsonSerializerOptions 
+            { 
+                WriteIndented = true,
+                NumberHandling = JsonNumberHandling.AllowReadingFromString
+            };
+            
+            // Ensure data directory exists
+            Directory.CreateDirectory(dataDirectory);
+            
+            // Create empty patch file if it doesn't exist
+            if (!File.Exists(_patchPath))
             {
-                var doc = JsonDocument.Parse(catalogJson);
-                var entries = doc.RootElement.GetProperty("Entries");
+                File.WriteAllText(_patchPath, "[]");
+            }
+            
+            // Initialize category modifiers
+            Task.Run(InitializeCategoryModifierMappingsAsync);
+        }
+        private async Task InitializeCategoryModifierMappingsAsync()
+        {
+            try
+            {
+                var catalogItems = await GetItemsAsync("All", "");
                 
-                int startIndex = -1;
-                int endIndex = -1;
-                
-                // Find the exact position of this entry in the JSON string
-                for (int i = 0; i < entries.GetArrayLength(); i++)
+                lock (_categoryModifierMappings)
                 {
-                    if (entries[i].GetProperty("SkuId").GetUInt64() == entry.SkuId)
+                    _categoryModifierMappings.Clear();
+                    
+                    foreach (var group in catalogItems.GroupBy(item => item.Type.Name))
                     {
-                        var entryStr = entries[i].ToString();
-                        startIndex = catalogJson.IndexOf(entryStr);
-                        endIndex = startIndex + entryStr.Length;
-                        break;
+                        var modifiers = group
+                            .SelectMany(item => item.TypeModifiers)
+                            .Select(m => m.Name)
+                            .Distinct()
+                            .ToList();
+                            
+                        _categoryModifierMappings[group.Key] = modifiers;
                     }
                 }
-                
-                if (startIndex >= 0)
-                {
-                    // Create the new entry JSON
-                    var newEntryJson = JsonSerializer.Serialize(entry, new JsonSerializerOptions { WriteIndented = false });
-                    
-                    // Replace only this specific entry
-                    var updatedJson = catalogJson.Substring(0, startIndex) + 
-                                    newEntryJson + 
-                                    catalogJson.Substring(endIndex);
-                    
-                    await File.WriteAllTextAsync(_catalogPath, updatedJson);
-                }
             }
-            else
+            catch (Exception ex)
             {
-                var patchJson = await File.ReadAllTextAsync(_patchPath);
-                var patch = JsonSerializer.Deserialize<List<CatalogEntry>>(patchJson, _jsonOptions);
-                patch.Add(entry);
-                await File.WriteAllTextAsync(_patchPath, JsonSerializer.Serialize(patch, _jsonOptions));
+                Debug.WriteLine($"Error initializing category modifiers: {ex.Message}");
             }
         }
 
-        private async void InitializeCategoryModifierMappings()
+        public async Task<(List<CatalogEntry> Items, HashSet<string> Categories)> LoadCatalogAsync(bool forceRefresh = false)
         {
-            var catalogItems = await GetItemsAsync("All", "");
-            _categoryModifierMappings = catalogItems
-                .GroupBy(item => item.Type.Name)
-                .ToDictionary(
-                    g => g.Key,
-                    g => g.SelectMany(item => item.TypeModifiers)
-                        .Select(m => m.Name)
-                        .Distinct()
-                        .ToList()
-                );
+            // Return cached data if it's still valid
+            if (!forceRefresh && 
+                _cachedCatalogItems != null && 
+                _cachedCategories != null && 
+                (DateTime.Now - _lastCatalogLoadTime) < _cacheExpirationTime)
+            {
+                return (_cachedCatalogItems, _cachedCategories);
+            }
+            
+            await _catalogLock.WaitAsync();
+            try
+            {
+                var items = new List<CatalogEntry>();
+                _patchFileSkuIds.Clear();
+
+                // Load patch file
+                if (File.Exists(_patchPath))
+                {
+                    var patchJson = await File.ReadAllTextAsync(_patchPath);
+                    var patch = JsonSerializer.Deserialize<List<CatalogEntry>>(patchJson, _jsonOptions);
+                    
+                    if (patch != null) 
+                    {
+                        items.AddRange(patch);
+                        _patchFileSkuIds.UnionWith(patch.Select(x => x.SkuId));
+                    }
+                }
+
+                // Load base catalog if it exists
+                if (File.Exists(_catalogPath))
+                {
+                    var catalogJson = await File.ReadAllTextAsync(_catalogPath);
+                    var catalogRoot = JsonSerializer.Deserialize<CatalogRoot>(catalogJson, _jsonOptions);
+                    
+                    if (catalogRoot?.Entries != null)
+                    {
+                        items.AddRange(catalogRoot.Entries);
+                    }
+                }
+
+                // Get unique categories from all items
+                var categories = new HashSet<string>(items.Select(i => i.Type.Name).OrderBy(n => n));
+                
+                // Update cache
+                _cachedCatalogItems = items;
+                _cachedCategories = categories;
+                _lastCatalogLoadTime = DateTime.Now;
+                
+                return (items, categories);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error loading catalog: {ex.Message}");
+                throw;
+            }
+            finally
+            {
+                _catalogLock.Release();
+            }
         }
+
+        public bool IsItemFromPatch(ulong skuId) => _patchFileSkuIds.Contains(skuId);
+
+        public async Task<bool> SaveItemAsync(CatalogEntry entry)
+        {
+            if (entry == null)
+                throw new ArgumentNullException(nameof(entry));
+                        
+            await _catalogLock.WaitAsync();
+            try
+            {
+                // Determine if this is a new item or an update to an existing item
+                bool isNewItem = !IsItemInCatalog(entry.SkuId);
+                
+                if (isNewItem || IsItemFromPatch(entry.SkuId))
+                {
+                    // Save to patch file
+                    await SaveToPatchFileAsync(entry);
+                    return true;
+                }
+                else
+                {
+                    // Update in main catalog in-place without reformatting
+                    return await UpdateInMainCatalogInPlaceAsync(entry);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error saving item {entry.SkuId}: {ex.Message}");
+                throw;
+            }
+            finally
+            {
+                _catalogLock.Release();
+            }
+        }
+
+        private async Task SaveToPatchFileAsync(CatalogEntry entry)
+        {
+            // Load current patch file
+            var patchJson = await File.ReadAllTextAsync(_patchPath);
+            var patch = JsonSerializer.Deserialize<List<CatalogEntry>>(patchJson, _jsonOptions) ?? new List<CatalogEntry>();
+            
+            // Remove existing entry with same SKU if it exists
+            patch.RemoveAll(x => x.SkuId == entry.SkuId);
+            
+            // Add the new/updated entry
+            patch.Add(entry);
+            
+            // Save back to file with backup
+            string backupPath = _patchPath + ".bak";
+            if (File.Exists(_patchPath))
+            {
+                File.Copy(_patchPath, backupPath, true);
+            }
+            
+            await File.WriteAllTextAsync(_patchPath, JsonSerializer.Serialize(patch, _jsonOptions));
+            
+            // Update patch SKU cache
+            _patchFileSkuIds.Add(entry.SkuId);
+        }
+        
+        private async Task<bool> UpdateInMainCatalogInPlaceAsync(CatalogEntry entry)
+        {
+            if (!File.Exists(_catalogPath))
+            {
+                throw new FileNotFoundException("Base catalog file not found", _catalogPath);
+            }
+            
+            // Create backup
+            string backupPath = _catalogPath + ".bak";
+            File.Copy(_catalogPath, backupPath, true);
+            
+            try
+            {
+                // Read the entire file as text
+                string catalogJson = await File.ReadAllTextAsync(_catalogPath);
+                
+                // Find the entry by SkuId
+                string skuIdPattern = $"\"SkuId\":{entry.SkuId}";
+                int skuIdIndex = catalogJson.IndexOf(skuIdPattern);
+                
+                if (skuIdIndex < 0)
+                {
+                    // Entry not found in the catalog
+                    Debug.WriteLine($"Entry with SkuId {entry.SkuId} not found in catalog");
+                    return false;
+                }
+                
+                // Find the start and end of the entry
+                int entryStartIndex = catalogJson.LastIndexOf("{", skuIdIndex);
+                if (entryStartIndex < 0) return false;
+                
+                // Find the matching closing brace
+                int braceCount = 1;
+                int entryEndIndex = entryStartIndex + 1;
+                
+                while (braceCount > 0 && entryEndIndex < catalogJson.Length)
+                {
+                    char c = catalogJson[entryEndIndex];
+                    if (c == '{') braceCount++;
+                    else if (c == '}') braceCount--;
+                    entryEndIndex++;
+                }
+                
+                if (braceCount != 0) return false; // Unbalanced braces
+                
+                // Serialize the new entry with minimal formatting
+                var jsonOptions = new JsonSerializerOptions
+                {
+                    WriteIndented = false,
+                    NumberHandling = JsonNumberHandling.AllowReadingFromString
+                };
+                
+                string newEntryJson = JsonSerializer.Serialize(entry, jsonOptions);
+                
+                // Replace the old entry with the new one
+                string updatedCatalog = catalogJson.Substring(0, entryStartIndex) + 
+                                    newEntryJson + 
+                                    catalogJson.Substring(entryEndIndex);
+                
+                // Write back to the file
+                await File.WriteAllTextAsync(_catalogPath, updatedCatalog);
+                
+                // Invalidate cache
+                _lastCatalogLoadTime = DateTime.MinValue;
+                
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Restore from backup on error
+                Debug.WriteLine($"Error updating catalog in place: {ex.Message}");
+                if (File.Exists(backupPath))
+                {
+                    File.Copy(backupPath, _catalogPath, true);
+                }
+                throw;
+            }
+        }
+        
+        private bool IsItemInCatalog(ulong skuId)
+        {
+            return _cachedCatalogItems?.Any(i => i.SkuId == skuId) ?? false;
+        }
+
+        public async Task<bool> DeleteFromPatchAsync(ulong skuId)
+        {
+            await _catalogLock.WaitAsync();
+            try
+            {
+                if (!File.Exists(_patchPath))
+                {
+                    return false;
+                }
+                
+                // Create backup
+                string backupPath = _patchPath + ".bak";
+                File.Copy(_patchPath, backupPath, true);
+                
+                try
+                {
+                    var patchJson = await File.ReadAllTextAsync(_patchPath);
+                    var patch = JsonSerializer.Deserialize<List<CatalogEntry>>(patchJson, _jsonOptions);
+                    
+                    if (patch == null)
+                    {
+                        return false;
+                    }
+                    
+                    int initialCount = patch.Count;
+                    patch.RemoveAll(x => x.SkuId == skuId);
+                    
+                    if (patch.Count < initialCount)
+                    {
+                        await File.WriteAllTextAsync(_patchPath, JsonSerializer.Serialize(patch, _jsonOptions));
+                        _patchFileSkuIds.Remove(skuId);
+                        
+                        // Invalidate cache
+                        _lastCatalogLoadTime = DateTime.MinValue;
+                        return true;
+                    }
+                    return false;
+                }
+                catch
+                {
+                    // Restore from backup on error
+                    if (File.Exists(backupPath))
+                    {
+                        File.Copy(backupPath, _patchPath, true);
+                    }
+                    throw;
+                }
+            }
+            finally
+            {
+                _catalogLock.Release();
+            }
+        }
+
         public List<string> GetCategoryModifiers(string category)
         {
-            return _categoryModifierMappings.TryGetValue(category, out var modifiers) 
-                ? modifiers 
-                : new List<string>();
+            lock (_categoryModifierMappings)
+            {
+                return _categoryModifierMappings.TryGetValue(category, out var modifiers) 
+                    ? new List<string>(modifiers) // Return a copy to prevent modification
+                    : new List<string>();
+            }
         }
+
         public async Task<ulong> GetNextAvailableSkuId()
         {
             var (items, _) = await LoadCatalogAsync();
-            return items.Max(i => i.SkuId) + 1;
+            return items.Count > 0 ? items.Max(i => i.SkuId) + 1 : 1000;
         }
-/*         public async Task AnalyzeItemCategories()
-        {
-            var catalogItems = await GetItemsAsync("All", "");
-            
-            // Analyze existing catalog mappings
-            var catalogMappings = catalogItems
-                .GroupBy(item => GameDatabase.GetPrototypeName((PrototypeId)item.GuidItems[0].ItemPrototypeRuntimeIdForClient))
-                .Select(g => new
-                {
-                    Path = g.Key,
-                    Type = g.First().Type.Name,
-                    Modifiers = g.First().TypeModifiers.Select(m => m.Name)
-                })
-                .ToList();
 
-            // Get all items from game database
-            var allGameItems = GameDatabase.DataDirectory
-                .IteratePrototypesInHierarchy<ItemPrototype>(PrototypeIterateFlags.NoAbstractApprovedOnly)
-                .Select(protoId => GameDatabase.GetPrototypeName(protoId))
-                .ToList();
-
-            // Find items not in our current path filters
-            var currentPaths = new[]
-            {
-                "Entity/Items/Consumables",
-                "Entity/Items/CharacterTokens",
-                "Entity/Items/Costumes",
-                "Entity/Items/CurrencyItems",
-                "Entity/Inventory/PlayerInventories/StashInventories/PageProtos/AvatarGear"
-            };
-
-            var unmappedItems = allGameItems
-                .Where(path => !currentPaths.Any(filter => path.StartsWith(filter)))
-                .Select(path => new
-                {
-                    Path = path,
-                    ExistsInCatalog = catalogItems.Any(c => GameDatabase.GetPrototypeName((PrototypeId)c.GuidItems[0].ItemPrototypeRuntimeIdForClient) == path)
-                })
-                .Where(item => item.ExistsInCatalog)
-                .ToList();
-
-            var analysis = new
-            {
-                CatalogMappings = catalogMappings,
-                UnmappedItems = unmappedItems
-            };
-
-            string filePath = Path.Combine(AppContext.BaseDirectory, "ItemCategoryAnalysis.json");
-            await File.WriteAllTextAsync(filePath, 
-                JsonSerializer.Serialize(analysis, new JsonSerializerOptions { WriteIndented = true }));
-        } */
         public async Task<IEnumerable<CatalogEntry>> GetItemsAsync(
             string category, 
             string searchText, 
+            CancellationToken cancellationToken = default,
             int? minPrice = null, 
-            int? maxPrice = null)        
+            int? maxPrice = null)
         {
             var (items, _) = await LoadCatalogAsync();
-            var filtered = items.Where(item => 
-                (category == "All" || item.Type.Name == category) &&
-                (string.IsNullOrEmpty(searchText) || 
-                item.LocalizedEntries[0].Title.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
-                item.SkuId.ToString().Contains(searchText) ||
-                item.GuidItems[0].ItemPrototypeRuntimeIdForClient.ToString().Contains(searchText)) &&
-                (!minPrice.HasValue || item.LocalizedEntries[0].ItemPrice >= minPrice.Value) &&
-                (!maxPrice.HasValue || item.LocalizedEntries[0].ItemPrice <= maxPrice.Value)
-            );
-            return filtered;
+            
+            // Use more efficient LINQ with query termination
+            return items.AsParallel()
+                .WithCancellation(cancellationToken)
+                .Where(item => 
+                    (category == "All" || item.Type.Name == category) &&
+                    (string.IsNullOrEmpty(searchText) || 
+                        item.LocalizedEntries.Any(e => e.Title.Contains(searchText, StringComparison.OrdinalIgnoreCase)) ||
+                        item.SkuId.ToString().Contains(searchText) ||
+                        item.GuidItems.Any(g => g.ItemPrototypeRuntimeIdForClient.ToString().Contains(searchText))) &&
+                    (!minPrice.HasValue || item.LocalizedEntries.Any(e => e.ItemPrice >= minPrice.Value)) &&
+                    (!maxPrice.HasValue || item.LocalizedEntries.Any(e => e.ItemPrice <= maxPrice.Value))
+                )
+                .ToList();
+        }
+        
+        // Helper method to get prototype name with caching
+        public string GetPrototypeName(ulong prototypeId)
+        {
+            if (_prototypeNameCache.TryGetValue(prototypeId, out string name))
+            {
+                return name;
+            }
+            
+            name = GameDatabase.GetPrototypeName((PrototypeId)prototypeId);
+            _prototypeNameCache[prototypeId] = name;
+            return name;
         }
 
-        public async Task DeleteFromPatchAsync(ulong skuId)
+        public async Task<bool> UpdateTypeModifiersAsync(CatalogEntry item)
         {
-            var patchJson = await File.ReadAllTextAsync(_patchPath);
-            var patch = JsonSerializer.Deserialize<List<CatalogEntry>>(patchJson, _jsonOptions);
+            if (item == null)
+                throw new ArgumentNullException(nameof(item));
+                
+            await _catalogLock.WaitAsync();
+            try
+            {
+                // Determine if this is a patch item or a catalog item
+                bool isPatchItem = IsItemFromPatch(item.SkuId);
+                
+                if (isPatchItem)
+                {
+                    // For patch items, we need to load the current patch file
+                    var patchJson = await File.ReadAllTextAsync(_patchPath);
+                    var patch = JsonSerializer.Deserialize<List<CatalogEntry>>(patchJson, _jsonOptions) ?? new List<CatalogEntry>();
+                    
+                    // Find the existing entry
+                    var existingEntry = patch.FirstOrDefault(x => x.SkuId == item.SkuId);
+                    if (existingEntry == null) return false;
+                    
+                    // Only update the TypeModifiers field
+                    existingEntry.TypeModifiers = item.TypeModifiers;
+                    
+                    // Save back to file with backup
+                    string backupPath = _patchPath + ".bak";
+                    if (File.Exists(_patchPath))
+                    {
+                        File.Copy(_patchPath, backupPath, true);
+                    }
+                    
+                    await File.WriteAllTextAsync(_patchPath, JsonSerializer.Serialize(patch, _jsonOptions));
+                    
+                    // Invalidate cache
+                    _lastCatalogLoadTime = DateTime.MinValue;
+                    
+                    return true;
+                }
+                else
+                {
+                    // For catalog items, we need to update in-place
+                    if (!File.Exists(_catalogPath))
+                    {
+                        throw new FileNotFoundException("Main catalog file not found", _catalogPath);
+                    }
+                    
+                    // Create backup
+                    string backupPath = _catalogPath + ".bak";
+                    File.Copy(_catalogPath, backupPath, true);
+                    
+                    try
+                    {
+                        // Read the entire file as text
+                        string catalogJson = await File.ReadAllTextAsync(_catalogPath);
+                        
+                        // Find the entry by SkuId
+                        string skuIdPattern = $"\"SkuId\":{item.SkuId}";
+                        int skuIdIndex = catalogJson.IndexOf(skuIdPattern);
+                        
+                        if (skuIdIndex < 0)
+                        {
+                            // Entry not found in the catalog
+                            Debug.WriteLine($"Entry with SkuId {item.SkuId} not found in catalog");
+                            return false;
+                        }
+                        
+                        // Find the TypeModifiers section
+                        string typeModifiersPattern = "\"TypeModifiers\":";
+                        int typeModifiersIndex = catalogJson.IndexOf(typeModifiersPattern, skuIdIndex);
+                        
+                        if (typeModifiersIndex < 0)
+                        {
+                            // TypeModifiers not found in the entry
+                            Debug.WriteLine($"TypeModifiers not found for SkuId {item.SkuId}");
+                            return false;
+                        }
+                        
+                        // Find the start and end of the TypeModifiers array
+                        int arrayStartIndex = catalogJson.IndexOf('[', typeModifiersIndex);
+                        if (arrayStartIndex < 0) return false;
+                        
+                        // Find the matching closing bracket
+                        int bracketCount = 1;
+                        int arrayEndIndex = arrayStartIndex + 1;
+                        
+                        while (bracketCount > 0 && arrayEndIndex < catalogJson.Length)
+                        {
+                            char c = catalogJson[arrayEndIndex];
+                            if (c == '[') bracketCount++;
+                            else if (c == ']') bracketCount--;
+                            arrayEndIndex++;
+                        }
+                        
+                        if (bracketCount != 0) return false; // Unbalanced brackets
+                        
+                        // Serialize just the TypeModifiers array
+                        var jsonOptions = new JsonSerializerOptions
+                        {
+                            WriteIndented = false,
+                            NumberHandling = JsonNumberHandling.AllowReadingFromString
+                        };
+                        
+                        string newTypeModifiersJson = JsonSerializer.Serialize(item.TypeModifiers, jsonOptions);
+                        
+                        // Replace the old TypeModifiers array with the new one
+                        string updatedCatalog = catalogJson.Substring(0, arrayStartIndex) + 
+                                            newTypeModifiersJson + 
+                                            catalogJson.Substring(arrayEndIndex);
+                        
+                        // Write back to the file
+                        await File.WriteAllTextAsync(_catalogPath, updatedCatalog);
+                        
+                        // Invalidate cache
+                        _lastCatalogLoadTime = DateTime.MinValue;
+                        
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        // Restore from backup on error
+                        Debug.WriteLine($"Error updating catalog in place: {ex.Message}");
+                        if (File.Exists(backupPath))
+                        {
+                            File.Copy(backupPath, _catalogPath, true);
+                        }
+                        throw;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error updating type modifiers: {ex.Message}");
+                return false;
+            }
+            finally
+            {
+                _catalogLock.Release();
+            }
+        }
 
-            patch.RemoveAll(x => x.SkuId == skuId);
-            await File.WriteAllTextAsync(_patchPath, JsonSerializer.Serialize(patch, _jsonOptions));
+        public async Task<CatalogEntry> GetItemBySkuIdAsync(ulong skuId)
+        {
+            try
+            {
+                // Make sure the catalog is loaded
+                await LoadCatalogAsync();
+        
+                // Find the item with the matching SkuId
+                return _cachedCatalogItems.FirstOrDefault(item => item.SkuId == skuId);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error getting item by SkuId: {ex.Message}");
+                return null;
+            }
         }
     }
 
@@ -237,6 +558,6 @@ namespace CatalogManager.Services
     {
         public long TimestampSeconds { get; set; }
         public long TimestampMicroseconds { get; set; }
-        public List<CatalogEntry> Entries { get; set; }
+        public List<CatalogEntry> Entries { get; set; } = new List<CatalogEntry>();
     }
-}
+}        

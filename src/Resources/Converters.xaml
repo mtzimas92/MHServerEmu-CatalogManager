@@ -1,0 +1,13 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:CatalogManager.Converters">
+    
+    <converters:BoolToVisibilityConverter x:Key="BoolToVisibility"/>
+    <converters:SkuVisibilityConverter x:Key="SkuVisibilityConverter"/>
+    <converters:NotNullConverter x:Key="NotNullConverter"/>
+    <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    <converters:InverseBooleanConverter x:Key="InverseBooleanConverter"/>
+    <converters:BooleanToColorConverter x:Key="BooleanToColorConverter"/>
+    <converters:BooleanToTextConverter x:Key="BooleanToTextConverter"/>
+    
+</ResourceDictionary>

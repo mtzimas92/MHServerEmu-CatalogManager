@@ -12,18 +12,18 @@ namespace CatalogManager
     {
         public MainWindow()
         {
-        InitializeComponent();
-        DataContext = new MainViewModel(new CatalogService());
+            InitializeComponent();
+            DataContext = new MainViewModel(new CatalogService());
 
-        ItemsGrid.SelectionChanged += (s, e) =>
-        {
-            var vm = (MainViewModel)DataContext;
-            vm.SelectedItems.Clear();
-            foreach (var item in ItemsGrid.SelectedItems)
+            ItemsDataGrid.SelectionChanged += (s, e) =>
             {
-                vm.SelectedItems.Add((CatalogEntry)item);
-            }
-        };
+                var vm = (MainViewModel)DataContext;
+                vm.SelectedItems.Clear();
+                foreach (var item in ItemsDataGrid.SelectedItems)
+                {
+                    vm.SelectedItems.Add((CatalogEntry)item);
+                }
+            };
         }
 
         private ListSortDirection? _lastSortDirection;
@@ -63,6 +63,23 @@ namespace CatalogManager
             }
         }
 
-
+        private void ItemsDataGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Handle the SelectedItems binding programmatically since it can't be done in XAML
+            if (DataContext is MainViewModel viewModel && sender is DataGrid dataGrid)
+            {
+                dataGrid.SelectionChanged += (s, args) =>
+                {
+                    viewModel.SelectedItems.Clear();
+                    foreach (var item in dataGrid.SelectedItems)
+                    {
+                        if (item is CatalogEntry entry)
+                        {
+                            viewModel.SelectedItems.Add(entry);
+                        }
+                    }
+                };
+            }
+        }
     }
 }

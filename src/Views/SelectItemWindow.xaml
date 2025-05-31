@@ -5,11 +5,12 @@
         Title="Select Item" 
         Height="600" 
         Width="800"
-        WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="CenterOwner"
         Background="#F5F5F5">
 
     <Window.Resources>
         <converters:NotNullConverter x:Key="NotNullConverter"/>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibility"/>
     </Window.Resources>
     
     <Grid Margin="20">
@@ -62,8 +63,12 @@
                 </TextBox>
 
                 <!-- Items List -->
-                <ListBox ItemsSource="{Binding FilteredItems}"
-                         SelectedItem="{Binding SelectedItem}">
+                <ListBox x:Name="ItemsListBox"
+                    ItemsSource="{Binding FilteredItems}"
+                    SelectedItem="{Binding SelectedItem}"
+                    VirtualizingStackPanel.IsVirtualizing="True"
+                    VirtualizingStackPanel.VirtualizationMode="Recycling"
+                    ScrollViewer.CanContentScroll="True">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding DisplayName}" Padding="5"/>
@@ -87,5 +92,19 @@
                     Click="CancelButton_Click"
                     Width="100"/>
         </StackPanel>
+        
+        <!-- Status Bar -->
+        <Grid Grid.Row="1">
+            <TextBlock Text="{Binding StatusMessage}" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center" 
+                    Margin="10,5" />
+                    
+            <ProgressBar Width="100" Height="10" 
+                        HorizontalAlignment="Right" 
+                        IsIndeterminate="True"
+                        Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibility}}"
+                        Margin="0,0,10,0" />
+        </Grid>
     </Grid>
 </Window>

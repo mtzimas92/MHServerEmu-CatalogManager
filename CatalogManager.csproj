@@ -11,7 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="MHServerEmu.Core">
+	  <Reference Include="MHServerEmu.Core">
       <HintPath>lib\MHServerEmu.Core.dll</HintPath>
     </Reference>
     <Reference Include="MHServerEmu.Games">
