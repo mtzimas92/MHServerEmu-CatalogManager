@@ -3,22 +3,25 @@
 
 A MHServerEmu-based tool that allows users to change the in-game store catalog easily.
 It uses the game files to find common (and some uncommon or test) items that can be added to your store.  
-Using this application, you can bring back the stash tabs for F4 heroes which were removed from MHO in later iterations, in an easy-to-use UI.
-You can change the current catalog prices, you can create your own bundles or BOGO offers, or enable items that you cannot currently see but exist in the current catalog. 
+
+MHServerEmu - CatalogManager allows you to edit and change almost everything in the in-game store. Restore stash tabs (Fantastic Four), add crazy test items, or even make your own bundles. 
 
 ## Setup Instructions
 
-1. Download the application binaries (Found under Releases/CatalogManager-v0.2.zip). Alternatively, download the source code and compile yourself.
-2. Extract the zip folder.
-3. Place your game files in the Data/Game folder:
-   - Calligraphy.sip
-   - mu_cdata.sip
+1. Download the latest release or download and compile the source code.
+2. Extract the zip folder anywhere you want.
+3. Copy Calligraphy.sip and mu_cdata.sip from Marvel Heroes\Data\Game to the Data/Game folder of the Catalog Manager. 
 
 ## Usage
 
 1. Launch CatalogManager.exe
-2. Add, edit, or remove catalog entries through the user interface. You can edit all entries in all catalogs but you can only delete entries in the "CatalogPatch" file.
-3. Find your modified files in the Data folder:
+2. To add new items, click on the "Add new item" button on the top right. Click on Select Item on the new pop-up page and wait for the application to find all items that are supported.
+3. Filter by category (Consumables, Character tokens, etc) and select your item. You can further filter by typing in the search bar. Once your item is found, click OK.
+4. Now, add a short description, a Price, select the item type and the type modifier. (NOTE: Price must be minimum 1. In case of Stash Tab items, Always select the "StashPage" modifier, otherwise it will not work).
+5. Click on Save and your item has now been added. Do this for any items you want to add.
+6. You can also edit or remove existing catalog entries through the user interface. You can edit all entries in all catalogs but you can only delete entries in the "CatalogPatch" file. A warning is given.
+7. You can batch modify, price update or delete items. Select the items you want and click on the corresponding Batch button. You can only batch modify items of similar type, and delete items of the "CatalogPatch" file. A warning is given. 
+8. Find your modified files in the Data folder:
    - Catalog.json
    - CatalogPatch.json
 
@@ -40,7 +43,11 @@ Copy the modified json files to your MHServerEmu installation:
 - Batch delete operations.
 - Batch modify operations (for type modifiers). This is limited to items of the same type (i.e. costumes, bundles etc)
 - Search by SKU, title, or prototype ID.
-  
+
+## Upcoming Features
+
+- Bundles and BOGO items
+
 ## Disclaimer
 
 This application is completely new. Any issues you may encounter, please report them so I can look into them. Before doing any work, make a backup for the Catalog.json and CatalogPatch.json files that are included in this. 
