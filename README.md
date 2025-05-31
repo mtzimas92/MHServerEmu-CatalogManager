@@ -38,6 +38,7 @@ Copy the modified json files to your MHServerEmu installation:
 - Price range filtering.
 - Batch price updates.
 - Batch delete operations.
+- Batch modify operations (for type modifiers). This is limited to items of the same type (i.e. costumes, bundles etc)
 - Search by SKU, title, or prototype ID.
   
 ## Disclaimer
