@@ -52,7 +52,8 @@
                      SelectionMode="Multiple">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding}"/>
+                        <CheckBox Content="{Binding}" 
+                                  IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}"/>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

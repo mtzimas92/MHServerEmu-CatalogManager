@@ -636,6 +636,14 @@ namespace CatalogManager.ViewModels
                     }
                     
                     StatusText = statusMessage;
+                    
+                    // Show results popup
+                    MessageBox.Show(
+                        statusMessage,
+                        "Batch Modification Results",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
+                        
                     await LoadItemsAsync();
                 }
                 else

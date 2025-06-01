@@ -71,6 +71,12 @@
                  SelectionMode="Multiple"
                  Height="100" Margin="0,0,0,10"
                  SelectionChanged="TypeModifiersListBox_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <CheckBox Content="{Binding}" 
+                              IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
         
         <!-- Status Message -->
