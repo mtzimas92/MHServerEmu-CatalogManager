@@ -10,12 +10,18 @@ public class CatalogEntry
     public List<TypeModifier> TypeModifiers { get; set; } = new();
 }
 
+
 public class InfoUrl
 {
-    public string Language { get; set; }
+    public string LanguageId { get; set; }
     public string Url { get; set; }
+    public string ImageData { get; set; }
 }
+
 
 public class ContentData
 {
+    public string LanguageId { get; set; }
+    public string Url { get; set; }
+    public string ImageData { get; set; }
 }

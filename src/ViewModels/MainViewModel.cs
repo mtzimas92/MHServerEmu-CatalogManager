@@ -55,6 +55,7 @@ namespace CatalogManager.ViewModels
         public AsyncRelayCommand BatchDeleteCommand { get; }
         public AsyncRelayCommand BatchPriceUpdateCommand { get; }
         public AsyncRelayCommand BatchModifyCommand { get; }
+        public AsyncRelayCommand CreateBundleCommand { get; }
 
         public ICollectionView FilteredItems => _itemsViewSource.View;
 
@@ -184,6 +185,7 @@ namespace CatalogManager.ViewModels
             BatchDeleteCommand = new AsyncRelayCommand(BatchDeleteAsync, CanBatchDelete);
             BatchPriceUpdateCommand = new AsyncRelayCommand(BatchPriceUpdateAsync, CanBatchUpdate);
             BatchModifyCommand = new AsyncRelayCommand(BatchModifyAsync, CanBatchModify);
+            CreateBundleCommand = new AsyncRelayCommand(CreateBundleAsync);
 
 
             // Initial load
@@ -276,7 +278,32 @@ namespace CatalogManager.ViewModels
             await _catalogService.LoadCatalogAsync(forceRefresh: true);
             await LoadItemsAsync();
         }
-
+        private async Task CreateBundleAsync()
+        {
+            try
+            {
+                StatusText = "Opening bundle creation dialog...";
+                
+                var viewModel = new CreateBundleViewModel(_catalogService);
+                var window = new CreateBundleWindow { DataContext = viewModel };
+                window.Owner = Application.Current.MainWindow;
+                
+                if (window.ShowDialog() == true)
+                {
+                    StatusText = "Bundle created successfully";
+                    await LoadItemsAsync();
+                }
+                else
+                {
+                    StatusText = "Bundle creation cancelled";
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusText = $"Error creating bundle: {ex.Message}";
+                Debug.WriteLine($"Error in CreateBundleAsync: {ex}");
+            }
+        }
         private IEnumerable<CatalogEntry> ApplySorting(IEnumerable<CatalogEntry> items, string column, ListSortDirection direction)
         {
             return column switch
@@ -696,4 +723,3 @@ namespace CatalogManager.ViewModels
         public int? Max { get; set; }
     }
 }
-

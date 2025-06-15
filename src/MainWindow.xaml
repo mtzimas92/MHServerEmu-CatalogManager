@@ -15,11 +15,13 @@
         <converters:BoolToVisibilityConverter x:Key="BoolToVisibility"/>
         <converters:SkuVisibilityConverter x:Key="SkuVisibilityConverter"/>
         <Style TargetType="Button">
-            <Setter Property="Padding" Value="15,8"/>
+            <Setter Property="Padding" Value="10,6"/>
             <Setter Property="Background" Value="#2196F3"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="MinWidth" Value="100"/>
+            <Setter Property="MinWidth" Value="80"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FontSize" Value="12"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -71,64 +73,72 @@
             
             <!-- Controls Panel -->
             <Grid DockPanel.Dock="Top" Margin="0,0,0,20">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="180" MinWidth="180"/>
-                    <ColumnDefinition Width="200" MinWidth="200"/>
-                    <ColumnDefinition Width="*" MinWidth="400"/>
-                    <ColumnDefinition Width="Auto" MinWidth="450"/>
-                </Grid.ColumnDefinitions>
-
-                <!-- Category Filter -->
-                <ComboBox Grid.Column="0"
-                          ItemsSource="{Binding Categories}"
-                          SelectedItem="{Binding SelectedCategory}"
-                          Margin="0,0,10,0"/>
-
-                <!-- Search -->
-                <TextBox Grid.Column="1"
-                         Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
-                         Margin="0,0,10,0"/>
-
-                <!-- Price Range -->
-                <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <!-- First Row -->
+                <Grid Grid.Row="0" Margin="0,0,0,10">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="80"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="80"/>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="180"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     
-                    <TextBlock Text="Price Range:" 
-                              VerticalAlignment="Center" 
+                    <!-- Category Filter -->
+                    <ComboBox Grid.Column="0"
+                              ItemsSource="{Binding Categories}"
+                              SelectedItem="{Binding SelectedCategory}"
                               Margin="0,0,10,0"/>
-                    <TextBox Grid.Column="1" 
-                             Text="{Binding MinPrice, UpdateSourceTrigger=PropertyChanged}"/>
-                    <TextBlock Grid.Column="2" 
-                              Text="-" 
-                              Margin="10,0" 
-                              VerticalAlignment="Center"/>
-                    <TextBox Grid.Column="3" 
-                             Text="{Binding MaxPrice, UpdateSourceTrigger=PropertyChanged}"/>
-                    <ComboBox Grid.Column="4"
-                              Margin="10,0,0,0"
-                              Width="120"
-                              ItemsSource="{Binding PriceRanges}"
-                              SelectedItem="{Binding SelectedPriceRange}">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Name}"/>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
+
+                    <!-- Search -->
+                    <TextBox Grid.Column="1"
+                             Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                             Margin="0,0,10,0"/>
+
+                    <!-- Price Range -->
+                    <Grid Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <TextBlock Text="Price Range:" 
+                                  VerticalAlignment="Center" 
+                                  Margin="0,0,10,0"/>
+                        <TextBox Grid.Column="1" 
+                                 Text="{Binding MinPrice, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBlock Grid.Column="2" 
+                                  Text="-" 
+                                  Margin="10,0" 
+                                  VerticalAlignment="Center"/>
+                        <TextBox Grid.Column="3" 
+                                 Text="{Binding MaxPrice, UpdateSourceTrigger=PropertyChanged}"/>
+                        <ComboBox Grid.Column="4"
+                                  Margin="10,0,0,0"
+                                  Width="120"
+                                  ItemsSource="{Binding PriceRanges}"
+                                  SelectedItem="{Binding SelectedPriceRange}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </Grid>
                 </Grid>
 
-                <!-- Action Buttons -->
-                <StackPanel Grid.Column="3" 
-                            Orientation="Horizontal" 
-                            HorizontalAlignment="Right">
+                <!-- Second Row - Action Buttons -->
+                <UniformGrid Grid.Row="1" Rows="1" HorizontalAlignment="Left">
                     <Button Content="Batch Modify" 
                             Command="{Binding BatchModifyCommand}"
+                            Margin="0,0,10,0"/>
+                    <Button Content="Create Bundle/BOGO" 
+                            Command="{Binding CreateBundleCommand}"
                             Margin="0,0,10,0"/>
                     <Button Content="Batch Price Update" 
                             Command="{Binding BatchPriceUpdateCommand}"
@@ -141,7 +151,7 @@
                             Margin="0,0,10,0"/>
                     <Button Content="Refresh" 
                             Command="{Binding RefreshCommand}"/>
-                </StackPanel>
+                </UniformGrid>
             </Grid>
 
             <!-- Main DataGrid -->

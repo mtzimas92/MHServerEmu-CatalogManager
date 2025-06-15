@@ -552,6 +552,24 @@ namespace CatalogManager.Services
                 return null;
             }
         }
+
+        public async Task<CatalogEntry> GetItemByPrototypeIdAsync(ulong prototypeId)
+        {
+            try
+            {
+                // Make sure the catalog is loaded
+                await LoadCatalogAsync();
+        
+                // Find the item with the matching prototype ID in GuidItems
+                return _cachedCatalogItems.FirstOrDefault(item => 
+                    item.GuidItems.Any(g => g.ItemPrototypeRuntimeIdForClient == prototypeId));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error getting item by prototype ID: {ex.Message}");
+                return null;
+            }
+        }
     }
 
     public class CatalogRoot
