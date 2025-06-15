@@ -36,6 +36,7 @@ Copy the modified json files to your MHServerEmu installation:
 - Browse and search through all game items that are currently in the store.
 - Filter items by category.
 - Add new items to the catalog
+- Bundles and BOGO items.
 - Edit existing items.
 - Set item prices and type modifiers.
 - Price range filtering.
@@ -44,10 +45,13 @@ Copy the modified json files to your MHServerEmu installation:
 - Batch modify operations (for type modifiers). This is limited to items of the same type (i.e. costumes, bundles etc)
 - Search by SKU, title, or prototype ID.
 
-## Upcoming Features
-
-- Bundles and BOGO items
-
+## Bundle Items
+- Bundle items normally require a description page and a thumbnail so you can see the full contents. From version 0.4 and forward, there is an HTML generator and a thumbnail creator which has a very basic functionality to create the description page and the thumbnail. The result per bundle is stored in a new folder (WebContent), which contains:
+   - WebContent
+      - css
+      - html
+      - images
+- During bundle creation, you can select the URL for your webpage. The default for a local MHServerEmu stable release would be HTTP://localhost/store. The bundle creation page also uses that as a default option. Once a bundle is created, you can copy the files from the CSS, HTML, and images folders and put them in Apache24/htdocs/store. The HTML file should be placed in a new folder you must create, called "bundles". Meanwhile, the CSS and image files should be stored in their respective existing folders. 
 ## Disclaimer
 
 This application is completely new. Any issues you may encounter, please report them so I can look into them. Before doing any work, make a backup for the Catalog.json and CatalogPatch.json files that are included in this. 
