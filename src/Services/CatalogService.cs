@@ -211,70 +211,37 @@ namespace CatalogManager.Services
             {
                 throw new FileNotFoundException("Base catalog file not found", _catalogPath);
             }
-            
+
             // Create backup
             string backupPath = _catalogPath + ".bak";
             File.Copy(_catalogPath, backupPath, true);
-            
+
             try
             {
-                // Read the entire file as text
+                // Read the catalog
                 string catalogJson = await File.ReadAllTextAsync(_catalogPath);
-                
-                // Find the entry by SkuId
-                string skuIdPattern = $"\"SkuId\":{entry.SkuId}";
-                int skuIdIndex = catalogJson.IndexOf(skuIdPattern);
-                
-                if (skuIdIndex < 0)
+                var catalog = JsonSerializer.Deserialize<CatalogRoot>(catalogJson, _jsonOptions);
+
+                // Find and update the entry
+                var existingEntry = catalog.Entries.FirstOrDefault(e => e.SkuId == entry.SkuId);
+                if (existingEntry != null)
                 {
-                    // Entry not found in the catalog
-                    Debug.WriteLine($"Entry with SkuId {entry.SkuId} not found in catalog");
-                    return false;
+                    int index = catalog.Entries.IndexOf(existingEntry);
+                    catalog.Entries[index] = entry;
+
+                    // Write back to file using the same options
+                    await File.WriteAllTextAsync(_catalogPath, JsonSerializer.Serialize(catalog, _jsonOptions));
+            
+                    // Invalidate cache
+                    _lastCatalogLoadTime = DateTime.MinValue;
+            
+                    return true;
                 }
-                
-                // Find the start and end of the entry
-                int entryStartIndex = catalogJson.LastIndexOf("{", skuIdIndex);
-                if (entryStartIndex < 0) return false;
-                
-                // Find the matching closing brace
-                int braceCount = 1;
-                int entryEndIndex = entryStartIndex + 1;
-                
-                while (braceCount > 0 && entryEndIndex < catalogJson.Length)
-                {
-                    char c = catalogJson[entryEndIndex];
-                    if (c == '{') braceCount++;
-                    else if (c == '}') braceCount--;
-                    entryEndIndex++;
-                }
-                
-                if (braceCount != 0) return false; // Unbalanced braces
-                
-                // Serialize the new entry with minimal formatting
-                var jsonOptions = new JsonSerializerOptions
-                {
-                    WriteIndented = false,
-                    NumberHandling = JsonNumberHandling.AllowReadingFromString
-                };
-                
-                string newEntryJson = JsonSerializer.Serialize(entry, jsonOptions);
-                
-                // Replace the old entry with the new one
-                string updatedCatalog = catalogJson.Substring(0, entryStartIndex) + 
-                                    newEntryJson + 
-                                    catalogJson.Substring(entryEndIndex);
-                
-                // Write back to the file
-                await File.WriteAllTextAsync(_catalogPath, updatedCatalog);
-                
-                // Invalidate cache
-                _lastCatalogLoadTime = DateTime.MinValue;
-                
-                return true;
+
+                return false;
             }
             catch (Exception ex)
             {
-                // Restore from backup on error
                 Debug.WriteLine($"Error updating catalog in place: {ex.Message}");
                 if (File.Exists(backupPath))
                 {
