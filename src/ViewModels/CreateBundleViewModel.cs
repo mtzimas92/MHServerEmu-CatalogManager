@@ -18,6 +18,12 @@ using MHServerEmu.Games.GameData;
 
 namespace CatalogManager.ViewModels
 {
+    public class BundleItemEntry
+    {
+        public ItemDisplay Item { get; set; }
+        public int Quantity { get; set; } = 1;
+    }
+
     public class CreateBundleViewModel : INotifyPropertyChanged
     {
         private readonly CatalogService _catalogService;
@@ -127,29 +133,30 @@ namespace CatalogManager.ViewModels
             set => SetProperty(ref _selectedTypeModifiers, value);
         }
         
-        private ObservableCollection<ItemDisplay> _bundleItems = new();
-        public ObservableCollection<ItemDisplay> BundleItems
+        private ObservableCollection<BundleItemEntry> _bundleItems = new();
+        public ObservableCollection<BundleItemEntry> BundleItems
         {
             get => _bundleItems;
             set => SetProperty(ref _bundleItems, value);
         }
         
-        private ItemDisplay _selectedBundleItem;
-        public ItemDisplay SelectedBundleItem
+        private BundleItemEntry _selectedBundleItem;
+        public BundleItemEntry SelectedBundleItem
         {
             get => _selectedBundleItem;
             set => SetProperty(ref _selectedBundleItem, value);
         }
         
-        private ObservableCollection<ItemDisplay> _bonusItems = new();
-        public ObservableCollection<ItemDisplay> BonusItems
+        private ObservableCollection<BundleItemEntry> _bonusItems = new();
+        public ObservableCollection<BundleItemEntry> BonusItems
         {
             get => _bonusItems;
             set => SetProperty(ref _bonusItems, value);
         }
         
-        private ItemDisplay _selectedBonusItem;
-        public ItemDisplay SelectedBonusItem
+
+        private BundleItemEntry _selectedBonusItem;
+        public BundleItemEntry SelectedBonusItem
         {
             get => _selectedBonusItem;
             set => SetProperty(ref _selectedBonusItem, value);
@@ -276,22 +283,22 @@ namespace CatalogManager.ViewModels
             {
                 StatusMessage = "Opening item selector...";
                 
-                // Create the view model first
                 var selectViewModel = new SelectItemViewModel(_catalogService);
-                
-                // Create the window with the view model
                 var selectWindow = new SelectItemWindow
                 {
                     Owner = Application.Current.MainWindow,
                     DataContext = selectViewModel
                 };
 
-                // Show the window as a dialog
                 bool? result = selectWindow.ShowDialog();
                 
                 if (result == true && selectViewModel.SelectedItem != null)
                 {
-                    BundleItems.Add(selectViewModel.SelectedItem);
+                    BundleItems.Add(new BundleItemEntry 
+                    { 
+                        Item = selectViewModel.SelectedItem,
+                        Quantity = 1 
+                    });
                     StatusMessage = "Item added to bundle";
                 }
                 else
@@ -328,22 +335,22 @@ namespace CatalogManager.ViewModels
             {
                 StatusMessage = "Opening item selector for bonus item...";
                 
-                // Create the view model first
                 var selectViewModel = new SelectItemViewModel(_catalogService);
-                
-                // Create the window with the view model
                 var selectWindow = new SelectItemWindow
                 {
                     Owner = Application.Current.MainWindow,
                     DataContext = selectViewModel
                 };
 
-                // Show the window as a dialog
                 bool? result = selectWindow.ShowDialog();
                 
                 if (result == true && selectViewModel.SelectedItem != null)
                 {
-                    BonusItems.Add(selectViewModel.SelectedItem);
+                    BonusItems.Add(new BundleItemEntry 
+                    { 
+                        Item = selectViewModel.SelectedItem,
+                        Quantity = 1 
+                    });
                     StatusMessage = "Bonus item added";
                 }
                 else
@@ -421,14 +428,14 @@ namespace CatalogManager.ViewModels
                     GuidItems = BundleItems.Select(item => new GuidItem
                     {
                         PrototypeGuid = 0,
-                        ItemPrototypeRuntimeIdForClient = (ulong)item.Id,
-                        Quantity = 1
+                        ItemPrototypeRuntimeIdForClient = (ulong)item.Item.Id,
+                        Quantity = item.Quantity
                     }).ToList(),
                     AdditionalGuidItems = IsBogo ? BonusItems.Select(item => new GuidItem
                     {
                         PrototypeGuid = 0,
-                        ItemPrototypeRuntimeIdForClient = (ulong)item.Id,
-                        Quantity = 1
+                        ItemPrototypeRuntimeIdForClient = (ulong)item.Item.Id,
+                        Quantity = item.Quantity
                     }).ToList() : new List<GuidItem>(),
                     LocalizedEntries = new List<LocalizedEntry>
                     {

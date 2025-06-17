@@ -99,13 +99,24 @@
                 </Grid.RowDefinitions>
                 
                 <TextBlock Grid.Row="0" Text="Bundle Items:" FontWeight="Bold" Margin="0,0,0,5"/>
-                
+
+                <!-- Bundle Items -->
                 <ListBox Grid.Row="1" 
-                         ItemsSource="{Binding BundleItems}" 
-                         SelectedItem="{Binding SelectedBundleItem}"
-                         DisplayMemberPath="DisplayName"
-                         Margin="0,0,10,5"
-                         Height="150"/>
+                        ItemsSource="{Binding BundleItems}" 
+                        SelectedItem="{Binding SelectedBundleItem}"
+                        Margin="0,0,10,5"
+                        Height="150">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Item.DisplayName}" Width="200"/>
+                                <TextBlock Text="Quantity:" Margin="10,0"/>
+                                <TextBox Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}" 
+                                        Width="50" Margin="5,0"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
                 
                 <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0,10,15">
                     <Button Content="Add Item" Command="{Binding AddItemCommand}" Width="100" Margin="0,0,10,0"/>
@@ -117,11 +128,21 @@
                            Visibility="{Binding IsBogo, Converter={StaticResource BoolToVisibility}}"/>
                 
                 <ListBox Grid.Row="4" 
-                         ItemsSource="{Binding BonusItems}" 
-                         SelectedItem="{Binding SelectedBonusItem}"
-                         DisplayMemberPath="DisplayName"
-                         Margin="0,0,10,0"
-                         Visibility="{Binding IsBogo, Converter={StaticResource BoolToVisibility}}"/>
+                        ItemsSource="{Binding BonusItems}" 
+                        SelectedItem="{Binding SelectedBonusItem}"
+                        Margin="0,0,10,0"
+                        Visibility="{Binding IsBogo, Converter={StaticResource BoolToVisibility}}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Item.DisplayName}" Width="200"/>
+                                <TextBlock Text="Quantity:" Margin="10,0"/>
+                                <TextBox Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}" 
+                                        Width="50" Margin="5,0"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
                 
                 <StackPanel Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="0,0,10,0"
                             Visibility="{Binding IsBogo, Converter={StaticResource BoolToVisibility}}">

@@ -56,12 +56,14 @@ namespace CatalogManager.Converters
             if (values.Length < 2 || values[0] == null || values[1] == null)
                 return Visibility.Collapsed;
 
-            if (values[0] is ulong skuId && values[1] is CatalogService service)
-            {
-                return service.IsItemFromPatch(skuId) ? Visibility.Visible : Visibility.Collapsed;
-            }
+            bool allowCatalogModification = values[0] is bool && (bool)values[0];
+            CatalogService service = values[1] is CatalogService ? (CatalogService)values[1] : null;
+            ulong skuId = values.Length > 2 && values[2] is ulong ? (ulong)values[2] : 0;
 
-            return Visibility.Collapsed;
+            if (service != null && service.IsItemFromPatch(skuId))
+                return Visibility.Visible;
+
+            return allowCatalogModification ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)

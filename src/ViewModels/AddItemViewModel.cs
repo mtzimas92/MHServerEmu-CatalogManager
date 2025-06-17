@@ -151,6 +151,13 @@ namespace CatalogManager.ViewModels
             }
         }
 
+        private int _quantity = 1; // Default to 1
+        public int Quantity
+        {
+            get => _quantity;
+            set => SetProperty(ref _quantity, Math.Max(1, value)); // Ensure minimum of 1
+        }
+
         public AddItemViewModel(CatalogService catalogService, CatalogEntry existingItem = null)
         {
             _catalogService = catalogService ?? throw new ArgumentNullException(nameof(catalogService));
@@ -202,6 +209,8 @@ namespace CatalogManager.ViewModels
                 Title = item.LocalizedEntries[0].Title;
                 Description = item.LocalizedEntries[0].Description;
                 Price = item.LocalizedEntries[0].ItemPrice;
+                Quantity = item.GuidItems[0].Quantity; // Add this line to load quantity
+
                 SelectedType = item.Type.Name;
                 
                 // Store existing type information
@@ -459,7 +468,7 @@ namespace CatalogManager.ViewModels
                         {
                             PrototypeGuid = 0,
                             ItemPrototypeRuntimeIdForClient = PrototypeId,
-                            Quantity = 1
+                            Quantity = Quantity
                         }
                     },
                     LocalizedEntries = new List<LocalizedEntry>
