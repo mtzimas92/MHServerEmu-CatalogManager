@@ -24,6 +24,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         
@@ -59,14 +60,16 @@
         <!-- Price -->
         <TextBlock Grid.Row="4" Grid.Column="0" Text="Price:" VerticalAlignment="Center" Margin="0,0,10,10"/>
         <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Price}" Margin="0,0,0,10"/>
-        
+        <!-- Quantity -->
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Quantity:" VerticalAlignment="Center" Margin="0,0,10,10"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Quantity}" Margin="0,0,0,10"/>
         <!-- Item Type -->
-        <TextBlock Grid.Row="5" Grid.Column="0" Text="Item Type:" VerticalAlignment="Center" Margin="0,0,10,10"/>
-        <ComboBox Grid.Row="5" Grid.Column="1" ItemsSource="{Binding ItemTypes}" SelectedItem="{Binding SelectedType}" Margin="0,0,0,10"/>
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="Item Type:" VerticalAlignment="Center" Margin="0,0,10,10"/>
+        <ComboBox Grid.Row="6" Grid.Column="1" ItemsSource="{Binding ItemTypes}" SelectedItem="{Binding SelectedType}" Margin="0,0,0,10"/>
         
         <!-- Type Modifiers -->
-        <TextBlock Grid.Row="6" Grid.Column="0" Text="Type Modifiers:" VerticalAlignment="Top" Margin="0,5,10,10"/>
-        <ListBox x:Name="TypeModifiersListBox" Grid.Row="6" Grid.Column="1" 
+        <TextBlock Grid.Row="7" Grid.Column="0" Text="Type Modifiers:" VerticalAlignment="Top" Margin="0,5,10,10"/>
+        <ListBox x:Name="TypeModifiersListBox" Grid.Row="7" Grid.Column="1" 
                  ItemsSource="{Binding AvailableTypeModifiers}" 
                  SelectionMode="Multiple"
                  Height="100" Margin="0,0,0,10"
@@ -80,14 +83,14 @@
         </ListBox>
         
         <!-- Status Message -->
-        <TextBlock Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" 
+        <TextBlock Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" 
                    Text="{Binding StatusMessage}" 
                    Foreground="DarkBlue"
                    Margin="0,0,0,10"
                    TextWrapping="Wrap"/>
         
         <!-- Buttons -->
-        <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" 
+        <StackPanel Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" 
                     Orientation="Horizontal" 
                     HorizontalAlignment="Right" 
                     Margin="0,10,0,0">

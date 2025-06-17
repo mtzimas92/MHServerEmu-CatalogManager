@@ -342,6 +342,100 @@ namespace CatalogManager.Services
                 _catalogLock.Release();
             }
         }
+        public async Task<bool> DeleteFromCatalogAsync(ulong skuId)
+        {
+            await _catalogLock.WaitAsync();
+            try
+            {
+                bool success = false;
+
+                // Handle catalog.json deletion
+                string catalogJson = await File.ReadAllTextAsync(_catalogPath);
+                var catalog = JsonSerializer.Deserialize<CatalogRoot>(catalogJson);
+
+                if (catalog?.Entries != null)
+                {
+                    string backupPath = _catalogPath + ".bak";
+                    File.Copy(_catalogPath, backupPath, true);
+
+                    try
+                    {
+                        int initialCount = catalog.Entries.Count;
+                        catalog.Entries.RemoveAll(x => x.SkuId == skuId);
+
+                        if (catalog.Entries.Count < initialCount)
+                        {
+                            var options = new JsonSerializerOptions
+                            {
+                                WriteIndented = true,
+                                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
+                            };
+
+                            var updatedCatalog = new CatalogRoot
+                            {
+                                TimestampSeconds = catalog.TimestampSeconds,
+                                TimestampMicroseconds = catalog.TimestampMicroseconds,
+                                Entries = catalog.Entries,
+                                Urls = catalog.Urls,
+                                ClientMustDownloadImages = catalog.ClientMustDownloadImages
+                            };
+
+                            await File.WriteAllTextAsync(_catalogPath, JsonSerializer.Serialize(updatedCatalog, options));
+                            success = true;
+                        }
+                    }
+                    catch
+                    {
+                        if (File.Exists(backupPath))
+                            File.Copy(backupPath, _catalogPath, true);
+                        throw;
+                    }
+                }
+
+                // Handle patch file deletion
+                if (File.Exists(_patchPath))
+                {
+                    string patchBackupPath = _patchPath + ".bak";
+                    File.Copy(_patchPath, patchBackupPath, true);
+
+                    try
+                    {
+                        var patchJson = await File.ReadAllTextAsync(_patchPath);
+                        var patch = JsonSerializer.Deserialize<List<CatalogEntry>>(patchJson, _jsonOptions);
+
+                        if (patch != null)
+                        {
+                            int initialCount = patch.Count;
+                            patch.RemoveAll(x => x.SkuId == skuId);
+
+                            if (patch.Count < initialCount)
+                            {
+                                await File.WriteAllTextAsync(_patchPath, JsonSerializer.Serialize(patch, _jsonOptions));
+                                _patchFileSkuIds.Remove(skuId);
+                                success = true;
+                            }
+                        }
+                    }
+                    catch
+                    {
+                        if (File.Exists(patchBackupPath))
+                            File.Copy(patchBackupPath, _patchPath, true);
+                        throw;
+                    }
+                }
+
+                if (success)
+                {
+                    _lastCatalogLoadTime = DateTime.MinValue;
+                }
+
+                return success;
+            }
+            finally
+            {
+                _catalogLock.Release();
+            }
+        }
 
         public List<string> GetCategoryModifiers(string category)
         {
@@ -577,5 +671,21 @@ namespace CatalogManager.Services
         public long TimestampSeconds { get; set; }
         public long TimestampMicroseconds { get; set; }
         public List<CatalogEntry> Entries { get; set; } = new List<CatalogEntry>();
+        public List<CatalogUrls> Urls { get; set; } = new List<CatalogUrls>();
+        public bool ClientMustDownloadImages { get; set; }
+    }
+
+    public class CatalogUrls
+    {
+        public string LocaleId { get; set; }
+        public string StoreHomePageUrl { get; set; }
+        public List<StoreBannerPageUrl> StoreBannerPageUrls { get; set; } = new List<StoreBannerPageUrl>();
+        public string StoreRealMoneyUrl { get; set; }
+    }
+
+    public class StoreBannerPageUrl
+    {
+        public string Type { get; set; }
+        public string Url { get; set; }
     }
 }        

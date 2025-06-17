@@ -57,6 +57,33 @@ namespace CatalogManager.ViewModels
         public AsyncRelayCommand BatchModifyCommand { get; }
         public AsyncRelayCommand CreateBundleCommand { get; }
 
+        private bool _allowCatalogModification;
+        public bool AllowCatalogModification
+        {
+            get => _allowCatalogModification;
+            set
+            {
+                if (value == true)
+                {
+                    var result = MessageBox.Show(
+                        "Warning: This will allow deletion of items from the stock catalog.json file.\nThese deletions cannot be undone without restoring from backup.\n\nDo you want to enable catalog deletion?",
+                        "Enable Catalog Deletion",
+                        MessageBoxButton.YesNo,
+                        MessageBoxImage.Warning
+                    );
+
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        SetProperty(ref _allowCatalogModification, value);
+                    }
+                }
+                else
+                {
+                    SetProperty(ref _allowCatalogModification, value);
+                }
+            }
+        }
+
         public ICollectionView FilteredItems => _itemsViewSource.View;
 
         public ObservableCollection<CatalogEntry> Items
@@ -400,10 +427,9 @@ namespace CatalogManager.ViewModels
             try
             {
                 // Add warning about catalog.json items
-                var warningMessage = 
-                    $"Are you sure you want to delete '{SelectedItems.First().LocalizedEntries[0].Title}'?\n\n" +
-                    "Note: Items that exist in the original catalog.json file cannot be deleted via patch. " +
-                    "Only items added through patches can be removed.";
+                var warningMessage = AllowCatalogModification
+                    ? "Warning: You are about to delete an item directly from catalog.json. This cannot be undone.\n\nProceed with deletion?"
+                    : "Are you sure you want to delete this item?\n\nNote: Only items added through patches can be removed.";
             
                 var result = MessageBox.Show(
                     warningMessage,
@@ -414,8 +440,10 @@ namespace CatalogManager.ViewModels
                 if (result == MessageBoxResult.Yes)
                 {
                     StatusText = "Deleting item...";
-                    bool success = await _catalogService.DeleteFromPatchAsync(SelectedItems.First().SkuId);
-                    
+                    bool success = AllowCatalogModification 
+                        ? await _catalogService.DeleteFromCatalogAsync(SelectedItems.First().SkuId)
+                        : await _catalogService.DeleteFromPatchAsync(SelectedItems.First().SkuId);
+
                     if (success)
                     {
                         StatusText = "Item deleted successfully";
@@ -452,10 +480,9 @@ namespace CatalogManager.ViewModels
             try
             {
                 // Add warning about catalog.json items
-                var warningMessage = 
-                    $"Are you sure you want to delete {SelectedItems.Count} items?\n\n" +
-                    "Note: Items that exist in the original catalog.json file cannot be deleted via patch. " +
-                    "Only items added through patches can be removed.";
+                var warningMessage = AllowCatalogModification
+                    ? $"Warning: You are about to delete {SelectedItems.Count} items directly from catalog.json. This cannot be undone.\n\nProceed with deletion?"
+                    : $"Are you sure you want to delete {SelectedItems.Count} items?\n\nNote: Only items added through patches can be removed.";
             
                 var result = MessageBox.Show(
                     warningMessage,
@@ -470,8 +497,16 @@ namespace CatalogManager.ViewModels
                     
                     foreach (var item in SelectedItems.ToList())
                     {
-                        if (await _catalogService.DeleteFromPatchAsync(item.SkuId))
-                            successCount++;
+                        if (AllowCatalogModification)
+                        {
+                            if (await _catalogService.DeleteFromCatalogAsync(item.SkuId))
+                                successCount++;
+                        }
+                        else
+                        {
+                            if (await _catalogService.DeleteFromPatchAsync(item.SkuId))
+                                successCount++;
+                        }
                     }
                     
                     StatusText = $"Deleted {successCount} of {SelectedItems.Count} items";

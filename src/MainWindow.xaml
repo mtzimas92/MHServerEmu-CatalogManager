@@ -70,7 +70,7 @@
                       FontWeight="Bold" 
                       Margin="0,0,0,20"
                       Foreground="#333333"/>
-            
+
             <!-- Controls Panel -->
             <Grid DockPanel.Dock="Top" Margin="0,0,0,20">
                 <Grid.RowDefinitions>
@@ -88,14 +88,14 @@
                     
                     <!-- Category Filter -->
                     <ComboBox Grid.Column="0"
-                              ItemsSource="{Binding Categories}"
-                              SelectedItem="{Binding SelectedCategory}"
-                              Margin="0,0,10,0"/>
+                            ItemsSource="{Binding Categories}"
+                            SelectedItem="{Binding SelectedCategory}"
+                            Margin="0,0,10,0"/>
 
                     <!-- Search -->
                     <TextBox Grid.Column="1"
-                             Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
-                             Margin="0,0,10,0"/>
+                            Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                            Margin="0,0,10,0"/>
 
                     <!-- Price Range -->
                     <Grid Grid.Column="2">
@@ -105,30 +105,45 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="80"/>
                             <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         
                         <TextBlock Text="Price Range:" 
-                                  VerticalAlignment="Center" 
-                                  Margin="0,0,10,0"/>
+                                VerticalAlignment="Center" 
+                                Margin="0,0,10,0"/>
                         <TextBox Grid.Column="1" 
-                                 Text="{Binding MinPrice, UpdateSourceTrigger=PropertyChanged}"/>
+                                Text="{Binding MinPrice, UpdateSourceTrigger=PropertyChanged}"/>
                         <TextBlock Grid.Column="2" 
-                                  Text="-" 
-                                  Margin="10,0" 
-                                  VerticalAlignment="Center"/>
+                                Text="-" 
+                                Margin="10,0" 
+                                VerticalAlignment="Center"/>
                         <TextBox Grid.Column="3" 
-                                 Text="{Binding MaxPrice, UpdateSourceTrigger=PropertyChanged}"/>
+                                Text="{Binding MaxPrice, UpdateSourceTrigger=PropertyChanged}"/>
                         <ComboBox Grid.Column="4"
-                                  Margin="10,0,0,0"
-                                  Width="120"
-                                  ItemsSource="{Binding PriceRanges}"
-                                  SelectedItem="{Binding SelectedPriceRange}">
+                                Margin="10,0,0,0"
+                                Width="120"
+                                ItemsSource="{Binding PriceRanges}"
+                                SelectedItem="{Binding SelectedPriceRange}">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Name}"/>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
+                        <CheckBox Grid.Column="5" 
+                                Content="Enable Stock Catalog Deletion" 
+                                IsChecked="{Binding AllowCatalogModification}"
+                                HorizontalAlignment="Left"
+                                Margin="20,5,0,0">
+                            <CheckBox.ToolTip>
+                                <ToolTip Background="#FFF4F4" BorderBrush="Red">
+                                    <TextBlock TextWrapping="Wrap" MaxWidth="300">
+                                        Warning: This will allow deletion of items from the stock catalog.json file. 
+                                        These deletions cannot be undone without restoring from backup.
+                                    </TextBlock>
+                                </ToolTip>
+                            </CheckBox.ToolTip>
+                        </CheckBox>
                     </Grid>
                 </Grid>
 
@@ -153,6 +168,7 @@
                             Command="{Binding RefreshCommand}"/>
                 </UniformGrid>
             </Grid>
+
 
             <!-- Main DataGrid -->
             <DataGrid x:Name="ItemsDataGrid"
@@ -242,7 +258,7 @@
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
                                     <Button Content="Edit" 
-                                            Command="{Binding DataContext.EditItemCommand, 
+                                            Command="{Binding DataContext.EditItemCommand,
                                                     RelativeSource={RelativeSource AncestorType=Window}}"
                                             CommandParameter="{Binding}"
                                             Margin="0,0,10,0"
@@ -254,9 +270,11 @@
                                             Background="#F44336">
                                         <Button.Visibility>
                                             <MultiBinding Converter="{StaticResource SkuVisibilityConverter}">
-                                                <Binding Path="SkuId"/>
+                                                <Binding Path="DataContext.AllowCatalogModification" 
+                                                        RelativeSource="{RelativeSource AncestorType=Window}"/>
                                                 <Binding Path="DataContext.CatalogService" 
                                                         RelativeSource="{RelativeSource AncestorType=Window}"/>
+                                                <Binding Path="SkuId"/>
                                             </MultiBinding>
                                         </Button.Visibility>
                                     </Button>
@@ -264,6 +282,7 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+
                 </DataGrid.Columns>
             </DataGrid>
 
