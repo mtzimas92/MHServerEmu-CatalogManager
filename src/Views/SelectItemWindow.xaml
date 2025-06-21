@@ -11,6 +11,8 @@
     <Window.Resources>
         <converters:NotNullConverter x:Key="NotNullConverter"/>
         <converters:BoolToVisibilityConverter x:Key="BoolToVisibility"/>
+        <converters:ExistingItemColorConverter x:Key="ExistingItemColorConverter"/>
+
     </Window.Resources>
     
     <Grid Margin="20">
@@ -40,6 +42,10 @@
             <!-- Items Panel -->
             <DockPanel Grid.Column="1">
                 <!-- Search Box -->
+                <CheckBox DockPanel.Dock="Top" 
+                    Content="Hide Existing Items" 
+                    Margin="0,5,0,10"
+                    IsChecked="{Binding HideExistingItems, Mode=TwoWay}"/>
                 <TextBox DockPanel.Dock="Top" 
                          Margin="0,0,0,10"
                          Text="{Binding SearchFilter, UpdateSourceTrigger=PropertyChanged}">
@@ -61,7 +67,6 @@
                         </Style>
                     </TextBox.Style>
                 </TextBox>
-
                 <!-- Items List -->
                 <ListBox x:Name="ItemsListBox"
                     ItemsSource="{Binding FilteredItems}"
@@ -71,7 +76,16 @@
                     ScrollViewer.CanContentScroll="True">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding DisplayName}" Padding="5"/>
+                            <StackPanel Orientation="Horizontal">
+                                <!-- Existing item indicator -->
+                                <TextBlock Text="✓" 
+                                        Foreground="Green"
+                                        Margin="0,0,5,0"
+                                        Visibility="{Binding ExistsInCatalog, Converter={StaticResource BoolToVisibility}}"/>
+                                <TextBlock Text="{Binding DisplayName}" 
+                                        Padding="5"
+                                        Foreground="{Binding ExistsInCatalog, Converter={StaticResource ExistingItemColorConverter}}"/>
+                            </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>

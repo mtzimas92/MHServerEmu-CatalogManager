@@ -720,6 +720,7 @@ namespace CatalogManager.ViewModels
             }
         }
 
+
         private bool CanBatchModify()
         {
             return SelectedItems?.Count > 0 && !IsLoading;
