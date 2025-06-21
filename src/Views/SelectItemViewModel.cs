@@ -31,6 +31,7 @@ namespace CatalogManager.ViewModels
         private bool _isLoading;
         private string _statusMessage;
         private ItemDisplay _selectedItem;
+        private bool _hideExistingItems;
 
         public ObservableCollection<Category> Categories
         {
@@ -91,6 +92,18 @@ namespace CatalogManager.ViewModels
         {
             get => _statusMessage;
             private set => SetProperty(ref _statusMessage, value);
+        }
+
+        public bool HideExistingItems
+        {
+            get => _hideExistingItems;
+            set
+            {
+                if (SetProperty(ref _hideExistingItems, value))
+                {
+                    FilterItems();
+                }
+            }
         }
 
         public SelectItemViewModel(CatalogService catalogService)
@@ -180,16 +193,17 @@ namespace CatalogManager.ViewModels
                         var avatarGearItems = GameDatabase.DataDirectory
                             .IteratePrototypesInHierarchy<PlayerStashInventoryPrototype>(PrototypeIterateFlags.None)
                             .Where(protoId => GameDatabase.GetPrototypeName(protoId).StartsWith("Entity/Inventory/PlayerInventories/StashInventories/PageProtos/AvatarGear"))
-                            .Where(protoId => !existingProtoIds.Contains((ulong)protoId))
                             .Select(protoId => new ItemDisplay
                             {
                                 Id = protoId,
-                                FullPath = GameDatabase.GetPrototypeName(protoId)
+                                FullPath = GameDatabase.GetPrototypeName(protoId),
+                                ExistsInCatalog = existingProtoIds.Contains((ulong)protoId)
                             })
                             .ToList();
                             
                         newItems.AddRange(avatarGearItems);
                     }
+
                     
                     // Process costume items
                     if (SelectedCategory.Path.Contains("Costumes"))
@@ -201,16 +215,17 @@ namespace CatalogManager.ViewModels
                             .Where(item => 
                                 item.proto.DesignState == DesignWorkflowState.Live ||
                                 item.proto.DesignState == DesignWorkflowState.DevelopmentOnly)
-                            .Where(item => !existingProtoIds.Contains((ulong)item.id))
                             .Select(item => new ItemDisplay
                             {
                                 Id = item.id,
-                                FullPath = GameDatabase.GetPrototypeName(item.id)
+                                FullPath = GameDatabase.GetPrototypeName(item.id),
+                                ExistsInCatalog = existingProtoIds.Contains((ulong)item.id)
                             })
                             .ToList();
                             
                         newItems.AddRange(costumeItems);
                     }
+
                     
                     // Process regular items
                     var regularItems = GameDatabase.DataDirectory
@@ -221,11 +236,11 @@ namespace CatalogManager.ViewModels
                         .Where(item => 
                             item.proto.DesignState == DesignWorkflowState.Live ||
                             item.proto.DesignState == DesignWorkflowState.DevelopmentOnly)
-                        .Where(item => !existingProtoIds.Contains((ulong)item.id))
                         .Select(item => new ItemDisplay
                         {
                             Id = item.id,
-                            FullPath = GameDatabase.GetPrototypeName(item.id)
+                            FullPath = GameDatabase.GetPrototypeName(item.id),
+                            ExistsInCatalog = existingProtoIds.Contains((ulong)item.id)
                         })
                         .ToList();
                         
@@ -282,21 +297,24 @@ namespace CatalogManager.ViewModels
                 if (_itemsViewSource.View == null)
                     return;
                     
-                if (string.IsNullOrWhiteSpace(SearchFilter))
+                if (string.IsNullOrWhiteSpace(SearchFilter) && !HideExistingItems)
                 {
                     _itemsViewSource.View.Filter = null;
                 }
                 else
                 {
-                    // Split search terms for more powerful searching
                     var searchTerms = SearchFilter.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                     
                     _itemsViewSource.View.Filter = obj => 
                     {
                         if (obj is ItemDisplay item)
                         {
-                            // Item matches if it contains ALL search terms (AND logic)
-                            return searchTerms.All(term => 
+                            // Skip items that exist in catalog if hide filter is on
+                            if (HideExistingItems && item.ExistsInCatalog)
+                                return false;
+
+                            // Apply search filter if terms exist
+                            return !searchTerms.Any() || searchTerms.All(term => 
                                 item.FullPath.Contains(term, StringComparison.OrdinalIgnoreCase));
                         }
                         return false;
@@ -336,11 +354,13 @@ namespace CatalogManager.ViewModels
         public string DisplayName { get; set; }
         public bool IsInventoryType { get; set; }
     }
-    
+
     public class ItemDisplay
     {
         public PrototypeId Id { get; set; }
         public string FullPath { get; set; }
         public string DisplayName => FullPath;
+        public bool ExistsInCatalog { get; set; }
+
     }
 }

@@ -502,7 +502,22 @@ namespace CatalogManager.ViewModels
                 // Check the actual save result
                 bool saveResult = await saveTask;
                 
-                if (!saveResult)
+                if (saveResult)
+                {
+                    // Refresh SKU ID for next item
+                    SkuId = await _catalogService.GetNextAvailableSkuId();
+                    
+                    // Clear or reset other fields as needed
+                    Title = string.Empty;
+                    Description = string.Empty;
+                    PrototypeId = 0;
+                    
+                    StatusMessage = "Item saved successfully. Ready for next item.";
+                    
+                    // Force cache refresh in CatalogService
+                    await _catalogService.LoadCatalogAsync(true);
+                }
+                else
                 {
                     throw new InvalidOperationException("Save operation returned false");
                 }

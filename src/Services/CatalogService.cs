@@ -465,23 +465,19 @@ namespace CatalogManager.Services
             await _catalogLock.WaitAsync();
             try
             {
-                // Determine if this is a patch item or a catalog item
                 bool isPatchItem = IsItemFromPatch(item.SkuId);
                 
                 if (isPatchItem)
                 {
-                    // For patch items, we need to load the current patch file
+                    // Patch file handling remains the same
                     var patchJson = await File.ReadAllTextAsync(_patchPath);
-                    var patch = JsonSerializer.Deserialize<List<CatalogEntry>>(patchJson, _jsonOptions) ?? new List<CatalogEntry>();
+                    var patch = JsonSerializer.Deserialize<List<CatalogEntry>>(patchJson, _jsonOptions);
                     
-                    // Find the existing entry
-                    var existingEntry = patch.FirstOrDefault(x => x.SkuId == item.SkuId);
+                    var existingEntry = patch?.FirstOrDefault(x => x.SkuId == item.SkuId);
                     if (existingEntry == null) return false;
                     
-                    // Only update the TypeModifiers field
                     existingEntry.TypeModifiers = item.TypeModifiers;
                     
-                    // Save back to file with backup
                     string backupPath = _patchPath + ".bak";
                     if (File.Exists(_patchPath))
                     {
@@ -489,107 +485,49 @@ namespace CatalogManager.Services
                     }
                     
                     await File.WriteAllTextAsync(_patchPath, JsonSerializer.Serialize(patch, _jsonOptions));
-                    
-                    // Invalidate cache
-                    _lastCatalogLoadTime = DateTime.MinValue;
-                    
-                    return true;
                 }
                 else
                 {
-                    // For catalog items, we need to update in-place
+                    // Main catalog handling using CatalogRoot structure
                     if (!File.Exists(_catalogPath))
-                    {
                         throw new FileNotFoundException("Main catalog file not found", _catalogPath);
-                    }
-                    
-                    // Create backup
+
                     string backupPath = _catalogPath + ".bak";
                     File.Copy(_catalogPath, backupPath, true);
-                    
+
                     try
                     {
-                        // Read the entire file as text
                         string catalogJson = await File.ReadAllTextAsync(_catalogPath);
-                        
-                        // Find the entry by SkuId
-                        string skuIdPattern = $"\"SkuId\":{item.SkuId}";
-                        int skuIdIndex = catalogJson.IndexOf(skuIdPattern);
-                        
-                        if (skuIdIndex < 0)
+                        var catalog = JsonSerializer.Deserialize<CatalogRoot>(catalogJson);
+
+                        var existingEntry = catalog.Entries.FirstOrDefault(e => e.SkuId == item.SkuId);
+                        if (existingEntry != null)
                         {
-                            // Entry not found in the catalog
-                            Debug.WriteLine($"Entry with SkuId {item.SkuId} not found in catalog");
+                            existingEntry.TypeModifiers = item.TypeModifiers;
+
+                            var options = new JsonSerializerOptions
+                            {
+                                WriteIndented = true,
+                                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
+                            };
+
+                            await File.WriteAllTextAsync(_catalogPath, JsonSerializer.Serialize(catalog, options));
+                        }
+                        else
+                        {
                             return false;
                         }
-                        
-                        // Find the TypeModifiers section
-                        string typeModifiersPattern = "\"TypeModifiers\":";
-                        int typeModifiersIndex = catalogJson.IndexOf(typeModifiersPattern, skuIdIndex);
-                        
-                        if (typeModifiersIndex < 0)
-                        {
-                            // TypeModifiers not found in the entry
-                            Debug.WriteLine($"TypeModifiers not found for SkuId {item.SkuId}");
-                            return false;
-                        }
-                        
-                        // Find the start and end of the TypeModifiers array
-                        int arrayStartIndex = catalogJson.IndexOf('[', typeModifiersIndex);
-                        if (arrayStartIndex < 0) return false;
-                        
-                        // Find the matching closing bracket
-                        int bracketCount = 1;
-                        int arrayEndIndex = arrayStartIndex + 1;
-                        
-                        while (bracketCount > 0 && arrayEndIndex < catalogJson.Length)
-                        {
-                            char c = catalogJson[arrayEndIndex];
-                            if (c == '[') bracketCount++;
-                            else if (c == ']') bracketCount--;
-                            arrayEndIndex++;
-                        }
-                        
-                        if (bracketCount != 0) return false; // Unbalanced brackets
-                        
-                        // Serialize just the TypeModifiers array
-                        var jsonOptions = new JsonSerializerOptions
-                        {
-                            WriteIndented = false,
-                            NumberHandling = JsonNumberHandling.AllowReadingFromString
-                        };
-                        
-                        string newTypeModifiersJson = JsonSerializer.Serialize(item.TypeModifiers, jsonOptions);
-                        
-                        // Replace the old TypeModifiers array with the new one
-                        string updatedCatalog = catalogJson.Substring(0, arrayStartIndex) + 
-                                            newTypeModifiersJson + 
-                                            catalogJson.Substring(arrayEndIndex);
-                        
-                        // Write back to the file
-                        await File.WriteAllTextAsync(_catalogPath, updatedCatalog);
-                        
-                        // Invalidate cache
-                        _lastCatalogLoadTime = DateTime.MinValue;
-                        
-                        return true;
                     }
-                    catch (Exception ex)
+                    catch
                     {
-                        // Restore from backup on error
-                        Debug.WriteLine($"Error updating catalog in place: {ex.Message}");
                         if (File.Exists(backupPath))
-                        {
                             File.Copy(backupPath, _catalogPath, true);
-                        }
                         throw;
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error updating type modifiers: {ex.Message}");
-                return false;
+                
+                _lastCatalogLoadTime = DateTime.MinValue;
+                return true;
             }
             finally
             {
