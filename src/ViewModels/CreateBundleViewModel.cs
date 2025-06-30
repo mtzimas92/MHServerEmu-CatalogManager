@@ -528,12 +528,16 @@ namespace CatalogManager.ViewModels
                 // Check the actual save result
                 bool saveResult = await saveTask;
                 
-                if (!saveResult)
+                if (saveResult)
                 {
-                    throw new InvalidOperationException("Save operation returned false");
+                    // Refresh SKU ID for next bundle
+                    SkuId = await _catalogService.GetNextAvailableSkuId();
+                    
+                    // Force cache refresh in CatalogService
+                    await _catalogService.LoadCatalogAsync(true);
+                    
+                    StatusMessage = "Bundle saved successfully. Ready for next bundle.";
                 }
-                
-                StatusMessage = "Bundle saved successfully";
                 Debug.WriteLine($"Successfully saved bundle: {SkuId} - {Title}");
                 if (!IsBogo)
                 {

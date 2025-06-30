@@ -18,152 +18,151 @@ namespace CatalogManager.Services
         private readonly string _htmlOutputDirectory;
         private readonly string _imageOutputDirectory;
         private readonly string _cssOutputDirectory;
+        private readonly Dictionary<string, string> _displayNameMapping;
+
         private readonly CatalogService _catalogService;
-        
+
         public HtmlGeneratorService(CatalogService catalogService = null, string outputDirectory = "WebContent")
         {
             _catalogService = catalogService;
             _htmlOutputDirectory = Path.Combine(outputDirectory, "html");
             _imageOutputDirectory = Path.Combine(outputDirectory, "images");
             _cssOutputDirectory = Path.Combine(outputDirectory, "css");
-            
+
             // Ensure directories exist
             Directory.CreateDirectory(_htmlOutputDirectory);
             Directory.CreateDirectory(_imageOutputDirectory);
             Directory.CreateDirectory(_cssOutputDirectory);
-            
+
             // Create CSS file if it doesn't exist
             CreateCssFileIfNeeded();
+            var jsonPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "display_names.json");
+            var jsonContent = File.ReadAllText(jsonPath);
+            _displayNameMapping = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, string>>(jsonContent);
+
         }
-        
+        private string GetItemName(ulong prototypeId)
+        {
+            var path = MHServerEmu.Games.GameData.GameDatabase.GetPrototypeName((MHServerEmu.Games.GameData.PrototypeId)prototypeId);
+            if (_displayNameMapping.TryGetValue(path, out string displayName) && displayName != "N/A")
+            {
+                return displayName;
+            }
+            return path;
+        }
         private void CreateCssFileIfNeeded()
         {
             string cssFilePath = Path.Combine(_cssOutputDirectory, "bundle-style.css");
             if (!File.Exists(cssFilePath))
             {
                 string css = @"
-                    body {
-                        font-family: 'Roboto', Arial, sans-serif;
-                        margin: 0;
-                        padding: 0;
-                        background-color: #1a1a1a;
-                        color: #f0f0f0;
-                    }
-                    
-                    .container {
-                        max-width: 1000px;
-                        margin: 0 auto;
-                        padding: 30px;
-                        background-color: #2a2a2a;
-                        box-shadow: 0 0 20px rgba(0,0,0,0.5);
-                        border-radius: 8px;
-                        margin-top: 30px;
-                        margin-bottom: 30px;
-                    }
-                    
-                    .header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 30px;
-                        border-bottom: 1px solid #444;
-                        padding-bottom: 20px;
-                    }
-                    
-                    .header-image {
-                        width: 256px;
-                        height: 128px;
-                        margin-right: 30px;
-                        border-radius: 5px;
-                        box-shadow: 0 0 10px rgba(0,0,0,0.3);
-                    }
-                    
-                    .header-content h1 {
-                        color: #e63946;
-                        margin: 0 0 10px 0;
-                        font-size: 32px;
-                    }
-                    
-                    .price {
-                        font-size: 28px;
-                        font-weight: bold;
-                        color: #ffd700;
-                        margin: 10px 0;
-                    }
-                    
-                    .description {
-                        margin-bottom: 30px;
-                        font-size: 16px;
-                        line-height: 1.6;
-                        color: #cccccc;
-                    }
-                    
-                    .items-container {
-                        display: grid;
-                        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                        gap: 20px;
-                        margin-top: 30px;
-                    }
-                    
-                    .item {
-                        background-color: #333;
-                        border-radius: 8px;
-                        padding: 15px;
-                        transition: transform 0.2s, box-shadow 0.2s;
-                        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                    }
-                    
-                    .item:hover {
-                        transform: translateY(-5px);
-                        box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-                    }
-                    
-                    .item-name {
-                        font-weight: bold;
-                        font-size: 18px;
-                        margin-bottom: 10px;
-                        color: #4cc9f0;
-                    }
-                    
-                    .item-type {
-                        font-size: 14px;
-                        color: #aaa;
-                    }
-                    
-                    .footer {
-                        margin-top: 40px;
-                        text-align: center;
-                        font-size: 14px;
-                        color: #888;
-                        border-top: 1px solid #444;
-                        padding-top: 20px;
-                    }
-                    
-                    .buy-button {
-                        display: inline-block;
-                        background-color: #e63946;
-                        color: white;
-                        padding: 12px 30px;
-                        border-radius: 5px;
-                        text-decoration: none;
-                        font-weight: bold;
-                        margin-top: 20px;
-                        transition: background-color 0.2s;
-                    }
-                    
-                    .buy-button:hover {
-                        background-color: #f25d6a;
-                    }
-                    
-                    .savings {
-                        background-color: #4cc9f0;
-                        color: #1a1a1a;
-                        padding: 5px 10px;
-                        border-radius: 5px;
-                        font-weight: bold;
-                        display: inline-block;
-                        margin-left: 15px;
-                    }
-                ";
+            .mtx-bundle-details-page {
+                background-color: #1a1a1a;
+                color: #f0f0f0;
+                font-family: 'Roboto', Arial, sans-serif;
+            }
+            
+            .content-container {
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 0;
+            }
+            
+            .main-banner {
+                height: 300px;
+                background-size: cover;
+                background-position: center;
+                border-radius: 8px 8px 0 0;
+            }
+            
+            .text-area {
+                padding: 30px;
+                background-color: #2a2a2a;
+            }
+            
+            .pack-contents-container {
+                margin-top: 20px;
+            }
+            
+            .pack-contents-container h3 {
+                color: #e63946;
+                margin-bottom: 20px;
+            }
+            
+            .pack-contents-content dl {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .pack-contents-content dt {
+                color: #4cc9f0;
+                font-size: 18px;
+                font-weight: bold;
+                margin: 15px 0;
+            }
+            
+            .pack-contents-content dd {
+                margin-left: 20px;
+            }
+            
+            .pack-contents-content ul {
+                list-style: none;
+                padding: 0;
+            }
+            
+            .pack-contents-content li {
+                margin: 5px 0;
+                color: #cccccc;
+            }
+            
+            .text-column h2 {
+                color: #e63946;
+                margin: 0 0 20px 0;
+            }
+            
+            .buttons-container {
+                background-color: #333;
+                padding: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 0 0 8px 8px;
+            }
+            
+            .price {
+                font-size: 24px;
+                font-weight: bold;
+                color: #ffd700;
+            }
+            
+            .g {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background: url('../images/g-icon.png') no-repeat;
+                vertical-align: middle;
+            }
+            
+            .alternate-1 {
+                background-color: #e63946;
+                color: white;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 5px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background-color 0.2s;
+            }
+            
+            .alternate-1:hover {
+                background-color: #f25d6a;
+            }
+            
+            .custom-scrollbar {
+                scrollbar-width: thin;
+                scrollbar-color: #666 #333;
+            }
+        ";
                 
                 File.WriteAllText(cssFilePath, css);
             }
@@ -223,52 +222,50 @@ namespace CatalogManager.Services
             html.AppendLine("<html lang=\"en\">");
             html.AppendLine("<head>");
             html.AppendLine("    <meta charset=\"UTF-8\">");
-            html.AppendLine("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
-            html.AppendLine($"    <title>{title} - Marvel Heroes Store</title>");
-            html.AppendLine("    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap\" rel=\"stylesheet\">");
+            html.AppendLine($"    <title>{entry.Title}</title>");
             html.AppendLine("    <link rel=\"stylesheet\" href=\"../css/bundle-style.css\">");
             html.AppendLine("</head>");
             html.AppendLine("<body>");
-            html.AppendLine("    <div class=\"container\">");
+            html.AppendLine("<div class=\"mtx-bundle-details-page\">");
+            html.AppendLine("    <div class=\"content-container custom-scrollbar\">");
+            html.AppendLine($"        <div class=\"main-banner\" style=\"background-image: url('../images/MTX_Store_Bundle_{entry.Title.Replace(" ", "-")}_Thumb.png');\"></div>");
+            html.AppendLine("        <div class=\"text-area\">");
+            html.AppendLine("            <div class=\"pack-contents-container\">");
+            html.AppendLine("                <h3>Included in this bundle:</h3>");
+            html.AppendLine("                <div class=\"pack-contents-content\">");
+            html.AppendLine("                    <dl>");
             
-            // Header with image and title
-            html.AppendLine("        <div class=\"header\">");
-            html.AppendLine($"            <img src=\"{thumbnailRelativePath}\" alt=\"{title}\" class=\"header-image\">");
-            html.AppendLine("            <div class=\"header-content\">");
-            html.AppendLine($"                <h1>{title}</h1>");
-            html.AppendLine($"                <div class=\"price\">{price} G");
+            // Group items by category and generate content
+            var groupedItems = bundle.GuidItems
+                .GroupBy(item => GetItemCategory(item.ItemPrototypeRuntimeIdForClient))
+                .OrderBy(g => g.Key);
             
-            // Show savings if available
-            if (savings > 0)
+            foreach (var group in groupedItems)
             {
-                html.AppendLine($"                    <span class=\"savings\">Save {savingsPercentage} ({savings} G)</span>");
+                html.AppendLine($"                        <dt>{group.Key}</dt>");
+                html.AppendLine("                        <dd><ul>");
+                foreach (var item in group)
+                {
+                    string itemName = GetItemName(item.ItemPrototypeRuntimeIdForClient);
+                    html.AppendLine($"                            <li>{itemName}</li>");
+                }
+                html.AppendLine("                        </ul></dd>");
             }
             
+            html.AppendLine("                    </dl>");
             html.AppendLine("                </div>");
-            html.AppendLine($"                <a href=\"#\" class=\"buy-button\">Purchase Now</a>");
+            html.AppendLine("            </div>");
+            html.AppendLine("            <div class=\"text-column\">");
+            html.AppendLine($"                <h2>{entry.Title}</h2>");
+            html.AppendLine($"                <p>{entry.Description}</p>");
             html.AppendLine("            </div>");
             html.AppendLine("        </div>");
-            
-            // Description
-            html.AppendLine($"        <div class=\"description\">{description}</div>");
-            
-            // Bundle contents
-            html.AppendLine("        <h2>Bundle Contents:</h2>");
-            html.AppendLine("        <div class=\"items-container\">");
-            
-            // Add items in the bundle
-            foreach (var guidItem in bundle.GuidItems)
-            {
-                string itemName = GetItemName(guidItem.ItemPrototypeRuntimeIdForClient);
-                
-                html.AppendLine("            <div class=\"item\">");
-                html.AppendLine($"                <div class=\"item-name\">{itemName}</div>");
-                html.AppendLine("            </div>");
-            }
-            
-            html.AppendLine("        </div>");
-                        
             html.AppendLine("    </div>");
+            html.AppendLine("    <div class=\"buttons-container\">");
+            html.AppendLine($"        <div class=\"price\">{entry.ItemPrice} <span class=\"g ir\">G</span></div>");
+            html.AppendLine($"        <button class=\"alternate-1\" onclick=\"myApi.BuyBundleFromJS('{bundle.SkuId}')\">Buy Now!</button>");
+            html.AppendLine("    </div>");
+            html.AppendLine("</div>");
             html.AppendLine("</body>");
             html.AppendLine("</html>");
             
@@ -277,7 +274,7 @@ namespace CatalogManager.Services
             if (saveToFile)
             {
                 // Create a filename based on the bundle title
-                string fileName = $"{title.ToLower().Replace(" ", "_")}_en_bundle.html";
+                string fileName = $"{entry.Title.ToLower().Replace(" ", "_")}_en_bundle.html";
                 string filePath = Path.Combine(_htmlOutputDirectory, fileName);
                 
                 // Save the HTML file
@@ -403,17 +400,21 @@ namespace CatalogManager.Services
             await Task.CompletedTask; // Just to make the method async
         }
         
-        private string GetItemName(ulong prototypeId)
+        
+        private string GetItemCategory(ulong prototypeId)
         {
-            // Try to get the item name from the game database
-            try
-            {
-                return MHServerEmu.Games.GameData.GameDatabase.GetPrototypeName((MHServerEmu.Games.GameData.PrototypeId)prototypeId);
-            }
-            catch
-            {
-                return $"Item #{prototypeId}";
-            }
+            var path = MHServerEmu.Games.GameData.GameDatabase.GetPrototypeName((MHServerEmu.Games.GameData.PrototypeId)prototypeId);
+            
+            if (path.Contains("/Consumables/")) return "Consumables";
+            if (path.Contains("/CharacterTokens/")) return "Character Tokens";
+            if (path.Contains("/Costumes/")) return "Costumes";
+            if (path.Contains("/CurrencyItems/")) return "Currency Items";
+            if (path.Contains("/Pets/")) return "Pets";
+            if (path.Contains("/Crafting/")) return "Crafting";
+            if (path.Contains("/StashInventories/PageProtos/AvatarGear")) return "Stash Tabs";
+            if (path.Contains("/Test/") || path.Contains("/RaidTest/") || path.Contains("/TestMedals/")) return "Test Gear";
+            
+            return "Other";
         }
         
         public async Task<string> GenerateItemDetailsHtmlAsync(ulong prototypeId, string title, string description, int price)
