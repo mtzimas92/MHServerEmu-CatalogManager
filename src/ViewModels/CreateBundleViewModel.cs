@@ -194,33 +194,6 @@ namespace CatalogManager.ViewModels
             }
         }
 
-        private string _bundleBaseUrl = "http://localhost/store/bundles";
-        public string BundleBaseUrl
-        {
-            get => _bundleBaseUrl;
-            set => SetProperty(ref _bundleBaseUrl, value);
-        }
-
-        private string _imageBaseUrl = "http://localhost/store/images";
-        public string ImageBaseUrl
-        {
-            get => _imageBaseUrl;
-            set => SetProperty(ref _imageBaseUrl, value);
-        }
-        private async Task LoadUrlConfigurationAsync()
-        {
-            try
-            {
-                var config = await StoreUrlConfiguration.LoadAsync();
-                BundleBaseUrl = config.BundleBaseUrl;
-                ImageBaseUrl = config.ImageBaseUrl;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error loading URL configuration: {ex.Message}");
-            }
-        }
-
         public CreateBundleViewModel(CatalogService catalogService)
         {
             _catalogService = catalogService ?? throw new ArgumentNullException(nameof(catalogService));
@@ -239,9 +212,6 @@ namespace CatalogManager.ViewModels
             {
                 "Bundle", "Hero", "Costume", "TeamUp", "Boost", "Chest", "Service"
             });
-            
-            // Load URL configuration
-            LoadUrlConfigurationAsync().ConfigureAwait(false);
             
             // Initialize the view model
             InitializeNewBundleAsync().ConfigureAwait(false);
@@ -292,14 +262,22 @@ namespace CatalogManager.ViewModels
 
                 bool? result = selectWindow.ShowDialog();
                 
-                if (result == true && selectViewModel.SelectedItem != null)
+                if (result == true && selectViewModel.SelectedItems != null && selectViewModel.SelectedItems.Any())
                 {
-                    BundleItems.Add(new BundleItemEntry 
-                    { 
-                        Item = selectViewModel.SelectedItem,
-                        Quantity = 1 
-                    });
-                    StatusMessage = "Item added to bundle";
+                    // Add all selected items to the bundle
+                    foreach (var selectedItem in selectViewModel.SelectedItems)
+                    {
+                        BundleItems.Add(new BundleItemEntry 
+                        { 
+                            Item = selectedItem,
+                            Quantity = 1 
+                        });
+                    }
+                    
+                    int count = selectViewModel.SelectedItems.Count;
+                    StatusMessage = count == 1 
+                        ? "Item added to bundle" 
+                        : $"{count} items added to bundle";
                 }
                 else
                 {
@@ -344,14 +322,22 @@ namespace CatalogManager.ViewModels
 
                 bool? result = selectWindow.ShowDialog();
                 
-                if (result == true && selectViewModel.SelectedItem != null)
+                if (result == true && selectViewModel.SelectedItems != null && selectViewModel.SelectedItems.Any())
                 {
-                    BonusItems.Add(new BundleItemEntry 
-                    { 
-                        Item = selectViewModel.SelectedItem,
-                        Quantity = 1 
-                    });
-                    StatusMessage = "Bonus item added";
+                    // Add all selected items to bonus items
+                    foreach (var selectedItem in selectViewModel.SelectedItems)
+                    {
+                        BonusItems.Add(new BundleItemEntry 
+                        { 
+                            Item = selectedItem,
+                            Quantity = 1 
+                        });
+                    }
+                    
+                    int count = selectViewModel.SelectedItems.Count;
+                    StatusMessage = count == 1 
+                        ? "Bonus item added" 
+                        : $"{count} bonus items added";
                 }
                 else
                 {
@@ -462,7 +448,7 @@ namespace CatalogManager.ViewModels
                         new ContentData
                         {
                             LanguageId = "en_us",
-                            Url = $"http://storecdn.marvelheroes.com/bundles/compressedthumbs/MTX_Store_Bundle_{Title.Replace(" ", "-")}_Thumb.png",
+                            Url = $"http://storecdn.marvelheroes.com/bundles/MTX_Store_Bundle_{Title.Replace(" ", "-")}_Thumb.png",
                             ImageData = ""
                         }
                     },
@@ -487,27 +473,6 @@ namespace CatalogManager.ViewModels
                         // Generate thumbnail image
                         await _htmlGenerator.GenerateThumbnailImageAsync(Title);
                         
-                        // Set InfoUrls and ContentData with configured base URLs
-                        entry.InfoUrls = new List<InfoUrl>
-                        {
-                            new InfoUrl
-                            {
-                                LanguageId = "en_us",
-                                Url = $"{BundleBaseUrl}/{Title.ToLower().Replace(" ", "_")}_en_bundle.html",
-                                ImageData = ""
-                            }
-                        };
-                        
-                        entry.ContentData = new List<ContentData>
-                        {
-                            new ContentData
-                            {
-                                LanguageId = "en_us",
-                                Url = $"{ImageBaseUrl}/MTX_Store_Bundle_{Title.Replace(" ", "-")}_Thumb.png",
-                                ImageData = ""
-                            }
-                        };
-                        
                         StatusMessage = "HTML and thumbnail generated successfully";
                     }
                     catch (Exception ex)
@@ -528,23 +493,18 @@ namespace CatalogManager.ViewModels
                 // Check the actual save result
                 bool saveResult = await saveTask;
                 
-                if (!saveResult)
+                if (saveResult)
                 {
-                    throw new InvalidOperationException("Save operation returned false");
+                    // Refresh SKU ID for next bundle
+                    SkuId = await _catalogService.GetNextAvailableSkuId();
+                    
+                    // Force cache refresh in CatalogService
+                    await _catalogService.LoadCatalogAsync(true);
+                    
+                    StatusMessage = "Bundle saved successfully. Ready for next bundle.";
                 }
-                
-                StatusMessage = "Bundle saved successfully";
                 Debug.WriteLine($"Successfully saved bundle: {SkuId} - {Title}");
-                if (!IsBogo)
-                {
-                    // Save URL configuration for future use
-                    var config = new StoreUrlConfiguration
-                    {
-                        BundleBaseUrl = BundleBaseUrl,
-                        ImageBaseUrl = ImageBaseUrl
-                    };
-                    await config.SaveAsync();
-                }
+                
                 // Close window with success flag
                 CloseWindow(true);
             }

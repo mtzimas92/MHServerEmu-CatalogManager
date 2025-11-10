@@ -11,6 +11,7 @@ using System.Windows.Data;
 using MHServerEmu.Games.GameData;
 using MHServerEmu.Games.GameData.Prototypes;
 using CatalogManager.Services;
+using System.IO;
 
 namespace CatalogManager.ViewModels
 {
@@ -20,6 +21,8 @@ namespace CatalogManager.ViewModels
         private readonly object _itemsLock = new object();
         private CancellationTokenSource _filterCts;
         private CancellationTokenSource _loadCts;
+        private readonly Dictionary<string, string> _displayNameMapping;
+
         
         // Use CollectionViewSource for better filtering performance
         private readonly CollectionViewSource _itemsViewSource = new CollectionViewSource();
@@ -31,6 +34,7 @@ namespace CatalogManager.ViewModels
         private bool _isLoading;
         private string _statusMessage;
         private ItemDisplay _selectedItem;
+        private ObservableCollection<ItemDisplay> _selectedItems = new();
         private bool _hideExistingItems;
 
         public ObservableCollection<Category> Categories
@@ -81,6 +85,14 @@ namespace CatalogManager.ViewModels
             get => _selectedItem;
             set => SetProperty(ref _selectedItem, value);
         }
+
+        public ObservableCollection<ItemDisplay> SelectedItems
+        {
+            get => _selectedItems;
+            set => SetProperty(ref _selectedItems, value);
+        }
+
+        public bool HasSelectedItems => _selectedItems?.Count > 0;
         
         public bool IsLoading
         {
@@ -111,7 +123,10 @@ namespace CatalogManager.ViewModels
             _catalogService = catalogService ?? throw new ArgumentNullException(nameof(catalogService));
             _items = new ObservableCollection<ItemDisplay>();
             _itemsViewSource.Source = _items;
-            
+
+            var jsonPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "display_names.json");
+            var jsonContent = File.ReadAllText(jsonPath);
+            _displayNameMapping = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, string>>(jsonContent);
             // Initialize categories asynchronously
             Task.Run(InitializeCategoriesAsync);
         }
@@ -197,7 +212,9 @@ namespace CatalogManager.ViewModels
                             {
                                 Id = protoId,
                                 FullPath = GameDatabase.GetPrototypeName(protoId),
-                                ExistsInCatalog = existingProtoIds.Contains((ulong)protoId)
+                                ExistsInCatalog = existingProtoIds.Contains((ulong)protoId),
+                                DisplayNameMapping = _displayNameMapping
+
                             })
                             .ToList();
                             
@@ -219,7 +236,9 @@ namespace CatalogManager.ViewModels
                             {
                                 Id = item.id,
                                 FullPath = GameDatabase.GetPrototypeName(item.id),
-                                ExistsInCatalog = existingProtoIds.Contains((ulong)item.id)
+                                ExistsInCatalog = existingProtoIds.Contains((ulong)item.id),
+                                DisplayNameMapping = _displayNameMapping
+
                             })
                             .ToList();
                             
@@ -240,7 +259,9 @@ namespace CatalogManager.ViewModels
                         {
                             Id = item.id,
                             FullPath = GameDatabase.GetPrototypeName(item.id),
-                            ExistsInCatalog = existingProtoIds.Contains((ulong)item.id)
+                            ExistsInCatalog = existingProtoIds.Contains((ulong)item.id),
+                            DisplayNameMapping = _displayNameMapping
+
                         })
                         .ToList();
                         
@@ -259,7 +280,7 @@ namespace CatalogManager.ViewModels
                     }).ToList();
                     
                     // Update UI on main thread
-                    Application.Current.Dispatcher.Invoke(() => 
+                    Application.Current.Dispatcher.Invoke(() =>
                     {
                         lock (_itemsLock)
                         {
@@ -269,9 +290,10 @@ namespace CatalogManager.ViewModels
                                 _items.Add(item);
                             }
                         }
-                        
+
                         StatusMessage = $"Loaded {_items.Count} items";
                         FilterItems();
+                        
                     });
                     
                 }, token);
@@ -313,9 +335,11 @@ namespace CatalogManager.ViewModels
                             if (HideExistingItems && item.ExistsInCatalog)
                                 return false;
 
-                            // Apply search filter if terms exist
+                            // Search in both display name and path
+                            var displayName = _displayNameMapping.TryGetValue(item.FullPath, out string name) ? name : "";
                             return !searchTerms.Any() || searchTerms.All(term => 
-                                item.FullPath.Contains(term, StringComparison.OrdinalIgnoreCase));
+                                item.FullPath.Contains(term, StringComparison.OrdinalIgnoreCase) || 
+                                displayName.Contains(term, StringComparison.OrdinalIgnoreCase));
                         }
                         return false;
                     };
@@ -342,7 +366,7 @@ namespace CatalogManager.ViewModels
         
         public event PropertyChangedEventHandler PropertyChanged;
         
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
@@ -357,10 +381,20 @@ namespace CatalogManager.ViewModels
 
     public class ItemDisplay
     {
+        public Dictionary<string, string> DisplayNameMapping { get; set; }
         public PrototypeId Id { get; set; }
         public string FullPath { get; set; }
-        public string DisplayName => FullPath;
         public bool ExistsInCatalog { get; set; }
-
+        public string DisplayName 
+        { 
+            get
+            {
+                if (DisplayNameMapping?.TryGetValue(FullPath, out string displayName) == true && displayName != "N/A")
+                {
+                    return $"{displayName} ({FullPath})";
+                }
+                return FullPath;
+            }
+        }
     }
 }

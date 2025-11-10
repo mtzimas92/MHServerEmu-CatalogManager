@@ -12,7 +12,7 @@
         <converters:NotNullConverter x:Key="NotNullConverter"/>
         <converters:BoolToVisibilityConverter x:Key="BoolToVisibility"/>
         <converters:ExistingItemColorConverter x:Key="ExistingItemColorConverter"/>
-
+        <converters:CollectionHasItemsConverter x:Key="CollectionHasItemsConverter"/>
     </Window.Resources>
     
     <Grid Margin="20">
@@ -71,6 +71,7 @@
                 <ListBox x:Name="ItemsListBox"
                     ItemsSource="{Binding FilteredItems}"
                     SelectedItem="{Binding SelectedItem}"
+                    SelectionMode="Extended"
                     VirtualizingStackPanel.IsVirtualizing="True"
                     VirtualizingStackPanel.VirtualizationMode="Recycling"
                     ScrollViewer.CanContentScroll="True">
@@ -101,7 +102,7 @@
                     Click="OkButton_Click"
                     Width="100" 
                     Margin="0,0,10,0"
-                    IsEnabled="{Binding SelectedItem, Converter={StaticResource NotNullConverter}}"/>
+                    IsEnabled="{Binding HasSelectedItems}"/>
             <Button Content="Cancel" 
                     Click="CancelButton_Click"
                     Width="100"/>

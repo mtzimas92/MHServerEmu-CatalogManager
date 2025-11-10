@@ -1,0 +1,2518 @@
+[
+  {
+    "SkuId": 21000400,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1277161642800976004,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Magik Team-Up",
+        "Title": "Magik Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21000100,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6237744012630561006,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Falcon Team-Up",
+        "Title": "Falcon Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21000200,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 9671769034704228926,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Spider-Man Team-Up",
+        "Title": "Spider-Man Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21000300,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1054738674846798299,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Firestar Team-Up",
+        "Title": "Firestar Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21000800,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 18303256609750061298,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Gamora Team-Up",
+        "Title": "Gamora Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21000700,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2943735762294018090,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Drax Team-Up",
+        "Title": "Drax Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21002400,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 14119237192684540236,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Carnage Team-Up",
+        "Title": "Carnage Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21002500,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 3930543209986658711,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Sunspot Team-Up",
+        "Title": "Sunspot Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21000709,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2943735762294018090,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Drax Team-Up - BOGO",
+        "Title": "Drax Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21000909,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16453128962031161510,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Groot Team-Up - BOGO",
+        "Title": "Groot Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21001009,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8728139284375998831,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "She-Hulk Team-Up - BOGO",
+        "Title": "She-Hulk Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21001609,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15369520605703245840,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Clea Team-Up - BOGO",
+        "Title": "Clea Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21001809,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2376551315543560525,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Arachne Team-Up - BOGO",
+        "Title": "Arachne Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21001909,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15897070380891706428,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "The Deadpool Kid Team-Up - BOGO",
+        "Title": "The Deadpool Kid Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21002309,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12980491881127285336,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Sam Wilson Captain America Team-Up - BOGO",
+        "Title": "Sam Wilson Captain America Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21000500,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16998746507989160710,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Beta Ray Bill Team-Up",
+        "Title": "Beta Ray Bill Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21000900,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16453128962031161510,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Groot Team-Up",
+        "Title": "Groot Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21001000,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8728139284375998831,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "She-Hulk Team-Up",
+        "Title": "She-Hulk Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21001600,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15369520605703245840,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Clea Team-Up",
+        "Title": "Clea Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21001900,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15897070380891706428,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "The Deadpool Kid Team-Up",
+        "Title": "The Deadpool Kid Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21000109,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6237744012630561006,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Falcon Team-Up - BOGO",
+        "Title": "Falcon Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21000600,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13923092414038741249,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Domino Team-Up",
+        "Title": "Domino Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21001300,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6999721444344270902,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Wasp Team-Up",
+        "Title": "Wasp Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21001400,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11858549063889195156,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Havok Team-Up",
+        "Title": "Havok Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21001500,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10437471149139039012,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Spider-Woman Team-Up",
+        "Title": "Spider-Woman Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21001800,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2376551315543560525,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Arachne Team-Up",
+        "Title": "Arachne Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21002100,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8115834385544319789,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Quicksilver Team-Up",
+        "Title": "Quicksilver Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21002200,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 3380275529851932802,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Angel Team-Up",
+        "Title": "Angel Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21002300,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12980491881127285336,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Sam Wilson Captain America Team-Up",
+        "Title": "Sam Wilson Captain America Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21002209,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 3380275529851932802,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Angel Team-Up - BOGO",
+        "Title": "Angel Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21002409,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 14119237192684540236,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Carnage Team-Up - BOGO",
+        "Title": "Carnage Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21000809,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 18303256609750061298,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Gamora Team-Up - BOGO",
+        "Title": "Gamora Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21001309,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6999721444344270902,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Wasp Team-Up - BOGO",
+        "Title": "Wasp Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21001509,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10437471149139039012,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Spider-Woman Team-Up - BOGO",
+        "Title": "Spider-Woman Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21002509,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 3930543209986658711,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Sunspot Team-Up - BOGO",
+        "Title": "Sunspot Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21002600,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 3045010422899741363,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Spider-Gwen Team-Up",
+        "Title": "Spider-Gwen Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21000209,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 9671769034704228926,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Spider-Man Team-Up - BOGO",
+        "Title": "Spider-Man Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21000309,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1054738674846798299,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Firestar Team-Up - BOGO",
+        "Title": "Firestar Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21000409,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1277161642800976004,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Magik Team-Up - BOGO",
+        "Title": "Magik Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21000509,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16998746507989160710,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Beta Ray Bill Team-Up - BOGO",
+        "Title": "Beta Ray Bill Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21000609,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13923092414038741249,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Domino Team-Up - BOGO",
+        "Title": "Domino Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21001409,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11858549063889195156,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Havok Team-Up - BOGO",
+        "Title": "Havok Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21002109,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8115834385544319789,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Quicksilver Team-Up - BOGO",
+        "Title": "Quicksilver Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21002609,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 3045010422899741363,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Spider-Gwen Team-Up - BOGO",
+        "Title": "Spider-Gwen Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21002700,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10410660460662559708,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Franken-Castle Team-Up",
+        "Title": "Franken-Castle Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21002800,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1511498568964510383,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Agent Venom Team-Up",
+        "Title": "Agent Venom Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21002900,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15428049067089531424,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Archangel Team-Up",
+        "Title": "Archangel Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21003000,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2004935368850084098,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Rescue Team-Up",
+        "Title": "Rescue Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21003100,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 14106451657111180367,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Falcon Captain America: Civil War Team-Up",
+        "Title": "Falcon Captain America: Civil War Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21003200,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8167857776852603118,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Agent 13 Captain America: Civil War Team-Up",
+        "Title": "Agent 13 Captain America: Civil War Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21003300,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5828233760603771784,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Miles Morales Team-Up",
+        "Title": "Miles Morales Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21002809,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1511498568964510383,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Agent Venom Team-Up - BOGO",
+        "Title": "Agent Venom Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21002909,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15428049067089531424,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Archangel Team-Up - BOGO",
+        "Title": "Archangel Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21003009,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2004935368850084098,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Rescue Team-Up - BOGO",
+        "Title": "Rescue Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21003109,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 14106451657111180367,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Falcon Captain America: Civil War Team-Up - BOGO",
+        "Title": "Falcon Captain America: Civil War Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21003209,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8167857776852603118,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2988754540081125925,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Agent 13 Captain America: Civil War Team-Up - BOGO",
+        "Title": "Agent 13 Captain America: Civil War Team-Up - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21003400,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6780683547102089860,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Kamala Khan Team-Up",
+        "Title": "Kamala Khan Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21003500,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8185446423366733970,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Quake Team-Up",
+        "Title": "Quake Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21003600,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5367608868641706774,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ghost Rider (Robbie Reyes) Team-Up",
+        "Title": "Ghost Rider (Robbie Reyes) Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21003700,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 7880164105764606844,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Jessica Jones Team-Up",
+        "Title": "Jessica Jones Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21003900,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6736348866002227356,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Mordo Doctor Strange Movie Team-Up",
+        "Title": "Mordo Doctor Strange Movie Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21003800,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12514766973523137093,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Doctor Strange Classic Team-Up",
+        "Title": "Doctor Strange Classic Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 99300248,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10702708241426815879,
+        "Quantity": 1
+      },
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17570586484656905865,
+        "Quantity": 1
+      },
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11000690653486915161,
+        "Quantity": 1
+      },
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 92372018352561754,
+        "Quantity": 1
+      },
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13891058503866523227,
+        "Quantity": 1
+      },
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16860880655061163612,
+        "Quantity": 1
+      },
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2914741963682487901,
+        "Quantity": 1
+      },
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12795105179188010590,
+        "Quantity": 1
+      },
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16422221390127111776,
+        "Quantity": 1
+      },
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2479702840782888545,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Punisher Dead Winter Team-Up",
+        "Title": "Punisher Dead Winter Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99300249,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10702708241426815879,
+        "Quantity": 1
+      },
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17570586484656905865,
+        "Quantity": 1
+      },
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11000690653486915161,
+        "Quantity": 1
+      },
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 92372018352561754,
+        "Quantity": 1
+      },
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13891058503866523227,
+        "Quantity": 1
+      },
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16860880655061163612,
+        "Quantity": 1
+      },
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2914741963682487901,
+        "Quantity": 1
+      },
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12795105179188010590,
+        "Quantity": 1
+      },
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16422221390127111776,
+        "Quantity": 1
+      },
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2479702840782888545,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Mini Mandroid Mk 7 Pet",
+        "Title": "Mini Mandroid Mk 7 Pet",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 21004000,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1939264464472379739,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Jubilee Team-Up",
+        "Title": "Jubilee Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 750
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21004200,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 9053752069011806168,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Punisher Netflix Team-Up",
+        "Title": "Punisher Netflix Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 21004100,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 4280273926886592762,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Medusa Team-Up",
+        "Title": "Medusa Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 550
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "TeamUp",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      },
+      {
+        "Name": "Special",
+        "Order": 2
+      }
+    ]
+  }
+]

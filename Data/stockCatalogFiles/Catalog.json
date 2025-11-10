@@ -1,7 +1,4 @@
-{  
-	"TimestampSeconds": 1508422929,
-	"TimestampMicroseconds": 544000,
-	"Entries": [
+[
   {
     "SkuId": 40019700,
     "GuidItems": [
@@ -1472,8 +1469,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Daredevil - I'm Not Daredevil Costume",
-        "Title": "Daredevil - I'm Not Daredevil Costume",
+        "Description": "Daredevil - I\u0027m Not Daredevil Costume",
+        "Title": "Daredevil - I\u0027m Not Daredevil Costume",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -1617,7 +1614,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -1676,7 +1673,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -1725,7 +1722,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 18095141954958532090,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -1769,7 +1766,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 13360552517740469713,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -2244,8 +2241,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "St. Patrick's Day Fortune Card",
-        "Title": "St. Patrick's Day Fortune Card",
+        "Description": "St. Patrick\u0027s Day Fortune Card",
+        "Title": "St. Patrick\u0027s Day Fortune Card",
         "ReleaseDate": "",
         "ItemPrice": 50
       }
@@ -4270,8 +4267,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Gambit 90's Costume",
-        "Title": "Gambit 90's Costume - BOGO",
+        "Description": "Gambit 90\u0027s Costume",
+        "Title": "Gambit 90\u0027s Costume - BOGO",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -5415,7 +5412,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 12848405922260132596,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -5630,8 +5627,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Gambit 90's Costume",
-        "Title": "Gambit 90's Costume",
+        "Description": "Gambit 90\u0027s Costume",
+        "Title": "Gambit 90\u0027s Costume",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -6318,8 +6315,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Captain America Marvel's Avengers: Age of Ultron (Maskless) - Variant Costume",
-        "Title": "Captain America Marvel's Avengers: Age of Ultron (Maskless) - Variant Costume",
+        "Description": "Captain America Marvel\u0027s Avengers: Age of Ultron (Maskless) - Variant Costume",
+        "Title": "Captain America Marvel\u0027s Avengers: Age of Ultron (Maskless) - Variant Costume",
         "ReleaseDate": "",
         "ItemPrice": 1250
       }
@@ -6643,7 +6640,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -6717,7 +6714,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -6796,7 +6793,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -6875,7 +6872,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -6964,7 +6961,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -7013,7 +7010,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 5460518059085536758,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -7057,7 +7054,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 16513128686675238775,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -7101,7 +7098,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 7132784530930736633,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -8554,7 +8551,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 5447523880388599345,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -8598,20 +8595,20 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 5447523880388599345,
-        "Quantity": 1
+        "Quantity": 18
       },
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 17117190722675416722,
-        "Quantity": 1
+        "Quantity": 18
       }
     ],
     "AdditionalGuidItems": [],
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Box of 36 S.H.I.E.L.D. & Hydra Cards",
-        "Title": "Box of 36 S.H.I.E.L.D. & HYDRA Cards",
+        "Description": "Box of 36 S.H.I.E.L.D. \u0026 Hydra Cards",
+        "Title": "Box of 36 S.H.I.E.L.D. \u0026 HYDRA Cards",
         "ReleaseDate": "",
         "ItemPrice": 3000
       }
@@ -9198,7 +9195,12 @@
       "Name": "Service",
       "Order": 0
     },
-    "TypeModifiers": []
+    "TypeModifiers": [
+      {
+        "Name": "PowerSpecPanel",
+        "Order": 0
+      }
+    ]
   },
   {
     "SkuId": 40024000,
@@ -9225,7 +9227,12 @@
       "Name": "Service",
       "Order": 0
     },
-    "TypeModifiers": []
+    "TypeModifiers": [
+      {
+        "Name": "PowerSpecPanel",
+        "Order": 0
+      }
+    ]
   },
   {
     "SkuId": 40024100,
@@ -9252,7 +9259,12 @@
       "Name": "Service",
       "Order": 0
     },
-    "TypeModifiers": []
+    "TypeModifiers": [
+      {
+        "Name": "PowerSpecPanel",
+        "Order": 0
+      }
+    ]
   },
   {
     "SkuId": 40024500,
@@ -11010,7 +11022,7 @@
       {
         "LanguageId": "en_us",
         "Description": "Entity.Items.Costumes.Prototypes.Colossus.MagnetosAcolyte",
-        "Title": "Colossus Magneto's Acolyte Costume - BOGO",
+        "Title": "Colossus Magneto\u0027s Acolyte Costume - BOGO",
         "ReleaseDate": "",
         "ItemPrice": 450
       }
@@ -11682,7 +11694,7 @@
       {
         "LanguageId": "en_us",
         "Description": "Entity.Items.Costumes.Prototypes.Wolverine.XMen90s",
-        "Title": "Wolverine X-Men 90's Costume - BOGO",
+        "Title": "Wolverine X-Men 90\u0027s Costume - BOGO",
         "ReleaseDate": "",
         "ItemPrice": 450
       }
@@ -12186,7 +12198,7 @@
       {
         "LanguageId": "en_us",
         "Description": "Entity.Items.Costumes.Prototypes.Cyclops.XMen90s",
-        "Title": "Cyclops 90's X-Men Costume - BOGO",
+        "Title": "Cyclops 90\u0027s X-Men Costume - BOGO",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -14202,7 +14214,7 @@
       {
         "LanguageId": "en_us",
         "Description": "Entity.Items.Costumes.Prototypes.JeanGrey.XMen90s",
-        "Title": "Jean Grey X-Men 90's Costume - BOGO",
+        "Title": "Jean Grey X-Men 90\u0027s Costume - BOGO",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -17603,8 +17615,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Rogue X-Men 90's Costume - BOGO",
-        "Title": "Rogue X-Men 90's Costume - BOGO",
+        "Description": "Rogue X-Men 90\u0027s Costume - BOGO",
+        "Title": "Rogue X-Men 90\u0027s Costume - BOGO",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -20698,12 +20710,12 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 15629284864133571223,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 7561248414309032083,
-        "Quantity": 1
+        "Quantity": 34
       }
     ],
     "AdditionalGuidItems": [],
@@ -21495,7 +21507,7 @@
       {
         "LanguageId": "en_us",
         "Description": "Entity.Items.Costumes.Prototypes.Colossus.MagnetosAcolyte",
-        "Title": "Colossus Magneto's Acolyte Costume",
+        "Title": "Colossus Magneto\u0027s Acolyte Costume",
         "ReleaseDate": "",
         "ItemPrice": 450
       }
@@ -21591,7 +21603,7 @@
       {
         "LanguageId": "en_us",
         "Description": "Entity.Items.Costumes.Prototypes.Cyclops.XMen90s",
-        "Title": "Cyclops 90's X-Men Costume",
+        "Title": "Cyclops 90\u0027s X-Men Costume",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -24254,7 +24266,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -24328,7 +24340,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -24402,7 +24414,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -24481,7 +24493,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -24565,7 +24577,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -24649,7 +24661,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -24733,7 +24745,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -24822,7 +24834,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -24911,7 +24923,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -25000,7 +25012,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -25089,7 +25101,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -25178,7 +25190,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -25267,7 +25279,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -25356,7 +25368,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -25405,7 +25417,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 15142736093714783733,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -25449,7 +25461,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 9964627584974134775,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -25533,7 +25545,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -25582,7 +25594,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 7561248414309032083,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -25666,7 +25678,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -25755,7 +25767,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -25844,7 +25856,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -25933,7 +25945,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -26022,7 +26034,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -26111,7 +26123,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -26200,7 +26212,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -26289,7 +26301,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -26378,7 +26390,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -26472,7 +26484,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -26565,7 +26577,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -26614,7 +26626,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 14181895682336629616,
-        "Quantity": 1
+        "Quantity": 5
       }
     ],
     "AdditionalGuidItems": [],
@@ -26662,7 +26674,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 14181895682336629616,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -27557,7 +27569,7 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Entity.Characters.Avatars.Shipping.JeanGrey\",\"6058963115066526887",
+        "Description": "Entity.Characters.Avatars.Shipping.JeanGrey\u0022,\u00226058963115066526887",
         "Title": "Jean Grey - BOGO",
         "ReleaseDate": "",
         "ItemPrice": 900
@@ -27880,7 +27892,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 16566255714732875836,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -27964,7 +27976,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 12848405922260132596,
-        "Quantity": 1
+        "Quantity": 5
       }
     ],
     "AdditionalGuidItems": [],
@@ -28096,7 +28108,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 17622955599300993330,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -29112,7 +29124,7 @@
       {
         "LanguageId": "en_us",
         "Description": "Entity.Items.Costumes.Prototypes.JeanGrey.XMen90s",
-        "Title": "Jean Grey X-Men 90's Costume",
+        "Title": "Jean Grey X-Men 90\u0027s Costume",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -29208,7 +29220,7 @@
       {
         "LanguageId": "en_us",
         "Description": "Entity.Items.Costumes.Prototypes.Storm.XMen90s",
-        "Title": "Storm X-Men 90's Costume",
+        "Title": "Storm X-Men 90\u0027s Costume",
         "ReleaseDate": "",
         "ItemPrice": 450
       }
@@ -29240,7 +29252,7 @@
       {
         "LanguageId": "en_us",
         "Description": "Entity.Items.Costumes.Prototypes.Wolverine.XMen90s",
-        "Title": "Wolverine X-Men 90's Costume",
+        "Title": "Wolverine X-Men 90\u0027s Costume",
         "ReleaseDate": "",
         "ItemPrice": 450
       }
@@ -30007,8 +30019,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Rogue X-Men 90's Costume",
-        "Title": "Rogue X-Men 90's Costume",
+        "Description": "Rogue X-Men 90\u0027s Costume",
+        "Title": "Rogue X-Men 90\u0027s Costume",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -30032,7 +30044,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 8652531632129843415,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -31068,7 +31080,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 15142736093714783733,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -31112,7 +31124,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 5460518059085536758,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -31156,7 +31168,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 9964627584974134775,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -31200,7 +31212,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 16513128686675238775,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -31244,7 +31256,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 7132784530930736633,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -31288,7 +31300,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 18095141954958532090,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -31476,7 +31488,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3228669383330833808,
-        "Quantity": 1
+        "Quantity": 5
       }
     ],
     "AdditionalGuidItems": [],
@@ -31524,7 +31536,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3228669383330833808,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -31868,7 +31880,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -31917,7 +31929,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 17117190722675416722,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -32414,7 +32426,7 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Entity.Characters.Avatars.Shipping.JeanGrey\",\"6058963115066526887",
+        "Description": "Entity.Characters.Avatars.Shipping.JeanGrey\u0022,\u00226058963115066526887",
         "Title": "Jean Grey",
         "ReleaseDate": "",
         "ItemPrice": 900
@@ -33175,7 +33187,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 5447523880388599345,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -33303,7 +33315,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 17117190722675416722,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -33823,7 +33835,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -35093,7 +35105,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -35237,7 +35249,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 2282370008873116725,
-        "Quantity": 1
+        "Quantity": 5
       }
     ],
     "AdditionalGuidItems": [],
@@ -35285,7 +35297,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 2282370008873116725,
-        "Quantity": 1
+        "Quantity": 10
       },
       {
         "PrototypeGuid": 0,
@@ -35298,7 +35310,7 @@
       {
         "LanguageId": "en_us",
         "Description": "10x Halloween Mystery Bag Bundle",
-        "Title": "10x Halloween Mystery Bag Bundle + Brood Wolverine Team-Up",
+        "Title": "10x Halloween Mystery Bag Bundle \u002B Brood Wolverine Team-Up",
         "ReleaseDate": "",
         "ItemPrice": 3500
       }
@@ -35410,7 +35422,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -35499,7 +35511,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -36793,7 +36805,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -37328,7 +37340,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 11797866468091305623,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -37608,7 +37620,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 7215523412926079494,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -37652,7 +37664,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 7215523412926079494,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -37763,7 +37775,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -37912,7 +37924,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 11797866468091305623,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -37956,7 +37968,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 1946373172390272690,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -38000,7 +38012,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 1946373172390272690,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -38552,7 +38564,7 @@
       {
         "LanguageId": "en_us",
         "Description": "Entity.Items.Costumes.Prototypes.Storm.XMen90s",
-        "Title": "Storm X-Men 90's Costume - BOGO",
+        "Title": "Storm X-Men 90\u0027s Costume - BOGO",
         "ReleaseDate": "",
         "ItemPrice": 450
       }
@@ -38677,8 +38689,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Daredevil - I'm Not Daredevil Costume",
-        "Title": "Daredevil - I'm Not Daredevil Costume - BOGO",
+        "Description": "Daredevil - I\u0027m Not Daredevil Costume",
+        "Title": "Daredevil - I\u0027m Not Daredevil Costume - BOGO",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -39415,7 +39427,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -40121,7 +40133,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -40210,7 +40222,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -40259,7 +40271,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 16029799220675486709,
-        "Quantity": 1
+        "Quantity": 19
       }
     ],
     "AdditionalGuidItems": [],
@@ -41119,7 +41131,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 17546342028166048137,
-        "Quantity": 1
+        "Quantity": 5
       }
     ],
     "AdditionalGuidItems": [],
@@ -41163,7 +41175,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 7873925855885731531,
-        "Quantity": 1
+        "Quantity": 5
       }
     ],
     "AdditionalGuidItems": [],
@@ -41207,7 +41219,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 17546342028166048137,
-        "Quantity": 1
+        "Quantity": 10
       },
       {
         "PrototypeGuid": 0,
@@ -41219,8 +41231,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "10x Team Captain America Mystery Box Bundle + Captain America Team-Up",
-        "Title": "10x Team Captain America Mystery Box Bundle + Captain America Team-Up",
+        "Description": "10x Team Captain America Mystery Box Bundle \u002B Captain America Team-Up",
+        "Title": "10x Team Captain America Mystery Box Bundle \u002B Captain America Team-Up",
         "ReleaseDate": "",
         "ItemPrice": 3500
       }
@@ -41256,7 +41268,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 7873925855885731531,
-        "Quantity": 1
+        "Quantity": 10
       },
       {
         "PrototypeGuid": 0,
@@ -41268,8 +41280,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "10x Team Iron Man Mystery Box Bundle + Iron Man Team-Up",
-        "Title": "10x Team Iron Man Mystery Box Bundle + Iron Man Team-Up",
+        "Description": "10x Team Iron Man Mystery Box Bundle \u002B Iron Man Team-Up",
+        "Title": "10x Team Iron Man Mystery Box Bundle \u002B Iron Man Team-Up",
         "ReleaseDate": "",
         "ItemPrice": 3500
       }
@@ -42302,7 +42314,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -43222,7 +43234,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -43303,7 +43315,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 15254461210072522943,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -43347,7 +43359,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 15254461210072522943,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -43527,7 +43539,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -43701,8 +43713,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Luke Cage Marvel's Luke Cage (Netflix) Costume",
-        "Title": "Luke Cage Marvel's Luke Cage Costume",
+        "Description": "Luke Cage Marvel\u0027s Luke Cage (Netflix) Costume",
+        "Title": "Luke Cage Marvel\u0027s Luke Cage Costume",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -43758,7 +43770,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 17077694920195514766,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -43802,7 +43814,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 17077694920195514766,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -43866,7 +43878,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -43883,8 +43895,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Marvel's Luke Cage Bundle",
-        "Title": "Marvel's Luke Cage Bundle",
+        "Description": "Marvel\u0027s Luke Cage Bundle",
+        "Title": "Marvel\u0027s Luke Cage Bundle",
         "ReleaseDate": "",
         "ItemPrice": 2000
       }
@@ -44059,8 +44071,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Green Goblin Jack O' Lantern Enhanced Costume",
-        "Title": "Green Goblin Jack O' Lantern Enhanced Costume",
+        "Description": "Green Goblin Jack O\u0027 Lantern Enhanced Costume",
+        "Title": "Green Goblin Jack O\u0027 Lantern Enhanced Costume",
         "ReleaseDate": "",
         "ItemPrice": 1450
       }
@@ -44099,7 +44111,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -44121,8 +44133,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Marvel's Doctor Strange Bundle",
-        "Title": "Marvel's Doctor Strange Bundle",
+        "Description": "Marvel\u0027s Doctor Strange Bundle",
+        "Title": "Marvel\u0027s Doctor Strange Bundle",
         "ReleaseDate": "",
         "ItemPrice": 2500
       }
@@ -44158,7 +44170,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 5064982150159935196,
-        "Quantity": 1
+        "Quantity": 5
       }
     ],
     "AdditionalGuidItems": [],
@@ -44206,7 +44218,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 5064982150159935196,
-        "Quantity": 1
+        "Quantity": 10
       },
       {
         "PrototypeGuid": 0,
@@ -44218,8 +44230,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "10x Sorcerer Supreme Mystery Box Bundle + Doctor Strange Team-Up",
-        "Title": "10x Sorcerer Supreme Mystery Box Bundle + Doctor Strange Team-Up",
+        "Description": "10x Sorcerer Supreme Mystery Box Bundle \u002B Doctor Strange Team-Up",
+        "Title": "10x Sorcerer Supreme Mystery Box Bundle \u002B Doctor Strange Team-Up",
         "ReleaseDate": "",
         "ItemPrice": 3500
       }
@@ -44656,8 +44668,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Luke Cage Marvel's Luke Cage Costume - BOGO",
-        "Title": "Luke Cage Marvel's Luke Cage Costume - BOGO",
+        "Description": "Luke Cage Marvel\u0027s Luke Cage Costume - BOGO",
+        "Title": "Luke Cage Marvel\u0027s Luke Cage Costume - BOGO",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -44782,8 +44794,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Green Goblin Jack O' Lantern Enhanced Costume - BOGO",
-        "Title": "Green Goblin Jack O' Lantern Enhanced Costume - BOGO",
+        "Description": "Green Goblin Jack O\u0027 Lantern Enhanced Costume - BOGO",
+        "Title": "Green Goblin Jack O\u0027 Lantern Enhanced Costume - BOGO",
         "ReleaseDate": "",
         "ItemPrice": 1450
       }
@@ -45847,7 +45859,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -45864,8 +45876,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Beast & Jubilee Bundle",
-        "Title": "Beast & Jubilee Bundle",
+        "Description": "Beast \u0026 Jubilee Bundle",
+        "Title": "Beast \u0026 Jubilee Bundle",
         "ReleaseDate": "",
         "ItemPrice": 2250
       }
@@ -45941,7 +45953,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 1
+        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -46022,7 +46034,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 16305624328130272908,
-        "Quantity": 1
+        "Quantity": 5
       }
     ],
     "AdditionalGuidItems": [],
@@ -46066,7 +46078,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 16305624328130272908,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -46110,7 +46122,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 16085525630569096136,
-        "Quantity": 1
+        "Quantity": 5
       }
     ],
     "AdditionalGuidItems": [],
@@ -46154,7 +46166,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 16085525630569096136,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -46198,7 +46210,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 9761682476903964936,
-        "Quantity": 1
+        "Quantity": 5
       }
     ],
     "AdditionalGuidItems": [],
@@ -46242,7 +46254,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 9761682476903964936,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -46286,7 +46298,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 8014895674141123120,
-        "Quantity": 1
+        "Quantity": 5
       }
     ],
     "AdditionalGuidItems": [],
@@ -46330,7 +46342,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 8014895674141123120,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -47080,7 +47092,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 11660572688292912682,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -47124,7 +47136,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 11660572688292912682,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -47168,7 +47180,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 11660572688292912682,
-        "Quantity": 1
+        "Quantity": 72
       }
     ],
     "AdditionalGuidItems": [],
@@ -47265,8 +47277,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Iron Fist Marvel's Iron Fist Costume",
-        "Title": "Iron Fist Marvel's Iron Fist Costume",
+        "Description": "Iron Fist Marvel\u0027s Iron Fist Costume",
+        "Title": "Iron Fist Marvel\u0027s Iron Fist Costume",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -47344,8 +47356,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Marvel's Iron Fist Bundle",
-        "Title": "Marvel's Iron Fist Bundle",
+        "Description": "Marvel\u0027s Iron Fist Bundle",
+        "Title": "Marvel\u0027s Iron Fist Bundle",
         "ReleaseDate": "",
         "ItemPrice": 1400
       }
@@ -47940,8 +47952,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Iron Fist Marvel's Iron Fist Costume - BOGO",
-        "Title": "Iron Fist Marvel's Iron Fist Costume - BOGO",
+        "Description": "Iron Fist Marvel\u0027s Iron Fist Costume - BOGO",
+        "Title": "Iron Fist Marvel\u0027s Iron Fist Costume - BOGO",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -47976,8 +47988,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Star-Lord Marvel's Guardians of the Galaxy Vol. 2 Costume",
-        "Title": "Star-Lord Marvel's Guardians of the Galaxy Vol. 2 Costume",
+        "Description": "Star-Lord Marvel\u0027s Guardians of the Galaxy Vol. 2 Costume",
+        "Title": "Star-Lord Marvel\u0027s Guardians of the Galaxy Vol. 2 Costume",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -48012,8 +48024,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Rocket Raccoon Marvel's Guardians of the Galaxy Vol. 2 Enhanced Costume",
-        "Title": "Rocket Raccoon Marvel's Guardians of the Galaxy Vol. 2 Enhanced Costume",
+        "Description": "Rocket Raccoon Marvel\u0027s Guardians of the Galaxy Vol. 2 Enhanced Costume",
+        "Title": "Rocket Raccoon Marvel\u0027s Guardians of the Galaxy Vol. 2 Enhanced Costume",
         "ReleaseDate": "",
         "ItemPrice": 1450
       }
@@ -48077,7 +48089,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 17412548336846579190,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -48121,7 +48133,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 17412548336846579190,
-        "Quantity": 1
+        "Quantity": 36
       }
     ],
     "AdditionalGuidItems": [],
@@ -48165,7 +48177,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 17412548336846579190,
-        "Quantity": 1
+        "Quantity": 72
       },
       {
         "PrototypeGuid": 0,
@@ -48304,8 +48316,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Groot Marvel's Guardians of the Galaxy Vol. 2 Pet",
-        "Title": "Groot Marvel's Guardians of the Galaxy Vol. 2 Pet",
+        "Description": "Groot Marvel\u0027s Guardians of the Galaxy Vol. 2 Pet",
+        "Title": "Groot Marvel\u0027s Guardians of the Galaxy Vol. 2 Pet",
         "ReleaseDate": "",
         "ItemPrice": 10000
       }
@@ -48477,7 +48489,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 8669962911793554434,
-        "Quantity": 1
+        "Quantity": 10
       }
     ],
     "AdditionalGuidItems": [],
@@ -48521,7 +48533,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 8669962911793554434,
-        "Quantity": 1
+        "Quantity": 36
       },
       {
         "PrototypeGuid": 0,
@@ -48570,7 +48582,7 @@
       {
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 8669962911793554434,
-        "Quantity": 1
+        "Quantity": 72
       },
       {
         "PrototypeGuid": 0,
@@ -48892,8 +48904,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Daredevil Marvel's Daredevil Maskless Costume",
-        "Title": "Daredevil Marvel's Daredevil Maskless Costume",
+        "Description": "Daredevil Marvel\u0027s Daredevil Maskless Costume",
+        "Title": "Daredevil Marvel\u0027s Daredevil Maskless Costume",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -48928,8 +48940,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Elektra Marvel's Daredevil Maskless Costume",
-        "Title": "Elektra Marvel's Daredevil Maskless Costume",
+        "Description": "Elektra Marvel\u0027s Daredevil Maskless Costume",
+        "Title": "Elektra Marvel\u0027s Daredevil Maskless Costume",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -48964,8 +48976,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Luke Cage Marvel's Luke Cage Hood Up Costume",
-        "Title": "Luke Cage Marvel's Luke Cage Hood Up Costume",
+        "Description": "Luke Cage Marvel\u0027s Luke Cage Hood Up Costume",
+        "Title": "Luke Cage Marvel\u0027s Luke Cage Hood Up Costume",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -49006,8 +49018,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Star-Lord Marvel's Guardians of the Galaxy Vol. 2 Costume - BOGO",
-        "Title": "Star-Lord Marvel's Guardians of the Galaxy Vol. 2 Costume - BOGO",
+        "Description": "Star-Lord Marvel\u0027s Guardians of the Galaxy Vol. 2 Costume - BOGO",
+        "Title": "Star-Lord Marvel\u0027s Guardians of the Galaxy Vol. 2 Costume - BOGO",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -49048,8 +49060,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Rocket Raccoon Marvel's Guardians of the Galaxy Vol. 2 Enhanced Costume - BOGO",
-        "Title": "Rocket Raccoon Marvel's Guardians of the Galaxy Vol. 2 Enhanced Costume - BOGO",
+        "Description": "Rocket Raccoon Marvel\u0027s Guardians of the Galaxy Vol. 2 Enhanced Costume - BOGO",
+        "Title": "Rocket Raccoon Marvel\u0027s Guardians of the Galaxy Vol. 2 Enhanced Costume - BOGO",
         "ReleaseDate": "",
         "ItemPrice": 1450
       }
@@ -49132,8 +49144,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Daredevil Marvel's Daredevil Maskless Costume - BOGO",
-        "Title": "Daredevil Marvel's Daredevil Maskless Costume - BOGO",
+        "Description": "Daredevil Marvel\u0027s Daredevil Maskless Costume - BOGO",
+        "Title": "Daredevil Marvel\u0027s Daredevil Maskless Costume - BOGO",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -49174,8 +49186,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Elektra Marvel's Daredevil Maskless Costume - BOGO",
-        "Title": "Elektra Marvel's Daredevil Maskless Costume - BOGO",
+        "Description": "Elektra Marvel\u0027s Daredevil Maskless Costume - BOGO",
+        "Title": "Elektra Marvel\u0027s Daredevil Maskless Costume - BOGO",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -49216,8 +49228,8 @@
     "LocalizedEntries": [
       {
         "LanguageId": "en_us",
-        "Description": "Luke Cage Marvel's Luke Cage Hood Up Costume - BOGO",
-        "Title": "Luke Cage Marvel's Luke Cage Hood Up Costume - BOGO",
+        "Description": "Luke Cage Marvel\u0027s Luke Cage Hood Up Costume - BOGO",
+        "Title": "Luke Cage Marvel\u0027s Luke Cage Hood Up Costume - BOGO",
         "ReleaseDate": "",
         "ItemPrice": 950
       }
@@ -49361,39 +49373,8 @@
       },
       {
         "Name": "NoDisplayStore",
-        "Order":1}]}],
-		  "Urls": [
-    {
-      "LocaleId": "en_us",
-      "StoreHomePageUrl": "http://storecdn.marvelheroes.com/cdn/en_us/mhgame_store_home",
-      "StoreBannerPageUrls": [
-        {
-          "Type": "Home",
-          "Url": "http://storecdn.marvelheroes.com/cdn/en_us/home_banner"
-        },
-        {
-          "Type": "Heroes",
-          "Url": "http://storecdn.marvelheroes.com/cdn/en_us/heroes_banner"
-        },
-        {
-          "Type": "Costumes",
-          "Url": "http://storecdn.marvelheroes.com/cdn/en_us/costumes_banner"
-        },
-        {
-          "Type": "Boosts",
-          "Url": "http://storecdn.marvelheroes.com/cdn/en_us/boosts_banner"
-        },
-        {
-          "Type": "Chests",
-          "Url": "http://storecdn.marvelheroes.com/cdn/en_us/chests_banner"
-        },
-        {
-          "Type": "Specials",
-          "Url": "http://storecdn.marvelheroes.com/cdn/en_us/specials_banner"
-        }
-      ],
-      "StoreRealMoneyUrl": "https://mtxstore.marvelheroes.com/mtx_en_us/gs-bundles.html"
-    }
-  ],
-  "ClientMustDownloadImages": true
-}
+        "Order": 1
+      }
+    ]
+  }
+]

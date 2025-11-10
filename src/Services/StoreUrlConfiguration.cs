@@ -10,7 +10,7 @@ namespace CatalogManager.Services
         private static readonly string ConfigFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "store_config.json");
         
         public string BundleBaseUrl { get; set; } = "http://localhost/store/bundles";
-        public string ImageBaseUrl { get; set; } = "http://localhost/store/images";
+        public string ThumbnailBaseUrl { get; set; } = "http://localhost/store/compressed";
         
         public static async Task<StoreUrlConfiguration> LoadAsync()
         {

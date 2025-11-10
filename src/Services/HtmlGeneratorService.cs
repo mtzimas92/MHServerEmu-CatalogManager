@@ -18,152 +18,100 @@ namespace CatalogManager.Services
         private readonly string _htmlOutputDirectory;
         private readonly string _imageOutputDirectory;
         private readonly string _cssOutputDirectory;
+        private readonly Dictionary<string, string> _displayNameMapping;
+
         private readonly CatalogService _catalogService;
-        
+
         public HtmlGeneratorService(CatalogService catalogService = null, string outputDirectory = "WebContent")
         {
             _catalogService = catalogService;
             _htmlOutputDirectory = Path.Combine(outputDirectory, "html");
             _imageOutputDirectory = Path.Combine(outputDirectory, "images");
             _cssOutputDirectory = Path.Combine(outputDirectory, "css");
-            
+
             // Ensure directories exist
             Directory.CreateDirectory(_htmlOutputDirectory);
             Directory.CreateDirectory(_imageOutputDirectory);
             Directory.CreateDirectory(_cssOutputDirectory);
-            
+
             // Create CSS file if it doesn't exist
             CreateCssFileIfNeeded();
+            var jsonPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "display_names.json");
+            var jsonContent = File.ReadAllText(jsonPath);
+            _displayNameMapping = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, string>>(jsonContent);
+
         }
-        
+        private string GetItemName(ulong prototypeId)
+        {
+            var path = MHServerEmu.Games.GameData.GameDatabase.GetPrototypeName((MHServerEmu.Games.GameData.PrototypeId)prototypeId);
+            if (_displayNameMapping.TryGetValue(path, out string displayName) && displayName != "N/A")
+            {
+                return displayName;
+            }
+            return path;
+        }
         private void CreateCssFileIfNeeded()
         {
-            string cssFilePath = Path.Combine(_cssOutputDirectory, "bundle-style.css");
+            string cssFilePath = Path.Combine(_cssOutputDirectory, "style.css");
             if (!File.Exists(cssFilePath))
             {
-                string css = @"
-                    body {
-                        font-family: 'Roboto', Arial, sans-serif;
-                        margin: 0;
-                        padding: 0;
-                        background-color: #1a1a1a;
-                        color: #f0f0f0;
-                    }
-                    
-                    .container {
-                        max-width: 1000px;
-                        margin: 0 auto;
-                        padding: 30px;
-                        background-color: #2a2a2a;
-                        box-shadow: 0 0 20px rgba(0,0,0,0.5);
-                        border-radius: 8px;
-                        margin-top: 30px;
-                        margin-bottom: 30px;
-                    }
-                    
-                    .header {
-                        display: flex;
-                        align-items: center;
-                        margin-bottom: 30px;
-                        border-bottom: 1px solid #444;
-                        padding-bottom: 20px;
-                    }
-                    
-                    .header-image {
-                        width: 256px;
-                        height: 128px;
-                        margin-right: 30px;
-                        border-radius: 5px;
-                        box-shadow: 0 0 10px rgba(0,0,0,0.3);
-                    }
-                    
-                    .header-content h1 {
-                        color: #e63946;
-                        margin: 0 0 10px 0;
-                        font-size: 32px;
-                    }
-                    
-                    .price {
-                        font-size: 28px;
-                        font-weight: bold;
-                        color: #ffd700;
-                        margin: 10px 0;
-                    }
-                    
-                    .description {
-                        margin-bottom: 30px;
-                        font-size: 16px;
-                        line-height: 1.6;
-                        color: #cccccc;
-                    }
-                    
-                    .items-container {
-                        display: grid;
-                        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                        gap: 20px;
-                        margin-top: 30px;
-                    }
-                    
-                    .item {
-                        background-color: #333;
-                        border-radius: 8px;
-                        padding: 15px;
-                        transition: transform 0.2s, box-shadow 0.2s;
-                        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                    }
-                    
-                    .item:hover {
-                        transform: translateY(-5px);
-                        box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-                    }
-                    
-                    .item-name {
-                        font-weight: bold;
-                        font-size: 18px;
-                        margin-bottom: 10px;
-                        color: #4cc9f0;
-                    }
-                    
-                    .item-type {
-                        font-size: 14px;
-                        color: #aaa;
-                    }
-                    
-                    .footer {
-                        margin-top: 40px;
-                        text-align: center;
-                        font-size: 14px;
-                        color: #888;
-                        border-top: 1px solid #444;
-                        padding-top: 20px;
-                    }
-                    
-                    .buy-button {
-                        display: inline-block;
-                        background-color: #e63946;
-                        color: white;
-                        padding: 12px 30px;
-                        border-radius: 5px;
-                        text-decoration: none;
-                        font-weight: bold;
-                        margin-top: 20px;
-                        transition: background-color 0.2s;
-                    }
-                    
-                    .buy-button:hover {
-                        background-color: #f25d6a;
-                    }
-                    
-                    .savings {
-                        background-color: #4cc9f0;
-                        color: #1a1a1a;
-                        padding: 5px 10px;
-                        border-radius: 5px;
-                        font-weight: bold;
-                        display: inline-block;
-                        margin-left: 15px;
-                    }
-                ";
+                string css = @"html {
+    background-color: #0d0d0b;
+    color: #d7d7d7;
+    font: 18px/1.385 Verdana;
+}
+
+*:focus {
+    outline-color: #00e8ff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #00aaff;
+    font-family: ""Bebas Neue"", ""Trebuchet MS"", Verdana, sans-serif;
+    font-weight: normal;
+}
+
+button, input {
+    box-sizing: border-box;
+    border: 1px solid black;
+    box-shadow: 0 0 1px 1px #00aaff;
+    background: #1c1c1c;
+    color: inherit;
+    font: inherit;
+}
+
+button {
+    padding: 8px;
+}
+
+button:hover {
+    box-shadow: 0 0 1px 1px white;
+}
+
+div.content {
+    margin: 10px auto;
+    padding: 20px;
+    border: 1px solid #00717c;
+    background-color: #00090e;
+}
+
+div.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+span.enhanced-keyword {
+    color: #9128bb;
+}
+
+span.price {
+    color: #00aaff;
+    font-family: ""Bebas Neue"", ""Trebuchet MS"", Verdana, sans-serif;
+    font-weight: normal;
+    font-size: 32px;
+}
+";
                 
                 File.WriteAllText(cssFilePath, css);
             }
@@ -179,96 +127,53 @@ namespace CatalogManager.Services
                 
             var entry = bundle.LocalizedEntries[0];
             string title = entry.Title;
-            string description = entry.Description;
             int price = entry.ItemPrice;
             
-            // Calculate total value of items (if we have access to the catalog service)
-            int totalValue = 0;
-            int savings = 0;
-            string savingsPercentage = "";
-            
-            if (_catalogService != null)
-            {
-                try
-                {
-                    foreach (var guidItem in bundle.GuidItems)
-                    {
-                        var item = await _catalogService.GetItemByPrototypeIdAsync(guidItem.ItemPrototypeRuntimeIdForClient);
-                        if (item != null && item.LocalizedEntries.Count > 0)
-                        {
-                            totalValue += item.LocalizedEntries[0].ItemPrice;
-                        }
-                    }
-                    
-                    if (totalValue > 0)
-                    {
-                        savings = totalValue - price;
-                        savingsPercentage = totalValue > 0 ? $"{(savings * 100 / totalValue):0}%" : "";
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine($"Error calculating bundle value: {ex.Message}");
-                    // Continue without savings information
-                }
-            }
-            
-            // Generate thumbnail path
-            string thumbnailFileName = $"MTX_Store_Bundle_{title.Replace(" ", "-")}_Thumb.png";
-            string thumbnailRelativePath = $"../images/{thumbnailFileName}";
-            
-            // Generate a simple HTML page for the bundle
-            var html = new StringBuilder();
-            html.AppendLine("<!DOCTYPE html>");
-            html.AppendLine("<html lang=\"en\">");
-            html.AppendLine("<head>");
-            html.AppendLine("    <meta charset=\"UTF-8\">");
-            html.AppendLine("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
-            html.AppendLine($"    <title>{title} - Marvel Heroes Store</title>");
-            html.AppendLine("    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap\" rel=\"stylesheet\">");
-            html.AppendLine("    <link rel=\"stylesheet\" href=\"../css/bundle-style.css\">");
-            html.AppendLine("</head>");
-            html.AppendLine("<body>");
-            html.AppendLine("    <div class=\"container\">");
-            
-            // Header with image and title
-            html.AppendLine("        <div class=\"header\">");
-            html.AppendLine($"            <img src=\"{thumbnailRelativePath}\" alt=\"{title}\" class=\"header-image\">");
-            html.AppendLine("            <div class=\"header-content\">");
-            html.AppendLine($"                <h1>{title}</h1>");
-            html.AppendLine($"                <div class=\"price\">{price} G");
-            
-            // Show savings if available
-            if (savings > 0)
-            {
-                html.AppendLine($"                    <span class=\"savings\">Save {savingsPercentage} ({savings} G)</span>");
-            }
-            
-            html.AppendLine("                </div>");
-            html.AppendLine($"                <a href=\"#\" class=\"buy-button\">Purchase Now</a>");
-            html.AppendLine("            </div>");
-            html.AppendLine("        </div>");
-            
-            // Description
-            html.AppendLine($"        <div class=\"description\">{description}</div>");
-            
-            // Bundle contents
-            html.AppendLine("        <h2>Bundle Contents:</h2>");
-            html.AppendLine("        <div class=\"items-container\">");
-            
-            // Add items in the bundle
+            // Build items list HTML
+            var itemsHtml = new StringBuilder();
             foreach (var guidItem in bundle.GuidItems)
             {
                 string itemName = GetItemName(guidItem.ItemPrototypeRuntimeIdForClient);
                 
-                html.AppendLine("            <div class=\"item\">");
-                html.AppendLine($"                <div class=\"item-name\">{itemName}</div>");
-                html.AppendLine("            </div>");
+                // Do not specify quantity if it's only one thing
+                if (guidItem.Quantity == 1)
+                {
+                    itemsHtml.AppendLine($"\t\t\t<li>{itemName}</li>");
+                }
+                else
+                {
+                    itemsHtml.AppendLine($"\t\t\t<li>{itemName} x{guidItem.Quantity}</li>");
+                }
             }
             
-            html.AppendLine("        </div>");
-                        
-            html.AppendLine("    </div>");
+            // Format SkuId as hexadecimal (0x format)
+            string skuIdHex = $"0x{bundle.SkuId:X}";
+            
+            // Generate HTML using the simpler template
+            var html = new StringBuilder();
+            html.AppendLine("<!DOCTYPE html>");
+            html.AppendLine("<html lang=\"en\">");
+            html.AppendLine("<head>");
+            html.AppendLine("\t<meta charset=\"UTF-8\">");
+            html.AppendLine("\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
+            html.AppendLine($"\t<title>{title}</title>");
+            html.AppendLine("\t<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">");
+            html.AppendLine("\t<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>");
+            html.AppendLine("\t<link href=\"https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap\" rel=\"stylesheet\">");
+            html.AppendLine("\t<link rel=\"stylesheet\" href=\"css/style.css\">");
+            html.AppendLine("</head>");
+            html.AppendLine("<body>");
+            html.AppendLine("\t<div class=\"content\">");
+            html.AppendLine($"\t\t<h1>{title}</h1>");
+            html.AppendLine("\t\t<p>Included in this bundle:</p>");
+            html.AppendLine("\t\t<ul>");
+            html.Append(itemsHtml.ToString());
+            html.AppendLine("\t\t</ul>");
+            html.AppendLine("\t</div>");
+            html.AppendLine("\t<div class=\"buttons content\">");
+            html.AppendLine($"\t\t<span class=\"price\">{price} G</span>");
+            html.AppendLine($"\t\t<button onclick=\"myApi.BuyBundleFromJS('{skuIdHex}')\">Buy Now!</button>");
+            html.AppendLine("\t</div>");
             html.AppendLine("</body>");
             html.AppendLine("</html>");
             
@@ -403,17 +308,21 @@ namespace CatalogManager.Services
             await Task.CompletedTask; // Just to make the method async
         }
         
-        private string GetItemName(ulong prototypeId)
+        
+        private string GetItemCategory(ulong prototypeId)
         {
-            // Try to get the item name from the game database
-            try
-            {
-                return MHServerEmu.Games.GameData.GameDatabase.GetPrototypeName((MHServerEmu.Games.GameData.PrototypeId)prototypeId);
-            }
-            catch
-            {
-                return $"Item #{prototypeId}";
-            }
+            var path = MHServerEmu.Games.GameData.GameDatabase.GetPrototypeName((MHServerEmu.Games.GameData.PrototypeId)prototypeId);
+            
+            if (path.Contains("/Consumables/")) return "Consumables";
+            if (path.Contains("/CharacterTokens/")) return "Character Tokens";
+            if (path.Contains("/Costumes/")) return "Costumes";
+            if (path.Contains("/CurrencyItems/")) return "Currency Items";
+            if (path.Contains("/Pets/")) return "Pets";
+            if (path.Contains("/Crafting/")) return "Crafting";
+            if (path.Contains("/StashInventories/PageProtos/AvatarGear")) return "Stash Tabs";
+            if (path.Contains("/Test/") || path.Contains("/RaidTest/") || path.Contains("/TestMedals/")) return "Test Gear";
+            
+            return "Other";
         }
         
         public async Task<string> GenerateItemDetailsHtmlAsync(ulong prototypeId, string title, string description, int price)

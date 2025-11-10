@@ -1,0 +1,8673 @@
+[
+  {
+    "SkuId": 51000000,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17591756837553313434,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Mister Fantastic",
+        "Title": "Mister Fantastic",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 51000001,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12259390671146653669,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Invisible Woman",
+        "Title": "Invisible Woman",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 51000002,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6996312464889026103,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Human Torch",
+        "Title": "Human Torch",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 51000003,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 14005962908529333272,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Thing",
+        "Title": "Thing",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 51000004,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11103546526429026090,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Silver Surfer",
+        "Title": "Silver Surfer",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20001209,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13237838511939982809,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Wolverine",
+        "Title": "Wolverine - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009600,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8755692150967833833,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Magneto",
+        "Title": "Magneto",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20008400,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 18152689483875489544,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Nightcrawler",
+        "Title": "Nightcrawler",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20000500,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8294172517850551218,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Hulk",
+        "Title": "Hulk",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20007900,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 14354783269825877311,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Luke Cage Hero",
+        "Title": "Luke Cage",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20008000,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13109043516307281699,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Squirrel Girl",
+        "Title": "Squirrel Girl",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20001200,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13237838511939982809,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Wolverine",
+        "Title": "Wolverine",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20000200,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1660250039076459846,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Deadpool",
+        "Title": "Deadpool",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20000700,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17510769099164947813,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ms Marvel",
+        "Title": "Ms Marvel",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20000908,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8618811208778194378,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Spider-Man Hero Token",
+        "Title": "Spider-Man Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007608,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 583254199792902004,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Rocket Raccoon Hero Token",
+        "Title": "Rocket Raccoon Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010709,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6139368802772849654,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Blade - BOGO",
+        "Title": "Blade - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008409,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 18152689483875489544,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Nightcrawler",
+        "Title": "Nightcrawler - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008509,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 4196473162086422076,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Moon Knight",
+        "Title": "Moon Knight - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008609,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 9703681217466931069,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Doctor Strange",
+        "Title": "Doctor Strange - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008709,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13583994425176888893,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Taskmaster",
+        "Title": "Taskmaster - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009309,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6514650100102861856,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Rogue - BOGO",
+        "Title": "Rogue - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009709,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 7643048032188437211,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "X-23 - BOGO",
+        "Title": "X-23 - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009809,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15662110445428479011,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Venom - BOGO",
+        "Title": "Venom - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000607,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12587525800075468027,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Iron Man Hero Token - BOGO",
+        "Title": "Iron Man Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20001007,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15141359335250926652,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Storm Hero Token - BOGO",
+        "Title": "Storm Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007407,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15883360191221406660,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Thor Hero Token - BOGO",
+        "Title": "Thor Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007707,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 7824327606620789758,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Cable Hero Token - BOGO",
+        "Title": "Cable Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008107,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8801259638968097718,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Loki Hero Token - BOGO",
+        "Title": "Loki Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008207,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 18240003872669572219,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Gambit Hero Token - BOGO",
+        "Title": "Gambit Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000709,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17510769099164947813,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ms Marvel",
+        "Title": "Ms Marvel - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008009,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13109043516307281699,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Squirrel Girl",
+        "Title": "Squirrel Girl - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008109,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 14419064055405876141,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Loki",
+        "Title": "Loki - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008209,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6448072532466209906,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Gambit",
+        "Title": "Gambit - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20001000,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6791894920589808691,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Storm",
+        "Title": "Storm",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20008100,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 14419064055405876141,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Loki",
+        "Title": "Loki",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20008900,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 724683970231539048,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Psylocke",
+        "Title": "Psylocke",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20009200,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5394058310044226921,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Star-Lord",
+        "Title": "Star-Lord",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20010500,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8651855704152086045,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "War Machine",
+        "Title": "War Machine",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20010108,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 538123165725564155,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "She-Hulk Hero Token",
+        "Title": "She-Hulk Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000208,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11793431856982662479,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Deadpool Hero Token",
+        "Title": "Deadpool Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000408,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11139745655194524917,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Hawkeye Hero Token",
+        "Title": "Hawkeye Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000508,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13917324252746685371,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Hulk Hero Token",
+        "Title": "Hulk Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000608,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12587525800075468027,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Iron Man Hero Token",
+        "Title": "Iron Man Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000708,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5161816693443140974,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ms Marvel Hero Token",
+        "Title": "Ms Marvel Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000808,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 7582275884851207956,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Scarlet Witch Hero Token",
+        "Title": "Scarlet Witch Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20001008,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15141359335250926652,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Storm Hero Token",
+        "Title": "Storm Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20005108,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12645478590862925558,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Black Panther Hero Token",
+        "Title": "Black Panther Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20005208,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17632028704359456117,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Punisher Hero Token",
+        "Title": "Punisher Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20006008,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8469747402821672494,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Black Widow Hero Token",
+        "Title": "Black Widow Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20006508,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6091389445168766391,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Daredevil Hero Token",
+        "Title": "Daredevil Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007208,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 3380955624255397250,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Colossus Hero Token",
+        "Title": "Colossus Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007308,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17312088476783418628,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Cyclops Hero Token",
+        "Title": "Cyclops Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007408,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15883360191221406660,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Thor Hero Token",
+        "Title": "Thor Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007508,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1750229775416040796,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Jean Grey Hero Token",
+        "Title": "Jean Grey Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007708,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 7824327606620789758,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Cable Hero Token",
+        "Title": "Cable Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007908,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8329024894305049928,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Luke Cage Hero Token",
+        "Title": "Luke Cage Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008008,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2073670518888013612,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Squirrel Girl Hero Token",
+        "Title": "Squirrel Girl Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008108,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8801259638968097718,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Loki Hero Token",
+        "Title": "Loki Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008308,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8736529618564226626,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ghost Rider Hero Token",
+        "Title": "Ghost Rider Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008408,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5962989307772870417,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Nightcrawler Hero Token",
+        "Title": "Nightcrawler Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008508,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 14082960614354853445,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Moon Knight Hero Token",
+        "Title": "Moon Knight Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008908,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13740011237160328561,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Psylocke Hero Token",
+        "Title": "Psylocke Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009208,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 18337320827519573362,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Star-Lord Hero Token",
+        "Title": "Star-Lord Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009308,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15423119918681037865,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Rogue Hero Token",
+        "Title": "Rogue Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009408,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12915922378230668219,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Nova Hero Token",
+        "Title": "Nova Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009608,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15201644781346430194,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Magneto Hero Token",
+        "Title": "Magneto Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009708,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16829944152046770916,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "X-23 Hero Token",
+        "Title": "X-23 Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009808,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6141709301562416172,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Venom Hero Token",
+        "Title": "Venom Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010208,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10620348331841625247,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Vision Hero Token",
+        "Title": "Vision Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010007,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 3123778960139426932,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Iceman Hero Token BOGO",
+        "Title": "Iceman Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010107,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 538123165725564155,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "She-Hulk Hero Token - BOGO",
+        "Title": "She-Hulk Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008909,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 724683970231539048,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Psylocke - BOGO",
+        "Title": "Psylocke - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009209,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5394058310044226921,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Star-Lord - BOGO",
+        "Title": "Star-Lord - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009409,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 72066007482110898,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Nova - BOGO",
+        "Title": "Nova - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009509,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13061049321858668090,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Juggernaut",
+        "Title": "Juggernaut - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009609,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8755692150967833833,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Magneto - BOGO",
+        "Title": "Magneto - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000107,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10603904881766047673,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "20000108",
+        "Title": "Captain America Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000207,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11793431856982662479,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Deadpool Hero Token - BOGO",
+        "Title": "Deadpool Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000307,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17293895189575245269,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Emma Frost Hero Token - BOGO",
+        "Title": "Emma Frost Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000407,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11139745655194524917,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Hawkeye Hero Token - BOGO",
+        "Title": "Hawkeye Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000507,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13917324252746685371,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Hulk Hero Token - BOGO",
+        "Title": "Hulk Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000707,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5161816693443140974,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ms Marvel Hero Token - BOGO",
+        "Title": "Ms Marvel Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000807,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 7582275884851207956,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Scarlet Witch Hero Token - BOGO",
+        "Title": "Scarlet Witch Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000907,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8618811208778194378,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Spider-Man Hero Token - BOGO",
+        "Title": "Spider-Man Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20001207,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 4759560854560775650,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Wolverine Hero Token - BOGO",
+        "Title": "Wolverine Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20005107,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12645478590862925558,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Black Panther Hero Token - BOGO",
+        "Title": "Black Panther Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20005207,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17632028704359456117,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Punisher Hero Token - BOGO",
+        "Title": "Punisher Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20006007,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8469747402821672494,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Black Widow Hero Token - BOGO",
+        "Title": "Black Widow Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20006507,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6091389445168766391,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Daredevil Hero Token - BOGO",
+        "Title": "Daredevil Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007207,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 3380955624255397250,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Colossus Hero Token - BOGO",
+        "Title": "Colossus Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007307,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17312088476783418628,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Cyclops Hero Token - BOGO",
+        "Title": "Cyclops Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007507,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1750229775416040796,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Jean Grey Hero Token - BOGO",
+        "Title": "Jean Grey Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007607,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 583254199792902004,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Rocket Raccoon Hero Token - BOGO",
+        "Title": "Rocket Raccoon Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007907,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8329024894305049928,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Luke Cage Hero Token - BOGO",
+        "Title": "Luke Cage Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008007,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2073670518888013612,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Squirrel Girl Hero Token - BOGO",
+        "Title": "Squirrel Girl Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008307,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8736529618564226626,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ghost Rider Hero Token - BOGO",
+        "Title": "Ghost Rider Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008407,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5962989307772870417,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Nightcrawler Hero Token - BOGO",
+        "Title": "Nightcrawler Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008507,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 14082960614354853445,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Moon Knight Hero Token - BOGO",
+        "Title": "Moon Knight Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008607,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17583225745158381446,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Doctor Strange Hero Token - BOGO",
+        "Title": "Doctor Strange Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008707,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5028391022843862598,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Taskmaster Hero Token - BOGO",
+        "Title": "Taskmaster Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008907,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13740011237160328561,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Psylocke Hero Token - BOGO",
+        "Title": "Psylocke Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009207,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 18337320827519573362,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Star-Lord Hero Token - BOGO",
+        "Title": "Star-Lord Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009307,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15423119918681037865,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Rogue Hero Token - BOGO",
+        "Title": "Rogue Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009407,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12915922378230668219,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Nova Hero Token - BOGO",
+        "Title": "Nova Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009507,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5480404809977634371,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Juggernaut Hero Token - BOGO",
+        "Title": "Juggernaut Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009607,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15201644781346430194,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Magneto Hero Token - BOGO",
+        "Title": "Magneto Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009707,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16829944152046770916,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "X-23 Hero Token - BOGO",
+        "Title": "X-23 Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009807,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6141709301562416172,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Venom Hero Token - BOGO",
+        "Title": "Venom Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009907,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11776331979895283602,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Winter Soldier Hero Token - BOGO",
+        "Title": "Winter Soldier Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009909,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15115104590402361225,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Winter Soldier - BOGO",
+        "Title": "Winter Soldier - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010109,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12394659164528645362,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "She-Hulk BOGO",
+        "Title": "She-Hulk - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010209,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 3980807850392229014,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Vision BOGO",
+        "Title": "Vision - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010207,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10620348331841625247,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Vision Hero Token BOGO",
+        "Title": "Vision Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008300,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 9255468350667101753,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ghost Rider",
+        "Title": "Ghost Rider",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20008500,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 4196473162086422076,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Moon Knight",
+        "Title": "Moon Knight",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20008600,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 9703681217466931069,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Doctor Strange",
+        "Title": "Doctor Strange",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20008700,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13583994425176888893,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Taskmaster",
+        "Title": "Taskmaster",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20010100,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12394659164528645362,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "She-Hulk",
+        "Title": "She-Hulk",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20010300,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17750839636937086083,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Doctor Doom",
+        "Title": "Doctor Doom",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20010308,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5911541540780317836,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Doctor Doom Hero Token",
+        "Title": "Doctor Doom Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010307,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5911541540780317836,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Doctor Doom Hero Token - BOGO",
+        "Title": "Doctor Doom Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000108,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10603904881766047673,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Captain America Hero Token",
+        "Title": "Captain America Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20001208,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 4759560854560775650,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Wolverine Hero Token",
+        "Title": "Wolverine Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000409,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 3597588143900726508,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Hawkeye",
+        "Title": "Hawkeye - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000809,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13840162506148812555,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Scarlet Witch",
+        "Title": "Scarlet Witch - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20001009,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6791894920589808691,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Storm",
+        "Title": "Storm - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20006009,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10144061740894656037,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.BlackWidow",
+        "Title": "Black Widow - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20006509,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11615789429029934510,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.Daredevil",
+        "Title": "Daredevil - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000109,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10617813376954079152,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Captain America",
+        "Title": "Captain America - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000309,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 412966192105395660,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Emma Frost",
+        "Title": "Emma Frost - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000509,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8294172517850551218,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Hulk",
+        "Title": "Hulk - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20005109,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 456629384788186861,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Black Panther",
+        "Title": "Black Panther - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20005209,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 4616550151502632300,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Punisher",
+        "Title": "Punisher - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007209,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11118079530304738681,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.Colossus",
+        "Title": "Colossus - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007309,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6572304655153960187,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.Cyclops",
+        "Title": "Cyclops - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007409,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 7949859047165531067,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.Thor",
+        "Title": "Thor - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007509,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12460013083760072019,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.JeanGrey\",\"6058963115066526887",
+        "Title": "Jean Grey - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007609,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8842376528969668459,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.RocketRaccoon",
+        "Title": "Rocket Raccoon - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007709,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16209821644389487605,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.Cable",
+        "Title": "Cable - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20007909,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 14354783269825877311,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Luke Cage Hero",
+        "Title": "Luke Cage - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000209,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1660250039076459846,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Deadpool",
+        "Title": "Deadpool - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000609,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 421791326977791218,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.IronMan",
+        "Title": "Iron Man - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20000909,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 9378552423541970369,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.Spiderman",
+        "Title": "Spider-Man - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008309,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 9255468350667101753,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ghost Rider",
+        "Title": "Ghost Rider - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010009,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10305433616491287659,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Iceman BOGO",
+        "Title": "Iceman - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010309,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17750839636937086083,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Doctor Doom - BOGO",
+        "Title": "Doctor Doom - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010408,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6915792009402391686,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ant-Man Hero Token",
+        "Title": "Ant-Man Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010508,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 9321876078357978662,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "War Machine Hero Token",
+        "Title": "War Machine Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009500,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13061049321858668090,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Juggernaut",
+        "Title": "Juggernaut",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20000100,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10617813376954079152,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Captain America",
+        "Title": "Captain America",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20000300,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 412966192105395660,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Emma Frost",
+        "Title": "Emma Frost",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20000400,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 3597588143900726508,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Hawkeye",
+        "Title": "Hawkeye",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20000600,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 421791326977791218,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.IronMan",
+        "Title": "Iron Man",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20000800,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13840162506148812555,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Scarlet Witch",
+        "Title": "Scarlet Witch",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20000900,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 9378552423541970369,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.Spiderman",
+        "Title": "Spider-Man",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20005100,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 456629384788186861,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Black Panther",
+        "Title": "Black Panther",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20005200,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 4616550151502632300,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Punisher",
+        "Title": "Punisher",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20006000,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10144061740894656037,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.BlackWidow",
+        "Title": "Black Widow",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20006500,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11615789429029934510,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.Daredevil",
+        "Title": "Daredevil",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20007200,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11118079530304738681,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.Colossus",
+        "Title": "Colossus",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20007300,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6572304655153960187,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.Cyclops",
+        "Title": "Cyclops",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20007400,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 7949859047165531067,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.Thor",
+        "Title": "Thor",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20007500,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12460013083760072019,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.JeanGrey\",\"6058963115066526887",
+        "Title": "Jean Grey",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20007600,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8842376528969668459,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.RocketRaccoon",
+        "Title": "Rocket Raccoon",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20007700,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16209821644389487605,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Characters.Avatars.Shipping.Cable",
+        "Title": "Cable",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20008200,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6448072532466209906,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Gambit",
+        "Title": "Gambit",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20009300,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6514650100102861856,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Rogue",
+        "Title": "Rogue",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20009400,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 72066007482110898,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Nova",
+        "Title": "Nova",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20009700,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 7643048032188437211,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "X-23",
+        "Title": "X-23",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20000308,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17293895189575245269,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Emma Frost Hero Token",
+        "Title": "Emma Frost Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008208,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 18240003872669572219,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Gambit Hero Token",
+        "Title": "Gambit Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008608,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17583225745158381446,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Doctor Strange Hero Token",
+        "Title": "Doctor Strange Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 1350
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20008708,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5028391022843862598,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Taskmaster Hero Token",
+        "Title": "Taskmaster Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009508,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5480404809977634371,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Juggernaut Hero Token",
+        "Title": "Juggernaut Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20009800,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15662110445428479011,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Venom",
+        "Title": "Venom",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20009900,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15115104590402361225,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Winter Soldier",
+        "Title": "Winter Soldier",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20009908,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11776331979895283602,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Winter Soldier Hero Token",
+        "Title": "Winter Soldier Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010000,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10305433616491287659,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Iceman",
+        "Title": "Iceman",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20010008,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 3123778960139426932,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Iceman Hero Token",
+        "Title": "Iceman Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010200,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 3980807850392229014,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Vision",
+        "Title": "Vision",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20010400,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 18132742377931805821,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ant-Man",
+        "Title": "Ant-Man",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20010407,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6915792009402391686,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ant-Man Hero Token - BOGO",
+        "Title": "Ant-Man Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010507,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 9321876078357978662,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "War Machine Hero Token - BOGO",
+        "Title": "War Machine Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010509,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8651855704152086045,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "War Machine - BOGO",
+        "Title": "War Machine - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010409,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 18132742377931805821,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ant-Man - BOGO",
+        "Title": "Ant-Man - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010608,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16791990216765677152,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Kitty Pryde Hero Token",
+        "Title": "Kitty Pryde Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010700,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6139368802772849654,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Blade",
+        "Title": "Blade",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20010708,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15659623950655691775,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Blade Hero Token",
+        "Title": "Blade Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010808,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6204957466680040464,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Magik Hero Token",
+        "Title": "Magik Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010609,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1172420421674735191,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Kitty Pryde - BOGO",
+        "Title": "Kitty Pryde - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010607,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16791990216765677152,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Kitty Pryde Hero Token - BOGO",
+        "Title": "Kitty Pryde Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010707,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15659623950655691775,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Blade Hero Token - BOGO",
+        "Title": "Blade Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010600,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1172420421674735191,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Kitty Pryde",
+        "Title": "Kitty Pryde",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20010908,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 287424838536338805,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Iron Fist Hero Token",
+        "Title": "Iron Fist Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010800,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15743789998840419335,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Magik",
+        "Title": "Magik",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20010900,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13212972008131138924,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Iron Fist",
+        "Title": "Iron Fist",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20010809,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15743789998840419335,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Magik - BOGO",
+        "Title": "Magik - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010807,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6204957466680040464,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Magik Hero Token - BOGO",
+        "Title": "Magik Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010909,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13212972008131138924,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Iron Fist - BOGO",
+        "Title": "Iron Fist - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20010907,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 287424838536338805,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Iron Fist Hero Token - BOGO",
+        "Title": "Iron Fist Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011000,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12534955053251630387,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Black Cat",
+        "Title": "Black Cat",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20011008,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1825594343919721788,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Black Cat Hero Token",
+        "Title": "Black Cat Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011009,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12534955053251630387,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Black Cat - BOGO",
+        "Title": "Black Cat - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011007,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1825594343919721788,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Black Cat Hero Token - BOGO",
+        "Title": "Black Cat Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011100,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 7015297277250377354,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Green Goblin",
+        "Title": "Green Goblin",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20011108,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17757907016101142163,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Green Goblin Hero Token",
+        "Title": "Green Goblin Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011109,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 7015297277250377354,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Green Goblin - BOGO",
+        "Title": "Green Goblin - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011107,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17757907016101142163,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Green Goblin Hero Token - BOGO",
+        "Title": "Green Goblin Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011200,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 7937405352416253158,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Elektra",
+        "Title": "Elektra",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20011208,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 14218485114698210543,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Elektra Hero Token",
+        "Title": "Elektra Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011209,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 7937405352416253158,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Elektra -  BOGO",
+        "Title": "Elektra -  BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011207,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 14218485114698210543,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Elektra Hero Token - BOGO",
+        "Title": "Elektra Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011300,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1977663415972730018,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ultron",
+        "Title": "Ultron",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20011308,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13776431313319173291,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ultron - Hero Token",
+        "Title": "Ultron Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011309,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1977663415972730018,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ultron - BOGO",
+        "Title": "Ultron - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011307,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13776431313319173291,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ultron Hero Token - BOGO",
+        "Title": "Ultron Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011400,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13124420519155930214,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Angela",
+        "Title": "Angela",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20011408,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1332761762159729775,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Angela Hero Token",
+        "Title": "Angela Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011409,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13124420519155930214,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Angela - BOGO",
+        "Title": "Angela - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011407,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1332761762159729775,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Angela Hero Token - BOGO",
+        "Title": "Angela Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011500,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17049937000059835405,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Beast",
+        "Title": "Beast",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20011508,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 130899364860797276,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Beast Hero Token",
+        "Title": "Beast Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011600,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6223810743151629740,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Black Bolt",
+        "Title": "Black Bolt",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Special",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011608,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11809580036860157365,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Black Bolt Hero Token",
+        "Title": "Black Bolt Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011509,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17049937000059835405,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Beast - BOGO",
+        "Title": "Beast - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011507,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 130899364860797276,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Beast Hero Token - BOGO",
+        "Title": "Beast Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011700,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2198068880456357225,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Nick Fury",
+        "Title": "Nick Fury",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": []
+  },
+  {
+    "SkuId": 20011708,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12259316430015569266,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Nick Fury Hero Token",
+        "Title": "Nick Fury Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011709,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2198068880456357225,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Nick Fury - BOGO",
+        "Title": "Nick Fury - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011707,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12259316430015569266,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Nick Fury Hero Token - BOGO",
+        "Title": "Nick Fury Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011609,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6223810743151629740,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Black Bolt - BOGO",
+        "Title": "Black Bolt - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011607,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11809580036860157365,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Black Bolt Hero Token - BOGO",
+        "Title": "Black Bolt Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011800,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1644838416155284687,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Carnage",
+        "Title": "Carnage",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Special",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011808,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13665824726076890328,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Carnage Hero Token",
+        "Title": "Carnage Hero Token",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011809,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1644838416155284687,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Carnage - BOGO",
+        "Title": "Carnage - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 20011807,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13665824726076890328,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8274306950551640391,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Carnage Hero Token - BOGO",
+        "Title": "Carnage Hero Token - BOGO",
+        "ReleaseDate": "",
+        "ItemPrice": 900
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Hero",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  }
+]
