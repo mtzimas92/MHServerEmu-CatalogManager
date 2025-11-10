@@ -1,0 +1,770 @@
+[
+  {
+    "SkuId": 40010200,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15142736093714783733,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Items.Consumables.Prototypes.MysteryChest1",
+        "Title": "Fortune Card Mark 1",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 5
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 5
+      }
+    ]
+  },
+  {
+    "SkuId": 40017800,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5460518059085536758,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Fortune Card Mark 2",
+        "Title": "Fortune Card Mark 2",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 5
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 5
+      }
+    ]
+  },
+  {
+    "SkuId": 40021900,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13360552517740469713,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "X-Men Fortune Card",
+        "Title": "X-Men Fortune Card",
+        "ReleaseDate": "",
+        "ItemPrice": 50
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 6
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 6
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 6
+      }
+    ]
+  },
+  {
+    "SkuId": 40026000,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 77989783120191903,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "St. Patrick's Day Fortune Card",
+        "Title": "St. Patrick's Day Fortune Card",
+        "ReleaseDate": "",
+        "ItemPrice": 50
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 6
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 6
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 6
+      }
+    ]
+  },
+  {
+    "SkuId": 40021000,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 7132784530930736633,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Fortune Card Mark 5",
+        "Title": "Fortune Card Mark 5",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 5
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 5
+      }
+    ]
+  },
+  {
+    "SkuId": 40021600,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 18095141954958532090,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Fortune Card Mark 6",
+        "Title": "Fortune Card Mark 6",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 5
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 5
+      }
+    ]
+  },
+  {
+    "SkuId": 40024800,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 7561248414309032083,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Uncanny Fortune Card",
+        "Title": "Uncanny Fortune Card",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 6
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 6
+      }
+    ]
+  },
+  {
+    "SkuId": 40023400,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8652531632129843415,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Asgardian Fortune Card",
+        "Title": "Asgardian Fortune Card",
+        "ReleaseDate": "",
+        "ItemPrice": 50
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 6
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 6
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 6
+      }
+    ]
+  },
+  {
+    "SkuId": 40029800,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17117190722675416722,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "S.H.I.E.L.D. Fortune Card",
+        "Title": "S.H.I.E.L.D. Fortune Card",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 6
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 6
+      }
+    ]
+  },
+  {
+    "SkuId": 40030000,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5447523880388599345,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Hydra Fortune Card",
+        "Title": "HYDRA Fortune Card",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 6
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 6
+      }
+    ]
+  },
+  {
+    "SkuId": 40019500,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 9964627584974134775,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Fortune Card Mark 3",
+        "Title": "Fortune Card Mark 3",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 5
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 5
+      }
+    ]
+  },
+  {
+    "SkuId": 40020101,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16513128686675238775,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Fortune Card Mark 4 Rev 2",
+        "Title": "Fortune Card Mark 4 Rev 2",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 5
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 5
+      }
+    ]
+  },
+  {
+    "SkuId": 40022600,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16566255714732875836,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Summer Beach Party Fortune Card",
+        "Title": "Summer Beach Party Fortune Card",
+        "ReleaseDate": "",
+        "ItemPrice": 50
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 6
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 6
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 6
+      }
+    ]
+  },
+  {
+    "SkuId": 40020501,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 14320224649364840786,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Mardi Gras Fortune Card REV 2",
+        "Title": "Mardi Gras Fortune Card REV 2",
+        "ReleaseDate": "",
+        "ItemPrice": 50
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 6
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 6
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 6
+      }
+    ]
+  },
+  {
+    "SkuId": 40028000,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17622955599300993330,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Cowpocalypse Fortune Card",
+        "Title": "Cowpocalypse Fortune Card",
+        "ReleaseDate": "",
+        "ItemPrice": 50
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 6
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 6
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 6
+      }
+    ]
+  },
+  {
+    "SkuId": 40030300,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11797866468091305623,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Cosmic Fortune Card",
+        "Title": "Cosmic Fortune Card",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 6
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 6
+      }
+    ]
+  },
+  {
+    "SkuId": 40030600,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 7215523412926079494,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Secret Invasion Fortune Card",
+        "Title": "Secret Invasion Fortune Card",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 6
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 6
+      }
+    ]
+  },
+  {
+    "SkuId": 40030700,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1946373172390272690,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Winter Fortune Card",
+        "Title": "Winter Fortune Card",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 6
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 6
+      }
+    ]
+  },
+  {
+    "SkuId": 40031700,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15254461210072522943,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Age of Ultron Fortune Card",
+        "Title": "Age of Ultron Fortune Card",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 40031800,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17077694920195514766,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Heroes for Hire Fortune Card",
+        "Title": "Heroes for Hire Fortune Card",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 40032700,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11660572688292912682,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Old Man Logan Fortune Card",
+        "Title": "Old Man Logan Fortune Card",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 6
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 6
+      }
+    ]
+  },
+  {
+    "SkuId": 40032900,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17412548336846579190,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Guardians of the Galaxy Fortune Card",
+        "Title": "Guardians of the Galaxy Vol. 2 Fortune Card",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 2
+      },
+      {
+        "Name": "Special",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 40033100,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8669962911793554434,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Spider-Man Homecoming Fortune Card",
+        "Title": "Spider-Man Homecoming Fortune Card",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Chest",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 0
+      },
+      {
+        "Name": "Special",
+        "Order": 0
+      }
+    ]
+  }
+]

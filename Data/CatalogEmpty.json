@@ -1,0 +1,542 @@
+[
+  {
+    "SkuId": 99300229,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5975374667179958209,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "3rd Anniversary Daily Gift",
+        "Title": "3rd Anniversary Daily Gift",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99300231,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 18203769421157835046,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "3rd Anniversary Daily Gift",
+        "Title": "3rd Anniversary Daily Gift",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99300238,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13952217748788617061,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "10 Eternity Splinter Pack - Daily Draw Gift",
+        "Title": "10 Eternity Splinter Pack - Daily Draw Gift",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99300239,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10935727384724644598,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Infinity Points - Daily Draw Gift",
+        "Title": "Infinity Points - Daily Draw Gift",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99300240,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 4830777683965321659,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "1,000 Credits Chest - Daily Draw Gift",
+        "Title": "1,000 Credits Chest - Daily Draw Gift",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99300241,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 14924555240093786828,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Experience Chest - Daily Draw Gift",
+        "Title": "Experience Chest - Daily Draw Gift",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99300242,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15450566011030807449,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "10 Crafting Elements - Daily Draw Gift",
+        "Title": "10 Crafting Elements - Daily Draw Gift",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99300243,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 14975624189966623029,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Random Boost - Daily Draw Gift",
+        "Title": "Random Boost - Daily Draw Gift",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99300244,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 4423260879691981433,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Random Currency - Daily Draw Gift",
+        "Title": "Random Currency - Daily Draw Gift",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99300245,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10280375569890222913,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Unstable Molecule - Daily Draw Gift",
+        "Title": "Unstable Molecule - Daily Draw Gift",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99300247,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 4901033141404770277,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Relic Box - Daily Draw Gift",
+        "Title": "Relic Box - Daily Draw Gift",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99300246,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10280375569890222913,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Unbind Item - Daily Draw Gift",
+        "Title": "Unbind Item - Daily Draw Gift",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99001233,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12153120830587020168,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "4th Anniversary Cake Slice",
+        "Title": "4th Anniversary Cake Slice",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99001235,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2375797941050546001,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "4th Anniversary Birthday Card",
+        "Title": "4th Anniversary Birthday Card",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99001236,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2375797941050546001,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "4th Anniversary Birthday Card",
+        "Title": "4th Anniversary Birthday Card",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  }
+]

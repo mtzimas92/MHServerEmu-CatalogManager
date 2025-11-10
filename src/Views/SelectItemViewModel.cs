@@ -34,6 +34,7 @@ namespace CatalogManager.ViewModels
         private bool _isLoading;
         private string _statusMessage;
         private ItemDisplay _selectedItem;
+        private ObservableCollection<ItemDisplay> _selectedItems = new();
         private bool _hideExistingItems;
 
         public ObservableCollection<Category> Categories
@@ -84,6 +85,14 @@ namespace CatalogManager.ViewModels
             get => _selectedItem;
             set => SetProperty(ref _selectedItem, value);
         }
+
+        public ObservableCollection<ItemDisplay> SelectedItems
+        {
+            get => _selectedItems;
+            set => SetProperty(ref _selectedItems, value);
+        }
+
+        public bool HasSelectedItems => _selectedItems?.Count > 0;
         
         public bool IsLoading
         {
@@ -357,7 +366,7 @@ namespace CatalogManager.ViewModels
         
         public event PropertyChangedEventHandler PropertyChanged;
         
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

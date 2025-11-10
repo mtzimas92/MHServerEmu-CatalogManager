@@ -1,0 +1,1558 @@
+[
+  {
+    "SkuId": 40016800,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16313827754993193555,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ultron Silver Pet",
+        "Title": "Ultron Silver Pet",
+        "ReleaseDate": "",
+        "ItemPrice": 950
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 5
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 5
+      }
+    ]
+  },
+  {
+    "SkuId": 40020300,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11266305938963435654,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Throg Pet",
+        "Title": "Throg Pet",
+        "ReleaseDate": "",
+        "ItemPrice": 950
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 5
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 5
+      }
+    ]
+  },
+  {
+    "SkuId": 49991003,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1649948109715283495,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "CSGrantCrateOdinMark",
+        "Title": "CSGrantCrateOdinMark",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 99001008,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 15149935813441167247,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "DailyGiftOdinMarks",
+        "Title": "DailyGiftOdinMarks",
+        "ReleaseDate": "",
+        "ItemPrice": 1000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 99001009,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 4135198133364268254,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "DailyGiftShards",
+        "Title": "DailyGiftShards",
+        "ReleaseDate": "",
+        "ItemPrice": 1000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 99001012,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16685173088145448594,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "DailyGiftKoalaDrop",
+        "Title": "DailyGiftKoalaDrop",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 40013800,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13792161858352388170,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Items.Crafting.Ingredients.UnstableMolecules",
+        "Title": "Crafting Ingredient Unstable Molecules",
+        "ReleaseDate": "",
+        "ItemPrice": 50
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 999
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 999
+      }
+    ]
+  },
+  {
+    "SkuId": 40017000,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11713471430462019331,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Matrix of Unbinding",
+        "Title": "Matrix of Unbinding",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 999
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 999
+      }
+    ]
+  },
+  {
+    "SkuId": 49991001,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12443539321764519670,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "CSGrantCrateCubeShards",
+        "Title": "CSGrantCrateCubeShards",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 49991002,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 10730364020490117674,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "CSGrantCrateEternitySplinters",
+        "Title": "CSGrantCrateEternitySplinters",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 99001007,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 13844746909398998339,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "DailyGiftSplinters",
+        "Title": "DailyGiftSplinters",
+        "ReleaseDate": "",
+        "ItemPrice": 1000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 99991001,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 18187699580389430221,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ultimate Pack Founders Permabuff",
+        "Title": "Ultimate Pack Founders Permabuff",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 99991002,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16748241813791642113,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Mega Pack MK II Permabuff",
+        "Title": "Mega Pack MK II Permabuff",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 99001059,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 4294326692708162706,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Omega Orb Chest Daily Gift",
+        "Title": "Omega Orb Chest Daily Gift",
+        "ReleaseDate": "",
+        "ItemPrice": 1000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 40017100,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 9816441365112230099,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Mini Dragon Man Pet",
+        "Title": "Mini Dragon Man Pet",
+        "ReleaseDate": "",
+        "ItemPrice": 950
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 5
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 5
+      }
+    ]
+  },
+  {
+    "SkuId": 40019600,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11332641820779679957,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Spider-Ham Pet",
+        "Title": "Spider-Ham Pet",
+        "ReleaseDate": "",
+        "ItemPrice": 950
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 5
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 5
+      }
+    ]
+  },
+  {
+    "SkuId": 40019800,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5848332204010508386,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Headpool Enhanced Pet",
+        "Title": "Headpool Enhanced Pet",
+        "ReleaseDate": "",
+        "ItemPrice": 950
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 5
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 5
+      }
+    ]
+  },
+  {
+    "SkuId": 99991003,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 3096518677614498620,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Mega Pack MK III Permabuff",
+        "Title": "Mega Pack MK III Permabuff",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 40014300,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 14065705819888423186,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Items.Pets.Pet002IronManMk1",
+        "Title": "Iron Buddy Pet",
+        "ReleaseDate": "",
+        "ItemPrice": 950
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 5
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 5
+      }
+    ]
+  },
+  {
+    "SkuId": 40014400,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 11922313247660511208,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Entity.Items.Pets.Pet001OldLace",
+        "Title": "Old Lace Pet",
+        "ReleaseDate": "",
+        "ItemPrice": 950
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 5
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 5
+      }
+    ]
+  },
+  {
+    "SkuId": 40016900,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 18080246011096929576,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Holographic Crafter Pet Summon",
+        "Title": "Holographic Crafter Pet Summon",
+        "ReleaseDate": "",
+        "ItemPrice": 950
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 5
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 5
+      }
+    ]
+  },
+  {
+    "SkuId": 40018300,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12047601271710749145,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Holographic Stash Summon Pet",
+        "Title": "Holographic Stash Summon Pet",
+        "ReleaseDate": "",
+        "ItemPrice": 950
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 5
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 5
+      }
+    ]
+  },
+  {
+    "SkuId": 40018500,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 9192191025725314253,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Holographic Weapon Vendor Pet",
+        "Title": "Holographic Weapon Vendor Pet",
+        "ReleaseDate": "",
+        "ItemPrice": 725
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 5
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 5
+      }
+    ]
+  },
+  {
+    "SkuId": 40025600,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8034678450211524270,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Bamf Pet",
+        "Title": "Bamf Pet",
+        "ReleaseDate": "",
+        "ItemPrice": 950
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 5
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 5
+      }
+    ]
+  },
+  {
+    "SkuId": 40023100,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12848405922260132596,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Cosmic Mystery Box",
+        "Title": "Cosmic Mystery Box",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 1
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 40028600,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 14181895682336629616,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ant-Man Mystery Box",
+        "Title": "Ant-Man Mystery Box",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 1
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 40028800,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 3228669383330833808,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Mystic Mayhem Mystery Box",
+        "Title": "Mystic Mayhem Mystery Box",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 1
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 40024400,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 2282370008873116725,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Halloween Mystery Bag",
+        "Title": "Halloween Mystery Bag",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 1
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 99001182,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8658276573351386791,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Classic Green Dr. Doom Team-Up (Holiday Giveaway)",
+        "Title": "Classic Green Dr. Doom Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 99001184,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 1145116925631927114,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ice Golem Pet (Holiday Giveaway)",
+        "Title": "Ice Golem Pet",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 99001183,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 12136026618246929560,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Holiday Groot Team-Up (Holiday Giveaway)",
+        "Title": "Holiday Groot Team-Up",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 2
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 2
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 2
+      }
+    ]
+  },
+  {
+    "SkuId": 40031000,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16029799220675486709,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ultimate Upgrade Token",
+        "Title": "Ultimate Upgrade Token",
+        "ReleaseDate": "",
+        "ItemPrice": 300
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 4
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 4
+      }
+    ]
+  },
+  {
+    "SkuId": 40031100,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17546342028166048137,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17117190722675416722,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Team Captain America Mystery Box",
+        "Title": "Team Captain America Mystery Box",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 1
+      },
+      {
+        "Name": "Special",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 40031200,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 7873925855885731531,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 17117190722675416722,
+        "Quantity": 1
+      }
+    ],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Team Iron Man Mystery Box",
+        "Title": "Team Iron Man Mystery Box",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 1
+      },
+      {
+        "Name": "Special",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 99300213,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6791291224273855126,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Credit Coffer 1000 Reward",
+        "Title": "Credit Coffer 1000 Reward",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99300214,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 3861804197154463729,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Login Reward XP Pack (Experience Orb Pack)",
+        "Title": "Login Reward XP Pack (Experience Orb Pack)",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99300220,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 6755961098147077260,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Nano Crafting Element",
+        "Title": "Nano Crafting Element",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99300221,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 4419844522805239026,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Ionic Crafting Element",
+        "Title": "Ionic Crafting Element",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99300222,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5296157743058001243,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Genome Crafting Element",
+        "Title": "Genome Crafting Element",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 99300223,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5016951050256653671,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Astral Crafting Element",
+        "Title": "Astral Crafting Element",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  },
+  {
+    "SkuId": 40031900,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 5064982150159935196,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Sorcerer Supreme Mystery Box",
+        "Title": "Sorcerer Supreme Mystery Box",
+        "ReleaseDate": "",
+        "ItemPrice": 450
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 1
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 40032100,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16085525630569096136,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "S.H.I.E.L.D. Supply Boost",
+        "Title": "S.H.I.E.L.D. Supply Boost",
+        "ReleaseDate": "",
+        "ItemPrice": 125
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 40032200,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 16305624328130272908,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Experience Boost",
+        "Title": "Experience Boost",
+        "ReleaseDate": "",
+        "ItemPrice": 100
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 40032300,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 9761682476903964936,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Currency Boost",
+        "Title": "Currency Boost",
+        "ReleaseDate": "",
+        "ItemPrice": 75
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 40032400,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 8014895674141123120,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Combination Boost",
+        "Title": "Combination Boost",
+        "ReleaseDate": "",
+        "ItemPrice": 275
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 1
+    },
+    "TypeModifiers": [
+      {
+        "Name": "Giftable",
+        "Order": 1
+      }
+    ]
+  },
+  {
+    "SkuId": 99001232,
+    "GuidItems": [
+      {
+        "PrototypeGuid": 0,
+        "ItemPrototypeRuntimeIdForClient": 18124378460164657770,
+        "Quantity": 1
+      }
+    ],
+    "AdditionalGuidItems": [],
+    "LocalizedEntries": [
+      {
+        "LanguageId": "en_us",
+        "Description": "Groot Marvel's Guardians of the Galaxy Vol. 2 Pet",
+        "Title": "Groot Marvel's Guardians of the Galaxy Vol. 2 Pet",
+        "ReleaseDate": "",
+        "ItemPrice": 10000
+      }
+    ],
+    "InfoUrls": [],
+    "ContentData": [],
+    "Type": {
+      "Name": "Boost",
+      "Order": 0
+    },
+    "TypeModifiers": [
+      {
+        "Name": "NoDisplay",
+        "Order": 0
+      },
+      {
+        "Name": "NoDisplayStore",
+        "Order": 0
+      }
+    ]
+  }
+]

@@ -214,21 +214,28 @@ namespace CatalogManager.ViewModels
             BatchModifyCommand = new AsyncRelayCommand(BatchModifyAsync, CanBatchModify);
             CreateBundleCommand = new AsyncRelayCommand(CreateBundleAsync);
 
-
-            // Initial load
-            LoadItemsAsync().ConfigureAwait(false);
+            // Set initial status
+            StatusText = "No catalog loaded. Please select File → Load Catalog to begin.";
+            
+            // Initialize categories with just "All"
+            Categories.Add("All");
         }
 
         private async Task LoadItemsAsync()
         {
+            Debug.WriteLine("LoadItemsAsync: Starting");
+            
             if (!await _operationLock.WaitAsync(0))
             {
+                Debug.WriteLine("LoadItemsAsync: Operation already in progress");
                 StatusText = "Operation already in progress";
                 return;
             }
             
             try
             {
+                Debug.WriteLine("LoadItemsAsync: Lock acquired");
+                
                 // Cancel any previous load operation
                 _loadCts?.Cancel();
                 _loadCts = new CancellationTokenSource();
@@ -236,22 +243,48 @@ namespace CatalogManager.ViewModels
                 
                 IsLoading = true;
                 StatusText = "Loading items...";
+                Debug.WriteLine("LoadItemsAsync: Calling CatalogService.LoadCatalogAsync");
                 
                 // Load catalog data
                 var (items, categories) = await _catalogService.LoadCatalogAsync();
                 
-                // Update categories if needed
-                if (!Categories.Any())
+                Debug.WriteLine($"LoadItemsAsync: Got {items?.Count ?? 0} items and {categories?.Count ?? 0} categories");
+                
+                // Update categories if we have new categories from the catalog
+                if (categories != null && categories.Any())
                 {
+                    Debug.WriteLine($"LoadItemsAsync: Updating Categories collection with {categories.Count} categories");
+                    
                     await Application.Current.Dispatcher.InvokeAsync(() =>
                     {
+                        // Save the current selection
+                        var currentSelection = SelectedCategory;
+                        
+                        Categories.Clear();
                         Categories.Add("All");
                         foreach (var category in categories.OrderBy(c => c))
                         {
                             Categories.Add(category);
                         }
+                        Debug.WriteLine($"LoadItemsAsync: Categories collection now has {Categories.Count} items");
+                        
+                        // Restore the selection if it still exists, otherwise default to "All"
+                        if (Categories.Contains(currentSelection))
+                        {
+                            SelectedCategory = currentSelection;
+                        }
+                        else
+                        {
+                            SelectedCategory = "All";
+                        }
                     });
                 }
+                else
+                {
+                    Debug.WriteLine("LoadItemsAsync: No categories to update");
+                }
+                
+                Debug.WriteLine($"LoadItemsAsync: Calling GetItemsAsync with category='{SelectedCategory}', search='{SearchText}'");
                 
                 // Filter items based on current criteria
                 var filtered = await _catalogService.GetItemsAsync(
@@ -262,15 +295,19 @@ namespace CatalogManager.ViewModels
                     MaxPrice
                 );
                 
+                Debug.WriteLine($"LoadItemsAsync: GetItemsAsync returned {filtered?.Count() ?? 0} filtered items");
+                
                 // Apply sorting if needed
                 if (_sortColumn != null && _sortDirection.HasValue)
                 {
+                    Debug.WriteLine($"LoadItemsAsync: Applying sort: column='{_sortColumn}', direction={_sortDirection}");
                     filtered = ApplySorting(filtered, _sortColumn, _sortDirection.Value);
                 }
                 
                 // Update UI on main thread
                 await Application.Current.Dispatcher.InvokeAsync(() =>
                 {
+                    Debug.WriteLine("LoadItemsAsync: Updating Items collection on UI thread");
                     Items.Clear();
                     foreach (var item in filtered)
                     {
@@ -278,24 +315,30 @@ namespace CatalogManager.ViewModels
                     }
                     
                     StatusText = $"Loaded {Items.Count} items";
+                    Debug.WriteLine($"LoadItemsAsync: Items collection now has {Items.Count} items");
                     
                     // Refresh the view
                     _itemsViewSource.View.Refresh();
+                    Debug.WriteLine("LoadItemsAsync: View refreshed");
                 });
             }
             catch (OperationCanceledException)
             {
+                Debug.WriteLine("LoadItemsAsync: Operation cancelled");
                 StatusText = "Loading cancelled";
             }
             catch (Exception ex)
             {
+                Debug.WriteLine($"LoadItemsAsync: Exception caught: {ex}");
                 StatusText = $"Error loading items: {ex.Message}";
                 Debug.WriteLine($"Error loading items: {ex}");
             }
             finally
             {
+                Debug.WriteLine("LoadItemsAsync: Cleaning up");
                 IsLoading = false;
                 _operationLock.Release();
+                Debug.WriteLine("LoadItemsAsync: Completed");
             }
         }
         
@@ -440,9 +483,7 @@ namespace CatalogManager.ViewModels
                 if (result == MessageBoxResult.Yes)
                 {
                     StatusText = "Deleting item...";
-                    bool success = AllowCatalogModification 
-                        ? await _catalogService.DeleteFromCatalogAsync(SelectedItems.First().SkuId)
-                        : await _catalogService.DeleteFromPatchAsync(SelectedItems.First().SkuId);
+                    bool success = await _catalogService.DeleteItemAsync(SelectedItems.First().SkuId);
 
                     if (success)
                     {
@@ -452,7 +493,7 @@ namespace CatalogManager.ViewModels
                     else
                     {
                         StatusText = "Failed to delete item";
-                        MessageBox.Show("The item could not be deleted. Items that exist in the original catalog.json file cannot be deleted via patch.",
+                        MessageBox.Show("The item could not be deleted.",
                             "Delete Failed", MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
                 }
@@ -481,8 +522,8 @@ namespace CatalogManager.ViewModels
             {
                 // Add warning about catalog.json items
                 var warningMessage = AllowCatalogModification
-                    ? $"Warning: You are about to delete {SelectedItems.Count} items directly from catalog.json. This cannot be undone.\n\nProceed with deletion?"
-                    : $"Are you sure you want to delete {SelectedItems.Count} items?\n\nNote: Only items added through patches can be removed.";
+                    ? $"Warning: You are about to delete {SelectedItems.Count} items from their source files. This cannot be undone.\n\nProceed with deletion?"
+                    : $"Are you sure you want to delete {SelectedItems.Count} items?\n\nNote: This will delete items from their source files.";
             
                 var result = MessageBox.Show(
                     warningMessage,
@@ -497,16 +538,8 @@ namespace CatalogManager.ViewModels
                     
                     foreach (var item in SelectedItems.ToList())
                     {
-                        if (AllowCatalogModification)
-                        {
-                            if (await _catalogService.DeleteFromCatalogAsync(item.SkuId))
-                                successCount++;
-                        }
-                        else
-                        {
-                            if (await _catalogService.DeleteFromPatchAsync(item.SkuId))
-                                successCount++;
-                        }
+                        if (await _catalogService.DeleteItemAsync(item.SkuId))
+                            successCount++;
                     }
                     
                     StatusText = $"Deleted {successCount} of {SelectedItems.Count} items";

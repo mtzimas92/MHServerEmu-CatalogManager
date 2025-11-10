@@ -14,45 +14,121 @@ namespace CatalogManager.Services
 {
     public class CatalogService
     {
-        private readonly string _catalogPath;
-        private readonly string _patchPath;
+        private readonly List<string> _loadedFiles = new();
+        private readonly Dictionary<ulong, string> _skuToFileMapping = new(); // Track which file each SKU came from
         private readonly JsonSerializerOptions _jsonOptions;
         private readonly SemaphoreSlim _catalogLock = new SemaphoreSlim(1, 1);
         private readonly Dictionary<string, List<string>> _categoryModifierMappings = new();
         private readonly HashSet<ulong> _patchFileSkuIds = new();
         
         // Cache for better performance
-        private List<CatalogEntry> _cachedCatalogItems;
-        private HashSet<string> _cachedCategories;
+        private List<CatalogEntry>? _cachedCatalogItems;
+        private HashSet<string>? _cachedCategories;
         private DateTime _lastCatalogLoadTime = DateTime.MinValue;
         private readonly TimeSpan _cacheExpirationTime = TimeSpan.FromMinutes(5);
         
         // Prototype cache
         private readonly Dictionary<ulong, string> _prototypeNameCache = new();
 
-        public CatalogService(string dataDirectory = "Data")
+        // Predefined type modifiers for each category - all possible modifiers from Marvel Heroes
+        private static readonly Dictionary<string, List<string>> PredefinedModifiers = new()
         {
-            _catalogPath = Path.Combine(dataDirectory, "Catalog.json");
-            _patchPath = Path.Combine(dataDirectory, "CatalogPatch.json");
-            
+            { "Bundle", new List<string> { "Giftable", "NoDisplay", "NoDisplayStore"} },
+            { "Hero", new List<string> { "Giftable", "NoDisplay", "NoDisplayStore","Special" } },
+            { "Costume", new List<string> { "Giftable", "NoDisplay", "NoDisplayStore","Special" } },
+            { "TeamUp", new List<string> { "Giftable", "NoDisplay", "NoDisplayStore","Special" } },
+            { "Boost", new List<string> {"Giftable", "NoDisplay", "NoDisplayStore","Special" } },
+            { "Chest", new List<string> { "Giftable", "NoDisplay", "NoDisplayStore","Special" } },
+            { "Service", new List<string> { "StashPage", "PowerSpecPanel" } }
+        };
+
+        public IReadOnlyList<string> LoadedFiles => _loadedFiles.AsReadOnly();
+
+        public CatalogService()
+        {
             _jsonOptions = new JsonSerializerOptions 
             { 
                 WriteIndented = true,
                 NumberHandling = JsonNumberHandling.AllowReadingFromString
             };
+        }
+
+        public async Task<bool> LoadCatalogFileAsync(string catalogFilePath)
+        {
+            // Logger.Log($"LoadCatalogFileAsync: Called with path: {catalogFilePath}");
             
-            // Ensure data directory exists
-            Directory.CreateDirectory(dataDirectory);
-            
-            // Create empty patch file if it doesn't exist
-            if (!File.Exists(_patchPath))
+            if (string.IsNullOrEmpty(catalogFilePath))
             {
-                File.WriteAllText(_patchPath, "[]");
+                // Logger.Log("LoadCatalogFileAsync: Path is null or empty");
+                return false;
             }
             
-            // Initialize category modifiers
-            Task.Run(InitializeCategoryModifierMappingsAsync);
+            if (!File.Exists(catalogFilePath))
+            {
+                // Logger.Log($"LoadCatalogFileAsync: File does not exist: {catalogFilePath}");
+                return false;
+            }
+
+            // Logger.Log("LoadCatalogFileAsync: Waiting for catalog lock");
+            await _catalogLock.WaitAsync();
+            try
+            {
+                // Add to loaded files list if not already present
+                if (!_loadedFiles.Contains(catalogFilePath))
+                {
+                    // Logger.Log($"LoadCatalogFileAsync: Adding file to loaded files: {catalogFilePath}");
+                    _loadedFiles.Add(catalogFilePath);
+                }
+                else
+                {
+                    // Logger.Log($"LoadCatalogFileAsync: File already loaded: {catalogFilePath}");
+                }
+                
+                _lastCatalogLoadTime = DateTime.MinValue; // Force reload
+                
+                // Logger.Log("LoadCatalogFileAsync: Calling LoadCatalogInternalAsync");
+                var result = await LoadCatalogInternalAsync();
+                // Logger.Log($"LoadCatalogFileAsync: LoadCatalogInternalAsync returned {result.Items?.Count ?? 0} items and {result.Categories?.Count ?? 0} categories");
+                
+                // Initialize category modifiers after loading
+                // Logger.Log("LoadCatalogFileAsync: Initializing category modifier mappings");
+                await InitializeCategoryModifierMappingsAsync();
+                // Logger.Log("LoadCatalogFileAsync: Category modifier mappings initialized");
+                
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogException("LoadCatalogFileAsync: Exception", ex);
+                throw;
+            }
+            finally
+            {
+                // Logger.Log("LoadCatalogFileAsync: Releasing catalog lock");
+                _catalogLock.Release();
+            }
         }
+
+        public async Task ClearAllFilesAsync()
+        {
+            await _catalogLock.WaitAsync();
+            try
+            {
+                // Logger.Log("ClearAllFilesAsync: Clearing all loaded files");
+                _loadedFiles.Clear();
+                _skuToFileMapping.Clear();
+                _patchFileSkuIds.Clear();
+                _cachedCatalogItems = null;
+                _cachedCategories = null;
+                _lastCatalogLoadTime = DateTime.MinValue;
+                // Logger.Log("ClearAllFilesAsync: All files cleared");
+            }
+            finally
+            {
+                _catalogLock.Release();
+            }
+        }
+
         private async Task InitializeCategoryModifierMappingsAsync()
         {
             try
@@ -63,15 +139,37 @@ namespace CatalogManager.Services
                 {
                     _categoryModifierMappings.Clear();
                     
+                    // Start with predefined modifiers for each category
+                    foreach (var kvp in PredefinedModifiers)
+                    {
+                        _categoryModifierMappings[kvp.Key] = new List<string>(kvp.Value);
+                    }
+                    
+                    // Merge with modifiers found in the catalog (add any new ones not in predefined list)
                     foreach (var group in catalogItems.GroupBy(item => item.Type.Name))
                     {
-                        var modifiers = group
+                        var catalogModifiers = group
                             .SelectMany(item => item.TypeModifiers)
                             .Select(m => m.Name)
                             .Distinct()
                             .ToList();
-                            
-                        _categoryModifierMappings[group.Key] = modifiers;
+                        
+                        if (_categoryModifierMappings.ContainsKey(group.Key))
+                        {
+                            // Add any catalog modifiers not already in the predefined list
+                            foreach (var modifier in catalogModifiers)
+                            {
+                                if (!_categoryModifierMappings[group.Key].Contains(modifier))
+                                {
+                                    _categoryModifierMappings[group.Key].Add(modifier);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            // New category not in predefined list, add all its modifiers
+                            _categoryModifierMappings[group.Key] = catalogModifiers;
+                        }
                     }
                 }
             }
@@ -83,65 +181,124 @@ namespace CatalogManager.Services
 
         public async Task<(List<CatalogEntry> Items, HashSet<string> Categories)> LoadCatalogAsync(bool forceRefresh = false)
         {
+            // Logger.Log($"LoadCatalogAsync: Called with forceRefresh={forceRefresh}");
+            
             // Return cached data if it's still valid
             if (!forceRefresh && 
                 _cachedCatalogItems != null && 
                 _cachedCategories != null && 
                 (DateTime.Now - _lastCatalogLoadTime) < _cacheExpirationTime)
             {
+                // Logger.Log($"LoadCatalogAsync: Returning cached data ({_cachedCatalogItems.Count} items, {_cachedCategories.Count} categories)");
                 return (_cachedCatalogItems, _cachedCategories);
             }
             
+            // Logger.Log("LoadCatalogAsync: Waiting for catalog lock");
             await _catalogLock.WaitAsync();
             try
             {
-                var items = new List<CatalogEntry>();
-                _patchFileSkuIds.Clear();
-
-                // Load patch file
-                if (File.Exists(_patchPath))
-                {
-                    var patchJson = await File.ReadAllTextAsync(_patchPath);
-                    var patch = JsonSerializer.Deserialize<List<CatalogEntry>>(patchJson, _jsonOptions);
-                    
-                    if (patch != null) 
-                    {
-                        items.AddRange(patch);
-                        _patchFileSkuIds.UnionWith(patch.Select(x => x.SkuId));
-                    }
-                }
-
-                // Load base catalog if it exists
-                if (File.Exists(_catalogPath))
-                {
-                    var catalogJson = await File.ReadAllTextAsync(_catalogPath);
-                    var catalogRoot = JsonSerializer.Deserialize<CatalogRoot>(catalogJson, _jsonOptions);
-                    
-                    if (catalogRoot?.Entries != null)
-                    {
-                        items.AddRange(catalogRoot.Entries);
-                    }
-                }
-
-                // Get unique categories from all items
-                var categories = new HashSet<string>(items.Select(i => i.Type.Name).OrderBy(n => n));
-                
-                // Update cache
-                _cachedCatalogItems = items;
-                _cachedCategories = categories;
-                _lastCatalogLoadTime = DateTime.Now;
-                
-                return (items, categories);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error loading catalog: {ex.Message}");
-                throw;
+                return await LoadCatalogInternalAsync();
             }
             finally
             {
+                // Logger.Log("LoadCatalogAsync: Releasing catalog lock");
                 _catalogLock.Release();
             }
+        }
+
+        private async Task<(List<CatalogEntry> Items, HashSet<string> Categories)> LoadCatalogInternalAsync()
+        {
+            // Logger.Log($"LoadCatalogInternalAsync: Loading {_loadedFiles.Count} files");
+            
+            var items = new List<CatalogEntry>();
+            _patchFileSkuIds.Clear();
+            _skuToFileMapping.Clear();
+
+            // Load all files in the loaded files list, plus their _MODIFIED versions
+            foreach (var filePath in _loadedFiles)
+            {
+                if (!File.Exists(filePath))
+                {
+                    // Logger.Log($"LoadCatalogInternalAsync: Skipping missing file: {filePath}");
+                    continue;
+                }
+                
+                // Logger.Log($"LoadCatalogInternalAsync: Loading file: {filePath}");
+                var fileJson = await File.ReadAllTextAsync(filePath);
+                // Logger.Log($"LoadCatalogInternalAsync: JSON length: {fileJson.Length}");
+                
+                var fileEntries = JsonSerializer.Deserialize<List<CatalogEntry>>(fileJson, _jsonOptions);
+                
+                if (fileEntries != null)
+                {
+                    // Logger.Log($"LoadCatalogInternalAsync: Loaded {fileEntries.Count} items from {Path.GetFileName(filePath)}");
+                    items.AddRange(fileEntries);
+                    
+                    // Track which file each SKU came from
+                    foreach (var entry in fileEntries)
+                    {
+                        _skuToFileMapping[entry.SkuId] = filePath;
+                    }
+                }
+                else
+                {
+                    // Logger.Log($"LoadCatalogInternalAsync: Deserialization returned null for {filePath}");
+                }
+
+                // Also load the corresponding _MODIFIED file if it exists
+                string baseFileName = Path.GetFileNameWithoutExtension(filePath);
+                if (!baseFileName.EndsWith("_MODIFIED", StringComparison.OrdinalIgnoreCase))
+                {
+                    string directory = Path.GetDirectoryName(filePath) ?? "";
+                    string extension = Path.GetExtension(filePath);
+                    string modifiedFilePath = Path.Combine(directory, $"{baseFileName}_MODIFIED{extension}");
+
+                    if (File.Exists(modifiedFilePath))
+                    {
+                        // Logger.Log($"LoadCatalogInternalAsync: Loading modified file: {modifiedFilePath}");
+                        var modifiedJson = await File.ReadAllTextAsync(modifiedFilePath);
+                        // Logger.Log($"LoadCatalogInternalAsync: Modified JSON length: {modifiedJson.Length}");
+                        
+                        var modifiedEntries = JsonSerializer.Deserialize<List<CatalogEntry>>(modifiedJson, _jsonOptions);
+                        
+                        if (modifiedEntries != null)
+                        {
+                            // Logger.Log($"LoadCatalogInternalAsync: Loaded {modifiedEntries.Count} items from {Path.GetFileName(modifiedFilePath)}");
+                            
+                            // Modified entries override base entries
+                            foreach (var modifiedEntry in modifiedEntries)
+                            {
+                                // Remove the base version if it exists
+                                items.RemoveAll(x => x.SkuId == modifiedEntry.SkuId);
+                                // Add the modified version
+                                items.Add(modifiedEntry);
+                                // Track as coming from the base file (for future saves)
+                                _skuToFileMapping[modifiedEntry.SkuId] = filePath;
+                            }
+                            
+                            // Logger.Log($"LoadCatalogInternalAsync: Applied {modifiedEntries.Count} modifications");
+                        }
+                        else
+                        {
+                            // Logger.Log($"LoadCatalogInternalAsync: Modified file deserialization returned null");
+                        }
+                    }
+                }
+            }
+
+            // Logger.Log($"LoadCatalogInternalAsync: Total items loaded: {items.Count}");
+            
+            // Get unique categories from all items
+            var categories = new HashSet<string>(items.Select(i => i.Type.Name).OrderBy(n => n));
+            // Logger.Log($"LoadCatalogInternalAsync: Extracted {categories.Count} categories");
+            
+            // Update cache
+            _cachedCatalogItems = items;
+            _cachedCategories = categories;
+            _lastCatalogLoadTime = DateTime.Now;
+            
+            // Logger.Log("LoadCatalogInternalAsync: Returning results");
+            return (items, categories);
         }
 
         public bool IsItemFromPatch(ulong skuId) => _patchFileSkuIds.Contains(skuId);
@@ -154,20 +311,9 @@ namespace CatalogManager.Services
             await _catalogLock.WaitAsync();
             try
             {
-                // Determine if this is a new item or an update to an existing item
-                bool isNewItem = !IsItemInCatalog(entry.SkuId);
-                
-                if (isNewItem || IsItemFromPatch(entry.SkuId))
-                {
-                    // Save to patch file
-                    await SaveToPatchFileAsync(entry);
-                    return true;
-                }
-                else
-                {
-                    // Update in main catalog in-place without reformatting
-                    return await UpdateInMainCatalogInPlaceAsync(entry);
-                }
+                // Always save to the _MODIFIED file based on the catalog path
+                await SaveToModifiedFileAsync(entry);
+                return true;
             }
             catch (Exception ex)
             {
@@ -180,118 +326,135 @@ namespace CatalogManager.Services
             }
         }
 
-        private async Task SaveToPatchFileAsync(CatalogEntry entry)
+        private async Task SaveToModifiedFileAsync(CatalogEntry entry)
         {
-            // Load current patch file
-            var patchJson = await File.ReadAllTextAsync(_patchPath);
-            var patch = JsonSerializer.Deserialize<List<CatalogEntry>>(patchJson, _jsonOptions) ?? new List<CatalogEntry>();
-            
+            // Determine which file this SKU belongs to, or use the most recently loaded file if new
+            string sourceFile;
+            if (_skuToFileMapping.TryGetValue(entry.SkuId, out var mappedFile))
+            {
+                sourceFile = mappedFile;
+                // Logger.Log($"SaveToModifiedFileAsync: SKU {entry.SkuId} maps to {Path.GetFileName(sourceFile)}");
+            }
+            else if (_loadedFiles.Count > 0)
+            {
+                // New item - save to most recently loaded file
+                sourceFile = _loadedFiles[^1];
+                // Logger.Log($"SaveToModifiedFileAsync: New SKU {entry.SkuId}, using most recent file {Path.GetFileName(sourceFile)}");
+            }
+            else
+            {
+                throw new InvalidOperationException("No catalog files loaded");
+            }
+
+            // Remove existing _MODIFIED suffix if present to avoid _MODIFIED_MODIFIED
+            string baseFileName = Path.GetFileNameWithoutExtension(sourceFile);
+            if (baseFileName.EndsWith("_MODIFIED", StringComparison.OrdinalIgnoreCase))
+            {
+                baseFileName = baseFileName.Substring(0, baseFileName.Length - "_MODIFIED".Length);
+            }
+
+            string directory = Path.GetDirectoryName(sourceFile) ?? "";
+            string extension = Path.GetExtension(sourceFile);
+            string modifiedFilePath = Path.Combine(directory, $"{baseFileName}_MODIFIED{extension}");
+
+            // Logger.Log($"SaveToModifiedFileAsync: Saving to {modifiedFilePath}");
+
+            // Load existing modified file or create new list
+            List<CatalogEntry> modifiedItems;
+            if (File.Exists(modifiedFilePath))
+            {
+                var modifiedJson = await File.ReadAllTextAsync(modifiedFilePath);
+                modifiedItems = JsonSerializer.Deserialize<List<CatalogEntry>>(modifiedJson, _jsonOptions) ?? new List<CatalogEntry>();
+                // Logger.Log($"SaveToModifiedFileAsync: Loaded {modifiedItems.Count} existing items from modified file");
+            }
+            else
+            {
+                modifiedItems = new List<CatalogEntry>();
+                // Logger.Log("SaveToModifiedFileAsync: Creating new modified file");
+            }
+
             // Remove existing entry with same SKU if it exists
-            patch.RemoveAll(x => x.SkuId == entry.SkuId);
-            
+            int beforeCount = modifiedItems.Count;
+            modifiedItems.RemoveAll(x => x.SkuId == entry.SkuId);
+            if (modifiedItems.Count < beforeCount)
+            {
+                // Logger.Log($"SaveToModifiedFileAsync: Removed existing entry with SkuId {entry.SkuId}");
+            }
+
             // Add the new/updated entry
-            patch.Add(entry);
-            
-            // Save back to file with backup
-            string backupPath = _patchPath + ".bak";
-            if (File.Exists(_patchPath))
+            modifiedItems.Add(entry);
+            // Logger.Log($"SaveToModifiedFileAsync: Added entry with SkuId {entry.SkuId}, total items: {modifiedItems.Count}");
+
+            // Create backup if file exists
+            if (File.Exists(modifiedFilePath))
             {
-                File.Copy(_patchPath, backupPath, true);
-            }
-            
-            await File.WriteAllTextAsync(_patchPath, JsonSerializer.Serialize(patch, _jsonOptions));
-            
-            // Update patch SKU cache
-            _patchFileSkuIds.Add(entry.SkuId);
-        }
-        
-        private async Task<bool> UpdateInMainCatalogInPlaceAsync(CatalogEntry entry)
-        {
-            if (!File.Exists(_catalogPath))
-            {
-                throw new FileNotFoundException("Base catalog file not found", _catalogPath);
+                string backupPath = modifiedFilePath + ".bak";
+                File.Copy(modifiedFilePath, backupPath, true);
             }
 
-            // Create backup
-            string backupPath = _catalogPath + ".bak";
-            File.Copy(_catalogPath, backupPath, true);
+            // Save to modified file
+            await File.WriteAllTextAsync(modifiedFilePath, JsonSerializer.Serialize(modifiedItems, _jsonOptions));
+            // Logger.Log($"SaveToModifiedFileAsync: Successfully saved to {modifiedFilePath}");
 
-            try
-            {
-                // Read the catalog
-                string catalogJson = await File.ReadAllTextAsync(_catalogPath);
-                var catalog = JsonSerializer.Deserialize<CatalogRoot>(catalogJson, _jsonOptions);
-
-                // Find and update the entry
-                var existingEntry = catalog.Entries.FirstOrDefault(e => e.SkuId == entry.SkuId);
-                if (existingEntry != null)
-                {
-                    int index = catalog.Entries.IndexOf(existingEntry);
-                    catalog.Entries[index] = entry;
-
-                    // Write back to file using the same options
-                    await File.WriteAllTextAsync(_catalogPath, JsonSerializer.Serialize(catalog, _jsonOptions));
-            
-                    // Invalidate cache
-                    _lastCatalogLoadTime = DateTime.MinValue;
-            
-                    return true;
-                }
-
-                return false;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error updating catalog in place: {ex.Message}");
-                if (File.Exists(backupPath))
-                {
-                    File.Copy(backupPath, _catalogPath, true);
-                }
-                throw;
-            }
-        }
-        
-        private bool IsItemInCatalog(ulong skuId)
-        {
-            return _cachedCatalogItems?.Any(i => i.SkuId == skuId) ?? false;
+            // Invalidate cache to force reload
+            _lastCatalogLoadTime = DateTime.MinValue;
         }
 
-        public async Task<bool> DeleteFromPatchAsync(ulong skuId)
+        public async Task<bool> DeleteItemAsync(ulong skuId)
         {
             await _catalogLock.WaitAsync();
             try
             {
-                if (!File.Exists(_patchPath))
+                // Find which file this SKU belongs to
+                if (!_skuToFileMapping.TryGetValue(skuId, out var sourceFile))
                 {
+                    // Logger.Log($"DeleteItemAsync: SKU {skuId} not found in any loaded file");
                     return false;
                 }
-                
+
+                // Logger.Log($"DeleteItemAsync: Deleting SKU {skuId} from {Path.GetFileName(sourceFile)}");
+
+                if (!File.Exists(sourceFile))
+                {
+                    // Logger.Log($"DeleteItemAsync: Source file not found: {sourceFile}");
+                    return false;
+                }
+
                 // Create backup
-                string backupPath = _patchPath + ".bak";
-                File.Copy(_patchPath, backupPath, true);
-                
+                string backupPath = sourceFile + ".bak";
+                File.Copy(sourceFile, backupPath, true);
+
                 try
                 {
-                    var patchJson = await File.ReadAllTextAsync(_patchPath);
-                    var patch = JsonSerializer.Deserialize<List<CatalogEntry>>(patchJson, _jsonOptions);
-                    
-                    if (patch == null)
+                    // Load the file
+                    var fileJson = await File.ReadAllTextAsync(sourceFile);
+                    var fileEntries = JsonSerializer.Deserialize<List<CatalogEntry>>(fileJson, _jsonOptions);
+
+                    if (fileEntries == null)
                     {
                         return false;
                     }
-                    
-                    int initialCount = patch.Count;
-                    patch.RemoveAll(x => x.SkuId == skuId);
-                    
-                    if (patch.Count < initialCount)
+
+                    // Remove the entry
+                    int initialCount = fileEntries.Count;
+                    fileEntries.RemoveAll(x => x.SkuId == skuId);
+
+                    if (fileEntries.Count < initialCount)
                     {
-                        await File.WriteAllTextAsync(_patchPath, JsonSerializer.Serialize(patch, _jsonOptions));
+                        // Save back to file
+                        await File.WriteAllTextAsync(sourceFile, JsonSerializer.Serialize(fileEntries, _jsonOptions));
+                        
+                        // Remove from mapping
+                        _skuToFileMapping.Remove(skuId);
                         _patchFileSkuIds.Remove(skuId);
                         
                         // Invalidate cache
                         _lastCatalogLoadTime = DateTime.MinValue;
+                        
+                        // Logger.Log($"DeleteItemAsync: Successfully deleted SKU {skuId}");
                         return true;
                     }
+                    
                     return false;
                 }
                 catch
@@ -299,104 +462,10 @@ namespace CatalogManager.Services
                     // Restore from backup on error
                     if (File.Exists(backupPath))
                     {
-                        File.Copy(backupPath, _patchPath, true);
+                        File.Copy(backupPath, sourceFile, true);
                     }
                     throw;
                 }
-            }
-            finally
-            {
-                _catalogLock.Release();
-            }
-        }
-        public async Task<bool> DeleteFromCatalogAsync(ulong skuId)
-        {
-            await _catalogLock.WaitAsync();
-            try
-            {
-                bool success = false;
-
-                // Handle catalog.json deletion
-                string catalogJson = await File.ReadAllTextAsync(_catalogPath);
-                var catalog = JsonSerializer.Deserialize<CatalogRoot>(catalogJson);
-
-                if (catalog?.Entries != null)
-                {
-                    string backupPath = _catalogPath + ".bak";
-                    File.Copy(_catalogPath, backupPath, true);
-
-                    try
-                    {
-                        int initialCount = catalog.Entries.Count;
-                        catalog.Entries.RemoveAll(x => x.SkuId == skuId);
-
-                        if (catalog.Entries.Count < initialCount)
-                        {
-                            var options = new JsonSerializerOptions
-                            {
-                                WriteIndented = true,
-                                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
-                            };
-
-                            var updatedCatalog = new CatalogRoot
-                            {
-                                TimestampSeconds = catalog.TimestampSeconds,
-                                TimestampMicroseconds = catalog.TimestampMicroseconds,
-                                Entries = catalog.Entries,
-                                Urls = catalog.Urls,
-                                ClientMustDownloadImages = catalog.ClientMustDownloadImages
-                            };
-
-                            await File.WriteAllTextAsync(_catalogPath, JsonSerializer.Serialize(updatedCatalog, options));
-                            success = true;
-                        }
-                    }
-                    catch
-                    {
-                        if (File.Exists(backupPath))
-                            File.Copy(backupPath, _catalogPath, true);
-                        throw;
-                    }
-                }
-
-                // Handle patch file deletion
-                if (File.Exists(_patchPath))
-                {
-                    string patchBackupPath = _patchPath + ".bak";
-                    File.Copy(_patchPath, patchBackupPath, true);
-
-                    try
-                    {
-                        var patchJson = await File.ReadAllTextAsync(_patchPath);
-                        var patch = JsonSerializer.Deserialize<List<CatalogEntry>>(patchJson, _jsonOptions);
-
-                        if (patch != null)
-                        {
-                            int initialCount = patch.Count;
-                            patch.RemoveAll(x => x.SkuId == skuId);
-
-                            if (patch.Count < initialCount)
-                            {
-                                await File.WriteAllTextAsync(_patchPath, JsonSerializer.Serialize(patch, _jsonOptions));
-                                _patchFileSkuIds.Remove(skuId);
-                                success = true;
-                            }
-                        }
-                    }
-                    catch
-                    {
-                        if (File.Exists(patchBackupPath))
-                            File.Copy(patchBackupPath, _patchPath, true);
-                        throw;
-                    }
-                }
-
-                if (success)
-                {
-                    _lastCatalogLoadTime = DateTime.MinValue;
-                }
-
-                return success;
             }
             finally
             {
@@ -416,8 +485,45 @@ namespace CatalogManager.Services
 
         public async Task<ulong> GetNextAvailableSkuId()
         {
+            ulong maxSku = 1000;
+            
+            // Check all currently loaded files
             var (items, _) = await LoadCatalogAsync();
-            return items.Count > 0 ? items.Max(i => i.SkuId) + 1 : 1000;
+            if (items.Count > 0)
+            {
+                maxSku = Math.Max(maxSku, items.Max(i => i.SkuId));
+            }
+            
+            // Also scan all JSON files in the Data directory to avoid SKU conflicts
+            string dataDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data");
+            if (Directory.Exists(dataDir))
+            {
+                // Logger.Log($"GetNextAvailableSkuId: Scanning {dataDir} for all catalog files");
+                
+                foreach (var file in Directory.GetFiles(dataDir, "*.json", SearchOption.AllDirectories))
+                {
+                    try
+                    {
+                        var json = await File.ReadAllTextAsync(file);
+                        var entries = JsonSerializer.Deserialize<List<CatalogEntry>>(json, _jsonOptions);
+                        
+                        if (entries?.Count > 0)
+                        {
+                            var fileMax = entries.Max(i => i.SkuId);
+                            maxSku = Math.Max(maxSku, fileMax);
+                            // Logger.Log($"GetNextAvailableSkuId: {Path.GetFileName(file)} max SKU: {fileMax}");
+                        }
+                    }
+                    catch
+                    {
+                        // Skip files that can't be deserialized (not catalog files)
+                        // Logger.Log($"GetNextAvailableSkuId: Skipping {Path.GetFileName(file)}: {ex.Message}");
+                    }
+                }
+            }
+            
+            // Logger.Log($"GetNextAvailableSkuId: Returning {maxSku + 1}");
+            return maxSku + 1;
         }
 
         public async Task<IEnumerable<CatalogEntry>> GetItemsAsync(
@@ -447,7 +553,7 @@ namespace CatalogManager.Services
         // Helper method to get prototype name with caching
         public string GetPrototypeName(ulong prototypeId)
         {
-            if (_prototypeNameCache.TryGetValue(prototypeId, out string name))
+            if (_prototypeNameCache.TryGetValue(prototypeId, out string? name))
             {
                 return name;
             }
@@ -465,66 +571,16 @@ namespace CatalogManager.Services
             await _catalogLock.WaitAsync();
             try
             {
-                bool isPatchItem = IsItemFromPatch(item.SkuId);
+                // Get the full item from catalog, update its type modifiers, then save to _MODIFIED file
+                var fullItem = await GetItemBySkuIdAsync(item.SkuId);
+                if (fullItem == null)
+                    return false;
                 
-                if (isPatchItem)
-                {
-                    // Patch file handling remains the same
-                    var patchJson = await File.ReadAllTextAsync(_patchPath);
-                    var patch = JsonSerializer.Deserialize<List<CatalogEntry>>(patchJson, _jsonOptions);
-                    
-                    var existingEntry = patch?.FirstOrDefault(x => x.SkuId == item.SkuId);
-                    if (existingEntry == null) return false;
-                    
-                    existingEntry.TypeModifiers = item.TypeModifiers;
-                    
-                    string backupPath = _patchPath + ".bak";
-                    if (File.Exists(_patchPath))
-                    {
-                        File.Copy(_patchPath, backupPath, true);
-                    }
-                    
-                    await File.WriteAllTextAsync(_patchPath, JsonSerializer.Serialize(patch, _jsonOptions));
-                }
-                else
-                {
-                    // Main catalog handling using CatalogRoot structure
-                    if (!File.Exists(_catalogPath))
-                        throw new FileNotFoundException("Main catalog file not found", _catalogPath);
-
-                    string backupPath = _catalogPath + ".bak";
-                    File.Copy(_catalogPath, backupPath, true);
-
-                    try
-                    {
-                        string catalogJson = await File.ReadAllTextAsync(_catalogPath);
-                        var catalog = JsonSerializer.Deserialize<CatalogRoot>(catalogJson);
-
-                        var existingEntry = catalog.Entries.FirstOrDefault(e => e.SkuId == item.SkuId);
-                        if (existingEntry != null)
-                        {
-                            existingEntry.TypeModifiers = item.TypeModifiers;
-
-                            var options = new JsonSerializerOptions
-                            {
-                                WriteIndented = true,
-                                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
-                            };
-
-                            await File.WriteAllTextAsync(_catalogPath, JsonSerializer.Serialize(catalog, options));
-                        }
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                    catch
-                    {
-                        if (File.Exists(backupPath))
-                            File.Copy(backupPath, _catalogPath, true);
-                        throw;
-                    }
-                }
+                // Update the type modifiers
+                fullItem.TypeModifiers = item.TypeModifiers;
+                
+                // Save to _MODIFIED file
+                await SaveToModifiedFileAsync(fullItem);
                 
                 _lastCatalogLoadTime = DateTime.MinValue;
                 return true;
@@ -535,7 +591,7 @@ namespace CatalogManager.Services
             }
         }
 
-        public async Task<CatalogEntry> GetItemBySkuIdAsync(ulong skuId)
+        public async Task<CatalogEntry?> GetItemBySkuIdAsync(ulong skuId)
         {
             try
             {
@@ -543,7 +599,7 @@ namespace CatalogManager.Services
                 await LoadCatalogAsync();
         
                 // Find the item with the matching SkuId
-                return _cachedCatalogItems.FirstOrDefault(item => item.SkuId == skuId);
+                return _cachedCatalogItems?.FirstOrDefault(item => item.SkuId == skuId);
             }
             catch (Exception ex)
             {
@@ -552,7 +608,7 @@ namespace CatalogManager.Services
             }
         }
 
-        public async Task<CatalogEntry> GetItemByPrototypeIdAsync(ulong prototypeId)
+        public async Task<CatalogEntry?> GetItemByPrototypeIdAsync(ulong prototypeId)
         {
             try
             {
@@ -560,7 +616,7 @@ namespace CatalogManager.Services
                 await LoadCatalogAsync();
         
                 // Find the item with the matching prototype ID in GuidItems
-                return _cachedCatalogItems.FirstOrDefault(item => 
+                return _cachedCatalogItems?.FirstOrDefault(item => 
                     item.GuidItems.Any(g => g.ItemPrototypeRuntimeIdForClient == prototypeId));
             }
             catch (Exception ex)
@@ -569,28 +625,5 @@ namespace CatalogManager.Services
                 return null;
             }
         }
-    }
-
-    public class CatalogRoot
-    {
-        public long TimestampSeconds { get; set; }
-        public long TimestampMicroseconds { get; set; }
-        public List<CatalogEntry> Entries { get; set; } = new List<CatalogEntry>();
-        public List<CatalogUrls> Urls { get; set; } = new List<CatalogUrls>();
-        public bool ClientMustDownloadImages { get; set; }
-    }
-
-    public class CatalogUrls
-    {
-        public string LocaleId { get; set; }
-        public string StoreHomePageUrl { get; set; }
-        public List<StoreBannerPageUrl> StoreBannerPageUrls { get; set; } = new List<StoreBannerPageUrl>();
-        public string StoreRealMoneyUrl { get; set; }
-    }
-
-    public class StoreBannerPageUrl
-    {
-        public string Type { get; set; }
-        public string Url { get; set; }
     }
 }        

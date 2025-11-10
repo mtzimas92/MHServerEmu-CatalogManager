@@ -52,117 +52,66 @@ namespace CatalogManager.Services
         }
         private void CreateCssFileIfNeeded()
         {
-            string cssFilePath = Path.Combine(_cssOutputDirectory, "bundle-style.css");
+            string cssFilePath = Path.Combine(_cssOutputDirectory, "style.css");
             if (!File.Exists(cssFilePath))
             {
-                string css = @"
-            .mtx-bundle-details-page {
-                background-color: #1a1a1a;
-                color: #f0f0f0;
-                font-family: 'Roboto', Arial, sans-serif;
-            }
-            
-            .content-container {
-                max-width: 1000px;
-                margin: 0 auto;
-                padding: 0;
-            }
-            
-            .main-banner {
-                height: 300px;
-                background-size: cover;
-                background-position: center;
-                border-radius: 8px 8px 0 0;
-            }
-            
-            .text-area {
-                padding: 30px;
-                background-color: #2a2a2a;
-            }
-            
-            .pack-contents-container {
-                margin-top: 20px;
-            }
-            
-            .pack-contents-container h3 {
-                color: #e63946;
-                margin-bottom: 20px;
-            }
-            
-            .pack-contents-content dl {
-                margin: 0;
-                padding: 0;
-            }
-            
-            .pack-contents-content dt {
-                color: #4cc9f0;
-                font-size: 18px;
-                font-weight: bold;
-                margin: 15px 0;
-            }
-            
-            .pack-contents-content dd {
-                margin-left: 20px;
-            }
-            
-            .pack-contents-content ul {
-                list-style: none;
-                padding: 0;
-            }
-            
-            .pack-contents-content li {
-                margin: 5px 0;
-                color: #cccccc;
-            }
-            
-            .text-column h2 {
-                color: #e63946;
-                margin: 0 0 20px 0;
-            }
-            
-            .buttons-container {
-                background-color: #333;
-                padding: 20px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                border-radius: 0 0 8px 8px;
-            }
-            
-            .price {
-                font-size: 24px;
-                font-weight: bold;
-                color: #ffd700;
-            }
-            
-            .g {
-                display: inline-block;
-                width: 20px;
-                height: 20px;
-                background: url('../images/g-icon.png') no-repeat;
-                vertical-align: middle;
-            }
-            
-            .alternate-1 {
-                background-color: #e63946;
-                color: white;
-                border: none;
-                padding: 12px 30px;
-                border-radius: 5px;
-                font-weight: bold;
-                cursor: pointer;
-                transition: background-color 0.2s;
-            }
-            
-            .alternate-1:hover {
-                background-color: #f25d6a;
-            }
-            
-            .custom-scrollbar {
-                scrollbar-width: thin;
-                scrollbar-color: #666 #333;
-            }
-        ";
+                string css = @"html {
+    background-color: #0d0d0b;
+    color: #d7d7d7;
+    font: 18px/1.385 Verdana;
+}
+
+*:focus {
+    outline-color: #00e8ff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #00aaff;
+    font-family: ""Bebas Neue"", ""Trebuchet MS"", Verdana, sans-serif;
+    font-weight: normal;
+}
+
+button, input {
+    box-sizing: border-box;
+    border: 1px solid black;
+    box-shadow: 0 0 1px 1px #00aaff;
+    background: #1c1c1c;
+    color: inherit;
+    font: inherit;
+}
+
+button {
+    padding: 8px;
+}
+
+button:hover {
+    box-shadow: 0 0 1px 1px white;
+}
+
+div.content {
+    margin: 10px auto;
+    padding: 20px;
+    border: 1px solid #00717c;
+    background-color: #00090e;
+}
+
+div.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+span.enhanced-keyword {
+    color: #9128bb;
+}
+
+span.price {
+    color: #00aaff;
+    font-family: ""Bebas Neue"", ""Trebuchet MS"", Verdana, sans-serif;
+    font-weight: normal;
+    font-size: 32px;
+}
+";
                 
                 File.WriteAllText(cssFilePath, css);
             }
@@ -178,94 +127,53 @@ namespace CatalogManager.Services
                 
             var entry = bundle.LocalizedEntries[0];
             string title = entry.Title;
-            string description = entry.Description;
             int price = entry.ItemPrice;
             
-            // Calculate total value of items (if we have access to the catalog service)
-            int totalValue = 0;
-            int savings = 0;
-            string savingsPercentage = "";
-            
-            if (_catalogService != null)
+            // Build items list HTML
+            var itemsHtml = new StringBuilder();
+            foreach (var guidItem in bundle.GuidItems)
             {
-                try
+                string itemName = GetItemName(guidItem.ItemPrototypeRuntimeIdForClient);
+                
+                // Do not specify quantity if it's only one thing
+                if (guidItem.Quantity == 1)
                 {
-                    foreach (var guidItem in bundle.GuidItems)
-                    {
-                        var item = await _catalogService.GetItemByPrototypeIdAsync(guidItem.ItemPrototypeRuntimeIdForClient);
-                        if (item != null && item.LocalizedEntries.Count > 0)
-                        {
-                            totalValue += item.LocalizedEntries[0].ItemPrice;
-                        }
-                    }
-                    
-                    if (totalValue > 0)
-                    {
-                        savings = totalValue - price;
-                        savingsPercentage = totalValue > 0 ? $"{(savings * 100 / totalValue):0}%" : "";
-                    }
+                    itemsHtml.AppendLine($"\t\t\t<li>{itemName}</li>");
                 }
-                catch (Exception ex)
+                else
                 {
-                    Debug.WriteLine($"Error calculating bundle value: {ex.Message}");
-                    // Continue without savings information
+                    itemsHtml.AppendLine($"\t\t\t<li>{itemName} x{guidItem.Quantity}</li>");
                 }
             }
             
-            // Generate thumbnail path
-            string thumbnailFileName = $"MTX_Store_Bundle_{title.Replace(" ", "-")}_Thumb.png";
-            string thumbnailRelativePath = $"../images/{thumbnailFileName}";
+            // Format SkuId as hexadecimal (0x format)
+            string skuIdHex = $"0x{bundle.SkuId:X}";
             
-            // Generate a simple HTML page for the bundle
+            // Generate HTML using the simpler template
             var html = new StringBuilder();
             html.AppendLine("<!DOCTYPE html>");
             html.AppendLine("<html lang=\"en\">");
             html.AppendLine("<head>");
-            html.AppendLine("    <meta charset=\"UTF-8\">");
-            html.AppendLine($"    <title>{entry.Title}</title>");
-            html.AppendLine("    <link rel=\"stylesheet\" href=\"../css/bundle-style.css\">");
+            html.AppendLine("\t<meta charset=\"UTF-8\">");
+            html.AppendLine("\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
+            html.AppendLine($"\t<title>{title}</title>");
+            html.AppendLine("\t<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">");
+            html.AppendLine("\t<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>");
+            html.AppendLine("\t<link href=\"https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap\" rel=\"stylesheet\">");
+            html.AppendLine("\t<link rel=\"stylesheet\" href=\"css/style.css\">");
             html.AppendLine("</head>");
             html.AppendLine("<body>");
-            html.AppendLine("<div class=\"mtx-bundle-details-page\">");
-            html.AppendLine("    <div class=\"content-container custom-scrollbar\">");
-            html.AppendLine($"        <div class=\"main-banner\" style=\"background-image: url('../images/MTX_Store_Bundle_{entry.Title.Replace(" ", "-")}_Thumb.png');\"></div>");
-            html.AppendLine("        <div class=\"text-area\">");
-            html.AppendLine("            <div class=\"pack-contents-container\">");
-            html.AppendLine("                <h3>Included in this bundle:</h3>");
-            html.AppendLine("                <div class=\"pack-contents-content\">");
-            html.AppendLine("                    <dl>");
-            
-            // Group items by category and generate content
-            var groupedItems = bundle.GuidItems
-                .GroupBy(item => GetItemCategory(item.ItemPrototypeRuntimeIdForClient))
-                .OrderBy(g => g.Key);
-            
-            foreach (var group in groupedItems)
-            {
-                html.AppendLine($"                        <dt>{group.Key}</dt>");
-                html.AppendLine("                        <dd><ul>");
-                foreach (var item in group)
-                {
-                    string itemName = GetItemName(item.ItemPrototypeRuntimeIdForClient);
-                    html.AppendLine($"                            <li>{itemName}</li>");
-                }
-                html.AppendLine("                        </ul></dd>");
-            }
-            
-            html.AppendLine("                    </dl>");
-            html.AppendLine("                </div>");
-            html.AppendLine("            </div>");
-            html.AppendLine("            <div class=\"text-column\">");
-            html.AppendLine($"                <h2>{entry.Title}</h2>");
-            html.AppendLine($"                <p>{entry.Description}</p>");
-            html.AppendLine("            </div>");
-            html.AppendLine("        </div>");
-            html.AppendLine("    </div>");
-            html.AppendLine("    <div class=\"buttons-container\">");
-            html.AppendLine($"        <div class=\"price\">{entry.ItemPrice} <span class=\"g ir\">G</span></div>");
-            html.AppendLine($"        <button class=\"alternate-1\" onclick=\"myApi.BuyBundleFromJS('{bundle.SkuId}')\">Buy Now!</button>");
-            html.AppendLine("    </div>");
-            html.AppendLine("</div>");
+            html.AppendLine("\t<div class=\"content\">");
+            html.AppendLine($"\t\t<h1>{title}</h1>");
+            html.AppendLine("\t\t<p>Included in this bundle:</p>");
+            html.AppendLine("\t\t<ul>");
+            html.Append(itemsHtml.ToString());
+            html.AppendLine("\t\t</ul>");
+            html.AppendLine("\t</div>");
+            html.AppendLine("\t<div class=\"buttons content\">");
+            html.AppendLine($"\t\t<span class=\"price\">{price} G</span>");
+            html.AppendLine($"\t\t<button onclick=\"myApi.BuyBundleFromJS('{skuIdHex}')\">Buy Now!</button>");
+            html.AppendLine("\t</div>");
             html.AppendLine("</body>");
             html.AppendLine("</html>");
             
@@ -274,7 +182,7 @@ namespace CatalogManager.Services
             if (saveToFile)
             {
                 // Create a filename based on the bundle title
-                string fileName = $"{entry.Title.ToLower().Replace(" ", "_")}_en_bundle.html";
+                string fileName = $"{title.ToLower().Replace(" ", "_")}_en_bundle.html";
                 string filePath = Path.Combine(_htmlOutputDirectory, fileName);
                 
                 // Save the HTML file
