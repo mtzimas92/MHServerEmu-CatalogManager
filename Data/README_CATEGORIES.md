@@ -72,14 +72,16 @@ The file is a JSON array of category objects. Each category has three properties
 
 ## Common Item Paths
 
+Item paths can be found by using **OpenCalligraphy**, available at: https://github.com/Crypto137/OpenCalligraphy
+
 Here are some common item paths you might want to add:
 
 - **Artifacts**: `Entity/Items/Artifacts`
-- **Legendary Items**: `Entity/Items/LegendaryItems`
+- **Legendary Items**: `Entity/Items/Legendaries`
 - **Medals**: `Entity/Items/Medals`
 - **Relics**: `Entity/Items/Relics`
 - **Rings**: `Entity/Items/Rings`
-- **Team-Up Gear**: `Entity/Items/TeamUpGear`
+- **Runes**: `Entity/Items/Runewords/Glyphs`
 - **Insignias**: `Entity/Items/Insignias`
 
 ## Design State Filtering
