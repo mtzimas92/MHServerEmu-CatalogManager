@@ -144,16 +144,21 @@ WebContent/
 ## Configuration
 
 ### Categories
-Edit `Data/categories.json` to customize item categories. See `Data/README_CATEGORIES.md` for details.
+Edit `Data/categories.json` to customize item categories. See `Data/README_CATEGORIES.md` for details. `README_CATEGORIES.MD` is an AI generated file, which has been manually checked for accuracy. 
 
 Use **OpenCalligraphy** to discover item paths: https://github.com/Crypto137/OpenCalligraphy
+
+### Localization
+Go to `Data/Localization/` and copy `en-US.json` to a new file. Rename it with your country's locale code. Edit the entries to your own language. Once finished, open the application and select your language from the dropdown menu, located at the bottom right corner. See `Data/README_LOCALIZATION.md` for details. `README_LOCALIZATION.md` is an AI-generated file, which has been manually checked for accuracy. 
+
 
 ## Disclaimer
 
 **Important Notes:**
-- Always backup your catalog files before making changes
+- Always backup your catalog files before making changes.
+- Backup the stock `en-US.json` and `Data/categories.json` file so you have fallback stock settings in case something goes wrong.
 - Some items may require specific type modifiers to work correctly
-- Stash tabs **must** have the "StashPage" modifier
+- Stash tabs **must** have the "StashPage" modifier.
 
 **Reporting Issues:**
 Please report any bugs or issues you encounter. This helps improve the tool for everyone!
@@ -162,3 +167,4 @@ Please report any bugs or issues you encounter. This helps improve the tool for 
 
 - Built for **MHServerEmu**: https://github.com/Crypto137/MHServerEmu
 - Uses **OpenCalligraphy** for item discovery: https://github.com/Crypto137/OpenCalligraphy
+
