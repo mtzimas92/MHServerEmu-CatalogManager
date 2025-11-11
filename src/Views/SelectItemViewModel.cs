@@ -127,6 +127,7 @@ namespace CatalogManager.ViewModels
             var jsonPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "display_names.json");
             var jsonContent = File.ReadAllText(jsonPath);
             _displayNameMapping = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, string>>(jsonContent);
+            
             // Initialize categories asynchronously
             Task.Run(InitializeCategoriesAsync);
         }
@@ -135,21 +136,41 @@ namespace CatalogManager.ViewModels
         {
             try
             {
-                var categories = new ObservableCollection<Category>
+                ObservableCollection<Category> categories;
+                
+                // Try to load categories from config file
+                var categoriesPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "categories.json");
+                
+                if (File.Exists(categoriesPath))
                 {
-                    new Category { Path = "Entity/Items/Consumables", DisplayName = "Consumables", IsInventoryType = false },
-                    new Category { Path = "Entity/Items/CharacterTokens", DisplayName = "Character Tokens", IsInventoryType = false },
-                    new Category { Path = "Entity/Items/Costumes", DisplayName = "Costumes", IsInventoryType = false },
-                    new Category { Path = "Entity/Items/CurrencyItems", DisplayName = "Currency Items", IsInventoryType = false },
-                    new Category { Path = "Entity/Items/Pets", DisplayName = "Pets", IsInventoryType = false },
-                    new Category { Path = "Entity/Items/Crafting", DisplayName = "Crafting", IsInventoryType = false },
-                    new Category { Path = "Entity/Inventory/PlayerInventories/StashInventories/PageProtos/AvatarGear", DisplayName = "Stash Tabs", IsInventoryType = true },
-                    new Category { 
-                        Path = "Entity/Items/Test|Entity/Items/Artifacts/Prototypes/Tier1Artifacts/RaidTest|Entity/Items/Medals/MedalBlueprints/Endgame/TestMedals", 
-                        DisplayName = "Test Gear", 
-                        IsInventoryType = false 
-                    },
-                };
+                    var categoriesJson = await File.ReadAllTextAsync(categoriesPath);
+                    var categoriesList = System.Text.Json.JsonSerializer.Deserialize<List<Category>>(categoriesJson);
+                    categories = new ObservableCollection<Category>(categoriesList ?? new List<Category>());
+                }
+                else
+                {
+                    // Fallback to default categories if file doesn't exist
+                    categories = new ObservableCollection<Category>
+                    {
+                        new Category { Path = "Entity/Items/Consumables", DisplayName = "Consumables", IsInventoryType = false },
+                        new Category { Path = "Entity/Items/CharacterTokens", DisplayName = "Character Tokens", IsInventoryType = false },
+                        new Category { Path = "Entity/Items/Costumes", DisplayName = "Costumes", IsInventoryType = false },
+                        new Category { Path = "Entity/Items/CurrencyItems", DisplayName = "Currency Items", IsInventoryType = false },
+                        new Category { Path = "Entity/Items/Pets", DisplayName = "Pets", IsInventoryType = false },
+                        new Category { Path = "Entity/Items/Crafting", DisplayName = "Crafting", IsInventoryType = false },
+                        new Category { Path = "Entity/Inventory/PlayerInventories/StashInventories/PageProtos/AvatarGear", DisplayName = "Stash Tabs", IsInventoryType = true },
+                        new Category { 
+                            Path = "Entity/Items/Test|Entity/Items/Artifacts/Prototypes/Tier1Artifacts/RaidTest|Entity/Items/Medals/MedalBlueprints/Endgame/TestMedals", 
+                            DisplayName = "Test Gear", 
+                            IsInventoryType = false 
+                        },
+                    };
+                    
+                    // Create the default config file for future edits
+                    var defaultJson = System.Text.Json.JsonSerializer.Serialize(categories, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
+                    Directory.CreateDirectory(Path.GetDirectoryName(categoriesPath)!);
+                    await File.WriteAllTextAsync(categoriesPath, defaultJson);
+                }
 
                 await Application.Current.Dispatcher.InvokeAsync(() => 
                 {
