@@ -20,8 +20,8 @@ MHServerEmu - CatalogManager allows you to edit and change almost everything in 
 4. Filter by category (Consumables, Character tokens, etc) and select your item. You can further filter by typing in the search bar. Once your item is found, click OK.
 5. Now, add a short description, a Price, select the item type and the type modifier. (NOTE: Price must be minimum 1. In case of Stash Tab items, Always select the "StashPage" modifier, otherwise it will not work).
 6. Click on Save and your item has now been added to a _MODIFIED.json file depending on your initial category. Do this for any items you want to add.
-7. You can also edit or remove existing catalog entries through the user interface. You can edit all entries in all catalogs and they will be added in the _MODIFIED.json file. 
-8. You can batch modify, price update items. Select the items you want and click on the corresponding Batch button. You can only batch modify items of similar type. 
+7. You can also edit or remove existing catalog entries through the user interface. You can edit all entries in all catalogs and they will be added in the _MODIFIED.json file. To delete files, you need to select the "Enable Stock Catalog Deletion" checkbox. Warning: Doing so will delete the item from the included stock items. 
+8. You can batch modify, delete or update the price on items. Select the items you want and click on the corresponding Batch button. You can only batch modify items of similar type. 
 9. Find your modified files in the Data folder:
    - CatalogBoost_MODIFIED.json
    - CatalogHeroes_MODIFIED.json
@@ -55,4 +55,5 @@ Copy the modified json files to your MHServerEmu installation:
 ## Disclaimer
 
 This application is completely new. Any issues you may encounter, please report them so I can look into them. Before doing any work, make a backup for the Catalog.json and CatalogPatch.json files that are included in this. 
+
 
