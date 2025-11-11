@@ -1,7 +1,10 @@
 <Window x:Class="CatalogManager.Views.BatchPriceUpdateWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Update Price" Height="200" Width="300"
+        xmlns:loc="clr-namespace:CatalogManager.Converters"
+        Title="{loc:Translate BatchPriceUpdateWindow.Title}" 
+        Height="200" 
+        Width="300"
         WindowStartupLocation="CenterScreen">
     <Grid Margin="20">
         <Grid.RowDefinitions>
@@ -11,7 +14,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Enter new price for selected items:" 
+        <TextBlock Text="{loc:Translate BatchPriceUpdateWindow.Labels.EnterNewPrice}" 
                    Margin="0,0,0,10"/>
         
         <TextBox Grid.Row="1" 
@@ -21,11 +24,11 @@
         <StackPanel Grid.Row="3" 
                     Orientation="Horizontal" 
                     HorizontalAlignment="Right">
-            <Button Content="Update" 
+            <Button Content="{loc:Translate BatchPriceUpdateWindow.Buttons.Update}" 
                     Click="UpdateButton_Click"
                     Width="80" 
                     Margin="0,0,10,0"/>
-            <Button Content="Cancel" 
+            <Button Content="{loc:Translate Common.Cancel}" 
                     Click="CancelButton_Click"
                     Width="80"/>
         </StackPanel>

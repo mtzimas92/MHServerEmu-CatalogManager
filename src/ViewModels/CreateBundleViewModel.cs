@@ -45,7 +45,9 @@ namespace CatalogManager.ViewModels
         private string _statusMessage;
         
         // UI properties
-        public string WindowTitle => IsBogo ? "Create BOGO Offer" : "Create Bundle";
+        public string WindowTitle => IsBogo 
+            ? LocalizationService.Instance.GetString("CreateBundleWindow.TitleBOGO") 
+            : LocalizationService.Instance.GetString("CreateBundleWindow.TitleBundle");
         
         private bool _isBogo;
         public bool IsBogo
@@ -221,14 +223,14 @@ namespace CatalogManager.ViewModels
         {
             try
             {
-                StatusMessage = "Initializing...";
+                StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.Initializing");
                 SkuId = await _catalogService.GetNextAvailableSkuId();
                 SelectedType = "Bundle"; // Default type
-                StatusMessage = "Ready";
+                StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.Ready");
             }
             catch (Exception ex)
             {
-                StatusMessage = $"Error initializing: {ex.Message}";
+                StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.ErrorInitializing", ex.Message);
                 Debug.WriteLine($"Error initializing new bundle: {ex}");
             }
         }
@@ -251,7 +253,7 @@ namespace CatalogManager.ViewModels
         {
             try
             {
-                StatusMessage = "Opening item selector...";
+                StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.OpeningSelector");
                 
                 var selectViewModel = new SelectItemViewModel(_catalogService);
                 var selectWindow = new SelectItemWindow
@@ -275,18 +277,16 @@ namespace CatalogManager.ViewModels
                     }
                     
                     int count = selectViewModel.SelectedItems.Count;
-                    StatusMessage = count == 1 
-                        ? "Item added to bundle" 
-                        : $"{count} items added to bundle";
+                    StatusMessage = count == 1 ? LocalizationService.Instance.GetString("CreateBundleWindow.Status.ItemAdded") : LocalizationService.Instance.GetString("CreateBundleWindow.Status.ItemsAdded", count);
                 }
                 else
                 {
-                    StatusMessage = "Item selection cancelled";
+                    StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.SelectionCancelled");
                 }
             }
             catch (Exception ex)
             {
-                StatusMessage = $"Error selecting item: {ex.Message}";
+                StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.ErrorSelecting", ex.Message);
                 Debug.WriteLine($"Error in AddItemAsync: {ex}");
             }
         }
@@ -296,7 +296,7 @@ namespace CatalogManager.ViewModels
             if (SelectedBundleItem != null)
             {
                 BundleItems.Remove(SelectedBundleItem);
-                StatusMessage = "Item removed from bundle";
+                StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.ItemRemoved");
             }
         }
         
@@ -311,7 +311,7 @@ namespace CatalogManager.ViewModels
             
             try
             {
-                StatusMessage = "Opening item selector for bonus item...";
+                StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.OpeningSelectorBonus");
                 
                 var selectViewModel = new SelectItemViewModel(_catalogService);
                 var selectWindow = new SelectItemWindow
@@ -335,18 +335,16 @@ namespace CatalogManager.ViewModels
                     }
                     
                     int count = selectViewModel.SelectedItems.Count;
-                    StatusMessage = count == 1 
-                        ? "Bonus item added" 
-                        : $"{count} bonus items added";
+                    StatusMessage = count == 1 ? LocalizationService.Instance.GetString("CreateBundleWindow.Status.BonusAdded") : LocalizationService.Instance.GetString("CreateBundleWindow.Status.BonusItemsAdded", count);
                 }
                 else
                 {
-                    StatusMessage = "Bonus item selection cancelled";
+                    StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.BonusSelectionCancelled");
                 }
             }
             catch (Exception ex)
             {
-                StatusMessage = $"Error selecting bonus item: {ex.Message}";
+                StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.ErrorSelectingBonus", ex.Message);
                 Debug.WriteLine($"Error in AddBonusItemAsync: {ex}");
             }
         }
@@ -356,7 +354,7 @@ namespace CatalogManager.ViewModels
             if (SelectedBonusItem != null)
             {
                 BonusItems.Remove(SelectedBonusItem);
-                StatusMessage = "Bonus item removed";
+                StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.BonusRemoved");
             }
         }
         
@@ -384,7 +382,7 @@ namespace CatalogManager.ViewModels
             // Prevent multiple save operations
             if (!await _saveLock.WaitAsync(0))
             {
-                StatusMessage = "Save already in progress";
+                StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.SaveInProgress");
                 return;
             }
             
@@ -396,7 +394,7 @@ namespace CatalogManager.ViewModels
                 var token = _saveCts.Token;
                 
                 IsSaving = true;
-                StatusMessage = "Saving bundle...";
+                StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.Saving");
                 
                 // Validate all required fields
                 if (!ValidateAllFields(out string validationError))
@@ -463,7 +461,7 @@ namespace CatalogManager.ViewModels
                 };
                 if (!IsBogo)
                 {
-                    StatusMessage = "Generating bundle HTML...";
+                    StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.GeneratingHtml");
                     
                     try
                     {
@@ -473,12 +471,12 @@ namespace CatalogManager.ViewModels
                         // Generate thumbnail image
                         await _htmlGenerator.GenerateThumbnailImageAsync(Title);
                         
-                        StatusMessage = "HTML and thumbnail generated successfully";
+                        StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.HtmlGenerated");
                     }
                     catch (Exception ex)
                     {
                         Debug.WriteLine($"Error generating HTML/thumbnail: {ex.Message}");
-                        StatusMessage = "Warning: Could not generate HTML/thumbnail";
+                        StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.HtmlWarning");
                     }
                 }
                 // Attempt to save with timeout
@@ -501,7 +499,7 @@ namespace CatalogManager.ViewModels
                     // Force cache refresh in CatalogService
                     await _catalogService.LoadCatalogAsync(true);
                     
-                    StatusMessage = "Bundle saved successfully. Ready for next bundle.";
+                    StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.SavedNext");
                 }
                 Debug.WriteLine($"Successfully saved bundle: {SkuId} - {Title}");
                 
@@ -510,11 +508,11 @@ namespace CatalogManager.ViewModels
             }
             catch (OperationCanceledException)
             {
-                StatusMessage = "Save operation cancelled";
+                StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.SaveCancelled");
             }
             catch (Exception ex)
             {
-                StatusMessage = $"Error saving bundle: {ex.Message}";
+                StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.ErrorSaving", ex.Message);
                 Debug.WriteLine($"Error saving bundle: {ex}");
                 
                 MessageBox.Show($"Failed to save bundle: {ex.Message}\n\nPlease try again or contact support.",
@@ -577,7 +575,7 @@ namespace CatalogManager.ViewModels
                     return;
                     
                 _isClosing = true;
-                StatusMessage = "Closing...";
+                StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.Closing");
                 
                 // Cancel any pending operations
                 _saveCts?.Cancel();
@@ -687,3 +685,5 @@ namespace CatalogManager.ViewModels
         }
     }
 }
+
+

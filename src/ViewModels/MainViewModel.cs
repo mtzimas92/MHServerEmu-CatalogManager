@@ -66,8 +66,8 @@ namespace CatalogManager.ViewModels
                 if (value == true)
                 {
                     var result = MessageBox.Show(
-                        "Warning: This will allow deletion of items from the stock catalog.json file.\nThese deletions cannot be undone without restoring from backup.\n\nDo you want to enable catalog deletion?",
-                        "Enable Catalog Deletion",
+                        LocalizationService.Instance.GetString("MainWindow.Messages.EnableCatalogDeletionWarning"),
+                        LocalizationService.Instance.GetString("MainWindow.Messages.EnableCatalogDeletionTitle"),
                         MessageBoxButton.YesNo,
                         MessageBoxImage.Warning
                     );
@@ -215,7 +215,7 @@ namespace CatalogManager.ViewModels
             CreateBundleCommand = new AsyncRelayCommand(CreateBundleAsync);
 
             // Set initial status
-            StatusText = "No catalog loaded. Please select File → Load Catalog to begin.";
+            StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.NoFilesLoaded");
             
             // Initialize categories with just "All"
             Categories.Add("All");
@@ -228,7 +228,7 @@ namespace CatalogManager.ViewModels
             if (!await _operationLock.WaitAsync(0))
             {
                 Debug.WriteLine("LoadItemsAsync: Operation already in progress");
-                StatusText = "Operation already in progress";
+                StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.OperationInProgress");
                 return;
             }
             
@@ -242,7 +242,7 @@ namespace CatalogManager.ViewModels
                 var token = _loadCts.Token;
                 
                 IsLoading = true;
-                StatusText = "Loading items...";
+                StatusText = LocalizationService.Instance.GetString("SelectItemWindow.Status.LoadingItems");
                 Debug.WriteLine("LoadItemsAsync: Calling CatalogService.LoadCatalogAsync");
                 
                 // Load catalog data
@@ -314,7 +314,7 @@ namespace CatalogManager.ViewModels
                         Items.Add(item);
                     }
                     
-                    StatusText = $"Loaded {Items.Count} items";
+                    StatusText = LocalizationService.Instance.GetString("SelectItemWindow.Status.LoadedItems", Items.Count);
                     Debug.WriteLine($"LoadItemsAsync: Items collection now has {Items.Count} items");
                     
                     // Refresh the view
@@ -325,12 +325,12 @@ namespace CatalogManager.ViewModels
             catch (OperationCanceledException)
             {
                 Debug.WriteLine("LoadItemsAsync: Operation cancelled");
-                StatusText = "Loading cancelled";
+                StatusText = LocalizationService.Instance.GetString("SelectItemWindow.Status.LoadingCancelled");
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"LoadItemsAsync: Exception caught: {ex}");
-                StatusText = $"Error loading items: {ex.Message}";
+                StatusText = LocalizationService.Instance.GetString("SelectItemWindow.Status.ErrorLoading", ex.Message);
                 Debug.WriteLine($"Error loading items: {ex}");
             }
             finally
@@ -352,7 +352,7 @@ namespace CatalogManager.ViewModels
         {
             try
             {
-                StatusText = "Opening bundle creation dialog...";
+                StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.OpeningBundleDialog");
                 
                 var viewModel = new CreateBundleViewModel(_catalogService);
                 var window = new CreateBundleWindow { DataContext = viewModel };
@@ -360,17 +360,17 @@ namespace CatalogManager.ViewModels
                 
                 if (window.ShowDialog() == true)
                 {
-                    StatusText = "Bundle created successfully";
+                    StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.BundleCreated");
                     await LoadItemsAsync();
                 }
                 else
                 {
-                    StatusText = "Bundle creation cancelled";
+                    StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.BundleCreationCancelled");
                 }
             }
             catch (Exception ex)
             {
-                StatusText = $"Error creating bundle: {ex.Message}";
+                StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.ErrorCreatingBundle", ex.Message);
                 Debug.WriteLine($"Error in CreateBundleAsync: {ex}");
             }
         }
@@ -402,7 +402,7 @@ namespace CatalogManager.ViewModels
         {
             try
             {
-                StatusText = "Opening add item dialog...";
+                StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.OpeningAddDialog");
                 
                 var viewModel = new AddItemViewModel(_catalogService);
                 var window = new AddItemWindow { DataContext = viewModel };
@@ -410,17 +410,17 @@ namespace CatalogManager.ViewModels
                 
                 if (window.ShowDialog() == true)
                 {
-                    StatusText = "Item added successfully";
+                    StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.ItemAdded");
                     await LoadItemsAsync();
                 }
                 else
                 {
-                    StatusText = "Add item cancelled";
+                    StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.AddItemCancelled");
                 }
             }
             catch (Exception ex)
             {
-                StatusText = $"Error adding item: {ex.Message}";
+                StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.ErrorAddingItem", ex.Message);
                 Debug.WriteLine($"Error in AddItemAsync: {ex}");
             }
         }
@@ -429,13 +429,16 @@ namespace CatalogManager.ViewModels
         {
             if (SelectedItems.FirstOrDefault() == null)
             {
-                MessageBox.Show("Please select an item to edit.", "No Selection", MessageBoxButton.OK);
+                MessageBox.Show(
+                    LocalizationService.Instance.GetString("MainWindow.Messages.NoSelectionMessage"),
+                    LocalizationService.Instance.GetString("MainWindow.Messages.NoSelectionTitle"),
+                    MessageBoxButton.OK);
                 return;
             }
 
             try
             {
-                StatusText = "Opening edit item dialog...";
+                StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.OpeningEditDialog");
                 
                 var viewModel = new AddItemViewModel(_catalogService, SelectedItems.First());
                 var window = new AddItemWindow { DataContext = viewModel };
@@ -443,17 +446,17 @@ namespace CatalogManager.ViewModels
                 
                 if (window.ShowDialog() == true)
                 {
-                    StatusText = "Item updated successfully";
+                    StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.ItemUpdated");
                     await LoadItemsAsync();
                 }
                 else
                 {
-                    StatusText = "Edit item cancelled";
+                    StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.EditItemCancelled");
                 }
             }
             catch (Exception ex)
             {
-                StatusText = $"Error editing item: {ex.Message}";
+                StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.ErrorEditingItem", ex.Message);
                 Debug.WriteLine($"Error in EditItemAsync: {ex}");
             }
         }
@@ -471,40 +474,42 @@ namespace CatalogManager.ViewModels
             {
                 // Add warning about catalog.json items
                 var warningMessage = AllowCatalogModification
-                    ? "Warning: You are about to delete an item directly from catalog.json. This cannot be undone.\n\nProceed with deletion?"
-                    : "Are you sure you want to delete this item?\n\nNote: Only items added through patches can be removed.";
+                    ? LocalizationService.Instance.GetString("MainWindow.Messages.DeleteItemWarning")
+                    : LocalizationService.Instance.GetString("MainWindow.Messages.DeleteItemConfirmation");
             
                 var result = MessageBox.Show(
                     warningMessage,
-                    "Confirm Delete",
+                    LocalizationService.Instance.GetString("MainWindow.Messages.DeleteItemTitle"),
                     MessageBoxButton.YesNo,
                     MessageBoxImage.Question);
 
                 if (result == MessageBoxResult.Yes)
                 {
-                    StatusText = "Deleting item...";
+                    StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.DeletingItem");
                     bool success = await _catalogService.DeleteItemAsync(SelectedItems.First().SkuId);
 
                     if (success)
                     {
-                        StatusText = "Item deleted successfully";
+                        StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.ItemDeleted");
                         await LoadItemsAsync();
                     }
                     else
                     {
-                        StatusText = "Failed to delete item";
-                        MessageBox.Show("The item could not be deleted.",
-                            "Delete Failed", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.FailedToDeleteItem");
+                        MessageBox.Show(
+                            LocalizationService.Instance.GetString("MainWindow.Messages.DeleteItemFailed"),
+                            LocalizationService.Instance.GetString("MainWindow.Messages.DeleteItemFailedTitle"),
+                            MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
                 }
                 else
                 {
-                    StatusText = "Delete cancelled";
+                    StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.DeleteCancelled");
                 }
             }
             catch (Exception ex)
             {
-                StatusText = $"Error deleting item: {ex.Message}";
+                StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.ErrorDeletingItem", ex.Message);
                 Debug.WriteLine($"Error in DeleteItemAsync: {ex}");
             }
         }
@@ -522,18 +527,18 @@ namespace CatalogManager.ViewModels
             {
                 // Add warning about catalog.json items
                 var warningMessage = AllowCatalogModification
-                    ? $"Warning: You are about to delete {SelectedItems.Count} items from their source files. This cannot be undone.\n\nProceed with deletion?"
-                    : $"Are you sure you want to delete {SelectedItems.Count} items?\n\nNote: This will delete items from their source files.";
+                    ? LocalizationService.Instance.GetString("MainWindow.Messages.BatchDeleteWarningCatalog", SelectedItems.Count)
+                    : LocalizationService.Instance.GetString("MainWindow.Messages.BatchDeleteConfirmationPatch", SelectedItems.Count);
             
                 var result = MessageBox.Show(
                     warningMessage,
-                    "Confirm Batch Delete",
+                    LocalizationService.Instance.GetString("MainWindow.Messages.BatchDeleteConfirmTitle"),
                     MessageBoxButton.YesNo,
                     MessageBoxImage.Question);
 
                 if (result == MessageBoxResult.Yes)
                 {
-                    StatusText = $"Deleting {SelectedItems.Count} items...";
+                    StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.DeletingItems", SelectedItems.Count);
                     int successCount = 0;
                     
                     foreach (var item in SelectedItems.ToList())
@@ -542,17 +547,17 @@ namespace CatalogManager.ViewModels
                             successCount++;
                     }
                     
-                    StatusText = $"Deleted {successCount} of {SelectedItems.Count} items";
+                    StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.DeletedItems", successCount, SelectedItems.Count);
                     await LoadItemsAsync();
                 }
                 else
                 {
-                    StatusText = "Batch delete cancelled";
+                    StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.BatchDeleteCancelled");
                 }
             }
             catch (Exception ex)
             {
-                StatusText = $"Error during batch delete: {ex.Message}";
+                StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.ErrorBatchDelete", ex.Message);
                 Debug.WriteLine($"Error in BatchDeleteAsync: {ex}");
             }
         }
@@ -573,7 +578,7 @@ namespace CatalogManager.ViewModels
                 
                 if (dialog.ShowDialog() == true)
                 {
-                    StatusText = $"Updating prices for {SelectedItems.Count} items...";
+                    StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.UpdatingPrices", SelectedItems.Count);
                     int successCount = 0;
                     
                     foreach (var item in SelectedItems.ToList())
@@ -590,17 +595,17 @@ namespace CatalogManager.ViewModels
                         }
                     }
                     
-                    StatusText = $"Updated prices for {successCount} of {SelectedItems.Count} items";
+                    StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.PricesUpdated", successCount, SelectedItems.Count);
                     await LoadItemsAsync();
                 }
                 else
                 {
-                    StatusText = "Batch price update cancelled";
+                    StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.BatchPriceUpdateCancelled");
                 }
             }
             catch (Exception ex)
             {
-                StatusText = $"Error during batch price update: {ex.Message}";
+                StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.ErrorBatchPriceUpdate", ex.Message);
                 Debug.WriteLine($"Error in BatchPriceUpdateAsync: {ex}");
             }
         }
@@ -622,15 +627,15 @@ namespace CatalogManager.ViewModels
                 if (itemTypes.Count > 1)
                 {
                     MessageBox.Show(
-                        "You can only batch modify items of the same type. Please filter your selection to include only one type of item.",
-                        "Multiple Types Selected",
+                        LocalizationService.Instance.GetString("MainWindow.Messages.MultipleTypesMessage"),
+                        LocalizationService.Instance.GetString("MainWindow.Messages.MultipleTypesTitle"),
                         MessageBoxButton.OK,
                         MessageBoxImage.Warning);
                     return;
                 }
                 
                 string itemType = itemTypes.First();
-                StatusText = $"Opening batch modify dialog for {itemType} items...";
+                StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.OpeningBatchModifyDialog", itemType);
                 
                 var viewModel = new BatchModifyViewModel(_catalogService, itemType);
                 var window = new BatchModifyWindow { DataContext = viewModel };
@@ -638,7 +643,7 @@ namespace CatalogManager.ViewModels
                 
                 if (window.ShowDialog() == true)
                 {
-                    StatusText = $"Modifying {SelectedItems.Count} {itemType} items...";
+                    StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.ModifyingItems", SelectedItems.Count, itemType);
                     int successCount = 0;
                     int alreadyHadCount = 0;
                     int notModifiedCount = 0;
@@ -723,11 +728,13 @@ namespace CatalogManager.ViewModels
                     string statusMessage;
                     if (viewModel.AddModifiers)
                     {
-                        statusMessage = $"Added modifiers to {successCount} of {SelectedItems.Count} {itemType} items. {alreadyHadCount} items already had all selected modifiers.";
+                        statusMessage = LocalizationService.Instance.GetString("MainWindow.StatusBar.ModifiersAdded", 
+                            successCount, SelectedItems.Count, itemType, alreadyHadCount);
                     }
                     else
                     {
-                        statusMessage = $"Removed modifiers from {successCount} of {SelectedItems.Count} {itemType} items. {notModifiedCount} items didn't have the selected modifiers.";
+                        statusMessage = LocalizationService.Instance.GetString("MainWindow.StatusBar.ModifiersRemoved", 
+                            successCount, SelectedItems.Count, itemType, notModifiedCount);
                     }
                     
                     StatusText = statusMessage;
@@ -735,7 +742,7 @@ namespace CatalogManager.ViewModels
                     // Show results popup
                     MessageBox.Show(
                         statusMessage,
-                        "Batch Modification Results",
+                        LocalizationService.Instance.GetString("MainWindow.Messages.BatchModificationResultsTitle"),
                         MessageBoxButton.OK,
                         MessageBoxImage.Information);
                         
@@ -743,12 +750,12 @@ namespace CatalogManager.ViewModels
                 }
                 else
                 {
-                    StatusText = "Batch modification cancelled";
+                    StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.BatchModificationCancelled");
                 }
             }
             catch (Exception ex)
             {
-                StatusText = $"Error during batch modification: {ex.Message}";
+                StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.ErrorBatchModification", ex.Message);
                 Debug.WriteLine($"Error in BatchModifyAsync: {ex}");
             }
         }
@@ -792,3 +799,4 @@ namespace CatalogManager.ViewModels
         public int? Max { get; set; }
     }
 }
+

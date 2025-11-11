@@ -182,7 +182,7 @@ namespace CatalogManager.ViewModels
             {
                 await Application.Current.Dispatcher.InvokeAsync(() => 
                 {
-                    StatusMessage = $"Error initializing categories: {ex.Message}";
+                    StatusMessage = LocalizationService.Instance.GetString("SelectItemWindow.Status.ErrorInitializing", ex.Message);
                 });
             }
         }
@@ -199,7 +199,7 @@ namespace CatalogManager.ViewModels
                 var token = _loadCts.Token;
                 
                 IsLoading = true;
-                StatusMessage = "Loading items...";
+                StatusMessage = LocalizationService.Instance.GetString("SelectItemWindow.Status.LoadingItems");
                 
                 // Get existing catalog items to exclude
                 var catalogItems = await _catalogService.GetItemsAsync("All", "", token);
@@ -312,7 +312,7 @@ namespace CatalogManager.ViewModels
                             }
                         }
 
-                        StatusMessage = $"Loaded {_items.Count} items";
+                        StatusMessage = LocalizationService.Instance.GetString("SelectItemWindow.Status.LoadedItems", _items.Count);
                         FilterItems();
                         
                     });
@@ -321,11 +321,11 @@ namespace CatalogManager.ViewModels
             }
             catch (OperationCanceledException)
             {
-                StatusMessage = "Loading cancelled";
+                StatusMessage = LocalizationService.Instance.GetString("SelectItemWindow.Status.LoadingCancelled");
             }
             catch (Exception ex)
             {
-                StatusMessage = $"Error loading items: {ex.Message}";
+                StatusMessage = LocalizationService.Instance.GetString("SelectItemWindow.Status.ErrorLoading", ex.Message);
             }
             finally
             {
@@ -366,11 +366,11 @@ namespace CatalogManager.ViewModels
                     };
                 }
                 
-                StatusMessage = $"Found {_itemsViewSource.View.Cast<object>().Count()} items";
+                StatusMessage = LocalizationService.Instance.GetString("SelectItemWindow.Status.FoundItems", _itemsViewSource.View.Cast<object>().Count());
             }
             catch (Exception ex)
             {
-                StatusMessage = $"Error filtering items: {ex.Message}";
+                StatusMessage = LocalizationService.Instance.GetString("SelectItemWindow.Status.ErrorFiltering", ex.Message);
             }
         }
         

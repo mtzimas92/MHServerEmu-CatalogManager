@@ -4,8 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CatalogManager.Views"
+        xmlns:loc="clr-namespace:CatalogManager.Converters"
         mc:Ignorable="d"
-        Title="Batch Modify Type Modifiers" Height="450" Width="500"
+        Title="{loc:Translate BatchModifyWindow.Title}" 
+        Height="450" 
+        Width="500"
         WindowStartupLocation="CenterOwner">
     <Grid Margin="15">
         <Grid.RowDefinitions>
@@ -16,25 +19,25 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="Batch Modify Type Modifiers" 
+        <TextBlock Grid.Row="0" Text="{loc:Translate BatchModifyWindow.Title}" 
                    FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
         
         <TextBlock Grid.Row="1" TextWrapping="Wrap" Margin="0,0,0,15">
-            <Run Text="Select type modifiers to add or remove from all selected"/>
+            <Run Text="{loc:Translate BatchModifyWindow.Labels.Instructions1}"/>
             <Run Text="{Binding ItemType, Mode=OneWay}"/>
-            <Run Text="items."/>
+            <Run Text="{loc:Translate BatchModifyWindow.Labels.Instructions2}"/>
         </TextBlock>
         
         <StackPanel Grid.Row="2" Margin="0,0,0,10">
             <StackPanel Orientation="Horizontal" Margin="0,5">
-                <TextBlock Text="Item Type:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBlock Text="{loc:Translate BatchModifyWindow.Labels.ItemType}" VerticalAlignment="Center" Margin="0,0,10,0"/>
                 <TextBlock Text="{Binding ItemType}" FontWeight="Bold" VerticalAlignment="Center"/>
             </StackPanel>
             
             <StackPanel Orientation="Horizontal" Margin="0,10,0,5">
-                <RadioButton Content="Add modifiers to items" IsChecked="{Binding AddModifiers}" 
+                <RadioButton Content="{loc:Translate BatchModifyWindow.Labels.AddModifiers}" IsChecked="{Binding AddModifiers}" 
                              Margin="0,0,20,0" GroupName="ModifyType"/>
-                <RadioButton Content="Remove modifiers from items" IsChecked="{Binding RemoveModifiers}" 
+                <RadioButton Content="{loc:Translate BatchModifyWindow.Labels.RemoveModifiers}" IsChecked="{Binding RemoveModifiers}" 
                              GroupName="ModifyType"/>
             </StackPanel>
         </StackPanel>
@@ -45,7 +48,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             
-            <TextBlock Grid.Row="0" Text="Select Type Modifiers:" Margin="0,0,0,5"/>
+            <TextBlock Grid.Row="0" Text="{loc:Translate BatchModifyWindow.Labels.SelectModifiers}" Margin="0,0,0,5"/>
             
             <ListBox Grid.Row="1" Name="TypeModifiersListBox" 
                      ItemsSource="{Binding AvailableTypeModifiers}"
@@ -60,8 +63,8 @@
         </Grid>
 
         <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0">
-            <Button Content="Apply" Command="{Binding ApplyCommand}" Width="80" Margin="0,0,10,0"/>
-            <Button Content="Cancel" Command="{Binding CancelCommand}" Width="80"/>
+            <Button Content="{loc:Translate Common.Apply}" Command="{Binding ApplyCommand}" Width="80" Margin="0,0,10,0"/>
+            <Button Content="{loc:Translate Common.Cancel}" Command="{Binding CancelCommand}" Width="80"/>
         </StackPanel>
     </Grid>
 </Window>

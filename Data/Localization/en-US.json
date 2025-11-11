@@ -1,0 +1,365 @@
+{
+  "Language": {
+    "Code": "en-US",
+    "Name": "English (United States)"
+  },
+  "MainWindow": {
+    "Title": "Marvel Heroes Catalog Manager",
+    "Menu": {
+      "File": "_File",
+      "LoadCatalogFile": "_Load Catalog File...",
+      "ClearAllFiles": "_Clear All Files",
+      "CurrentFiles": "_Current Files",
+      "Exit": "E_xit"
+    },
+    "Tooltip": {
+      "LoadedFiles": "Loaded Files:",
+      "NoFilesLoaded": "No files loaded",
+      "DeletionWarning": "Warning: This will allow deletion of items from the stock catalog.json file. These deletions cannot be undone without restoring from backup."
+    },
+    "StatusBar": {
+      "NoFilesLoaded": "No catalog loaded. Please select File → Load Catalog to begin.",
+      "LoadingCatalog": "Loading catalog file...",
+      "LoadedCatalog": "Loaded catalog: {0}",
+      "LoadedFiles": "Loaded: {0} ({1} file(s) total)",
+      "FailedToLoad": "Failed to load catalog file",
+      "AllFilesCleared": "All files cleared. Please load a catalog file to begin.",
+      "Error": "Error: {0}",
+      "OperationInProgress": "Operation already in progress",
+      "OpeningBundleDialog": "Opening bundle creation dialog...",
+      "BundleCreated": "Bundle created successfully",
+      "BundleCreationCancelled": "Bundle creation cancelled",
+      "ErrorCreatingBundle": "Error creating bundle: {0}",
+      "OpeningAddDialog": "Opening add item dialog...",
+      "ItemAdded": "Item added successfully",
+      "AddItemCancelled": "Add item cancelled",
+      "ErrorAddingItem": "Error adding item: {0}",
+      "OpeningEditDialog": "Opening edit item dialog...",
+      "ItemUpdated": "Item updated successfully",
+      "EditItemCancelled": "Edit item cancelled",
+      "ErrorEditingItem": "Error editing item: {0}",
+      "DeletingItem": "Deleting item...",
+      "ItemDeleted": "Item deleted successfully",
+      "FailedToDeleteItem": "Failed to delete item",
+      "DeleteCancelled": "Delete cancelled",
+      "DeletingItems": "Deleting {0} items...",
+      "DeletedItems": "Deleted {0} of {1} items",
+      "BatchDeleteCancelled": "Batch delete cancelled",
+      "ErrorDeletingItem": "Error deleting item: {0}",
+      "ErrorBatchDelete": "Error during batch delete: {0}",
+      "UpdatingPrices": "Updating prices for {0} items...",
+      "PricesUpdated": "Updated prices for {0} of {1} items",
+      "BatchPriceUpdateCancelled": "Batch price update cancelled",
+      "ErrorBatchPriceUpdate": "Error during batch price update: {0}",
+      "OpeningBatchModifyDialog": "Opening batch modify dialog for {0} items...",
+      "ModifyingItems": "Modifying {0} {1} items...",
+      "ModifiersAdded": "Added modifiers to {0} of {1} {2} items. {3} items already had all selected modifiers.",
+      "ModifiersRemoved": "Removed modifiers from {0} of {1} {2} items. {3} items didn't have the selected modifiers.",
+      "BatchModificationCancelled": "Batch modification cancelled",
+      "ErrorBatchModification": "Error during batch modification: {0}"
+    },
+    "Controls": {
+      "CategoryFilter": "Category Filter",
+      "SearchPlaceholder": "Search...",
+      "PriceRange": "Price Range:",
+      "MinPrice": "Min",
+      "MaxPrice": "Max",
+      "EnableStockCatalogDeletion": "Enable Stock Catalog Deletion",
+      "EnableCatalogDeletionTooltip": "Warning: This will allow deletion of items from the stock catalog files. These deletions cannot be undone without restoring from backup."
+    },
+    "Buttons": {
+      "BatchModify": "Batch Modify",
+      "CreateBundle": "Create Bundle/BOGO",
+      "BatchPriceUpdate": "Batch Price Update",
+      "BatchDelete": "Batch Delete",
+      "AddItem": "Add New Item",
+      "Refresh": "Refresh",
+      "Edit": "Edit",
+      "Delete": "Delete"
+    },
+    "DataGrid": {
+      "SkuId": "SKU",
+      "DisplayName": "Title",
+      "Type": "Type",
+      "Price": "Price",
+      "Actions": "Actions"
+    },
+    "PriceRanges": {
+      "All": "All Prices",
+      "Free": "Free",
+      "Under500": "Under 500G",
+      "500to1000": "500G - 1000G",
+      "1000to2000": "1000G - 2000G",
+      "Over2000": "Over 2000G"
+    },
+    "Messages": {
+      "DeleteConfirmation": "Are you sure you want to delete the item '{0}'?",
+      "DeleteTitle": "Confirm Delete",
+      "DeleteSuccess": "Item deleted successfully",
+      "DeleteFailed": "The item could not be deleted.",
+      "BatchDeleteWarning": "Warning: You are about to delete {0} items from their source files. This cannot be undone.\n\nProceed with deletion?",
+      "BatchDeleteConfirmation": "Are you sure you want to delete {0} items?\n\nNote: This will delete items from their source files.",
+      "BatchDeleteTitle": "Confirm Batch Delete",
+      "DeletedItems": "Deleted {0} of {1} items",
+      "DeleteCancelled": "Delete cancelled",
+      "EnableCatalogDeletionWarning": "Warning: This will allow deletion of items from the stock catalog.json file.\nThese deletions cannot be undone without restoring from backup.\n\nDo you want to enable catalog deletion?",
+      "EnableCatalogDeletionTitle": "Enable Catalog Deletion",
+      "NoSelectionMessage": "Please select an item to edit.",
+      "NoSelectionTitle": "No Selection",
+      "DeleteItemWarning": "Warning: You are about to delete an item directly from catalog.json. This cannot be undone.\n\nProceed with deletion?",
+      "DeleteItemConfirmation": "Are you sure you want to delete this item?\n\nNote: Only items added through patches can be removed.",
+      "DeleteItemTitle": "Confirm Delete",
+      "DeleteItemFailed": "The item could not be deleted.",
+      "DeleteItemFailedTitle": "Delete Failed",
+      "BatchDeleteWarningCatalog": "Warning: You are about to delete {0} items from their source files. This cannot be undone.\n\nProceed with deletion?",
+      "BatchDeleteConfirmationPatch": "Are you sure you want to delete {0} items?\n\nNote: This will delete items from their source files.",
+      "BatchDeleteConfirmTitle": "Confirm Batch Delete",
+      "MultipleTypesMessage": "You can only batch modify items of the same type. Please filter your selection to include only one type of item.",
+      "MultipleTypesTitle": "Multiple Types Selected",
+      "BatchModificationResultsTitle": "Batch Modification Results"
+    }
+  },
+  "AddItemWindow": {
+    "Title": "Add New Catalog Item",
+    "EditTitle": "Edit Item",
+    "Labels": {
+      "SelectItem": "Prototype ID:",
+      "Title": "Title:",
+      "Description": "Description:",
+      "Price": "Price (G):",
+      "Quantity": "Quantity:",
+      "ItemType": "Item Type:",
+      "TypeModifiers": "Type Modifiers:",
+      "SKU": "SKU ID:"
+    },
+    "Buttons": {
+      "SelectItem": "Select Item",
+      "Save": "Save",
+      "Cancel": "Cancel"
+    },
+    "Messages": {
+      "NoItemSelected": "Please select an item first.",
+      "TitleRequired": "Title is required.",
+      "PriceInvalid": "Price must be at least 1.",
+      "ItemTypeRequired": "Please select an item type.",
+      "SaveSuccess": "Item added successfully!",
+      "SaveError": "Error saving item: {0}"
+    },
+    "Status": {
+      "Initializing": "Initializing...",
+      "Ready": "Ready",
+      "LoadingItem": "Loading item...",
+      "ItemLoaded": "Item loaded",
+      "OpeningSelector": "Opening item selector...",
+      "ItemSelected": "Item selected",
+      "SelectionCancelled": "Item selection cancelled",
+      "Saving": "Saving item...",
+      "SavedNext": "Item saved successfully. Ready for next item.",
+      "Saved": "Item saved successfully",
+      "SaveCancelled": "Save operation cancelled",
+      "SaveInProgress": "Save already in progress",
+      "Closing": "Closing...",
+      "ErrorInitializing": "Error initializing: {0}",
+      "ErrorLoading": "Error loading item: {0}",
+      "ErrorSelecting": "Error selecting item: {0}",
+      "ErrorSaving": "Error saving item: {0}"
+    }
+  },
+  "SelectItemWindow": {
+    "Title": "Select Item",
+    "Labels": {
+      "Category": "Category:",
+      "Search": "Search:",
+      "HideExisting": "Hide Existing Items",
+      "SearchPlaceholder": "Search items..."
+    },
+    "Buttons": {
+      "OK": "OK",
+      "Cancel": "Cancel"
+    },
+    "Status": {
+      "LoadingItems": "Loading items...",
+      "LoadedItems": "Loaded {0} items",
+      "FoundItems": "Found {0} items",
+      "LoadingCancelled": "Loading cancelled",
+      "ErrorLoading": "Error loading items: {0}",
+      "ErrorFiltering": "Error filtering items: {0}",
+      "ErrorInitializing": "Error initializing categories: {0}"
+    },
+    "DataGrid": {
+      "Headers": {
+        "Item": "Item",
+        "InCatalog": "In Catalog"
+      }
+    }
+  },
+  "CreateBundleWindow": {
+    "Title": "Create Bundle/BOGO",
+    "TitleBundle": "Create Bundle",
+    "TitleBOGO": "Create BOGO Offer",
+    "Labels": {
+      "OfferType": "Offer Type:",
+      "Bundle": "Bundle",
+      "BOGO": "BOGO (Buy One Get One)",
+      "SKU": "SKU ID:",
+      "Title": "Title:",
+      "Description": "Description:",
+      "Price": "Price:",
+      "ItemType": "Item Type:",
+      "BundleItems": "Bundle Items:",
+      "BonusItems": "Bonus Items (BOGO):",
+      "Quantity": "Quantity:",
+      "TypeModifiers": "Type Modifiers:"
+    },
+    "Buttons": {
+      "AddItem": "Add Item",
+      "RemoveItem": "Remove Item",
+      "AddBonus": "Add Bonus",
+      "RemoveBonus": "Remove Bonus",
+      "Save": "Save",
+      "Cancel": "Cancel"
+    },
+    "Messages": {
+      "BundleNameRequired": "Bundle title is required.",
+      "InvalidPrice": "Price must be a valid number.",
+      "NoItems": "Please add at least one item to the bundle.",
+      "SaveSuccess": "Bundle created successfully!",
+      "SaveError": "Error creating bundle: {0}",
+      "HtmlGenerationError": "Error generating HTML: {0}"
+    },
+    "Status": {
+      "Initializing": "Initializing...",
+      "Ready": "Ready",
+      "OpeningSelector": "Opening item selector...",
+      "OpeningSelectorBonus": "Opening item selector for bonus item...",
+      "ItemAdded": "Item added to bundle",
+      "ItemsAdded": "{0} items added to bundle",
+      "ItemRemoved": "Item removed from bundle",
+      "BonusAdded": "Bonus item added",
+      "BonusItemsAdded": "{0} bonus items added",
+      "BonusRemoved": "Bonus item removed",
+      "SelectionCancelled": "Item selection cancelled",
+      "BonusSelectionCancelled": "Bonus item selection cancelled",
+      "Saving": "Saving bundle...",
+      "SaveInProgress": "Save already in progress",
+      "GeneratingHtml": "Generating bundle HTML...",
+      "HtmlGenerated": "HTML and thumbnail generated successfully",
+      "HtmlWarning": "Warning: Could not generate HTML/thumbnail",
+      "SavedNext": "Bundle saved successfully. Ready for next bundle.",
+      "SaveCancelled": "Save operation cancelled",
+      "Closing": "Closing...",
+      "ErrorInitializing": "Error initializing: {0}",
+      "ErrorSelecting": "Error selecting item: {0}",
+      "ErrorSelectingBonus": "Error selecting bonus item: {0}",
+      "ErrorSaving": "Error saving bundle: {0}"
+    }
+  },
+  "EditItemWindow": {
+    "Title": "Edit Catalog Item",
+    "Labels": {
+      "Title": "Title:",
+      "Description": "Description:",
+      "Price": "Price (G):",
+      "ItemType": "Item Type:",
+      "TypeModifiers": "Type Modifiers:",
+      "SKU": "SKU ID:"
+    },
+    "Buttons": {
+      "Save": "Save Changes",
+      "Cancel": "Cancel"
+    },
+    "Messages": {
+      "TitleRequired": "Title is required.",
+      "PriceInvalid": "Price must be at least 1.",
+      "SaveSuccess": "Item updated successfully!",
+      "SaveError": "Error updating item: {0}"
+    },
+    "Status": {
+      "Ready": "Ready to edit item",
+      "Saving": "Saving changes..."
+    }
+  },
+  "BatchModifyWindow": {
+    "Title": "Batch Modify Type Modifiers",
+    "Labels": {
+      "Instructions1": "Select type modifiers to add or remove from all selected",
+      "Instructions2": "items.",
+      "ItemType": "Item Type:",
+      "AddModifiers": "Add modifiers to items",
+      "RemoveModifiers": "Remove modifiers from items",
+      "SelectModifiers": "Select Type Modifiers:"
+    },
+    "Buttons": {
+      "Apply": "Apply",
+      "Cancel": "Cancel"
+    },
+    "Messages": {
+      "NoModifiersSelected": "Please select at least one type modifier.",
+      "ApplySuccess": "Type modifiers updated for {0} items.",
+      "ApplyError": "Error updating items: {0}",
+      "DifferentTypes": "Warning: Selected items are of different types. Only common modifiers are shown."
+    },
+    "Status": {
+      "Ready": "Ready to modify {0} items",
+      "Applying": "Applying changes..."
+    }
+  },
+  "BatchPriceUpdateWindow": {
+    "Title": "Update Price",
+    "Labels": {
+      "EnterNewPrice": "Enter new price for selected items:"
+    },
+    "Buttons": {
+      "Update": "Update",
+      "Cancel": "Cancel"
+    },
+    "Messages": {
+      "PriceInvalid": "Price must be at least 1.",
+      "ApplySuccess": "Price updated for {0} items.",
+      "ApplyError": "Error updating prices: {0}",
+      "ConfirmUpdate": "Update price to {0}G for {1} items?"
+    },
+    "Status": {
+      "Ready": "Ready to update prices for {0} items",
+      "Applying": "Updating prices..."
+    }
+  },
+  "BatchDeleteWindow": {
+    "Title": "Confirm Delete"
+  },
+  "Common": {
+    "Yes": "Yes",
+    "No": "No",
+    "OK": "OK",
+    "Cancel": "Cancel",
+    "Edit": "Edit",
+    "Delete": "Delete",
+    "Save": "Save",
+    "Close": "Close",
+    "Apply": "Apply",
+    "Loading": "Loading...",
+    "Error": "Error",
+    "Warning": "Warning",
+    "Information": "Information",
+    "Success": "Success",
+    "Confirmation": "Confirmation"
+  },
+  "Categories": {
+    "All": "All",
+    "Hero": "Hero",
+    "Costume": "Costume",
+    "TeamUp": "Team-Up",
+    "Boost": "Boost",
+    "Chest": "Chest",
+    "Service": "Service",
+    "Bundle": "Bundle"
+  },
+  "TypeModifiers": {
+    "Giftable": "Giftable",
+    "NoDisplay": "No Display",
+    "NoDisplayStore": "No Display in Store",
+    "Special": "Special",
+    "StashPage": "Stash Page",
+    "PowerSpecPanel": "Power Spec Panel"
+  }
+}
