@@ -5,6 +5,7 @@
     xmlns:converters="clr-namespace:CatalogManager.Converters"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:CatalogManager.Views"
+    xmlns:loc="clr-namespace:CatalogManager.Converters"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{Binding WindowTitle}"
     Width="800"
@@ -50,7 +51,7 @@
             Grid.Column="0"
             Margin="0,0,10,10"
             VerticalAlignment="Center"
-            Text="Offer Type:" />
+            Text="{loc:Translate CreateBundleWindow.Labels.OfferType}" />
         <StackPanel
             Grid.Row="1"
             Grid.Column="1"
@@ -58,9 +59,9 @@
             Orientation="Horizontal">
             <RadioButton
                 Margin="0,0,20,0"
-                Content="Bundle"
+                Content="{loc:Translate CreateBundleWindow.Labels.Bundle}"
                 IsChecked="{Binding IsBogo, Converter={StaticResource BoolToVisibility}, ConverterParameter=invert}" />
-            <RadioButton Content="BOGO (Buy One Get One)" IsChecked="{Binding IsBogo}" />
+            <RadioButton Content="{loc:Translate CreateBundleWindow.Labels.BOGO}" IsChecked="{Binding IsBogo}" />
         </StackPanel>
 
         <!--  SKU ID  -->
@@ -69,7 +70,7 @@
             Grid.Column="0"
             Margin="0,0,10,10"
             VerticalAlignment="Center"
-            Text="SKU ID:" />
+            Text="{loc:Translate CreateBundleWindow.Labels.SKU}" />
         <TextBox
             Grid.Row="2"
             Grid.Column="1"
@@ -82,7 +83,7 @@
             Grid.Column="0"
             Margin="0,0,10,10"
             VerticalAlignment="Center"
-            Text="Title:" />
+            Text="{loc:Translate CreateBundleWindow.Labels.Title}" />
         <TextBox
             Grid.Row="3"
             Grid.Column="1"
@@ -95,7 +96,7 @@
             Grid.Column="0"
             Margin="0,5,10,10"
             VerticalAlignment="Top"
-            Text="Description:" />
+            Text="{loc:Translate CreateBundleWindow.Labels.Description}" />
         <TextBox
             Grid.Row="4"
             Grid.Column="1"
@@ -112,7 +113,7 @@
             Grid.Column="0"
             Margin="0,0,10,10"
             VerticalAlignment="Center"
-            Text="Price:" />
+            Text="{loc:Translate CreateBundleWindow.Labels.Price}" />
         <TextBox
             Grid.Row="5"
             Grid.Column="1"
@@ -125,7 +126,7 @@
             Grid.Column="0"
             Margin="0,0,10,10"
             VerticalAlignment="Center"
-            Text="Item Type:" />
+            Text="{loc:Translate CreateBundleWindow.Labels.ItemType}" />
         <ComboBox
             Grid.Row="6"
             Grid.Column="1"
@@ -165,7 +166,7 @@
                     Grid.Row="0"
                     Margin="0,0,0,5"
                     FontWeight="Bold"
-                    Text="Bundle Items:" />
+                    Text="{loc:Translate CreateBundleWindow.Labels.BundleItems}" />
 
                 <!--  Bundle Items  -->
                 <ListBox
@@ -178,7 +179,7 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Width="200" Text="{Binding Item.DisplayName}" />
-                                <TextBlock Margin="10,0" Text="Quantity:" />
+                                <TextBlock Margin="10,0" Text="{loc:Translate CreateBundleWindow.Labels.Quantity}" />
                                 <TextBox
                                     Width="50"
                                     Margin="5,0"
@@ -196,11 +197,11 @@
                         Width="100"
                         Margin="0,0,10,0"
                         Command="{Binding AddItemCommand}"
-                        Content="Add Item" />
+                        Content="{loc:Translate CreateBundleWindow.Buttons.AddItem}" />
                     <Button
                         Width="100"
                         Command="{Binding RemoveItemCommand}"
-                        Content="Remove Item" />
+                        Content="{loc:Translate CreateBundleWindow.Buttons.RemoveItem}" />
                 </StackPanel>
 
                 <!--  Bonus Items (BOGO only)  -->
@@ -208,7 +209,7 @@
                     Grid.Row="3"
                     Margin="0,0,0,5"
                     FontWeight="Bold"
-                    Text="Bonus Items (BOGO):"
+                    Text="{loc:Translate CreateBundleWindow.Labels.BonusItems}"
                     Visibility="{Binding IsBogo, Converter={StaticResource BoolToVisibility}}" />
 
                 <ListBox
@@ -221,7 +222,7 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Width="200" Text="{Binding Item.DisplayName}" />
-                                <TextBlock Margin="10,0" Text="Quantity:" />
+                                <TextBlock Margin="10,0" Text="{loc:Translate CreateBundleWindow.Labels.Quantity}" />
                                 <TextBox
                                     Width="50"
                                     Margin="5,0"
@@ -241,11 +242,11 @@
                         Width="100"
                         Margin="0,0,10,0"
                         Command="{Binding AddBonusItemCommand}"
-                        Content="Add Bonus" />
+                        Content="{loc:Translate CreateBundleWindow.Buttons.AddBonus}" />
                     <Button
                         Width="100"
                         Command="{Binding RemoveBonusItemCommand}"
-                        Content="Remove Bonus" />
+                        Content="{loc:Translate CreateBundleWindow.Buttons.RemoveBonus}" />
                 </StackPanel>
             </Grid>
 
@@ -255,7 +256,7 @@
                 Grid.Column="1"
                 Margin="0,0,0,5"
                 FontWeight="Bold"
-                Text="Type Modifiers:" />
+                Text="{loc:Translate CreateBundleWindow.Labels.TypeModifiers}" />
 
             <ListBox
                 x:Name="TypeModifiersListBox"
@@ -295,11 +296,11 @@
                 Width="100"
                 Margin="0,0,10,0"
                 Command="{Binding SaveCommand}"
-                Content="Save" />
+                Content="{loc:Translate Common.Save}" />
             <Button
                 Width="100"
                 Command="{Binding CancelCommand}"
-                Content="Cancel" />
+                Content="{loc:Translate Common.Cancel}" />
         </StackPanel>
 
         <!--  Loading Indicator  -->
@@ -315,7 +316,7 @@
                     Margin="0,0,0,10"
                     FontWeight="Bold"
                     Foreground="White"
-                    Text="Saving..." />
+                    Text="{loc:Translate CreateBundleWindow.Status.Saving}" />
                 <ProgressBar
                     Width="200"
                     Height="5"

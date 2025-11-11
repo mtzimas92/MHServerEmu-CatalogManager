@@ -39,7 +39,9 @@ namespace CatalogManager.ViewModels
         private string _statusMessage;
         
         // UI properties
-        public string WindowTitle => _existingItem == null ? "Add New Item" : "Edit Item";
+        public string WindowTitle => _existingItem == null 
+            ? LocalizationService.Instance.GetString("AddItemWindow.Title") 
+            : LocalizationService.Instance.GetString("AddItemWindow.EditTitle");
         public bool IsNewItem => _existingItem == null;
         
         private ulong _skuId;
@@ -185,14 +187,14 @@ namespace CatalogManager.ViewModels
         {
             try
             {
-                StatusMessage = "Initializing...";
+                StatusMessage = LocalizationService.Instance.GetString("AddItemWindow.Status.Initializing");
                 SkuId = await _catalogService.GetNextAvailableSkuId();
                 SelectedType = ItemTypes.FirstOrDefault();
-                StatusMessage = "Ready";
+                StatusMessage = LocalizationService.Instance.GetString("AddItemWindow.Status.Ready");
             }
             catch (Exception ex)
             {
-                StatusMessage = $"Error initializing: {ex.Message}";
+                StatusMessage = LocalizationService.Instance.GetString("AddItemWindow.Status.ErrorInitializing", ex.Message);
                 Debug.WriteLine($"Error initializing new item: {ex}");
             }
         }
@@ -201,7 +203,7 @@ namespace CatalogManager.ViewModels
         {
             try
             {
-                StatusMessage = "Loading item...";
+                StatusMessage = LocalizationService.Instance.GetString("AddItemWindow.Status.LoadingItem");
                 
                 // Load basic properties
                 SkuId = item.SkuId;
@@ -227,11 +229,11 @@ namespace CatalogManager.ViewModels
                 // Update the ListBox selections to match existing modifiers
                 UpdateListBoxSelections();
                 
-                StatusMessage = "Item loaded";
+                StatusMessage = LocalizationService.Instance.GetString("AddItemWindow.Status.ItemLoaded");
             }
             catch (Exception ex)
             {
-                StatusMessage = $"Error loading item: {ex.Message}";
+                StatusMessage = LocalizationService.Instance.GetString("AddItemWindow.Status.ErrorLoading", ex.Message);
                 Debug.WriteLine($"Error loading existing item: {ex}");
             }
         }
@@ -312,7 +314,7 @@ namespace CatalogManager.ViewModels
         {
             try
             {
-                StatusMessage = "Opening item selector...";
+                StatusMessage = LocalizationService.Instance.GetString("AddItemWindow.Status.OpeningSelector");
                 
                 // Create the view model first
                 var selectViewModel = new SelectItemViewModel(_catalogService);
@@ -332,16 +334,16 @@ namespace CatalogManager.ViewModels
                     PrototypeId = (ulong)selectViewModel.SelectedItem.Id;
                     Title = selectViewModel.SelectedItem.DisplayName;
                     SetSmartDefaults(selectViewModel.SelectedItem);
-                    StatusMessage = "Item selected";
+                    StatusMessage = LocalizationService.Instance.GetString("AddItemWindow.Status.ItemSelected");
                 }
                 else
                 {
-                    StatusMessage = "Item selection cancelled";
+                    StatusMessage = LocalizationService.Instance.GetString("AddItemWindow.Status.SelectionCancelled");
                 }
             }
             catch (Exception ex)
             {
-                StatusMessage = $"Error selecting item: {ex.Message}";
+                StatusMessage = LocalizationService.Instance.GetString("AddItemWindow.Status.ErrorSelecting", ex.Message);
                 Debug.WriteLine($"Error in OpenSelectItemWindowAsync: {ex}");
             }
         }
@@ -435,7 +437,7 @@ namespace CatalogManager.ViewModels
             // Prevent multiple save operations
             if (!await _saveLock.WaitAsync(0))
             {
-                StatusMessage = "Save already in progress";
+                StatusMessage = LocalizationService.Instance.GetString("AddItemWindow.Status.SaveInProgress");
                 return;
             }
             
@@ -447,7 +449,7 @@ namespace CatalogManager.ViewModels
                 var token = _saveCts.Token;
                 
                 IsSaving = true;
-                StatusMessage = "Saving item...";
+                StatusMessage = LocalizationService.Instance.GetString("AddItemWindow.Status.Saving");
                 
                 // Validate all required fields
                 if (!ValidateAllFields(out string validationError))
@@ -512,7 +514,7 @@ namespace CatalogManager.ViewModels
                     Description = string.Empty;
                     PrototypeId = 0;
                     
-                    StatusMessage = "Item saved successfully. Ready for next item.";
+                    StatusMessage = LocalizationService.Instance.GetString("AddItemWindow.Status.SavedNext");
                     
                     // Force cache refresh in CatalogService
                     await _catalogService.LoadCatalogAsync(true);
@@ -522,7 +524,7 @@ namespace CatalogManager.ViewModels
                     throw new InvalidOperationException("Save operation returned false");
                 }
                 
-                StatusMessage = "Item saved successfully";
+                StatusMessage = LocalizationService.Instance.GetString("AddItemWindow.Status.Saved");
                 Debug.WriteLine($"Successfully saved item: {SkuId} - {Title}");
                 
                 // Close window with success flag
@@ -530,11 +532,11 @@ namespace CatalogManager.ViewModels
             }
             catch (OperationCanceledException)
             {
-                StatusMessage = "Save operation cancelled";
+                StatusMessage = LocalizationService.Instance.GetString("AddItemWindow.Status.SaveCancelled");
             }
             catch (Exception ex)
             {
-                StatusMessage = $"Error saving item: {ex.Message}";
+                StatusMessage = LocalizationService.Instance.GetString("AddItemWindow.Status.ErrorSaving", ex.Message);
                 Debug.WriteLine($"Error saving item: {ex}");
                 
                 MessageBox.Show($"Failed to save item: {ex.Message}\n\nPlease try again or contact support.",
@@ -591,7 +593,7 @@ namespace CatalogManager.ViewModels
                     return;
                     
                 _isClosing = true;
-                StatusMessage = "Closing...";
+                StatusMessage = LocalizationService.Instance.GetString("AddItemWindow.Status.Closing");
                 
                 // Cancel any pending operations
                 _saveCts?.Cancel();

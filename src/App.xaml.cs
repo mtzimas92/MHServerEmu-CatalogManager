@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows;
 using MHServerEmu.Games.GameData;
 using System.Windows.Threading;
+using CatalogManager.Services;
 
 namespace CatalogManager
 {
@@ -18,6 +19,17 @@ namespace CatalogManager
             {
                 LogMessage("Application starting...");
                 LogEnvironmentInfo();
+
+                // Initialize localization service
+                LogMessage("Initializing localization...");
+                var localizationService = LocalizationService.Instance;
+                
+                // Default to English (language can be changed via UI)
+                if (!localizationService.LoadLanguage("en-US"))
+                {
+                    LogMessage("WARNING: Failed to load English localization file");
+                }
+                LogMessage($"Localization loaded: {localizationService.CurrentLanguage}");
 
                 string dataPath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "Game");
                 LogMessage($"Current directory: {Directory.GetCurrentDirectory()}");

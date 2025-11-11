@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:CatalogManager"
         xmlns:converters="clr-namespace:CatalogManager.Converters"
-        Title="Marvel Heroes Catalog Manager" 
+        xmlns:loc="clr-namespace:CatalogManager.Converters"
+        Title="{loc:Translate MainWindow.Title}" 
         Height="900" 
         Width="1400"
         MinWidth="1200"
@@ -63,15 +64,15 @@
         
         <!-- Menu Bar -->
         <Menu Grid.Row="0" Background="White" BorderBrush="#DDDDDD" BorderThickness="0,0,0,1">
-            <MenuItem Header="_File">
-                <MenuItem Header="_Load Catalog File..." Click="LoadCatalogFile_Click" FontWeight="Bold"/>
-                <MenuItem Header="_Clear All Files" Click="ClearAllFiles_Click"/>
+            <MenuItem Header="{loc:Translate MainWindow.Menu.File}">
+                <MenuItem Header="{loc:Translate MainWindow.Menu.LoadCatalogFile}" Click="LoadCatalogFile_Click" FontWeight="Bold"/>
+                <MenuItem Header="{loc:Translate MainWindow.Menu.ClearAllFiles}" Click="ClearAllFiles_Click"/>
                 <Separator/>
-                <MenuItem Header="_Current Files" IsEnabled="False">
+                <MenuItem Header="{loc:Translate MainWindow.Menu.CurrentFiles}" IsEnabled="False">
                     <MenuItem.ToolTip>
                         <ToolTip>
                             <StackPanel>
-                                <TextBlock FontWeight="Bold" Text="Loaded Files:" Margin="0,0,0,5"/>
+                                <TextBlock FontWeight="Bold" Text="{loc:Translate MainWindow.Tooltip.LoadedFiles}" Margin="0,0,0,5"/>
                                 <ItemsControl ItemsSource="{Binding CatalogService.LoadedFiles}">
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate>
@@ -79,13 +80,13 @@
                                         </DataTemplate>
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControl>
-                                <TextBlock Text="No files loaded" Visibility="{Binding CatalogService.LoadedFiles.Count, Converter={StaticResource BoolToVisibility}}"/>
+                                <TextBlock Text="{loc:Translate MainWindow.Tooltip.NoFilesLoaded}" Visibility="{Binding CatalogService.LoadedFiles.Count, Converter={StaticResource BoolToVisibility}}"/>
                             </StackPanel>
                         </ToolTip>
                     </MenuItem.ToolTip>
                 </MenuItem>
                 <Separator/>
-                <MenuItem Header="E_xit" Click="Exit_Click"/>
+                <MenuItem Header="{loc:Translate MainWindow.Menu.Exit}" Click="Exit_Click"/>
             </MenuItem>
         </Menu>
         
@@ -93,7 +94,7 @@
         <DockPanel Grid.Row="1" Margin="20">
             <!-- Header -->
             <TextBlock DockPanel.Dock="Top" 
-                      Text="Marvel Heroes Catalog Manager" 
+                      Text="{loc:Translate MainWindow.Title}" 
                       FontSize="24" 
                       FontWeight="Bold" 
                       Margin="0,0,0,20"
@@ -136,7 +137,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         
-                        <TextBlock Text="Price Range:" 
+                        <TextBlock Text="{loc:Translate MainWindow.Controls.PriceRange}" 
                                 VerticalAlignment="Center" 
                                 Margin="0,0,10,0"/>
                         <TextBox Grid.Column="1" 
@@ -159,16 +160,13 @@
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                         <CheckBox Grid.Column="5" 
-                                Content="Enable Stock Catalog Deletion" 
+                                Content="{loc:Translate MainWindow.Controls.EnableStockCatalogDeletion}" 
                                 IsChecked="{Binding AllowCatalogModification}"
                                 HorizontalAlignment="Left"
                                 Margin="20,5,0,0">
                             <CheckBox.ToolTip>
                                 <ToolTip Background="#FFF4F4" BorderBrush="Red">
-                                    <TextBlock TextWrapping="Wrap" MaxWidth="300">
-                                        Warning: This will allow deletion of items from the stock catalog.json file. 
-                                        These deletions cannot be undone without restoring from backup.
-                                    </TextBlock>
+                                    <TextBlock TextWrapping="Wrap" MaxWidth="300" Text="{loc:Translate MainWindow.Tooltip.DeletionWarning}"/>
                                 </ToolTip>
                             </CheckBox.ToolTip>
                         </CheckBox>
@@ -177,22 +175,22 @@
 
                 <!-- Second Row - Action Buttons -->
                 <UniformGrid Grid.Row="1" Rows="1" HorizontalAlignment="Left">
-                    <Button Content="Batch Modify" 
+                    <Button Content="{loc:Translate MainWindow.Buttons.BatchModify}" 
                             Command="{Binding BatchModifyCommand}"
                             Margin="0,0,10,0"/>
-                    <Button Content="Create Bundle/BOGO" 
+                    <Button Content="{loc:Translate MainWindow.Buttons.CreateBundle}" 
                             Command="{Binding CreateBundleCommand}"
                             Margin="0,0,10,0"/>
-                    <Button Content="Batch Price Update" 
+                    <Button Content="{loc:Translate MainWindow.Buttons.BatchPriceUpdate}" 
                             Command="{Binding BatchPriceUpdateCommand}"
                             Margin="0,0,10,0"/>
-                    <Button Content="Batch Delete" 
+                    <Button Content="{loc:Translate MainWindow.Buttons.BatchDelete}" 
                             Command="{Binding BatchDeleteCommand}"
                             Margin="0,0,10,0"/>
-                    <Button Content="Add New Item" 
+                    <Button Content="{loc:Translate MainWindow.Buttons.AddItem}" 
                             Command="{Binding AddItemCommand}"
                             Margin="0,0,10,0"/>
-                    <Button Content="Refresh" 
+                    <Button Content="{loc:Translate MainWindow.Buttons.Refresh}" 
                             Command="{Binding RefreshCommand}"/>
                 </UniformGrid>
             </Grid>
@@ -265,33 +263,33 @@
                     </Style>
                 </DataGrid.Resources>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="SKU" 
+                    <DataGridTextColumn Header="{loc:Translate MainWindow.DataGrid.SkuId}" 
                                     Binding="{Binding SkuId}" 
                                     Width="120"
                                     SortMemberPath="SkuId"/>
-                    <DataGridTextColumn Header="Title" 
+                    <DataGridTextColumn Header="{loc:Translate MainWindow.DataGrid.DisplayName}" 
                                     Binding="{Binding LocalizedEntries[0].Title}" 
                                     Width="*"
                                     MinWidth="400"
                                     MaxWidth="600"
                                     SortMemberPath="LocalizedEntries[0].Title"/>
-                    <DataGridTextColumn Header="Type" 
+                    <DataGridTextColumn Header="{loc:Translate MainWindow.DataGrid.Type}" 
                                     Binding="{Binding Type.Name}" 
                                     Width="180"/>
-                    <DataGridTextColumn Header="Price" 
+                    <DataGridTextColumn Header="{loc:Translate MainWindow.DataGrid.Price}" 
                                     Binding="{Binding LocalizedEntries[0].ItemPrice}" 
                                     Width="120"/>
-                    <DataGridTemplateColumn Header="Actions" Width="220">
+                    <DataGridTemplateColumn Header="{loc:Translate MainWindow.DataGrid.Actions}" Width="220">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Content="Edit" 
+                                    <Button Content="{loc:Translate Common.Edit}" 
                                             Command="{Binding DataContext.EditItemCommand,
                                                     RelativeSource={RelativeSource AncestorType=Window}}"
                                             CommandParameter="{Binding}"
                                             Margin="0,0,10,0"
                                             Background="#4CAF50"/>
-                                    <Button Content="Delete" 
+                                    <Button Content="{loc:Translate Common.Delete}" 
                                             Command="{Binding DataContext.DeleteItemCommand,
                                                     RelativeSource={RelativeSource AncestorType=Window}}"
                                             CommandParameter="{Binding}"
@@ -327,13 +325,27 @@
         </DockPanel>
         
         <!-- Status Bar -->
-        <StatusBar Grid.Row="2" Height="25" Background="#F5F5F5">
+        <StatusBar Grid.Row="2" Height="32" Background="#F5F5F5" Padding="5,0">
             <StatusBarItem>
-                <TextBlock Text="{Binding StatusText}"/>
+                <TextBlock Text="{Binding StatusText}" VerticalAlignment="Center"/>
             </StatusBarItem>
             <StatusBarItem HorizontalAlignment="Right">
-                <ProgressBar Width="100" Height="15" IsIndeterminate="True" 
-                            Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibility}}"/>
+                <ProgressBar Width="100" Height="18" IsIndeterminate="True" 
+                            Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibility}}"
+                            VerticalAlignment="Center"
+                            Margin="0,0,15,0"/>
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,8,0">
+                    <TextBlock Text="Language:" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="LanguageComboBox" 
+                              Width="110" 
+                              Height="22"
+                              VerticalAlignment="Center"
+                              SelectionChanged="LanguageComboBox_SelectionChanged">
+                        <!-- Items populated dynamically from available language files -->
+                    </ComboBox>
+                </StackPanel>
             </StatusBarItem>
         </StatusBar>
     </Grid>

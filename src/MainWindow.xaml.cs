@@ -29,6 +29,53 @@ namespace CatalogManager
                     vm.SelectedItems.Add((CatalogEntry)item);
                 }
             };
+            
+            // Subscribe to language changes
+            LocalizationService.Instance.LanguageChanged += OnLanguageChanged;
+            
+            // Populate language selector with available languages
+            PopulateLanguageSelector();
+        }
+
+        private void PopulateLanguageSelector()
+        {
+            LanguageComboBox.Items.Clear();
+            
+            var availableLanguages = LocalizationService.Instance.GetAvailableLanguages();
+            var currentLanguage = LocalizationService.Instance.CurrentLanguage;
+            
+            int selectedIndex = 0;
+            for (int i = 0; i < availableLanguages.Count; i++)
+            {
+                var languageCode = availableLanguages[i];
+                var languageName = LocalizationService.Instance.GetLanguageName(languageCode);
+                
+                var item = new ComboBoxItem
+                {
+                    Content = languageName,
+                    Tag = languageCode
+                };
+                
+                LanguageComboBox.Items.Add(item);
+                
+                if (languageCode == currentLanguage)
+                {
+                    selectedIndex = i;
+                }
+            }
+            
+            LanguageComboBox.SelectedIndex = selectedIndex;
+        }
+
+        private void OnLanguageChanged(object? sender, EventArgs e)
+        {
+            // Refresh the ViewModel's status text to update it to the new language
+            if (_viewModel != null)
+            {
+                var currentStatus = _viewModel.StatusText;
+                // Trigger property change notification by reassigning
+                _viewModel.StatusText = currentStatus;
+            }
         }
 
         private ListSortDirection? _lastSortDirection;
@@ -104,7 +151,7 @@ namespace CatalogManager
                 
                 try
                 {
-                    _viewModel.StatusText = "Loading catalog file...";
+                    _viewModel.StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.LoadingCatalog");
                     Logger.Log($"LoadCatalogFile_Click: Calling LoadCatalogFileAsync with: {dialog.FileName}");
                     
                     bool success = await _viewModel.CatalogService.LoadCatalogFileAsync(dialog.FileName);
@@ -114,7 +161,7 @@ namespace CatalogManager
                     {
                         var fileName = System.IO.Path.GetFileName(dialog.FileName);
                         var fileCount = _viewModel.CatalogService.LoadedFiles.Count;
-                        _viewModel.StatusText = $"Loaded: {fileName} ({fileCount} file{(fileCount != 1 ? "s" : "")} total)";
+                        _viewModel.StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.LoadedFiles", fileName, fileCount);
                         Logger.Log("LoadCatalogFile_Click: Executing LoadItemsCommand");
                         // Trigger reload of items
                         _viewModel.LoadItemsCommand.Execute(null);
@@ -123,15 +170,15 @@ namespace CatalogManager
                     else
                     {
                         Logger.Log("LoadCatalogFile_Click: LoadCatalogFileAsync returned false");
-                        MessageBox.Show("Failed to load catalog file.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                        _viewModel.StatusText = "Failed to load catalog file";
+                        MessageBox.Show(LocalizationService.Instance.GetString("MainWindow.StatusBar.FailedToLoad"), LocalizationService.Instance.GetString("Common.Error"), MessageBoxButton.OK, MessageBoxImage.Error);
+                        _viewModel.StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.FailedToLoad");
                     }
                 }
                 catch (Exception ex)
                 {
                     Logger.LogException("LoadCatalogFile_Click: Exception caught", ex);
-                    MessageBox.Show($"Error loading catalog: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    _viewModel.StatusText = $"Error: {ex.Message}";
+                    MessageBox.Show(LocalizationService.Instance.GetString("MainWindow.StatusBar.Error", ex.Message), LocalizationService.Instance.GetString("Common.Error"), MessageBoxButton.OK, MessageBoxImage.Error);
+                    _viewModel.StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.Error", ex.Message);
                 }
             }
             else
@@ -147,7 +194,7 @@ namespace CatalogManager
             try
             {
                 await _viewModel.CatalogService.ClearAllFilesAsync();
-                _viewModel.StatusText = "All files cleared. Please load a catalog file to begin.";
+                _viewModel.StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.AllFilesCleared");
                 Logger.Log("ClearAllFiles_Click: Executing LoadItemsCommand to refresh view");
                 _viewModel.LoadItemsCommand.Execute(null);
                 Logger.Log("ClearAllFiles_Click: Files cleared successfully");
@@ -163,6 +210,18 @@ namespace CatalogManager
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void LanguageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (LanguageComboBox?.SelectedItem is ComboBoxItem selectedItem)
+            {
+                var languageCode = selectedItem.Tag?.ToString();
+                if (!string.IsNullOrEmpty(languageCode))
+                {
+                    LocalizationService.Instance.LoadLanguage(languageCode);
+                }
+            }
         }
     }
 }
