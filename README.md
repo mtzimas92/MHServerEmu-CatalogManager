@@ -92,9 +92,9 @@ MHServerEmu/Data/Game/MTXStore/CatalogBundles_MODIFIED.json
 
 ### Catalog Management
 - **Multi-file Support**: Load any number of catalog files simultaneously
-- **Flexible Organization**: Separate catalogs by category (Boosts, Heroes, Costumes, etc.)
-- **Non-Destructive Edits**: Original files never modified
-- **Smart SKU Management**: Prevents duplicate SKU IDs across all files
+- **Organization**: Separate catalogs by category (Boosts, Heroes, Costumes, etc.)
+- **Non-Destructive Edits**: Original files never modified unless specifically selected. Backups are created in such case. 
+- **SKU Management**: Prevents duplicate SKU IDs across all files by pre-scanning the included Catalog files.
 - **Browse & Search**: Search by SKU, title, or prototype ID
 - **Category Filtering**: Filter items by type
 - **Price Range Filtering**: Find items within specific price ranges
@@ -106,9 +106,9 @@ MHServerEmu/Data/Game/MTXStore/CatalogBundles_MODIFIED.json
 
 ### Bundles & BOGO
 - **Bundle Creator**: Build custom bundles with multiple items
-- **HTML Generator**: Auto-generates bundle description pages
-- **Thumbnail Creator**: Creates bundle preview images
-- **Hardcoded URLs**: Uses Marvel Heroes CDN paths for consistency
+- **HTML Generator**: Auto-generates bundle description pages according to MHServerEmu MTXStore HTML files. 
+- **Thumbnail Creator**: Creates rudimentary bundle preview images
+- **Hardcoded URLs**: Uses Marvel Heroes CDN paths for consistency with existing bundles. 
 
 ### Customization
 - **Categories Config**: Edit `Data/categories.json` to add custom item categories
@@ -162,3 +162,4 @@ Please report any bugs or issues you encounter. This helps improve the tool for 
 
 - Built for **MHServerEmu**: https://github.com/Crypto137/MHServerEmu
 - Uses **OpenCalligraphy** for item discovery: https://github.com/Crypto137/OpenCalligraphy
+
