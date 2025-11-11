@@ -148,43 +148,10 @@ Edit `Data/categories.json` to customize item categories. See `Data/README_CATEG
 
 Use **OpenCalligraphy** to discover item paths: https://github.com/Crypto137/OpenCalligraphy
 
-## Version 2.0 Highlights
-
-### Major Changes
-- ✅ **Multi-File Support**: Load any number of catalog files
-- ✅ **_MODIFIED Workflow**: All changes save to separate modification files
-- ✅ **Global SKU Scanning**: Prevents duplicate IDs across all catalogs
-- ✅ **Configurable Categories**: JSON-based category configuration
-- ✅ **Simplified UI**: Single "Load Catalog File" option
-
-### Breaking Changes from v1.x
-- ❌ No more separate Catalog/Patch distinction
-- ❌ Deleted `LoadCustomCatalogAsync()` and `LoadCustomPatchAsync()`
-- ✅ Use `LoadCatalogFileAsync()` for all catalog loading
-- ✅ All changes save to `_MODIFIED` files instead of in-place edits
-
-## Troubleshooting
-
-### Items Not Appearing After Creation
-- Make sure to reload the catalog after saving (File → Load Catalog File)
-- Check that the `_MODIFIED` file exists in the Data folder
-- Verify the item was saved (check the status bar message)
-
-### SKU ID Conflicts
-- The application automatically scans all JSON files in the Data directory
-- Ensures unique SKU IDs even when not all catalogs are loaded
-
-### Category Not Showing Items
-- Edit `Data/categories.json` to add or modify categories
-- Restart the application after editing the config file
-- Check `Data/README_CATEGORIES.md` for format details
-
 ## Disclaimer
 
 **Important Notes:**
 - Always backup your catalog files before making changes
-- Modified files include automatic `.bak` backups
-- Test changes on a development server before production deployment
 - Some items may require specific type modifiers to work correctly
 - Stash tabs **must** have the "StashPage" modifier
 
@@ -195,4 +162,3 @@ Please report any bugs or issues you encounter. This helps improve the tool for 
 
 - Built for **MHServerEmu**: https://github.com/Crypto137/MHServerEmu
 - Uses **OpenCalligraphy** for item discovery: https://github.com/Crypto137/OpenCalligraphy
-- Marvel Heroes is a trademark of Marvel Entertainment 
