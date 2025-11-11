@@ -1,57 +1,198 @@
 # Marvel Heroes Catalog Manager
+
 ## Description
 
-A MHServerEmu-based tool that allows users to change the in-game store catalog easily.
-It uses the game files to find common (and some uncommon or test) items that can be added to your store.  
+A MHServerEmu-based tool that allows users to change the in-game store catalog easily. It uses the game files to find common (and some uncommon or test) items that can be added to your store.
 
-MHServerEmu - CatalogManager allows you to edit and change almost everything in the in-game store. Restore stash tabs (Fantastic Four), add crazy test items, or even make your own bundles. 
+MHServerEmu CatalogManager allows you to edit and change almost everything in the in-game store. Restore stash tabs (Fantastic Four), add crazy test items, or even make your own bundles.
 
 ## Setup Instructions
 
 1. Download the latest release or download and compile the source code.
 2. Extract the zip folder anywhere you want.
-3. Copy Calligraphy.sip and mu_cdata.sip from Marvel Heroes\Data\Game to the Data/Game folder of the Catalog Manager. 
+3. Copy `Calligraphy.sip` and `mu_cdata.sip` from `Marvel Heroes\Data\Game` to the `Data/Game` folder of the Catalog Manager.
 
 ## Usage
 
-1. Launch CatalogManager.exe
-2. To add new items, click on the "Add new item" button on the top right. Click on Select Item on the new pop-up page and wait for the application to find all items that are supported.
-3. Filter by category (Consumables, Character tokens, etc) and select your item. You can further filter by typing in the search bar. Once your item is found, click OK.
-4. Now, add a short description, a Price, select the item type and the type modifier. (NOTE: Price must be minimum 1. In case of Stash Tab items, Always select the "StashPage" modifier, otherwise it will not work).
-5. Click on Save and your item has now been added. Do this for any items you want to add.
-6. You can also edit or remove existing catalog entries through the user interface. You can edit all entries in all catalogs but you can only delete entries in the "CatalogPatch" file. A warning is given.
-7. You can batch modify, price update or delete items. Select the items you want and click on the corresponding Batch button. You can only batch modify items of similar type, and delete items of the "CatalogPatch" file. A warning is given. 
-8. Find your modified files in the Data folder:
-   - Catalog.json
-   - CatalogPatch.json
+### Loading Catalog Files
+
+1. Launch `CatalogManager.exe`
+2. Load your catalog files via **File → Load Catalog File**
+   - You can load multiple files (e.g., `CatalogBoost.json`, `CatalogHeroes.json`, `CatalogBundles.json`)
+   - All loaded files merge together in a unified view
+   - Use **File → Clear All Files** to reset and start fresh
+3. View currently loaded files by hovering over **File → Current Files**
+
+### Adding New Items
+
+1. Click **Add New Item** button
+2. In the item selection dialog, choose a category (Consumables, Costumes, etc.)
+3. Wait for the application to load all available items
+4. Use the search bar to filter items by name or path
+5. Select your item and click **OK**
+6. Fill in the details:
+   - **Title**: Display name for the item
+   - **Description**: Short description
+   - **Price**: Minimum 1 G (in-game currency)
+   - **Item Type**: Category (Hero, Costume, Boost, etc.)
+   - **Type Modifiers**: Special flags (e.g., "StashPage" for stash tabs - **required**)
+7. Click **Save** - the item will be added to `{SourceFile}_MODIFIED.json`
+
+### Editing & Deleting Items
+
+- **Edit**: Select an item and click **Edit** to modify its properties
+- **Delete**: 
+  - Check **"Enable Stock Catalog Deletion"** to enable delete buttons
+  - Warning: This deletes items from their source files (with backup)
+  - Items are removed from the original catalog file, not just hidden
+
+### Batch Operations
+
+- **Batch Modify**: Update type modifiers for multiple items (must be same type)
+- **Batch Price Update**: Change prices for multiple selected items
+- **Batch Delete**: Remove multiple items at once
+
+### Modified Files Workflow
+
+All changes save to `{filename}_MODIFIED.json` files:
+- `CatalogBoost.json` → `CatalogBoost_MODIFIED.json`
+- `CatalogHeroes.json` → `CatalogHeroes_MODIFIED.json`
+- etc.
+
+**Benefits:**
+- Original catalog files remain untouched
+- Modified files automatically load alongside their base files
+- Each category has independent modification tracking
+- Deploy only the `_MODIFIED` files you need
+
+### Finding Your Modified Files
+
+Modified files are saved in the same directory as their source files. Typically:
+- `Data/CatalogBoost_MODIFIED.json`
+- `Data/CatalogHeroes_MODIFIED.json`
+- `Data/CatalogBundles_MODIFIED.json`
+- etc.
 
 ## Deployment
 
-Copy the modified json files to your MHServerEmu installation:
-- MHServerEmu/Data/Billing/Catalog.json
-- MHServerEmu/Data/Billing/CatalogPatch.json
+Copy the `_MODIFIED.json` files to your MHServerEmu installation:
+
+**Option 1 - Use Modified Files (Recommended):**
+```
+MHServerEmu/Data/Game/MTXStore/CatalogBoost_MODIFIED.json
+MHServerEmu/Data/Game/MTXStore/CatalogHeroes_MODIFIED.json
+MHServerEmu/Data/Game/MTXStore/CatalogBundles_MODIFIED.json
+```
+
+**Option 2 - Replace Base Files:**
+- Merge modified entries into base catalog files
+- Or replace base files entirely (keep backups!)
 
 ## Features
 
-- Browse and search through all game items that are currently in the store.
-- Filter items by category.
-- Add new items to the catalog
-- Bundles and BOGO items.
-- Edit existing items.
-- Set item prices and type modifiers.
-- Price range filtering.
-- Batch price updates.
-- Batch delete operations.
-- Batch modify operations (for type modifiers). This is limited to items of the same type (i.e. costumes, bundles etc)
-- Search by SKU, title, or prototype ID.
+### Catalog Management
+- **Multi-file Support**: Load any number of catalog files simultaneously
+- **Flexible Organization**: Separate catalogs by category (Boosts, Heroes, Costumes, etc.)
+- **Non-Destructive Edits**: Original files never modified
+- **Smart SKU Management**: Prevents duplicate SKU IDs across all files
+- **Browse & Search**: Search by SKU, title, or prototype ID
+- **Category Filtering**: Filter items by type
+- **Price Range Filtering**: Find items within specific price ranges
+
+### Batch Operations
+- **Batch Modify**: Update type modifiers for multiple items
+- **Batch Price Update**: Change prices in bulk
+- **Batch Delete**: Remove multiple items at once
+
+### Bundles & BOGO
+- **Bundle Creator**: Build custom bundles with multiple items
+- **HTML Generator**: Auto-generates bundle description pages
+- **Thumbnail Creator**: Creates bundle preview images
+- **Hardcoded URLs**: Uses Marvel Heroes CDN paths for consistency
+
+### Customization
+- **Categories Config**: Edit `Data/categories.json` to add custom item categories
+- **Display Names**: Use OpenCalligraphy to discover item paths
+- **Type Modifiers**: Predefined for all categories, discoverable from loaded catalogs
 
 ## Bundle Items
-- Bundle items normally require a description page and a thumbnail so you can see the full contents. From version 0.4 and forward, there is an HTML generator and a thumbnail creator which has a very basic functionality to create the description page and the thumbnail. The result per bundle is stored in a new folder (WebContent), which contains:
-   - WebContent
-      - css
-      - html
-      - images
-- During bundle creation, you can select the URL for your webpage. The default for a local MHServerEmu stable release would be HTTP://localhost/store. The bundle creation page also uses that as a default option. Once a bundle is created, you can copy the files from the CSS, HTML, and images folders and put them in Apache24/htdocs/store. The HTML file should be placed in a new folder you must create, called "bundles". Meanwhile, the CSS and image files should be stored in their respective existing folders. 
+
+Bundle items include auto-generated description pages and thumbnails. When you create a bundle:
+
+**Generated Files** (in `WebContent` folder):
+```
+WebContent/
+├── css/
+│   └── bundle.css
+├── html/
+│   └── {BundleName}_en_bundle.html
+└── images/
+    └── MTX_Store_Bundle_{BundleName}_Thumb.png
+```
+
+**URLs** (hardcoded to Marvel Heroes CDN):
+- HTML: `http://storecdn.marvelheroes.com/cdn/en_us/bundles/{title}_en_bundle.html`
+- Image: `http://storecdn.marvelheroes.com/bundles/MTX_Store_Bundle_{title}_Thumb.png`
+
+**Deployment:**
+1. Copy files to your Apache server:
+   - HTML → `Apache24/htdocs/bundles/`
+   - CSS → `Apache24/htdocs/bundles/css/`
+   - Images → `Apache24/htdocs/bundles/images/`
+2. Or host them on your own CDN matching the hardcoded paths
+
+## Configuration
+
+### Categories
+Edit `Data/categories.json` to customize item categories. See `Data/README_CATEGORIES.md` for details.
+
+Use **OpenCalligraphy** to discover item paths: https://github.com/Crypto137/OpenCalligraphy
+
+## Version 2.0 Highlights
+
+### Major Changes
+- ✅ **Multi-File Support**: Load any number of catalog files
+- ✅ **_MODIFIED Workflow**: All changes save to separate modification files
+- ✅ **Global SKU Scanning**: Prevents duplicate IDs across all catalogs
+- ✅ **Configurable Categories**: JSON-based category configuration
+- ✅ **Simplified UI**: Single "Load Catalog File" option
+
+### Breaking Changes from v1.x
+- ❌ No more separate Catalog/Patch distinction
+- ❌ Deleted `LoadCustomCatalogAsync()` and `LoadCustomPatchAsync()`
+- ✅ Use `LoadCatalogFileAsync()` for all catalog loading
+- ✅ All changes save to `_MODIFIED` files instead of in-place edits
+
+## Troubleshooting
+
+### Items Not Appearing After Creation
+- Make sure to reload the catalog after saving (File → Load Catalog File)
+- Check that the `_MODIFIED` file exists in the Data folder
+- Verify the item was saved (check the status bar message)
+
+### SKU ID Conflicts
+- The application automatically scans all JSON files in the Data directory
+- Ensures unique SKU IDs even when not all catalogs are loaded
+
+### Category Not Showing Items
+- Edit `Data/categories.json` to add or modify categories
+- Restart the application after editing the config file
+- Check `Data/README_CATEGORIES.md` for format details
+
 ## Disclaimer
 
-This application is completely new. Any issues you may encounter, please report them so I can look into them. Before doing any work, make a backup for the Catalog.json and CatalogPatch.json files that are included in this. 
+**Important Notes:**
+- Always backup your catalog files before making changes
+- Modified files include automatic `.bak` backups
+- Test changes on a development server before production deployment
+- Some items may require specific type modifiers to work correctly
+- Stash tabs **must** have the "StashPage" modifier
+
+**Reporting Issues:**
+Please report any bugs or issues you encounter. This helps improve the tool for everyone!
+
+## Credits
+
+- Built for **MHServerEmu**: https://github.com/Crypto137/MHServerEmu
+- Uses **OpenCalligraphy** for item discovery: https://github.com/Crypto137/OpenCalligraphy
+- Marvel Heroes is a trademark of Marvel Entertainment 
