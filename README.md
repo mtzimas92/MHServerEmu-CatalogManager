@@ -1,16 +1,16 @@
 # Marvel Heroes Catalog Manager
+
 ## Description
 
-A MHServerEmu-based tool that allows users to change the in-game store catalog easily.
-It uses the game files to find common (and some uncommon or test) items that can be added to your store.  
+A MHServerEmu-based tool that allows users to change the in-game store catalog easily. It uses the game files to find common (and some uncommon or test) items that can be added to your store.
 
-MHServerEmu - CatalogManager allows you to edit and change almost everything in the in-game store. Restore stash tabs (Fantastic Four), add crazy test items, or even make your own bundles. 
+MHServerEmu CatalogManager allows you to edit and change almost everything in the in-game store. Restore stash tabs (Fantastic Four), add crazy test items, or even make your own bundles.
 
 ## Setup Instructions
 
 1. Download the latest release or download and compile the source code.
 2. Extract the zip folder anywhere you want.
-3. Copy Calligraphy.sip and mu_cdata.sip from Marvel Heroes\Data\Game to the Data/Game folder of the Catalog Manager. 
+3. Copy `Calligraphy.sip` and `mu_cdata.sip` from `Marvel Heroes\Data\Game` to the `Data/Game` folder of the Catalog Manager.
 
 ## Usage
 
