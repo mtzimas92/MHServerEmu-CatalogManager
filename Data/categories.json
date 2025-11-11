@@ -1,0 +1,42 @@
+[
+  {
+    "DisplayName": "Consumables",
+    "Path": "Entity/Items/Consumables",
+    "IsInventoryType": false
+  },
+  {
+    "DisplayName": "Character Tokens",
+    "Path": "Entity/Items/CharacterTokens",
+    "IsInventoryType": false
+  },
+  {
+    "DisplayName": "Costumes",
+    "Path": "Entity/Items/Costumes",
+    "IsInventoryType": false
+  },
+  {
+    "DisplayName": "Currency Items",
+    "Path": "Entity/Items/CurrencyItems",
+    "IsInventoryType": false
+  },
+  {
+    "DisplayName": "Pets",
+    "Path": "Entity/Items/Pets",
+    "IsInventoryType": false
+  },
+  {
+    "DisplayName": "Crafting",
+    "Path": "Entity/Items/Crafting",
+    "IsInventoryType": false
+  },
+  {
+    "DisplayName": "Stash Tabs",
+    "Path": "Entity/Inventory/PlayerInventories/StashInventories/PageProtos/AvatarGear",
+    "IsInventoryType": true
+  },
+  {
+    "DisplayName": "Test Gear",
+    "Path": "Entity/Items/Test|Entity/Items/Artifacts/Prototypes/Tier1Artifacts/RaidTest|Entity/Items/Medals/MedalBlueprints/Endgame/TestMedals",
+    "IsInventoryType": false
+  }
+]
