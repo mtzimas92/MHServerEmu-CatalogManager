@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using CatalogManager.Commands;
+using CatalogManager.Models;
 using CatalogManager.Services;
 
 namespace CatalogManager.ViewModels
@@ -15,16 +17,16 @@ namespace CatalogManager.ViewModels
         private readonly CatalogService _catalogService;
         private readonly string _itemType;
         
-        private ObservableCollection<string> _availableTypeModifiers;
-        public ObservableCollection<string> AvailableTypeModifiers
+        private ObservableCollection<LocalizedTypeModifier> _availableTypeModifiers;
+        public ObservableCollection<LocalizedTypeModifier> AvailableTypeModifiers
         {
             get => _availableTypeModifiers;
             set => SetProperty(ref _availableTypeModifiers, value);
         }
 
-        private ObservableCollection<string> _selectedTypeModifiers = new();
-        public ObservableCollection<string> SelectedTypeModifiers 
-        { 
+        private ObservableCollection<LocalizedTypeModifier> _selectedTypeModifiers = new();
+        public ObservableCollection<LocalizedTypeModifier> SelectedTypeModifiers
+        {
             get => _selectedTypeModifiers;
             set => SetProperty(ref _selectedTypeModifiers, value);
         }
@@ -65,12 +67,13 @@ namespace CatalogManager.ViewModels
             try
             {
                 var categoryModifiers = _catalogService.GetCategoryModifiers(_itemType);
-                AvailableTypeModifiers = new ObservableCollection<string>(categoryModifiers);
+                AvailableTypeModifiers = new ObservableCollection<LocalizedTypeModifier>(
+                    categoryModifiers.Select(m => new LocalizedTypeModifier(m)));
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine($"Error updating modifiers: {ex.Message}");
-                AvailableTypeModifiers = new ObservableCollection<string>();
+                Debug.WriteLine($"Error updating modifiers: {ex.Message}");
+                AvailableTypeModifiers = new ObservableCollection<LocalizedTypeModifier>();
             }
         }
 

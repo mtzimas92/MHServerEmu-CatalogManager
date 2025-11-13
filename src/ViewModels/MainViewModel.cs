@@ -188,20 +188,19 @@ namespace CatalogManager.ViewModels
             }
         }
 
-        public ObservableCollection<PriceRange> PriceRanges { get; } = new ObservableCollection<PriceRange>
-        {
-            new PriceRange { Name = "All Prices", Min = null, Max = null },
-            new PriceRange { Name = "Under 100", Min = 0, Max = 100 },
-            new PriceRange { Name = "100-500", Min = 100, Max = 500 },
-            new PriceRange { Name = "500-1000", Min = 500, Max = 1000 },
-            new PriceRange { Name = "Over 1000", Min = 1000, Max = null }
-        };
+        public ObservableCollection<PriceRange> PriceRanges { get; } = new ObservableCollection<PriceRange>();
 
         public MainViewModel(CatalogService catalogService)
         {
             _catalogService = catalogService ?? throw new ArgumentNullException(nameof(catalogService));
             _items = new ObservableCollection<CatalogEntry>();
             _itemsViewSource.Source = _items;
+            
+            // Initialize price ranges with localized names
+            InitializePriceRanges();
+            
+            // Subscribe to language changes to update price ranges
+            LocalizationService.Instance.LanguageChanged += OnLanguageChanged;
             
             // Initialize commands
             LoadItemsCommand = new AsyncRelayCommand(LoadItemsAsync);
@@ -217,8 +216,91 @@ namespace CatalogManager.ViewModels
             // Set initial status
             StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.NoFilesLoaded");
             
-            // Initialize categories with just "All"
-            Categories.Add("All");
+            // Initialize categories with just "All" (translated)
+            Categories.Add(LocalizationService.Instance.GetString("Categories.All"));
+        }
+        
+        private void InitializePriceRanges()
+        {
+            PriceRanges.Clear();
+            PriceRanges.Add(new PriceRange { Name = LocalizationService.Instance.GetString("MainWindow.PriceRanges.AllPrices"), Min = null, Max = null });
+            PriceRanges.Add(new PriceRange { Name = LocalizationService.Instance.GetString("MainWindow.PriceRanges.Under100"), Min = 0, Max = 100 });
+            PriceRanges.Add(new PriceRange { Name = LocalizationService.Instance.GetString("MainWindow.PriceRanges.100to500"), Min = 100, Max = 500 });
+            PriceRanges.Add(new PriceRange { Name = LocalizationService.Instance.GetString("MainWindow.PriceRanges.500to1000"), Min = 500, Max = 1000 });
+            PriceRanges.Add(new PriceRange { Name = LocalizationService.Instance.GetString("MainWindow.PriceRanges.Over1000"), Min = 1000, Max = null });
+        }
+
+        private void OnLanguageChanged(object? sender, EventArgs e)
+        {
+            // Re-initialize price ranges with new language
+            InitializePriceRanges();
+            
+            // Update category translations
+            UpdateCategoryTranslations();
+            
+            // Update status text if no files are loaded
+            if (!_items.Any())
+            {
+                StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.NoFilesLoaded");
+            }
+        }
+
+        private void UpdateCategoryTranslations()
+        {
+            // Save current selection's English name
+            string? currentEnglishCategory = GetEnglishCategoryName(SelectedCategory);
+            
+            // Rebuild categories with new translations
+            var englishCategories = Categories.Select(c => GetEnglishCategoryName(c)).ToList();
+            Categories.Clear();
+            
+            foreach (var englishName in englishCategories)
+            {
+                Categories.Add(GetTranslatedCategoryName(englishName));
+            }
+            
+            // Restore selection
+            if (currentEnglishCategory != null)
+            {
+                var translatedName = GetTranslatedCategoryName(currentEnglishCategory);
+                if (Categories.Contains(translatedName))
+                {
+                    SelectedCategory = translatedName;
+                }
+            }
+        }
+
+        private string GetEnglishCategoryName(string displayName)
+        {
+            // Map from display name back to English
+            if (displayName == LocalizationService.Instance.GetString("Categories.All")) return "All";
+            if (displayName == LocalizationService.Instance.GetString("Categories.Hero")) return "Hero";
+            if (displayName == LocalizationService.Instance.GetString("Categories.Costume")) return "Costume";
+            if (displayName == LocalizationService.Instance.GetString("Categories.TeamUp")) return "TeamUp";
+            if (displayName == LocalizationService.Instance.GetString("Categories.Boost")) return "Boost";
+            if (displayName == LocalizationService.Instance.GetString("Categories.Chest")) return "Chest";
+            if (displayName == LocalizationService.Instance.GetString("Categories.Service")) return "Service";
+            if (displayName == LocalizationService.Instance.GetString("Categories.Bundle")) return "Bundle";
+            
+            // If no match found, return the original (it's probably already English)
+            return displayName;
+        }
+
+        private string GetTranslatedCategoryName(string englishName)
+        {
+            // Map from English to translated
+            return englishName switch
+            {
+                "All" => LocalizationService.Instance.GetString("Categories.All"),
+                "Hero" => LocalizationService.Instance.GetString("Categories.Hero"),
+                "Costume" => LocalizationService.Instance.GetString("Categories.Costume"),
+                "TeamUp" => LocalizationService.Instance.GetString("Categories.TeamUp"),
+                "Boost" => LocalizationService.Instance.GetString("Categories.Boost"),
+                "Chest" => LocalizationService.Instance.GetString("Categories.Chest"),
+                "Service" => LocalizationService.Instance.GetString("Categories.Service"),
+                "Bundle" => LocalizationService.Instance.GetString("Categories.Bundle"),
+                _ => englishName
+            };
         }
 
         private async Task LoadItemsAsync()
@@ -257,25 +339,26 @@ namespace CatalogManager.ViewModels
                     
                     await Application.Current.Dispatcher.InvokeAsync(() =>
                     {
-                        // Save the current selection
-                        var currentSelection = SelectedCategory;
+                        // Save the current selection (English name)
+                        var currentEnglishCategory = GetEnglishCategoryName(SelectedCategory);
                         
                         Categories.Clear();
-                        Categories.Add("All");
+                        Categories.Add(GetTranslatedCategoryName("All"));
                         foreach (var category in categories.OrderBy(c => c))
                         {
-                            Categories.Add(category);
+                            Categories.Add(GetTranslatedCategoryName(category));
                         }
                         Debug.WriteLine($"LoadItemsAsync: Categories collection now has {Categories.Count} items");
                         
                         // Restore the selection if it still exists, otherwise default to "All"
-                        if (Categories.Contains(currentSelection))
+                        var translatedCategory = GetTranslatedCategoryName(currentEnglishCategory);
+                        if (Categories.Contains(translatedCategory))
                         {
-                            SelectedCategory = currentSelection;
+                            SelectedCategory = translatedCategory;
                         }
                         else
                         {
-                            SelectedCategory = "All";
+                            SelectedCategory = GetTranslatedCategoryName("All");
                         }
                     });
                 }
@@ -286,9 +369,12 @@ namespace CatalogManager.ViewModels
                 
                 Debug.WriteLine($"LoadItemsAsync: Calling GetItemsAsync with category='{SelectedCategory}', search='{SearchText}'");
                 
+                // Convert translated category name back to English for catalog query
+                var englishCategory = GetEnglishCategoryName(SelectedCategory);
+                
                 // Filter items based on current criteria
                 var filtered = await _catalogService.GetItemsAsync(
-                    SelectedCategory, 
+                    englishCategory, 
                     SearchText,
                     token,
                     MinPrice,
@@ -666,12 +752,12 @@ namespace CatalogManager.ViewModels
                             
                             if (viewModel.AddModifiers)
                             {
-                                // Add selected modifiers that don't already exist
+                                // Add selected modifiers that don't already exist (based on English names)
                                 foreach (var modifier in viewModel.SelectedTypeModifiers)
                                 {
-                                    if (!newModifiers.Contains(modifier))
+                                    if (!newModifiers.Contains(modifier.EnglishName))
                                     {
-                                        newModifiers.Add(modifier);
+                                        newModifiers.Add(modifier.EnglishName);
                                         modified = true;
                                     }
                                 }
@@ -683,12 +769,12 @@ namespace CatalogManager.ViewModels
                             }
                             else if (viewModel.RemoveModifiers)
                             {
-                                // Remove selected modifiers if they exist
+                                // Remove selected modifiers if they exist (based on English names)
                                 foreach (var modifier in viewModel.SelectedTypeModifiers)
                                 {
-                                    if (newModifiers.Contains(modifier))
+                                    if (newModifiers.Contains(modifier.EnglishName))
                                     {
-                                        newModifiers.Remove(modifier);
+                                        newModifiers.Remove(modifier.EnglishName);
                                         modified = true;
                                     }
                                 }

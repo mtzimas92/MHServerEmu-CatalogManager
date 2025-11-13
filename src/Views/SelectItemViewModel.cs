@@ -11,6 +11,7 @@ using System.Windows.Data;
 using MHServerEmu.Games.GameData;
 using MHServerEmu.Games.GameData.Prototypes;
 using CatalogManager.Services;
+using CatalogManager.Models;
 using System.IO;
 
 namespace CatalogManager.ViewModels
@@ -27,8 +28,8 @@ namespace CatalogManager.ViewModels
         // Use CollectionViewSource for better filtering performance
         private readonly CollectionViewSource _itemsViewSource = new CollectionViewSource();
         
-        private ObservableCollection<Category> _categories;
-        private Category _selectedCategory;
+        private ObservableCollection<LocalizedCategory> _categories;
+        private LocalizedCategory _selectedCategory;
         private string _searchFilter = "";
         private ObservableCollection<ItemDisplay> _items;
         private bool _isLoading;
@@ -37,13 +38,13 @@ namespace CatalogManager.ViewModels
         private ObservableCollection<ItemDisplay> _selectedItems = new();
         private bool _hideExistingItems;
 
-        public ObservableCollection<Category> Categories
+        public ObservableCollection<LocalizedCategory> Categories
         {
             get => _categories;
             set => SetProperty(ref _categories, value);
         }
 
-        public Category SelectedCategory
+        public LocalizedCategory SelectedCategory
         {
             get => _selectedCategory;
             set
@@ -118,6 +119,20 @@ namespace CatalogManager.ViewModels
             }
         }
 
+        private bool _hidePrototypePaths;
+        public bool HidePrototypePaths
+        {
+            get => _hidePrototypePaths;
+            set
+            {
+                if (SetProperty(ref _hidePrototypePaths, value))
+                {
+                    // Refresh all items to update their display names
+                    RefreshItemDisplayNames();
+                }
+            }
+        }
+
         public SelectItemViewModel(CatalogService catalogService)
         {
             _catalogService = catalogService ?? throw new ArgumentNullException(nameof(catalogService));
@@ -136,41 +151,20 @@ namespace CatalogManager.ViewModels
         {
             try
             {
-                ObservableCollection<Category> categories;
+                ObservableCollection<LocalizedCategory> categories;
                 
-                // Try to load categories from config file
-                var categoriesPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "categories.json");
-                
-                if (File.Exists(categoriesPath))
+                // Use LocalizedCategory objects instead of simple Category
+                categories = new ObservableCollection<LocalizedCategory>
                 {
-                    var categoriesJson = await File.ReadAllTextAsync(categoriesPath);
-                    var categoriesList = System.Text.Json.JsonSerializer.Deserialize<List<Category>>(categoriesJson);
-                    categories = new ObservableCollection<Category>(categoriesList ?? new List<Category>());
-                }
-                else
-                {
-                    // Fallback to default categories if file doesn't exist
-                    categories = new ObservableCollection<Category>
-                    {
-                        new Category { Path = "Entity/Items/Consumables", DisplayName = "Consumables", IsInventoryType = false },
-                        new Category { Path = "Entity/Items/CharacterTokens", DisplayName = "Character Tokens", IsInventoryType = false },
-                        new Category { Path = "Entity/Items/Costumes", DisplayName = "Costumes", IsInventoryType = false },
-                        new Category { Path = "Entity/Items/CurrencyItems", DisplayName = "Currency Items", IsInventoryType = false },
-                        new Category { Path = "Entity/Items/Pets", DisplayName = "Pets", IsInventoryType = false },
-                        new Category { Path = "Entity/Items/Crafting", DisplayName = "Crafting", IsInventoryType = false },
-                        new Category { Path = "Entity/Inventory/PlayerInventories/StashInventories/PageProtos/AvatarGear", DisplayName = "Stash Tabs", IsInventoryType = true },
-                        new Category { 
-                            Path = "Entity/Items/Test|Entity/Items/Artifacts/Prototypes/Tier1Artifacts/RaidTest|Entity/Items/Medals/MedalBlueprints/Endgame/TestMedals", 
-                            DisplayName = "Test Gear", 
-                            IsInventoryType = false 
-                        },
-                    };
-                    
-                    // Create the default config file for future edits
-                    var defaultJson = System.Text.Json.JsonSerializer.Serialize(categories, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
-                    Directory.CreateDirectory(Path.GetDirectoryName(categoriesPath)!);
-                    await File.WriteAllTextAsync(categoriesPath, defaultJson);
-                }
+                    new LocalizedCategory("Entity/Items/Consumables", "Consumables", false),
+                    new LocalizedCategory("Entity/Items/CharacterTokens", "CharacterTokens", false),
+                    new LocalizedCategory("Entity/Items/Costumes", "Costumes", false),
+                    new LocalizedCategory("Entity/Items/CurrencyItems", "CurrencyItems", false),
+                    new LocalizedCategory("Entity/Items/Pets", "Pets", false),
+                    new LocalizedCategory("Entity/Items/Crafting", "Crafting", false),
+                    new LocalizedCategory("Entity/Inventory/PlayerInventories/StashInventories/PageProtos/AvatarGear", "StashTabs", true),
+                    new LocalizedCategory("Entity/Items/Test|Entity/Items/Artifacts/Prototypes/Tier1Artifacts/RaidTest|Entity/Items/Medals/MedalBlueprints/Endgame/TestMedals", "TestGear", false),
+                };
 
                 await Application.Current.Dispatcher.InvokeAsync(() => 
                 {
@@ -308,6 +302,7 @@ namespace CatalogManager.ViewModels
                             _items.Clear();
                             foreach (var item in categoryItems)
                             {
+                                item.ViewModel = this;
                                 _items.Add(item);
                             }
                         }
@@ -373,6 +368,15 @@ namespace CatalogManager.ViewModels
                 StatusMessage = LocalizationService.Instance.GetString("SelectItemWindow.Status.ErrorFiltering", ex.Message);
             }
         }
+
+        private void RefreshItemDisplayNames()
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                // Trigger a refresh of the view to update all display names
+                _itemsViewSource.View?.Refresh();
+            });
+        }
         
         // Helper method for property change notification
         private bool SetProperty<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
@@ -406,12 +410,19 @@ namespace CatalogManager.ViewModels
         public PrototypeId Id { get; set; }
         public string FullPath { get; set; }
         public bool ExistsInCatalog { get; set; }
+        public SelectItemViewModel ViewModel { get; set; }
+        
         public string DisplayName 
         { 
             get
             {
                 if (DisplayNameMapping?.TryGetValue(FullPath, out string displayName) == true && displayName != "N/A")
                 {
+                    // Check if we should hide the prototype path
+                    if (ViewModel?.HidePrototypePaths == true)
+                    {
+                        return displayName;
+                    }
                     return $"{displayName} ({FullPath})";
                 }
                 return FullPath;
