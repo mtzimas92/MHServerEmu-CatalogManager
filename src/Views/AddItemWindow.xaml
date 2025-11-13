@@ -66,7 +66,7 @@
         <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Quantity}" Margin="0,0,0,10"/>
         <!-- Item Type -->
         <TextBlock Grid.Row="6" Grid.Column="0" Text="{loc:Translate AddItemWindow.Labels.ItemType}" VerticalAlignment="Center" Margin="0,0,10,10"/>
-        <ComboBox Grid.Row="6" Grid.Column="1" ItemsSource="{Binding ItemTypes}" SelectedItem="{Binding SelectedType}" Margin="0,0,0,10"/>
+        <ComboBox Grid.Row="6" Grid.Column="1" ItemsSource="{Binding ItemTypes}" SelectedItem="{Binding SelectedType}" DisplayMemberPath="DisplayName" Margin="0,0,0,10"/>
         
         <!-- Type Modifiers -->
         <TextBlock Grid.Row="7" Grid.Column="0" Text="{loc:Translate AddItemWindow.Labels.TypeModifiers}" VerticalAlignment="Top" Margin="0,5,10,10"/>
@@ -77,7 +77,7 @@
                  SelectionChanged="TypeModifiersListBox_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <CheckBox Content="{Binding}" 
+                    <CheckBox Content="{Binding DisplayName}" 
                               IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using CatalogManager.Models;
 using CatalogManager.ViewModels;
 
 namespace CatalogManager.Views
@@ -22,12 +23,15 @@ namespace CatalogManager.Views
                 viewModel.CloseRequested += (sender, args) =>
                 {
                     // Get selected modifiers from the ListBox
-                    var selectedModifiers = new List<string>();
+                    var selectedModifiers = new List<LocalizedTypeModifier>();
                     foreach (var item in TypeModifiersListBox.SelectedItems)
                     {
-                        selectedModifiers.Add(item.ToString());
+                        if (item is LocalizedTypeModifier modifier)
+                        {
+                            selectedModifiers.Add(modifier);
+                        }
                     }
-                    viewModel.SelectedTypeModifiers = new System.Collections.ObjectModel.ObservableCollection<string>(selectedModifiers);
+                    viewModel.SelectedTypeModifiers = new System.Collections.ObjectModel.ObservableCollection<LocalizedTypeModifier>(selectedModifiers);
                     
                     DialogResult = viewModel.DialogResult;
                     Close();

@@ -85,12 +85,11 @@
       "Actions": "Actions"
     },
     "PriceRanges": {
-      "All": "All Prices",
-      "Free": "Free",
-      "Under500": "Under 500G",
+      "AllPrices": "All Prices",
+      "Under100": "Under 100G",
+      "100to500": "100G - 500G",
       "500to1000": "500G - 1000G",
-      "1000to2000": "1000G - 2000G",
-      "Over2000": "Over 2000G"
+      "Over1000": "Over 1000G"
     },
     "Messages": {
       "DeleteConfirmation": "Are you sure you want to delete the item '{0}'?",
@@ -171,6 +170,7 @@
       "Category": "Category:",
       "Search": "Search:",
       "HideExisting": "Hide Existing Items",
+      "HidePrototypePaths": "Hide Prototype Paths",
       "SearchPlaceholder": "Search items..."
     },
     "Buttons": {
@@ -252,6 +252,13 @@
       "ErrorSelecting": "Error selecting item: {0}",
       "ErrorSelectingBonus": "Error selecting bonus item: {0}",
       "ErrorSaving": "Error saving bundle: {0}"
+    },
+    "Validation": {
+      "TitleRequired": "Title is required",
+      "DescriptionRequired": "Description is required",
+      "AtLeastOneItem": "At least one item must be added to the bundle",
+      "AtLeastOneBonus": "At least one bonus item must be added to the BOGO offer",
+      "ValidSkuRequired": "Valid SKU ID is required"
     }
   },
   "EditItemWindow": {
@@ -361,5 +368,15 @@
     "Special": "Special",
     "StashPage": "Stash Page",
     "PowerSpecPanel": "Power Spec Panel"
+  },
+  "ItemCategories": {
+    "Consumables": "Consumables",
+    "CharacterTokens": "Character Tokens",
+    "Costumes": "Costumes",
+    "CurrencyItems": "Currency Items",
+    "Pets": "Pets",
+    "Crafting": "Crafting",
+    "StashTabs": "Stash Tabs",
+    "TestGear": "Test Gear"
   }
 }

@@ -11,6 +11,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using CatalogManager.Commands;
+using CatalogManager.Models;
 using CatalogManager.Services;
 using CatalogManager.Views;
 using MHServerEmu.Games.GameData;
@@ -92,15 +93,15 @@ namespace CatalogManager.ViewModels
             set => SetProperty(ref _price, value);
         }
         
-        private ObservableCollection<string> _availableTypeModifiers;
-        public ObservableCollection<string> AvailableTypeModifiers
+        private ObservableCollection<LocalizedTypeModifier> _availableTypeModifiers;
+        public ObservableCollection<LocalizedTypeModifier> AvailableTypeModifiers
         {
             get => _availableTypeModifiers;
             set => SetProperty(ref _availableTypeModifiers, value);
         }
 
-        private ObservableCollection<string> _selectedTypeModifiers = new();
-        public ObservableCollection<string> SelectedTypeModifiers 
+        private ObservableCollection<LocalizedTypeModifier> _selectedTypeModifiers = new();
+        public ObservableCollection<LocalizedTypeModifier> SelectedTypeModifiers 
         { 
             get => _selectedTypeModifiers;
             set => SetProperty(ref _selectedTypeModifiers, value);
@@ -133,15 +134,15 @@ namespace CatalogManager.ViewModels
             private set => SetProperty(ref _statusMessage, value);
         }
 
-        private ObservableCollection<string> _itemTypes;
-        public ObservableCollection<string> ItemTypes 
-        { 
+        private ObservableCollection<LocalizedItemType> _itemTypes;
+        public ObservableCollection<LocalizedItemType> ItemTypes 
+        {
             get => _itemTypes;
             private set => SetProperty(ref _itemTypes, value);
         }
-
-        private string _selectedType;
-        public string SelectedType
+        
+        private LocalizedItemType _selectedType;
+        public LocalizedItemType SelectedType
         {
             get => _selectedType;
             set
@@ -170,11 +171,17 @@ namespace CatalogManager.ViewModels
             SaveCommand = new AsyncRelayCommand(SaveAsync, CanSave);
             CancelCommand = new RelayCommand(Cancel);
             
-            // Initialize item types
-            _itemTypes = new ObservableCollection<string>(new[]
+            // Initialize item types with localized names
+            _itemTypes = new ObservableCollection<LocalizedItemType>
             {
-                "Boost", "Bundle", "Chest", "Costume", "Hero", "Service", "TeamUp"
-            });
+                new LocalizedItemType("Boost"),
+                new LocalizedItemType("Bundle"),
+                new LocalizedItemType("Chest"),
+                new LocalizedItemType("Costume"),
+                new LocalizedItemType("Hero"),
+                new LocalizedItemType("Service"),
+                new LocalizedItemType("TeamUp")
+            };
             
             // Initialize the view model
             if (existingItem != null)
@@ -199,6 +206,11 @@ namespace CatalogManager.ViewModels
             }
         }
         
+        private LocalizedItemType FindItemTypeByEnglishName(string englishName)
+        {
+            return ItemTypes.FirstOrDefault(t => t.EnglishName == englishName);
+        }
+        
         private void LoadExistingItem(CatalogEntry item)
         {
             try
@@ -213,7 +225,7 @@ namespace CatalogManager.ViewModels
                 Price = item.LocalizedEntries[0].ItemPrice;
                 Quantity = item.GuidItems[0].Quantity; // Add this line to load quantity
 
-                SelectedType = item.Type.Name;
+                SelectedType = FindItemTypeByEnglishName(item.Type.Name);
                 
                 // Store existing type information
                 _existingTypeOrder = item.Type.Order;
@@ -222,9 +234,9 @@ namespace CatalogManager.ViewModels
                 // Update available modifiers first
                 UpdateAvailableModifiers();
                 
-                // Set the selected modifiers from the existing item
-                SelectedTypeModifiers = new ObservableCollection<string>(
-                    item.TypeModifiers.Select(m => m.Name));
+                // Convert existing type modifiers to LocalizedTypeModifier objects
+                SelectedTypeModifiers = new ObservableCollection<LocalizedTypeModifier>(
+                    item.TypeModifiers.Select(m => new LocalizedTypeModifier(m.Name)));
                 
                 // Update the ListBox selections to match existing modifiers
                 UpdateListBoxSelections();
@@ -261,17 +273,17 @@ namespace CatalogManager.ViewModels
             }
         }
         
-        private void UpdateListBoxItemsSelection(ListBox listBox, List<string> selectedModifiers)
+        private void UpdateListBoxItemsSelection(ListBox listBox, List<LocalizedTypeModifier> selectedModifiers)
         {
             if (listBox.ItemContainerGenerator.Status == GeneratorStatus.ContainersGenerated)
             {
                 for (int i = 0; i < listBox.Items.Count; i++)
                 {
-                    var item = listBox.Items[i];
+                    var item = listBox.Items[i] as LocalizedTypeModifier;
                     var listBoxItem = listBox.ItemContainerGenerator.ContainerFromIndex(i) as ListBoxItem;
-                    if (listBoxItem != null)
+                    if (listBoxItem != null && item != null)
                     {
-                        listBoxItem.IsSelected = selectedModifiers.Contains(item.ToString());
+                        listBoxItem.IsSelected = selectedModifiers.Any(m => m.EnglishName == item.EnglishName);
                     }
                 }
             }
@@ -284,7 +296,10 @@ namespace CatalogManager.ViewModels
             SelectedTypeModifiers.Clear();
             foreach (var item in listBox.SelectedItems)
             {
-                SelectedTypeModifiers.Add(item.ToString());
+                if (item is LocalizedTypeModifier modifier)
+                {
+                    SelectedTypeModifiers.Add(modifier);
+                }
             }
         }
         
@@ -292,21 +307,23 @@ namespace CatalogManager.ViewModels
         {
             try
             {
-                var categoryModifiers = _catalogService.GetCategoryModifiers(SelectedType);
-                AvailableTypeModifiers = new ObservableCollection<string>(categoryModifiers);
+                var categoryModifiers = _catalogService.GetCategoryModifiers(SelectedType?.EnglishName ?? "Boost");
+                AvailableTypeModifiers = new ObservableCollection<LocalizedTypeModifier>(
+                    categoryModifiers.Select(m => new LocalizedTypeModifier(m)));
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Error updating modifiers: {ex.Message}");
-                AvailableTypeModifiers = new ObservableCollection<string>();
+                AvailableTypeModifiers = new ObservableCollection<LocalizedTypeModifier>();
             }
         }
         
         private List<TypeModifier> GetTypeModifiersForCategory(string category)
         {
             var typeOrder = _existingItem?.Type.Order ?? 999;
+            // Get English names from selected type modifiers to save to catalog
             return SelectedTypeModifiers
-                .Select(name => new TypeModifier { Name = name, Order = typeOrder })
+                .Select(m => new TypeModifier { Name = m.EnglishName, Order = typeOrder })
                 .ToList();
         }
         
@@ -355,13 +372,13 @@ namespace CatalogManager.ViewModels
             // Stash and Service items
             if (path.Contains("/StashInventories/PageProtos/"))
             {
-                SelectedType = "Service";
+                SelectedType = FindItemTypeByEnglishName("Service");
                 Description = "Stash Tab";
             }
             // Costumes
             else if (path.Contains("/Costumes/Prototypes/"))
             {
-                SelectedType = "Costume";
+                SelectedType = FindItemTypeByEnglishName("Costume");
                 Description = "Character Costume";
             }
             // Character Tokens and Heroes
@@ -369,12 +386,12 @@ namespace CatalogManager.ViewModels
             {
                 if (path.Contains("/TeamUps/"))
                 {
-                    SelectedType = "Boost";
+                    SelectedType = FindItemTypeByEnglishName("Boost");
                     Description = "Team-Up Token";
                 }
                 else
                 {
-                    SelectedType = "Hero";
+                    SelectedType = FindItemTypeByEnglishName("Hero");
                     Description = "Character Token";
                 }
             }
@@ -385,41 +402,41 @@ namespace CatalogManager.ViewModels
                 {
                     if (path.Contains("/MysteryBox/"))
                     {
-                        SelectedType = path.Contains("Bundle") ? "Bundle" : "Boost";
+                        SelectedType = path.Contains("Bundle") ? FindItemTypeByEnglishName("Bundle") : FindItemTypeByEnglishName("Boost");
                     }
                     else
                     {
-                        SelectedType = "Chest";
+                        SelectedType = FindItemTypeByEnglishName("Chest");
                     }
                     Description = "Fortune Card Item";
                 }
                 else if (path.Contains("/DailyGift/"))
                 {
-                    SelectedType = path.Contains("Bundle") ? "Bundle" : "Boost";
+                    SelectedType = path.Contains("Bundle") ? FindItemTypeByEnglishName("Bundle") : FindItemTypeByEnglishName("Boost");
                     Description = "Daily Gift Item";
                 }
                 else
                 {
-                    SelectedType = "Boost";
+                    SelectedType = FindItemTypeByEnglishName("Boost");
                     Description = "Consumable Item";
                 }
             }
             // Crafting items
             else if (path.Contains("/Crafting/"))
             {
-                SelectedType = "Boost";
+                SelectedType = FindItemTypeByEnglishName("Boost");
                 Description = "Crafting Material";
             }
             // Currency items
             else if (path.Contains("/CurrencyItems/"))
             {
-                SelectedType = path.Contains("Bundle") ? "Bundle" : "Boost";
+                SelectedType = path.Contains("Bundle") ? FindItemTypeByEnglishName("Bundle") : FindItemTypeByEnglishName("Boost");
                 Description = "Currency Item";
             }
             // Pets
             else if (path.Contains("/Pets/"))
             {
-                SelectedType = "Boost";
+                SelectedType = FindItemTypeByEnglishName("Boost");
                 Description = "Pet Item";
             }
         }
@@ -486,10 +503,10 @@ namespace CatalogManager.ViewModels
                     },
                     Type = new ItemType
                     {
-                        Name = SelectedType,
+                        Name = SelectedType.EnglishName,
                         Order = _existingItem?.Type.Order ?? 999
                     },
-                    TypeModifiers = GetTypeModifiersForCategory(SelectedType)
+                    TypeModifiers = GetTypeModifiersForCategory(SelectedType.EnglishName)
                 };
                 
                 // Attempt to save with timeout

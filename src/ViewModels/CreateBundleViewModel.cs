@@ -12,6 +12,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using CatalogManager.Commands;
+using CatalogManager.Models;
 using CatalogManager.Services;
 using CatalogManager.Views;
 using MHServerEmu.Games.GameData;
@@ -60,16 +61,16 @@ namespace CatalogManager.ViewModels
                     // Update type and other properties based on BOGO status
                     if (value)
                     {
-                        SelectedType = "Hero"; // BOGOs are typically Hero type
+                        SelectedType = FindItemTypeByEnglishName("Hero"); // BOGOs are typically Hero type
                         // Add default modifiers for BOGO
-                        if (!SelectedTypeModifiers.Contains("NoDisplay"))
-                            SelectedTypeModifiers.Add("NoDisplay");
-                        if (!SelectedTypeModifiers.Contains("NoDisplayStore"))
-                            SelectedTypeModifiers.Add("NoDisplayStore");
+                        if (!SelectedTypeModifiers.Any(m => m.EnglishName == "NoDisplay"))
+                            SelectedTypeModifiers.Add(new LocalizedTypeModifier("NoDisplay"));
+                        if (!SelectedTypeModifiers.Any(m => m.EnglishName == "NoDisplayStore"))
+                            SelectedTypeModifiers.Add(new LocalizedTypeModifier("NoDisplayStore"));
                     }
                     else
                     {
-                        SelectedType = "Bundle";
+                        SelectedType = FindItemTypeByEnglishName("Bundle");
                     }
                     
                     OnPropertyChanged(nameof(WindowTitle));
@@ -121,21 +122,19 @@ namespace CatalogManager.ViewModels
             set => SetProperty(ref _price, value);
         }
         
-        private ObservableCollection<string> _availableTypeModifiers;
-        public ObservableCollection<string> AvailableTypeModifiers
+        private ObservableCollection<LocalizedTypeModifier> _availableTypeModifiers;
+        public ObservableCollection<LocalizedTypeModifier> AvailableTypeModifiers
         {
             get => _availableTypeModifiers;
             set => SetProperty(ref _availableTypeModifiers, value);
         }
 
-        private ObservableCollection<string> _selectedTypeModifiers = new();
-        public ObservableCollection<string> SelectedTypeModifiers 
-        { 
+        private ObservableCollection<LocalizedTypeModifier> _selectedTypeModifiers = new();
+        public ObservableCollection<LocalizedTypeModifier> SelectedTypeModifiers
+        {
             get => _selectedTypeModifiers;
             set => SetProperty(ref _selectedTypeModifiers, value);
-        }
-        
-        private ObservableCollection<BundleItemEntry> _bundleItems = new();
+        }        private ObservableCollection<BundleItemEntry> _bundleItems = new();
         public ObservableCollection<BundleItemEntry> BundleItems
         {
             get => _bundleItems;
@@ -176,15 +175,15 @@ namespace CatalogManager.ViewModels
             private set => SetProperty(ref _statusMessage, value);
         }
 
-        private ObservableCollection<string> _itemTypes;
-        public ObservableCollection<string> ItemTypes 
-        { 
+        private ObservableCollection<LocalizedItemType> _itemTypes;
+        public ObservableCollection<LocalizedItemType> ItemTypes 
+        {
             get => _itemTypes;
             private set => SetProperty(ref _itemTypes, value);
         }
-
-        private string _selectedType;
-        public string SelectedType
+        
+        private LocalizedItemType _selectedType;
+        public LocalizedItemType SelectedType
         {
             get => _selectedType;
             set
@@ -209,14 +208,25 @@ namespace CatalogManager.ViewModels
             SaveCommand = new AsyncRelayCommand(SaveAsync, CanSave);
             CancelCommand = new RelayCommand(Cancel);
             
-            // Initialize item types
-            _itemTypes = new ObservableCollection<string>(new[]
+            // Initialize item types with localized names
+            _itemTypes = new ObservableCollection<LocalizedItemType>
             {
-                "Bundle", "Hero", "Costume", "TeamUp", "Boost", "Chest", "Service"
-            });
+                new LocalizedItemType("Bundle"),
+                new LocalizedItemType("Hero"),
+                new LocalizedItemType("Costume"),
+                new LocalizedItemType("TeamUp"),
+                new LocalizedItemType("Boost"),
+                new LocalizedItemType("Chest"),
+                new LocalizedItemType("Service")
+            };
             
             // Initialize the view model
             InitializeNewBundleAsync().ConfigureAwait(false);
+        }
+        
+        private LocalizedItemType FindItemTypeByEnglishName(string englishName)
+        {
+            return ItemTypes.FirstOrDefault(t => t.EnglishName == englishName);
         }
         
         private async Task InitializeNewBundleAsync()
@@ -225,7 +235,7 @@ namespace CatalogManager.ViewModels
             {
                 StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.Initializing");
                 SkuId = await _catalogService.GetNextAvailableSkuId();
-                SelectedType = "Bundle"; // Default type
+                SelectedType = FindItemTypeByEnglishName("Bundle"); // Default type
                 StatusMessage = LocalizationService.Instance.GetString("CreateBundleWindow.Status.Ready");
             }
             catch (Exception ex)
@@ -239,14 +249,24 @@ namespace CatalogManager.ViewModels
         {
             try
             {
-                var categoryModifiers = _catalogService.GetCategoryModifiers(SelectedType);
-                AvailableTypeModifiers = new ObservableCollection<string>(categoryModifiers);
+                var categoryModifiers = _catalogService.GetCategoryModifiers(SelectedType?.EnglishName ?? "Bundle");
+                AvailableTypeModifiers = new ObservableCollection<LocalizedTypeModifier>(
+                    categoryModifiers.Select(m => new LocalizedTypeModifier(m)));
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Error updating modifiers: {ex.Message}");
-                AvailableTypeModifiers = new ObservableCollection<string>();
+                AvailableTypeModifiers = new ObservableCollection<LocalizedTypeModifier>();
             }
+        }
+        
+        private List<TypeModifier> GetTypeModifiersForBundle()
+        {
+            var typeOrder = 999;
+            // Get English names from selected type modifiers to save to catalog
+            return SelectedTypeModifiers
+                .Select(m => new TypeModifier { Name = m.EnglishName, Order = typeOrder })
+                .ToList();
         }
         
         private async Task AddItemAsync()
@@ -452,12 +472,12 @@ namespace CatalogManager.ViewModels
                     },
                     Type = new ItemType
                     {
-                        Name = SelectedType,
+                        Name = SelectedType.EnglishName,
                         Order = IsBogo ? 0 : 5
                     },
-                    TypeModifiers = SelectedTypeModifiers
-                        .Select(name => new TypeModifier { Name = name, Order = IsBogo ? 0 : 5 })
-                        .ToList()
+                    TypeModifiers = IsBogo
+                        ? SelectedTypeModifiers.Select(m => new TypeModifier { Name = m.EnglishName, Order = 0 }).ToList()
+                        : SelectedTypeModifiers.Select(m => new TypeModifier { Name = m.EnglishName, Order = 5 }).ToList()
                 };
                 if (!IsBogo)
                 {
@@ -529,31 +549,31 @@ namespace CatalogManager.ViewModels
         {
             if (string.IsNullOrWhiteSpace(Title))
             {
-                error = "Title is required";
+                error = LocalizationService.Instance.GetString("CreateBundleWindow.Validation.TitleRequired");
                 return false;
             }
             
             if (string.IsNullOrWhiteSpace(Description))
             {
-                error = "Description is required";
+                error = LocalizationService.Instance.GetString("CreateBundleWindow.Validation.DescriptionRequired");
                 return false;
             }
             
             if (BundleItems.Count == 0)
             {
-                error = "At least one item must be added to the bundle";
+                error = LocalizationService.Instance.GetString("CreateBundleWindow.Validation.AtLeastOneItem");
                 return false;
             }
             
             if (IsBogo && BonusItems.Count == 0)
             {
-                error = "At least one bonus item must be added to the BOGO offer";
+                error = LocalizationService.Instance.GetString("CreateBundleWindow.Validation.AtLeastOneBonus");
                 return false;
             }
             
             if (SkuId <= 0)
             {
-                error = "Valid SKU ID is required";
+                error = LocalizationService.Instance.GetString("CreateBundleWindow.Validation.ValidSkuRequired");
                 return false;
             }
             
@@ -639,17 +659,17 @@ namespace CatalogManager.ViewModels
             }
         }
         
-        private void UpdateListBoxItemsSelection(ListBox listBox, List<string> selectedModifiers)
+        private void UpdateListBoxItemsSelection(ListBox listBox, List<LocalizedTypeModifier> selectedModifiers)
         {
             if (listBox.ItemContainerGenerator.Status == GeneratorStatus.ContainersGenerated)
             {
                 for (int i = 0; i < listBox.Items.Count; i++)
                 {
-                    var item = listBox.Items[i];
+                    var item = listBox.Items[i] as LocalizedTypeModifier;
                     var listBoxItem = listBox.ItemContainerGenerator.ContainerFromIndex(i) as ListBoxItem;
-                    if (listBoxItem != null)
+                    if (listBoxItem != null && item != null)
                     {
-                        listBoxItem.IsSelected = selectedModifiers.Contains(item.ToString());
+                        listBoxItem.IsSelected = selectedModifiers.Any(m => m.EnglishName == item.EnglishName);
                     }
                 }
             }
@@ -662,7 +682,10 @@ namespace CatalogManager.ViewModels
             SelectedTypeModifiers.Clear();
             foreach (var item in listBox.SelectedItems)
             {
-                SelectedTypeModifiers.Add(item.ToString());
+                if (item is LocalizedTypeModifier modifier)
+                {
+                    SelectedTypeModifiers.Add(modifier);
+                }
             }
         }
         

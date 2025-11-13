@@ -132,7 +132,8 @@
             Grid.Column="1"
             Margin="0,0,0,10"
             ItemsSource="{Binding ItemTypes}"
-            SelectedItem="{Binding SelectedType}" />
+            SelectedItem="{Binding SelectedType}"
+            DisplayMemberPath="DisplayName" />
 
         <!--  URL Configuration Section  -->
         <!--  Bundle Items and Type Modifiers  -->
@@ -267,7 +268,7 @@
                 SelectionMode="Multiple">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <CheckBox Content="{Binding}" IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
+                        <CheckBox Content="{Binding DisplayName}" IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}, Path=IsSelected}" />
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
