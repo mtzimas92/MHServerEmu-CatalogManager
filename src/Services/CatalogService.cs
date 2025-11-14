@@ -328,7 +328,7 @@ namespace CatalogManager.Services
 
         private async Task SaveToModifiedFileAsync(CatalogEntry entry)
         {
-            // Determine which file this SKU belongs to, or use the most recently loaded file if new
+            // Determine which file this SKU belongs to, or find the appropriate file based on item type if new
             string sourceFile;
             if (_skuToFileMapping.TryGetValue(entry.SkuId, out var mappedFile))
             {
@@ -337,9 +337,33 @@ namespace CatalogManager.Services
             }
             else if (_loadedFiles.Count > 0)
             {
-                // New item - save to most recently loaded file
-                sourceFile = _loadedFiles[^1];
-                // Logger.Log($"SaveToModifiedFileAsync: New SKU {entry.SkuId}, using most recent file {Path.GetFileName(sourceFile)}");
+                // New item - find the appropriate catalog file based on Type.Name
+                string itemType = entry.Type?.Name ?? "Boost"; // Default to Boost if no type specified
+                
+                // First, try to find in loaded files
+                sourceFile = _loadedFiles.FirstOrDefault(f => 
+                    Path.GetFileNameWithoutExtension(f).Contains(itemType, StringComparison.OrdinalIgnoreCase));
+                
+                // If not found in loaded files, look for the catalog file in the Data directory
+                if (sourceFile == null)
+                {
+                    var dataDirectory = Path.GetDirectoryName(_loadedFiles[0]) ?? "";
+                    var expectedFileName = $"Catalog{itemType}.json";
+                    var expectedPath = Path.Combine(dataDirectory, expectedFileName);
+                    
+                    if (File.Exists(expectedPath))
+                    {
+                        sourceFile = expectedPath;
+                        Debug.WriteLine($"Found catalog file for type '{itemType}' at {expectedPath} (not loaded)");
+                    }
+                    else
+                    {
+                        // Fall back to most recently loaded file
+                        sourceFile = _loadedFiles[^1];
+                        Debug.WriteLine($"Warning: No catalog file found for type '{itemType}', using {Path.GetFileName(sourceFile)}");
+                    }
+                }
+                // Logger.Log($"SaveToModifiedFileAsync: New SKU {entry.SkuId} with type '{itemType}', using file {Path.GetFileName(sourceFile)}");
             }
             else
             {
