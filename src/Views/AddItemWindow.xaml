@@ -26,6 +26,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         
@@ -83,15 +84,33 @@
             </ListBox.ItemTemplate>
         </ListBox>
         
+        <!-- Bundle Items (Visible only when editing bundles with multiple items) -->
+        <TextBlock Grid.Row="8" Grid.Column="0" Text="Bundle Items:" VerticalAlignment="Top" Margin="0,5,10,10"
+                   Visibility="{Binding HasMultipleItems, Converter={StaticResource BoolToVisibility}}"/>
+        <ListBox Grid.Row="8" Grid.Column="1" 
+                 ItemsSource="{Binding BundleItems}" 
+                 Height="100" Margin="0,0,0,10"
+                 Visibility="{Binding HasMultipleItems, Converter={StaticResource BoolToVisibility}}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Quantity}" Margin="0,0,5,0" FontWeight="Bold"/>
+                        <TextBlock Text="x" Margin="0,0,5,0"/>
+                        <TextBlock Text="{Binding DisplayName}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
         <!-- Status Message -->
-        <TextBlock Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" 
+        <TextBlock Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" 
                    Text="{Binding StatusMessage}" 
                    Foreground="DarkBlue"
                    Margin="0,0,0,10"
                    TextWrapping="Wrap"/>
         
         <!-- Buttons -->
-        <StackPanel Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" 
+        <StackPanel Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" 
                     Orientation="Horizontal" 
                     HorizontalAlignment="Right" 
                     Margin="0,10,0,0">
@@ -105,7 +124,7 @@
         </StackPanel>
         
         <!-- Loading Indicator -->
-        <Grid Grid.Row="0" Grid.RowSpan="9" Grid.Column="0" Grid.ColumnSpan="2"
+        <Grid Grid.Row="0" Grid.RowSpan="10" Grid.Column="0" Grid.ColumnSpan="2"
               Background="#80000000"
               Visibility="{Binding IsSaving, Converter={StaticResource BoolToVisibility}}">
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading;
@@ -20,6 +21,13 @@ using System.Windows.Controls.Primitives;
 
 namespace CatalogManager.ViewModels
 {
+    public class BundleItemInfo
+    {
+        public ulong PrototypeId { get; set; }
+        public int Quantity { get; set; }
+        public string DisplayName { get; set; }
+    }
+    
     public class AddItemViewModel : INotifyPropertyChanged
     {
         private readonly CatalogService _catalogService;
@@ -160,6 +168,15 @@ namespace CatalogManager.ViewModels
             get => _quantity;
             set => SetProperty(ref _quantity, Math.Max(1, value)); // Ensure minimum of 1
         }
+        
+        private ObservableCollection<BundleItemInfo> _bundleItems = new();
+        public ObservableCollection<BundleItemInfo> BundleItems
+        {
+            get => _bundleItems;
+            set => SetProperty(ref _bundleItems, value);
+        }
+        
+        public bool HasMultipleItems => BundleItems.Count > 1;
 
         public AddItemViewModel(CatalogService catalogService, CatalogEntry existingItem = null)
         {
@@ -223,7 +240,34 @@ namespace CatalogManager.ViewModels
                 Title = item.LocalizedEntries[0].Title;
                 Description = item.LocalizedEntries[0].Description;
                 Price = item.LocalizedEntries[0].ItemPrice;
-                Quantity = item.GuidItems[0].Quantity; // Add this line to load quantity
+                Quantity = item.GuidItems[0].Quantity;
+
+                // Load all bundle items with display names
+                var jsonPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "display_names.json");
+                Dictionary<string, string> displayNameMapping = new();
+                if (File.Exists(jsonPath))
+                {
+                    var jsonContent = File.ReadAllText(jsonPath);
+                    displayNameMapping = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, string>>(jsonContent) ?? new();
+                }
+                
+                BundleItems.Clear();
+                foreach (var guidItem in item.GuidItems)
+                {
+                    var prototypeId = (PrototypeId)guidItem.ItemPrototypeRuntimeIdForClient;
+                    var prototypePath = GameDatabase.GetPrototypeName(prototypeId);
+                    var displayName = displayNameMapping.TryGetValue(prototypePath, out var name) && name != "N/A" 
+                        ? $"{name} ({prototypePath})"
+                        : prototypePath;
+                    
+                    BundleItems.Add(new BundleItemInfo
+                    {
+                        PrototypeId = guidItem.ItemPrototypeRuntimeIdForClient,
+                        Quantity = guidItem.Quantity,
+                        DisplayName = displayName
+                    });
+                }
+                OnPropertyChanged(nameof(HasMultipleItems));
 
                 SelectedType = FindItemTypeByEnglishName(item.Type.Name);
                 
