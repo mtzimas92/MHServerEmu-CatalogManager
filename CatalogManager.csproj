@@ -26,6 +26,10 @@
     <Reference Include="INIFileParser">
       <HintPath>lib\INIFileParser.dll</HintPath>
     </Reference>
+    <Content Include="Data\display_names.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>display_names.json</Link>
+    </Content>
     <Content Include="Data\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
