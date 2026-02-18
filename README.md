@@ -36,7 +36,7 @@ MHServerEmu CatalogManager allows you to edit and change almost everything in th
    - **Price**: Minimum 1 G (in-game currency)
    - **Item Type**: Category (Hero, Costume, Boost, etc.)
    - **Type Modifiers**: Special flags (e.g., "StashPage" for stash tabs - **required**)
-7. Click **Save** - the item will be added to `{SourceFile}_MODIFIED.json`
+7. Click **Save** - the item will be added to `{SourceFile}MODIFIED.json`
 
 ### Editing & Deleting Items
 
@@ -54,34 +54,34 @@ MHServerEmu CatalogManager allows you to edit and change almost everything in th
 
 ### Modified Files Workflow
 
-All changes save to `{filename}_MODIFIED.json` files:
-- `CatalogBoost.json` → `CatalogBoost_MODIFIED.json`
-- `CatalogHeroes.json` → `CatalogHeroes_MODIFIED.json`
+All changes save to `{filename}MODIFIED.json` files:
+- `CatalogBoost.json` → `CatalogBoostMODIFIED.json`
+- `CatalogHeroes.json` → `CatalogHeroesMODIFIED.json`
 - etc.
 
 **Benefits:**
 - Original catalog files remain untouched
 - Modified files automatically load alongside their base files
 - Each category has independent modification tracking
-- Deploy only the `_MODIFIED` files you need
+- Deploy only the `MODIFIED` files you need
 
 ### Finding Your Modified Files
 
 Modified files are saved in the same directory as their source files. Typically:
-- `Data/CatalogBoost_MODIFIED.json`
-- `Data/CatalogHeroes_MODIFIED.json`
-- `Data/CatalogBundles_MODIFIED.json`
+- `Data/CatalogBoostMODIFIED.json`
+- `Data/CatalogHeroesMODIFIED.json`
+- `Data/CatalogBundlesMODIFIED.json`
 - etc.
 
 ## Deployment
 
-Copy the `_MODIFIED.json` files to your MHServerEmu installation:
+Copy the `MODIFIED.json` files to your MHServerEmu installation:
 
 **Option 1 - Use Modified Files (Recommended):**
 ```
-MHServerEmu/Data/Game/MTXStore/CatalogBoost_MODIFIED.json
-MHServerEmu/Data/Game/MTXStore/CatalogHeroes_MODIFIED.json
-MHServerEmu/Data/Game/MTXStore/CatalogBundles_MODIFIED.json
+MHServerEmu/Data/Game/MTXStore/CatalogBoostMODIFIED.json
+MHServerEmu/Data/Game/MTXStore/CatalogHeroesMODIFIED.json
+MHServerEmu/Data/Game/MTXStore/CatalogBundlesMODIFIED.json
 ```
 
 **Option 2 - Replace Base Files:**

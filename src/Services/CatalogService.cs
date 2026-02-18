@@ -214,7 +214,7 @@ namespace CatalogManager.Services
             _patchFileSkuIds.Clear();
             _skuToFileMapping.Clear();
 
-            // Load all files in the loaded files list, plus their _MODIFIED versions
+            // Load all files in the loaded files list, plus their MODIFIED versions
             foreach (var filePath in _loadedFiles)
             {
                 if (!File.Exists(filePath))
@@ -232,11 +232,19 @@ namespace CatalogManager.Services
                 if (fileEntries != null)
                 {
                     // Logger.Log($"LoadCatalogInternalAsync: Loaded {fileEntries.Count} items from {Path.GetFileName(filePath)}");
-                    items.AddRange(fileEntries);
                     
-                    // Track which file each SKU came from
+                    // If this is a MODIFIED file, its entries override any base entries already loaded
+                    string currentFileName = Path.GetFileNameWithoutExtension(filePath);
+                    bool isModifiedFile = currentFileName.EndsWith("MODIFIED", StringComparison.OrdinalIgnoreCase);
+                    
                     foreach (var entry in fileEntries)
                     {
+                        if (isModifiedFile)
+                        {
+                            // Remove any base version with the same SKU
+                            items.RemoveAll(x => x.SkuId == entry.SkuId);
+                        }
+                        items.Add(entry);
                         _skuToFileMapping[entry.SkuId] = filePath;
                     }
                 }
@@ -245,15 +253,16 @@ namespace CatalogManager.Services
                     // Logger.Log($"LoadCatalogInternalAsync: Deserialization returned null for {filePath}");
                 }
 
-                // Also load the corresponding _MODIFIED file if it exists
+                // Also load the corresponding MODIFIED file if it exists
+                // BUT skip if that MODIFIED file is already explicitly in _loadedFiles (it will be processed on its own)
                 string baseFileName = Path.GetFileNameWithoutExtension(filePath);
-                if (!baseFileName.EndsWith("_MODIFIED", StringComparison.OrdinalIgnoreCase))
+                if (!baseFileName.EndsWith("MODIFIED", StringComparison.OrdinalIgnoreCase))
                 {
                     string directory = Path.GetDirectoryName(filePath) ?? "";
                     string extension = Path.GetExtension(filePath);
-                    string modifiedFilePath = Path.Combine(directory, $"{baseFileName}_MODIFIED{extension}");
+                    string modifiedFilePath = Path.Combine(directory, $"{baseFileName}MODIFIED{extension}");
 
-                    if (File.Exists(modifiedFilePath))
+                    if (File.Exists(modifiedFilePath) && !_loadedFiles.Contains(modifiedFilePath))
                     {
                         // Logger.Log($"LoadCatalogInternalAsync: Loading modified file: {modifiedFilePath}");
                         var modifiedJson = await File.ReadAllTextAsync(modifiedFilePath);
@@ -311,7 +320,7 @@ namespace CatalogManager.Services
             await _catalogLock.WaitAsync();
             try
             {
-                // Always save to the _MODIFIED file based on the catalog path
+                // Always save to the MODIFIED file based on the catalog path
                 await SaveToModifiedFileAsync(entry);
                 return true;
             }
@@ -370,16 +379,16 @@ namespace CatalogManager.Services
                 throw new InvalidOperationException("No catalog files loaded");
             }
 
-            // Remove existing _MODIFIED suffix if present to avoid _MODIFIED_MODIFIED
+            // Remove existing MODIFIED suffix if present to avoid MODIFIEDMODIFIED
             string baseFileName = Path.GetFileNameWithoutExtension(sourceFile);
-            if (baseFileName.EndsWith("_MODIFIED", StringComparison.OrdinalIgnoreCase))
+            if (baseFileName.EndsWith("MODIFIED", StringComparison.OrdinalIgnoreCase))
             {
-                baseFileName = baseFileName.Substring(0, baseFileName.Length - "_MODIFIED".Length);
+                baseFileName = baseFileName.Substring(0, baseFileName.Length - "MODIFIED".Length);
             }
 
             string directory = Path.GetDirectoryName(sourceFile) ?? "";
             string extension = Path.GetExtension(sourceFile);
-            string modifiedFilePath = Path.Combine(directory, $"{baseFileName}_MODIFIED{extension}");
+            string modifiedFilePath = Path.Combine(directory, $"{baseFileName}MODIFIED{extension}");
 
             // Logger.Log($"SaveToModifiedFileAsync: Saving to {modifiedFilePath}");
 
@@ -595,7 +604,7 @@ namespace CatalogManager.Services
             await _catalogLock.WaitAsync();
             try
             {
-                // Get the full item from catalog, update its type modifiers, then save to _MODIFIED file
+                // Get the full item from catalog, update its type modifiers, then save to MODIFIED file
                 var fullItem = await GetItemBySkuIdAsync(item.SkuId);
                 if (fullItem == null)
                     return false;
@@ -603,7 +612,7 @@ namespace CatalogManager.Services
                 // Update the type modifiers
                 fullItem.TypeModifiers = item.TypeModifiers;
                 
-                // Save to _MODIFIED file
+                // Save to MODIFIED file
                 await SaveToModifiedFileAsync(fullItem);
                 
                 _lastCatalogLoadTime = DateTime.MinValue;
