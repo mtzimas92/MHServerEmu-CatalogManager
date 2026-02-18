@@ -140,38 +140,58 @@ namespace CatalogManager
             
             var dialog = new OpenFileDialog
             {
-                Title = "Select Catalog File",
+                Title = "Select Catalog File(s)",
                 Filter = "JSON Files (*.json)|*.json|All Files (*.*)|*.*",
-                DefaultExt = ".json"
+                DefaultExt = ".json",
+                Multiselect = true
             };
 
             if (dialog.ShowDialog() == true)
             {
-                Logger.Log($"LoadCatalogFile_Click: File selected: {dialog.FileName}");
+                var selectedFiles = dialog.FileNames;
+                Logger.Log($"LoadCatalogFile_Click: {selectedFiles.Length} file(s) selected");
                 
                 try
                 {
                     _viewModel.StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.LoadingCatalog");
-                    Logger.Log($"LoadCatalogFile_Click: Calling LoadCatalogFileAsync with: {dialog.FileName}");
                     
-                    bool success = await _viewModel.CatalogService.LoadCatalogFileAsync(dialog.FileName);
-                    Logger.Log($"LoadCatalogFile_Click: LoadCatalogFileAsync returned: {success}");
-                    
-                    if (success)
+                    int loadedCount = 0;
+                    int failedCount = 0;
+
+                    foreach (var filePath in selectedFiles)
                     {
-                        var fileName = System.IO.Path.GetFileName(dialog.FileName);
+                        Logger.Log($"LoadCatalogFile_Click: Calling LoadCatalogFileAsync with: {filePath}");
+                        bool success = await _viewModel.CatalogService.LoadCatalogFileAsync(filePath);
+                        Logger.Log($"LoadCatalogFile_Click: LoadCatalogFileAsync returned: {success} for {filePath}");
+
+                        if (success)
+                            loadedCount++;
+                        else
+                            failedCount++;
+                    }
+
+                    if (loadedCount > 0)
+                    {
                         var fileCount = _viewModel.CatalogService.LoadedFiles.Count;
-                        _viewModel.StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.LoadedFiles", fileName, fileCount);
+                        if (loadedCount == 1)
+                        {
+                            var fileName = System.IO.Path.GetFileName(selectedFiles[0]);
+                            _viewModel.StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.LoadedFiles", fileName, fileCount);
+                        }
+                        else
+                        {
+                            _viewModel.StatusText = $"Loaded {loadedCount} files ({fileCount} total loaded)";
+                        }
                         Logger.Log("LoadCatalogFile_Click: Executing LoadItemsCommand");
-                        // Trigger reload of items
+                        // Trigger reload of items once after all files are loaded
                         _viewModel.LoadItemsCommand.Execute(null);
                         Logger.Log("LoadCatalogFile_Click: LoadItemsCommand executed");
                     }
-                    else
+
+                    if (failedCount > 0)
                     {
-                        Logger.Log("LoadCatalogFile_Click: LoadCatalogFileAsync returned false");
-                        MessageBox.Show(LocalizationService.Instance.GetString("MainWindow.StatusBar.FailedToLoad"), LocalizationService.Instance.GetString("Common.Error"), MessageBoxButton.OK, MessageBoxImage.Error);
-                        _viewModel.StatusText = LocalizationService.Instance.GetString("MainWindow.StatusBar.FailedToLoad");
+                        Logger.Log($"LoadCatalogFile_Click: {failedCount} file(s) failed to load");
+                        MessageBox.Show($"{failedCount} file(s) failed to load.", LocalizationService.Instance.GetString("Common.Error"), MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
                 }
                 catch (Exception ex)
