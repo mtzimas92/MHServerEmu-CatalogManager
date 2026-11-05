@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using CatalogManager.Services;
@@ -192,6 +193,18 @@ namespace CatalogManager
                     {
                         Logger.Log($"LoadCatalogFile_Click: {failedCount} file(s) failed to load");
                         MessageBox.Show($"{failedCount} file(s) failed to load.", LocalizationService.Instance.GetString("Common.Error"), MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+
+                    var validationIssues = _viewModel.CatalogService.ValidationIssues;
+                    if (validationIssues.Count > 0)
+                    {
+                        var lines = string.Join("\n", validationIssues.Take(10).Select(i => $"- {i.Title} (SkuId {i.SkuId}, file {i.SourceFile})"));
+                        var more = validationIssues.Count > 10 ? $"\n... and {validationIssues.Count - 10} more" : "";
+                        MessageBox.Show(
+                            $"{validationIssues.Count} item(s) in the loaded catalog were not found in the game data, so they will not work in the store.\n\n" +
+                            lines + more +
+                            "\n\nFull list: validation_warnings.log",
+                            "Items missing from game data", MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
                 }
                 catch (Exception ex)
