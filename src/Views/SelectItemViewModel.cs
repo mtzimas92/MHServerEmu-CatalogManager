@@ -220,8 +220,8 @@ namespace CatalogManager.ViewModels
                     // Process avatar gear items
                     if (SelectedCategory.Path.Contains("AvatarGear"))
                     {
-                        var avatarGearItems = GameDatabase.DataDirectory
-                            .IteratePrototypesInHierarchy<PlayerStashInventoryPrototype>(PrototypeIterateFlags.None)
+                        var avatarGearItems = Materialize(GameDatabase.DataDirectory
+                            .IteratePrototypesInHierarchy<PlayerStashInventoryPrototype>(PrototypeIterateFlags.None))
                             .Where(protoId => GameDatabase.GetPrototypeName(protoId).StartsWith("Entity/Inventory/PlayerInventories/StashInventories/PageProtos/AvatarGear"))
                             .Select(protoId => new ItemDisplay
                             {
@@ -240,8 +240,8 @@ namespace CatalogManager.ViewModels
                     // Process costume items
                     if (SelectedCategory.Path.Contains("Costumes"))
                     {
-                        var costumeItems = GameDatabase.DataDirectory
-                            .IteratePrototypesInHierarchy<ItemPrototype>(PrototypeIterateFlags.None)
+                        var costumeItems = Materialize(GameDatabase.DataDirectory
+                            .IteratePrototypesInHierarchy<ItemPrototype>(PrototypeIterateFlags.None))
                             .Select(protoId => (id: protoId, proto: GameDatabase.GetPrototype<ItemPrototype>(protoId)))
                             .Where(item => GameDatabase.GetPrototypeName(item.id).StartsWith("Entity/Items/Costumes"))
                             .Where(item => 
@@ -262,8 +262,8 @@ namespace CatalogManager.ViewModels
 
                     
                     // Process regular items
-                    var regularItems = GameDatabase.DataDirectory
-                        .IteratePrototypesInHierarchy<ItemPrototype>(PrototypeIterateFlags.None)
+                    var regularItems = Materialize(GameDatabase.DataDirectory
+                        .IteratePrototypesInHierarchy<ItemPrototype>(PrototypeIterateFlags.None))
                         .Select(protoId => (id: protoId, proto: GameDatabase.GetPrototype<ItemPrototype>(protoId)))
                         .Where(item => validPaths.Except(new[] { "Entity/Items/Costumes" }).Any(path => 
                             GameDatabase.GetPrototypeName(item.id).StartsWith(path)))
@@ -394,6 +394,16 @@ namespace CatalogManager.ViewModels
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        // PrototypeIterator in current MHServerEmu builds is a pattern-based struct that no longer
+        // implements IEnumerable<PrototypeId>, so materialize it before applying LINQ operators.
+        private static List<PrototypeId> Materialize(PrototypeIterator iterator)
+        {
+            var ids = new List<PrototypeId>();
+            foreach (var id in iterator)
+                ids.Add(id);
+            return ids;
         }
     }
 

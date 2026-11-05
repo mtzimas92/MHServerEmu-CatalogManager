@@ -2416,38 +2416,6 @@
     ]
   },
   {
-    "SkuId": 21004000,
-    "GuidItems": [
-      {
-        "PrototypeGuid": 0,
-        "ItemPrototypeRuntimeIdForClient": 1939264464472379739,
-        "Quantity": 1
-      }
-    ],
-    "AdditionalGuidItems": [],
-    "LocalizedEntries": [
-      {
-        "LanguageId": "en_us",
-        "Description": "Jubilee Team-Up",
-        "Title": "Jubilee Team-Up",
-        "ReleaseDate": "",
-        "ItemPrice": 750
-      }
-    ],
-    "InfoUrls": [],
-    "ContentData": [],
-    "Type": {
-      "Name": "TeamUp",
-      "Order": 2
-    },
-    "TypeModifiers": [
-      {
-        "Name": "Giftable",
-        "Order": 2
-      }
-    ]
-  },
-  {
     "SkuId": 21004200,
     "GuidItems": [
       {
@@ -2475,42 +2443,6 @@
     "TypeModifiers": [
       {
         "Name": "Giftable",
-        "Order": 2
-      }
-    ]
-  },
-  {
-    "SkuId": 21004100,
-    "GuidItems": [
-      {
-        "PrototypeGuid": 0,
-        "ItemPrototypeRuntimeIdForClient": 4280273926886592762,
-        "Quantity": 1
-      }
-    ],
-    "AdditionalGuidItems": [],
-    "LocalizedEntries": [
-      {
-        "LanguageId": "en_us",
-        "Description": "Medusa Team-Up",
-        "Title": "Medusa Team-Up",
-        "ReleaseDate": "",
-        "ItemPrice": 550
-      }
-    ],
-    "InfoUrls": [],
-    "ContentData": [],
-    "Type": {
-      "Name": "TeamUp",
-      "Order": 2
-    },
-    "TypeModifiers": [
-      {
-        "Name": "Giftable",
-        "Order": 2
-      },
-      {
-        "Name": "Special",
         "Order": 2
       }
     ]

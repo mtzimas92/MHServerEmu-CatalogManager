@@ -339,11 +339,6 @@
       },
       {
         "PrototypeGuid": 0,
-        "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 2
-      },
-      {
-        "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 4314676162454560036,
         "Quantity": 1
       }
@@ -425,11 +420,6 @@
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 15142736093714783733,
         "Quantity": 1
-      },
-      {
-        "PrototypeGuid": 0,
-        "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,
@@ -517,11 +507,6 @@
       },
       {
         "PrototypeGuid": 0,
-        "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 2
-      },
-      {
-        "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 4030114999323204142,
         "Quantity": 1
       }
@@ -603,11 +588,6 @@
         "PrototypeGuid": 0,
         "ItemPrototypeRuntimeIdForClient": 15142736093714783733,
         "Quantity": 1
-      },
-      {
-        "PrototypeGuid": 0,
-        "ItemPrototypeRuntimeIdForClient": 3585754036662380275,
-        "Quantity": 2
       },
       {
         "PrototypeGuid": 0,

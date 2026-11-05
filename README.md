@@ -6,11 +6,17 @@ A MHServerEmu-based tool that allows users to change the in-game store catalog e
 
 MHServerEmu CatalogManager allows you to edit and change almost everything in the in-game store. Restore stash tabs (Fantastic Four), add crazy test items, or even make your own bundles.
 
+## Game Version Support
+
+This build targets game client **1.48.0.1712 (pre-BUE)** only. It requires the 1.48 build of the emulator libraries, which are compiled from MHServerEmu master using the `Release 1.48` build configuration (`dotnet build MHServerEmu.sln -c "Release 1.48"`, see `Build_v48.bat`). The DLLs in `lib/` must match the game version — pairing 1.48 libraries with 1.52 data (or vice versa) will fail at startup with a crash.
+
+Catalog entries that reference items which don't exist in the 1.48 data are detected when files are loaded and listed in a warning dialog (full list in `validation_warnings.log`). The stock catalog files shipped in `Data/` have been pruned to items that exist in 1.48.
+
 ## Setup Instructions
 
 1. Download the latest release or download and compile the source code.
 2. Extract the zip folder anywhere you want.
-3. Copy `Calligraphy.sip` and `mu_cdata.sip` from `Marvel Heroes\Data\Game` to the `Data/Game` folder of the Catalog Manager.
+3. Copy `Calligraphy.sip` and `mu_cdata.sip` from the **1.48 (pre-BUE)** client install's `Data/Game` folder to the `Data/Game` folder of the Catalog Manager.
 
 ## Usage
 

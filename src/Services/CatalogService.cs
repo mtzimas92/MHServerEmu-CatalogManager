@@ -30,6 +30,10 @@ namespace CatalogManager.Services
         // Prototype cache
         private readonly Dictionary<ulong, string> _prototypeNameCache = new();
 
+        // Validation results for the most recent catalog load (items not present in the game data)
+        private readonly List<CatalogValidationIssue> _validationIssues = new();
+        public IReadOnlyList<CatalogValidationIssue> ValidationIssues => _validationIssues;
+
         // Predefined type modifiers for each category - all possible modifiers from Marvel Heroes
         private static readonly Dictionary<string, List<string>> PredefinedModifiers = new()
         {
@@ -306,8 +310,54 @@ namespace CatalogManager.Services
             _cachedCategories = categories;
             _lastCatalogLoadTime = DateTime.Now;
             
+            // Check that every referenced item exists in the loaded game data
+            ValidateEntries(items);
+            
             // Logger.Log("LoadCatalogInternalAsync: Returning results");
             return (items, categories);
+        }
+
+        /// <summary>
+        /// Resolves every item reference in the loaded entries against the game data and records
+        /// the ones that do not exist (e.g. items added after game version 1.48).
+        /// </summary>
+        private void ValidateEntries(List<CatalogEntry> items)
+        {
+            _validationIssues.Clear();
+
+            foreach (var entry in items)
+            {
+                string title = entry.LocalizedEntries?.FirstOrDefault(e => !string.IsNullOrEmpty(e.Title))?.Title ?? "(untitled)";
+                string sourceFile = _skuToFileMapping.TryGetValue(entry.SkuId, out var f) ? Path.GetFileName(f) : "(unknown file)";
+
+                foreach (var guidItem in entry.GuidItems.Concat(entry.AdditionalGuidItems ?? new List<GuidItem>()))
+                {
+                    if (string.IsNullOrEmpty(GetPrototypeName(guidItem.ItemPrototypeRuntimeIdForClient)))
+                    {
+                        _validationIssues.Add(new CatalogValidationIssue
+                        {
+                            SkuId = entry.SkuId,
+                            Title = title,
+                            SourceFile = sourceFile,
+                            PrototypeId = guidItem.ItemPrototypeRuntimeIdForClient
+                        });
+                    }
+                }
+            }
+
+            if (_validationIssues.Count > 0)
+            {
+                try
+                {
+                    var lines = _validationIssues.Select(v =>
+                        $"SkuId={v.SkuId}  File={v.SourceFile}  Title={v.Title}  ItemId={v.PrototypeId}");
+                    File.WriteAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "validation_warnings.log"), lines);
+                }
+                catch (Exception ex)
+                {
+                    Logger.Log($"ValidateEntries: could not write validation_warnings.log: {ex.Message}");
+                }
+            }
         }
 
         public bool IsItemFromPatch(ulong skuId) => _patchFileSkuIds.Contains(skuId);
